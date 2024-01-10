@@ -1,7 +1,7 @@
 #more labels
 
 label houseOffice:
-    "while searching the house you find a room you've never been in before, the office"
+    "while searching the house you find a room you've never been in before, the office. You were never allowed in here."
     $ officeQuestStarted = True
     jump afterExploringHouse
 
@@ -22,3 +22,52 @@ label houseBook:
     "You should return it to the library."
     $ libraryQuestStarted = True
     jump afterExploringHouse
+
+label houseKey:
+    
+label afterExploringHouse:
+    "You spent a few hours and have yet to find a wrench to open that grate. Your next option is to see if there's a hardware store in town."
+    
+    jump intoTown
+    
+
+
+
+label intoTown:
+    "Using the map you downloaded at the cafe, you make your way towards the center of the town."
+            
+    scene bg 
+    
+    "Without GPS you get a bit lost but eventually stumble upon what must be the main street."
+    "blah blah blah general description of the surroundings. i think the statue is between the shops?"
+
+    "That looks like a hardware store over there, but the aroma from the nearby bakery draws you in."
+    menu:
+        "{cps=0}Where will you go first?{/cps}"
+        "bear essentials":
+            jump meetingAngus
+            #gregg mentions he's on a long lunch break since it's a slow day, but that he is still clocked in  
+            #if you visit 1st time after visitng pickaxe, you order 2 coffees
+        
+        "ol pickaxe":
+            jump meetingBea
+                            
+            #where do i know her (mae) from? :flashback:
+            #if you didn't explore the house in the morning, you automatically do it at night after fixing the heater
+        
+        #"underground":
+            #minor event
+        
+        #"rooftops":
+            #minor event
+            
+            
+label midday:
+    "It'll get dark in a couple hours. Is there anything else you want to do today?"
+    
+    jump continue
+    
+label continue:
+    #continues to next scene
+    #keep this at the end of file
+    "continuing..."
