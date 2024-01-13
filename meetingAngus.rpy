@@ -1,47 +1,71 @@
 label meetingAngus:
-    if metBea == True and metAngus == False:
-        "Order 2 coffees, one for yourself and one for Bea"
-        $ metAngus = True
     
-    elif metAngus == True:
+        
+
+
+
+    if metBea == True and metAngus == False:
+        #on the quest to get bea coffee, this is first time in bakery
+        $ metAngus = True
+        
+        scene bg bakery_exterior with dissolve
+    
+    elif metBea == True and metAngus == True:
+        #means you are doing bea's coffee quest and you visited the bakery before meeting Bea
+        
+        scene bg bakery_exterior with dissolve
+        
         angus "Back already?"
         gregg "I bet [heshethey] Couldn't resist another one of your snacks~"
         
-        "You met angus before, so the scene will be different. You'll just go in and order another coffee for yourself after giving the one you had to Bea."
         
-    else:
+    elif metBea == False and metAngus == True:
+        #means you went to the bakery first and have not yet met Bea. This case shouldn't happen because if you go to the bakery first it will automatically take you to the ol pickax immediately after
+        ""
+        
+    elif metBea == False and metAngus == False:
+        #means you have not visited Bea and this is your first time in the bakery
         $ metAngus = True
         
         scene bg bakery_exterior with dissolve
         
-        "...You reckon that's it."
-        "The smell of confections, pastries, and coffee permeate the air around it."
+        "You decide to check out the bakery first."
+        "The smell of confections, pastries, and coffee permeates the air around it."
 
         scene bg bakery_interior with fade
 
         play sound "sound/storebell.mp3"
         play music "music/Indecisive_Redux.mp3" fadein 1.0
 
-        "As soon as you walk in, the scent of peppermint hits you like a truck."
-        "You feel bad for the baker behind the counter who has to put up with this for hours every day."
-        "At least he probably comes home smelling nice."
-        "He pulls a tray full of holiday themed cookies out from the oven then turns to you with a warm smile."
-
-        show angus neutral at left with dissolve:
-            xzoom -1
-
-        angusunknown "Welcome! I'll be with you in just a second!"
-
-        "You nod to him as he sets the tray on a cooling rack and moves a fresh batch into the oven."
-
-        hide angus with dissolve
-
-        "You take the time to look over the menu, deciding on a coffee to get for the hardware store crocodile."
-        "You also pick out a treat from the glass case for yourself."
-        #bea thinks you got it for her, can give it to her
+        #"As soon as you walk in, the scent of peppermint hits you like a truck."
+        #"You feel bad for the baker behind the counter who has to put up with this for hours every day."
+        #"At least he probably comes home smelling nice."
+        
+        "A bell rings as you step inside and you hear a voice call out from the back of the shop."
+        
+        angusunknown "I'll be with you in just a moment!"
+        
+        
+        
+        "You look over the treats behind the glass case while waiting."
+        
+        "A bear comes around the corner, holding a tray of peppermint frosted cookies between mittened paws."
         
         show angus neutral at left with dissolve:
             xzoom -1
+        
+        angus "Sorry for the wait, I had to take these cookies out of the oven."
+        
+        #"He pulls a tray full of holiday themed cookies out from the oven then turns to you with a warm smile."
+
+        #angusunknown "Welcome! I'll be with you in just a second!"
+
+        #"You nod to him as he sets the tray on a cooling rack and moves a fresh batch into the oven."
+
+        hide angus with dissolve
+
+        #"You take the time to look over the menu, deciding on a coffee to get for the hardware store crocodile."
+        #"You also pick out a treat from the glass case for yourself."
 
         angusunknown "Sorry for the wait. What can I get you?"
         
@@ -66,16 +90,16 @@ label meetingAngus:
 
         #        player "I'll have a raspberry scone, please!"
         
-        player "I'll have a cinnamon roll, please!"
-        player "Oh and a coffee to go. Black."
+        player "I'll have a couple of those peppermint cookies, please!"
+        #player "Oh and a coffee to go. Black."
 
-        angusunknown "Sure! Would you like me to heat it up?"
+        #angusunknown "Sure! Would you like me to heat it up?"
 
-        "You look over your shoulder at the snowy environment."
+        #"You look over your shoulder at the snowy environment."
 
-        player "Please do."
+        #player "Please do."
 
-        "The baker catches you looking outside and chuckles as he grabs the cinnamon roll with a pair of tongs."
+        "The baker catches you looking outside and chuckles as he grabs the cookies with a pair of tongs."
 
         angusunknown "Haha that snow came out of nowhere, didn't it? My winter coat isn't even fully grown in yet!"
 

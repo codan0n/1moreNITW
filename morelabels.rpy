@@ -3,10 +3,12 @@
 label houseOffice:
     "while searching the house you find a room you've never been in before, the office. You were never allowed in here."
     $ officeQuestStarted = True
+    
     jump afterExploringHouse
 
 label houseShed:
     "After searching the house, you come across a rickety looking shed outside."
+    #must have been built after the last time you visted
     "Pushing the snow out of the way, you find the door is locked."
     if hasKey == True:
         "You recall you found a key earlier that looks like it might fit the lock."
@@ -15,18 +17,25 @@ label houseShed:
     else:
         "Maybe there's a key somewhere inside. Or maybe you'll have to find... alternative methods of entry."
     $ bikeQuestStarted = True
+    
     jump afterExploringHouse
     
 label houseBook:
     "You decide to explore your home some more. You don't find a wrench but you do find an overdue library book"
     "You should return it to the library."
     $ libraryQuestStarted = True
+    
     jump afterExploringHouse
 
 label houseKey:
+    "What's this? You find a rusty key in a dusty crevice behind some spider webs."
+    "You wonder what it's for."
+    
+    jump afterExploringHouse
     
 label afterExploringHouse:
-    "You spent a few hours and have yet to find a wrench to open that grate. Your next option is to see if there's a hardware store in town."
+    "You spent a few hours and have yet to find a wrench to open that grate. At this rate, it'll be dark by the time you figure something out."
+    "Your next best option is to see if there's a hardware store in town."
     
     jump intoTown
     
@@ -34,14 +43,16 @@ label afterExploringHouse:
 
 
 label intoTown:
-    "Using the map you downloaded at the cafe, you make your way towards the center of the town."
+    "You put on a jacket and boots and make your way towards the center of the town."
             
-    scene bg 
+    scene bg towncenter
     
-    "Without GPS you get a bit lost but eventually stumble upon what must be the main street."
+    #"You try to follow the map but without GPS "
+    #"Without GPS you get a bit lost but eventually stumble upon what must be the main street."
     "blah blah blah general description of the surroundings. i think the statue is between the shops?"
 
-    "That looks like a hardware store over there, but the aroma from the nearby bakery draws you in."
+    "That looks like the hardware store over there, but the aroma from the nearby bakery draws you in."
+    
     menu:
         "{cps=0}Where will you go first?{/cps}"
         "bear essentials":

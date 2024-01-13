@@ -732,35 +732,45 @@ label start:
     "You remember watching your father fiddle with the heater once or twice when it wasn't blasting enough heat."
     "Unfortunately the innards are blocked by a grate. You try to unscrew the bolts with your fingers but they're rusted and stuck in place."
     "Maybe there's a wrench somewhere in this house. It might be easier to see if there's a shop in town that sells them though."
+    "The map you downloaded at the cafe says there's a hardware store on main street."
+    "What should you do?"
+    
+    $ exploredHouse = False
     
     menu:
-        "{cps=0}Maybe there's a wrench somewhere in this house. It might be easier to see if there's a shop in town that sells them though.{/cps}"
+        "{cps=0}What should you do?{/cps}"
         "Explore home":
             #give a general description of the house to set the mood
             #after 1 search, it's getting late and you want heat now so you're forced into town
         
             #minor event
             #random whether you find the library book, office, or shed
-            $ houseEvents = ["houseOffice", "houseShed", "houseBook"]
+            $ houseEvents = ["houseOffice", "houseShed", "houseBook", "houseKey"]
     
             #if houseEvents is empty, you can no longer explore the house
             if not houseEvents:
-                $ houseExplored = True
+                $ houseFullyExplored = True
                 "You've already explored the house enough."
             
             $ randomSelected = renpy.random.choice(houseEvents)
             
+            $ exploredHouse = True
+            
             if randomSelected == "houseOffice":
                 $ houseEvents.remove("houseOffice")
-                "this is what remains of the list [houseEvents]"
                 jump houseOffice
-            elif randomSelected == "houseShed":
-                jump houseShed
+            #elif randomSelected == "houseShed":
+            #    $ houseEvents.remove("houseShed")
+            #    jump houseShed
             elif randomSelected == "houseBook":
+                $ houseEvents.remove("houseBook")
                 jump houseBook
+            elif randomSelected == "houseKey":
+                $ houseEvents.remove("houseKey")
+                jump houseKey
             else:
                 "You've already explore the house enough."
-                $ houseExplored = True
+                $ houseFullyExplored = True
             
         "Go into town":
             jump intoTown
