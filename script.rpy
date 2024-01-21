@@ -581,7 +581,7 @@ label start:
             "Better hope it doesn't freeze on the way home and make the jug explode."
             "Moving on, you pass by the deli counter. You weren't really planning on getting anything from it but the jolly old man behind the counter calls out to you."
             
-            show stan neutral at right:
+            show stan working at right:
                 yalign .5
             with dissolve
             
@@ -624,7 +624,7 @@ label start:
             "He catches you looking at the meats on display and bellows out a jolly greeting that startles you."
 
             #supposed to be in deli uniform, no sprite available for now :(
-            show stan neutral at right:
+            show stan working at right:
                 yalign .5
             with dissolve
 
@@ -772,22 +772,23 @@ label start:
     "It's been a long time since you were last in this house but you can recall some details from the times you visited."
     "You remember watching your father fiddle with the heater once or twice when it wasn't blasting enough heat."
     "Unfortunately the inner workings are blocked by a grate. You try to unscrew the bolts with your fingers but they're rusted and stuck in place."
-    "Maybe there's a wrench somewhere in this house. It might be easier to see if there's a shop in town that sells them though."
+    "Maybe there's a wrench somewhere in this house."
+    "You don't know where one would be though, and it's such a large house, it might be easier to see if there's a shop in town that sells them."
     "The map you downloaded at the cafe says there's a hardware store on main street."
     "What should you do?"
     
     $ exploredHouse = False
+    $ houseEvents = ["houseOffice", "houseShed", "houseBook", "houseKey"]
     
     menu:
         "{cps=0}What should you do?{/cps}"
         "Explore home":
-            jump unexploredHouse
+            call unexploredHouse
             #after 1 search, it's getting late and you want heat now so you're forced into town
         
             #minor event
             #random whether you find the library book, office, or shed
-            $ houseEvents = ["houseOffice", "houseShed", "houseBook", "houseKey"]
-    
+            
             #if houseEvents is empty, you can no longer explore the house
             if not houseEvents:
                 $ houseFullyExplored = True
@@ -813,6 +814,7 @@ label start:
                 "You've already explore the house enough."
                 $ houseFullyExplored = True
             
+            
         "Go into town":
             jump intoTown
             
@@ -827,26 +829,9 @@ label start:
             #minor event
             #"To hell with this, you'll wander around outside somewhere."
     
-
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+label day3:    
     
     
     
@@ -1902,36 +1887,6 @@ label start:
     
     scene bg home_office_day with dissolve
     
-    "You end up in a home office. A thick layer of dust cakes the various books and binders on the shelves but the desk area remains relatively clean."
-    "You poke around the safe and the computer a bit, but you're unable to crack into either of them."
-    "Much like the wifi, the PC is locked behind a password."
-    "Your inheritance paperwork never mentioned any codes or passwords. You try a few random guesses to no avail."
-    #you poke around the safe and then the computer before finding the photo
-    
-    
-    #"In your idle spinning, you must have accidentally bumped the mouse, because you hear the computer suddenly turn on."
-    #"You try a few common passwords but have no luck getting in."
-    #"You'll need to figure out a way to get past the login screen sometime."
-    #"You wander what could possibly be on the hard drive."
-    #"It's probably just going to be full of vacation photos and spreadsheets. A cryptocurrency wallet or two if you're lucky."
-    #"But you don't wanna wipe the drive until you've taken a look."
-
-    # pause
-
-    "As you shut the computer down, you notice a photo frame next to the monitor."
-    "Inside there's a faded picture of you as a kid. You're holding up a fish you caught and your father is kneeling beside you with a proud look on his face."
-    "You vaguely remember when that photo was taken. It was in early spring, when all the leaves were bright green."
-    "You got up early and spent the whole day fishing, just you and your dad. Then when the sun started going down you sat on the bank and fed the fish with the remainder of your bait."
-    "Simpler times, those were. Your parents were still together back then."
-    "You feel a lump in your throat, but you push it down because adults aren't supposed to cry."
-    #"With a heavy sigh, you look back at the monitor."
-    #"You half-heartedly try a few random passwords until it locks you out."
-    #might change back to the corrupt hard drive in recovery mode thing
-    #"Dang, the disk is saying it's corrupt. It's starting a recovery procedure now."
-    #"The estimated finish time is given in... days?!"
-    #"Just how big is the hard drive?"
-    #the code for the safe is in the files?
-    #"Ugh, you'll deal with this later. You leave the machine running and prepare to head out."
     
     "The sound of a motor revving in the distance fills the air and gradually gets louder as it approaches."
     
@@ -2470,51 +2425,7 @@ label start:
 
 
 
-        #"That's odd, the lamp is already on."
-    #"The soft glow illuminates the tidy room and all its furnishings."
-    #"You had called the utilities companies ahead of time to get things ready for your arrival, but apparently nobody took the time to turn off this one light."
-
-    #hint that there's a mark where a book used to lie on the table
-    #"Surprisingly this house hasn't been ransacked and vandalized in all the years it was sitting unoccupied, at least not from what you can tell."
-    #"You're lucky this house you've inherited hasn't been broken into and vandalized in all the time it was sitting empty."
-    #"At the very least the safe appears to be... safe. "
-    #"No sign that anybody tried to break into that safe, so whatever it contains is probably... safe."
-    #"Interestingly there's a safe built into one of the walls. You wonder what that's all about but there's no way you're getting it open without the combination."
-    #maybe gregg can crack it
-    #"You'll have to try and crack it later, right now you're more interested in cracking the wifi password."
-    #"You follow the wires coming out of the computer under the desk, which leads you straight to the router."
-    #"Jackpot!"
-    #"You look all over the box but the default password has faded from the label."
-    #"Damn cheap piece of shit ink."
-    #"You desperately look around the room for any sticky notes with passwords scrawled on them to no avail."
-    #"Even the computer is locked behind a password when you try turning it on."
-    #"Why can't phones just come with ethernet ports? You could plug yours in directly and satisfy your internet addiction if people weren't so obsessed with having thin phones."
-    #"If only your phone had an ethernet port."
-    #"You step away and sigh."
-    #"Now what are you gonna do?"
-    #"Your inheritance hasn't hit your bank account yet so buying a new computer or router is out of the question."
-    #"Especially when you haven't even bought groceries."
-    #"Your stomach rumbles."
-    #"You better find something to eat soon. Even a small town like Possum Springs must have a place to get breakfast, right? Hopefully some decent coffee too."
-    #"That, and a restaurant is bound to have public wifi."
-    #"That map of Possum Springs you snagged from the bus station yesterday should point you in the right direction."
-    #"You put on a jacket and shoes and ventured out in search of food and internet."
-    #"That's all the motivation you need to put on some shoes and head out the door and begin the hunt for food and internet."
-
     
-    
-    #"Your tour of the house concludes when you find yourself back in the office."
-    #"Your tour of the building took you through different rooms filled with art, furniture, and books."
-    #"Nothing out of the ordinary for a well-off boomer. You noted your father had a taste for antiques."
-    #"But what stood out to you the most was what must have been your father's bedroom."
-    #"Just thinking about it sends a chill up your spine and you're not sure why."
-    #"The room smelled like old stale clothes, and neither of the two windows provided much light. There was nothing in there except a king sized bed, a nightstand, and a wardrobe."
-    #"It didn't feel right to mess with anything so you shut the door and made a note to leave it be, like a tomb."
-    #"Wandering over to the desk, you take a gander at the shelves stuffed with binders and books. They seem to be work related."
-    #"You sit down in the leather chair and slowly spin around."
-    #"It's actually really comfortable. You guess you'd splurge on a nice chair too if you were gonna sit in it for long periods of time."
-    
-    #"There's just one more room left to check out."
 
     
     

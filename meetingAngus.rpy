@@ -41,11 +41,9 @@ label meetingAngus:
         #"You feel bad for the baker behind the counter who has to put up with this for hours every day."
         #"At least he probably comes home smelling nice."
         
-        "A bell rings as you step inside and you hear a voice call out from the back of the shop."
+        "A bell on the door chimes as you step inside. A voice calls out from the back of the shop."
         
         angusunknown "I'll be with you in just a moment!"
-        
-        
         
         "You look over the treats behind the glass case while waiting."
         
@@ -54,7 +52,9 @@ label meetingAngus:
         show angus neutral at left with dissolve:
             xzoom -1
         
-        angus "Sorry for the wait, I had to take these cookies out of the oven."
+        angusunknown "Sorry for the wait, these cookies were ready to come out of the oven."
+        angusunknown "What can I get you?"
+        
         
         #"He pulls a tray full of holiday themed cookies out from the oven then turns to you with a warm smile."
 
@@ -67,7 +67,7 @@ label meetingAngus:
         #"You take the time to look over the menu, deciding on a coffee to get for the hardware store crocodile."
         #"You also pick out a treat from the glass case for yourself."
 
-        angusunknown "Sorry for the wait. What can I get you?"
+        #angusunknown "Sorry for the wait. What can I get you?"
         
         #$ cinnamonRoll = False
         #honestly just remove this choice, it doesn't affect anything and bloats the game with too many choices at once
@@ -90,7 +90,21 @@ label meetingAngus:
 
         #        player "I'll have a raspberry scone, please!"
         
-        player "I'll have a couple of those peppermint cookies, please!"
+        player "Those smell really good! Can I get a couple to go?"
+        
+        angusunknown "Of course! Will that be all for you?"
+        
+        player "Yep. For now at least."
+        
+        "The baker uses a pair of tongs to grab your cookies and drops them into a paper bag."
+        
+        
+        
+        
+        
+        
+        
+        
         #player "Oh and a coffee to go. Black."
 
         #angusunknown "Sure! Would you like me to heat it up?"
