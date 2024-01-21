@@ -122,24 +122,38 @@ label start:
 
     scene bg black with fade
 
-    play music "music/americano_loop.mp3" fadein 1.0
+    #play music "music/americano_loop.mp3" fadein 1.0
+    
+    "This must be the place."
+    "You could smell the roasted coffee beans from a few blocks away."
 
     scene bg cafe with dissolve
 
     play sound "sound/storebell.mp3"
 
-    "Finally, you made it."
-    "A bell on the door chimes as you walk into a cozy little cafe."
+    #"Finally, you made it."
+    #"A bell on the door chimes as you walk into a cozy little cafe."
     #"The sign on the door read:\nPosspresso\nEST. 2020"
-    "The smell of roasted coffee beans guided you here from a couple blocks away."
-    "You brush the snow off your jacket and take a moment to bask in the warmth."
+    #"The smell of roasted coffee beans guided you here from a couple blocks away."
+    #""
+    "You brush the snow off your jacket and take a moment to bask in the warmth of the cafe you just stepped into."
+    "The distance you travelled to get here, combined with the frigid weather have left you drained of energy."
+    "What better place to rest and warm up than a coffee shop?"
+    "Posspresso... It's no chain you've ever heard of. Your home city had no shortage of local restaurants but this small town cafe is as authentic as it gets."
     "While fairly clean and new looking, the place has a rustic country charm to it."
+    "No overly dramatic lighting, no intentionally weathered hardwood, no fake plants, no cheesy messages about coffee being the most important thing in life."
+    "The chairs look like leftovers from whatever this place used to be, the out of place picnic table is covered in knife etchings new and old, the walls are adorned with bad painting that must come from the locals."
+    "The cheap grandma tier wallpaper really brings it all together."
+    #nuke possum springs carved into table
+    "This must be what they refer to as 'soul.'"
+    #quaint and unassuming
+    #"This quaint local "
     #finally a modern cafe in possum springs!
     #"It's the only one in Possum Springs if that map you got from the bus station is to be believed."
     #running joke about how every door in possum springs has a bell, even people's residences surprisingly ("it's just for the holidays. it's festive!")
-    "Hardwood flooring, homely wallpaper, a chalkboard menu, the works."
-    "Crude paintings adorn the walls, no doubt bought on the cheap from local artists."
-    "You wonder how the hell they fit that giant picnic table through the door."
+    #"Hardwood flooring, homely wallpaper, a chalkboard menu, the works."
+    #"Crude paintings adorn the walls, no doubt bought on the cheap from local artists."
+    #"You wonder how the hell they fit that giant picnic table through the door."
     #"There's even a large picnic table occupies the center of the room."
     #"How did they even fit that through the door, you wonder?"
     "Behind the counter, a young bird lady with brick red feathers smiles and waves at you."
@@ -205,7 +219,7 @@ label start:
         "What she had":
             $ selmaAP = selmaAP + 1
             $ chosendrink = "mocha"
-            "Not sure what else to get, you just order the same thing Selmers got."
+            "Not sure what else to get, you just order the same thing the previous customer got."
         
         "Posspresso Special":
         #surprise me
@@ -233,6 +247,7 @@ label start:
     "It asks if you would like to give a tip."
     
     menu:
+        "{cps=0}It asks if you would like to give a tip.{/cps}"
         "15\%":
             $ sympathetic = sympathetic + 1
             "A standard tip for standard service. Gotta pay the \"Please don't spit in my coffee\" tax."
@@ -332,11 +347,12 @@ label start:
     "That bear girl already found a table and was busy plugging a laptop into a nearby power outlet."
     "You quietly find a place to sit by a window, looking out at the blinding white landscape."
     "Winter decided to come early this year. You heard there was a blizzard on its way and but you didn't think it would be this bad."
-    "It's been snowing nonstop since you arrived in Possum Springs last night and your new home was colder than the innermost circle of Hell when you woke up."
-    "The town seemed to be caught off guard as well if the cars in ditches buried under a foot of snow are any indication."
-    "You saw some people shovelling snow off the streets but at the rate it's coming down, the roads will be piled with snow again in no time."
+    #"It's been snowing nonstop since you arrived in Possum Springs last night and your new home was colder than the innermost circle of Hell when you woke up."
+    "It's been snowing nonstop since you arrived in Possum Springs last night. You're lucky you didn't get hypothermia."
+    "The town seemed to be caught off guard as well if the cars in ditches buried under a foot of snow you saw on the way here are any indication."
+    "A few people were shovelling snow off the streets but at the rate it's coming down, they need a snow plow and a few metric tons of rock salt."
     #. Most of the roads on the way here weren't plowed and you saw a couple of abandoned cars that had slid into ditches, now buried under a foot of snow."
-    "You're lucky this place was even open."
+    "You're thankful a cafe even decided to open on a day like this."
     "Your eyes come to focus on your reflection in the glass, noticing you still have some snow on your..."
     
     menu:
@@ -348,7 +364,7 @@ label start:
         "Fur":
             $ animaltype = "mammal"
             "...fur. Because you're a mammal, of course."
-            "You pat down a patch of fur that the wind blew out of place."
+            "You pat down a patch of fur that the wind blew out of place but it keeps sticking up."
         "Feathers":
             $ animaltype = "bird"
             "...feathers. Because you're a bird, of course."
@@ -366,7 +382,7 @@ label start:
             $ hishertheir = "his"
             $ hisherstheirs = "his"
             $ himherthem = "him"
-            "Yeah, you lean on the masculine side."
+            "Yeah, a real macho manly wreck."
         "A feminine wreck":
             $ gender = "feminine"
             $ guygirlperson = "girl"
@@ -374,7 +390,7 @@ label start:
             $ hishertheir = "her"
             $ hisherstheirs = "hers"
             $ himherthem = "her"
-            "Naturally , you lean on the feminine side."
+            "A wreck fit for a lady such as yourself."
         "A gender neutral wreck":
             $ gender = "neutral"
             $ guygirlperson = "person"
@@ -422,7 +438,7 @@ label start:
     show trish neutral at center with dissolve
     
     trish "[name]!"
-    trish "Enjoy your meal!"
+    trish "Here ya go, hun. Enjoy your meal!"
     
     hide trish with dissolve
 
@@ -474,20 +490,23 @@ label start:
 
     "Meanwhile, the bear on the other side of the room taps away on her keyboard, her claws making quite a racket."
     "You can hear a lot of frustrated backspacing after she types a long block of text."
-    "You pull out your phone and get up to date on all your internet needs between bites and sips."
+    #"You pull out your phone and get up to date on all your internet needs between bites and sips."
+    "You couldn't get online at home, so now's the perfect time to get up to date on your internet addiction."
+    "You pull out your phone and alternate between tapping and swiping on the screen, interspersed with sips and bites of your breakfast."
     "It may be a while before you get internet again, so you should download something to keep yourself busy later on."
     
     menu:
+        "{cps=0}It may be a while before you get internet again, so you should download something to keep yourself busy later on.{/cps}"
         "Download movies":
             $ loriAP = loriAP + 1 #because she's known for liking movies
             #$ greggAP = greggAP + 1 #because choosing movies over books is something gregg would relate to, idk
-            "This will give you something to relax to. You just wish you didn't have to watch them on a 5 inch screen."
+            "This will give you something to pass the time. Hopefully the TV at home is modern enough for you to stream from your phone, you don't wanna get stuck watching these on a 5 inch screen."
             "You spend some time curating which movies you're interested in and finding working links."
         
         "Download books":
             $ mature = mature + 1
             $ selmaAP = selmaAP + 1
-            "Books will last longer than movies and give you something to think about, though it is more work to read."
+            "Books will last longer than movies and are more enjoyable anyway. Plus you can brag about being an adult who reads, an endangered species in the modern age."
             "You spend some time curating which books you're interested in and finding working links."
             
         "Download music":
@@ -496,9 +515,13 @@ label start:
             "You'd rather not suffer in silence. Even if you've got nothing else to do you can always rock out to something."
             "You spend some time curating which albums you're interested in and finding working links."
     
-    "Before you know it, it's already afternoon. It will get dark soon so you better hit the road."
-    "You're in dire need of food to stock your pantry with, so you look up a route to the nearest grocery store and memorize it before you're cut off from the internet."
+    "Hours go by and the setting sun reminds you that you still need to go shopping to stock your pantry, preferably before it gets dark."
+    
+    # It will get dark soon so you better hit the road."
+    #"You're in dire need of food to stock your pantry, so you look up a route to the nearest grocery store and memorize it before you're cut off from the internet."
+    "You look up a route to the nearest grocery store and memorize it before you're cut off from the internet"
     "The map app says they're open today but you're skeptical. You guess you'll find out when you get there."
+    "You rise from your seat and put away your dishes."
     "It seems the bear is still furiously typing away, concentrated on whatever she's writing."
     "You've both been here for a long time. You wonder how much longer she'll stay here."
     "As you're heading out the door, the barista chirps."
@@ -4140,7 +4163,7 @@ label day9:
         "Historical Society":
             jump loriGreggHistorical
 
-    label day10:
+    label day10a:
     # day 10, friday
     $ currentDay = 10
     $ currentDate = "December 10"
