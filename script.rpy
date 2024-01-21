@@ -495,21 +495,26 @@ label start:
     "You pull out your phone and alternate between tapping and swiping on the screen, interspersed with sips and bites of your breakfast."
     "It may be a while before you get internet again, so you should download something to keep yourself busy later on."
     
+    $ chosenHobby = ""
+    
     menu:
         "{cps=0}It may be a while before you get internet again, so you should download something to keep yourself busy later on.{/cps}"
         "Download movies":
+            $ chosenHobby = "movies"
             $ loriAP = loriAP + 1 #because she's known for liking movies
             #$ greggAP = greggAP + 1 #because choosing movies over books is something gregg would relate to, idk
             "This will give you something to pass the time. Hopefully the TV at home is modern enough for you to stream from your phone, you don't wanna get stuck watching these on a 5 inch screen."
             "You spend some time curating which movies you're interested in and finding working links."
         
         "Download books":
+            $ chosenHobby = "books"
             $ mature = mature + 1
             $ selmaAP = selmaAP + 1
             "Books will last longer than movies and are more enjoyable anyway. Plus you can brag about being an adult who reads, an endangered species in the modern age."
             "You spend some time curating which books you're interested in and finding working links."
             
         "Download music":
+            $ chosenHobby = "music"
             $ beaAP = beaAP + 1
             #$ maeAP = maeAP + 1
             "You'd rather not suffer in silence. Even if you've got nothing else to do you can always rock out to something."
@@ -519,7 +524,7 @@ label start:
     
     # It will get dark soon so you better hit the road."
     #"You're in dire need of food to stock your pantry, so you look up a route to the nearest grocery store and memorize it before you're cut off from the internet."
-    "You look up a route to the nearest grocery store and memorize it before you're cut off from the internet"
+    "You look up a route to the nearest grocery store and memorize it before you're cut off from the internet."
     "The map app says they're open today but you're skeptical. You guess you'll find out when you get there."
     "You rise from your seat and put away your dishes."
     "It seems the bear is still furiously typing away, concentrated on whatever she's writing."
@@ -544,7 +549,8 @@ label start:
 
     #"Now that you've had your morning coffee, you're in a position to get things done."
     #"Now that your belly is filled and your veins are pulsating with caffeine, you're in a position to get things done."
-    "Next stop: Ham Panther. It's right at the limit of what you'd call walking distance. Better get a move on while there's still daylight."
+    #"Next stop: Ham Panther."
+    "The nearest store right at the limit of what you'd call walking distance. Better get a move on while there's still daylight."
     #"It's almost noon already judging by the position of the sun. Best hurry if you want to make it home before dark."
     #"Best hurry if you want to make it home before dark. Longest Night is coming up soon, which means you don't have a lot of daylight to work with."
     #Longest Night is in just a few weeks so you don't have much daylight to burn."
@@ -557,19 +563,23 @@ label start:
     "You kick the snow off your boots and venture in. You're just shopping for the basics so you grab a basket and get to work."
     #"Ham Panthers are basically the same everywhere. And man are they everywhere."
     #"Except a couple miles closer to your house apparently."
-    "Oatmeal, bread, rice... Damn, the shelves are nearly empty and you think you almost witnessed a murder over the last carton of eggs."
+    "Rice, beans, lentils... The shelves are damn near empty but you manage to get what you need."
+    #You pass by some townsfolk whose shopping carts are filled to the brim in response to the storm, though it's mostly junk food.
+    "You pass by some townsfolk whose shopping carts are filled to the brim in response to the snowstorm."
+    "Two of them were fighting over the last carton of eggs and you thought you were about to witness a murder."
     "These small towns really are something."
     #"Should you pick up milk as well?"
-    "There's only a few milk jugs left. At least you don't have to worry about it spoiling on the walk back home since it's more likely to freeze."
-    "Now for the million dollar question, almond milk or normal milk?"
+    "Miraculously there are a few milk jugs left."
+    "Which one should you get, almond milk or normal milk?"
     
     menu:
-        "{cps=0}Now for the million dollar question, almond milk or normal milk?{/cps}"
+        "{cps=0}Which one should you get, almond milk or normal milk?{/cps}"
         "Almost milk":
             $ sympathetic = sympathetic + 1
             "You'd think packaging the runoff water from washing almonds would be cheaper than raising a cow but somehow it's always the more expensive option."
             "Oh well, at least you've grown accustomed to the taste and it doesn't upset your tummy."
-            "You pass by the deli counter, not really planning on getting anything from it but the jolly old man behind the counter calls out to you."
+            "Better hope it doesn't freeze on the way home and make the jug explode."
+            "Moving on, you pass by the deli counter. You weren't really planning on getting anything from it but the jolly old man behind the counter calls out to you."
             
             show stan neutral at right:
                 yalign .5
@@ -608,6 +618,7 @@ label start:
             
         "Moo cow milk":
             "Where else are you supposed to get your calcium? You need strong bones for... well you just need them, okay?"
+            "At least you don't have to worry about it spoiling on the walk back home since it's more likely to freeze."
             "Alright, what's next?"
             "You grab a few more things then swing by the deli where an old cat in an apron and paper hat stands behind the counter."
             "He catches you looking at the meats on display and bellows out a jolly greeting that startles you."
@@ -642,7 +653,7 @@ label start:
 
             hide stan with dissolve
 
-    "You go down a few more aisles, tossing some extras into your basket until it's filled to the brim, then proceed to the check out."
+    "You go down a few more aisles, tossing some extras into your basket until it's nearly overflowing, then proceed to the check out."
 
     show gregg apron at center with dissolve:
 
@@ -704,13 +715,21 @@ label start:
     
     hide gregg with dissolve
     
-    "You grab your bagged groceries and begin the long journey back home as the sun sets."
+    "You grab your bagged groceries and begin the long journey back home as the sun descends into the hilly landscape."
     
     scene bg home_interior_night with fade
     
-    "You've had enough of the cold by the time you reach your house. You crank the heat up to the max but the air coming through the vents is hardly any warmer than outside."
-    "Exhausted from trudging through snow all day, you promptly put away your groceries then wrap yourself in several blankets and try to fall asleep."
-
+    "You've had enough of the cold by the time you reach your house. You crank the heat up to the max but the air coming through the vents is hardly any warmer than it is outside."
+    #"In fact, it feels colder!"
+    #"You better not wake up to find yourself frozen to death because this machine "
+    "You're gonna be so mad if you freeze to death in your sleep."
+    "Exhausted from trudging through snow all day, you put away your groceries as quickly as possible then wrap yourself in several blankets."
+    if chosenHobby == "movies":
+        "Face pressed against a cold pillow, you watch a movie until you fall asleep."
+    elif chosenHobby == "music":
+        "Face pressed against a cold pillow, you listen to music until you fall asleep."
+    elif chosenHobby == "books":
+        "Face pressed against a cold pillow, you read a book until you fall asleep."
 
     # Day 2, thursday
     $ currentDay = 2
@@ -747,13 +766,12 @@ label start:
     
     scene bg home_interior_day with fade
     
-    "You awaken just as warm as you were when you went to sleep."
-    "Which is to say utterly frozen. You'd have a better time sleeping in the fridge."
-    "Seriously, you need to figure out what up with the heater."
-    "It should be right over... here!"
+    "You awaken just as warm as you were when you went to bed."
+    "Which is to say you've been in cryogenic sleep. You'd have a better time sleeping in the fridge."
+    "Seriously, you need to figure out what is up with the heater."
     "It's been a long time since you were last in this house but you can recall some details from the times you visited."
     "You remember watching your father fiddle with the heater once or twice when it wasn't blasting enough heat."
-    "Unfortunately the innards are blocked by a grate. You try to unscrew the bolts with your fingers but they're rusted and stuck in place."
+    "Unfortunately the inner workings are blocked by a grate. You try to unscrew the bolts with your fingers but they're rusted and stuck in place."
     "Maybe there's a wrench somewhere in this house. It might be easier to see if there's a shop in town that sells them though."
     "The map you downloaded at the cafe says there's a hardware store on main street."
     "What should you do?"
@@ -763,7 +781,7 @@ label start:
     menu:
         "{cps=0}What should you do?{/cps}"
         "Explore home":
-            #give a general description of the house to set the mood
+            jump unexploredHouse
             #after 1 search, it's getting late and you want heat now so you're forced into town
         
             #minor event

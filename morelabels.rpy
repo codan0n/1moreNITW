@@ -1,5 +1,17 @@
 #more labels
 
+label unexploredHouse:
+    #give a general description of the house to set the mood
+    "The eerie emptiness of the house unsettles you as you look around."
+    "A desolate building, untouched for who knows how long."
+    "Dust has piled up on every surface and cobwebs spill from the ceiling, but everything is otherwise so tidy and neat."
+    "It really is a tomb."
+    "Your memories conflict with the current reality."
+    "The room you slept in is exactly like you remember it. The kitchen got all new tile. Was that table always there in the den?"
+    "A whirlwind of confusion and conflicting emotions makes your search for tools more difficult. You're not sure where to look. You've never even been in half the rooms."
+    
+    jump continue
+
 label houseOffice:
     "while searching the house you find a room you've never been in before, the office. You were never allowed in here."
     $ officeQuestStarted = True
