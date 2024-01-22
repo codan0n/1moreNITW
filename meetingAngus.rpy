@@ -1,22 +1,38 @@
 label meetingAngus:
-    
-        
-
-
-
     if metBea == True and metAngus == False:
         #on the quest to get bea coffee, this is first time in bakery
         $ metAngus = True
         
-        scene bg bakery_exterior with dissolve
+        scene bg bakery_interior with dissolve
+        
+        show angus neutral at left with dissolve:
+            xzoom -1
+        
+        "this happens if this is your first time in the bakery and you're getting bea coffee"
+        
+        "blah blah blah get coffee, then return to bea"
+        
+        jump meetingBea
+        
+        
     
     elif metBea == True and metAngus == True:
         #means you are doing bea's coffee quest and you visited the bakery before meeting Bea
         
-        scene bg bakery_exterior with dissolve
+        scene bg bakery_interior with dissolve
+        
+        show angus neutral at left with dissolve:
+            xzoom -1
+            
+        show gregg neutral at right with dissolve
         
         angus "Back already?"
+        
         gregg "I bet [heshethey] Couldn't resist another one of your snacks~"
+        
+        "blah blah blah get coffee, then return to bea"
+        
+        jump meetingBea
         
         
     elif metBea == False and metAngus == True:
@@ -30,7 +46,7 @@ label meetingAngus:
         scene bg bakery_exterior with dissolve
         
         "You decide to check out the bakery first."
-        "The smell of confections, pastries, and coffee permeates the air around it."
+        "The smell of confections, pastries, and coffee fills the air around it."
 
         scene bg bakery_interior with fade
 
@@ -62,7 +78,7 @@ label meetingAngus:
 
         #"You nod to him as he sets the tray on a cooling rack and moves a fresh batch into the oven."
 
-        hide angus with dissolve
+        #hide angus with dissolve
 
         #"You take the time to look over the menu, deciding on a coffee to get for the hardware store crocodile."
         #"You also pick out a treat from the glass case for yourself."
@@ -98,7 +114,38 @@ label meetingAngus:
         
         "The baker uses a pair of tongs to grab your cookies and drops them into a paper bag."
         
+        angusunknown "Here you go! I'll ring you up over here."
         
+        "You pull a piping hot cookie from the bag and nibble on it while completing your purchase."
+        
+        player "Ow! Hot!"
+        
+        angusunknown "Please do be careful. I know it's freezing outside but I literally just pulled those out of the oven."
+        
+        player "I couldn't resist. It's good though!"
+        
+        angusunknown "Thanks! I'm glad you like it!"
+        angusunknown "Have a good day!"
+        
+        player "Thanks, you too!"
+        
+        "You say between tongue-scorching bites of your cookie on your way out."
+        
+        hide angus with dissolve
+        
+        scene bg bakery_exterior with dissolve
+        
+        "You make your way to the hardware store."
+        
+        jump meetingBea
+        
+        
+        
+        
+        
+        
+        
+        #angus talks about how nice hot treats are on a cold day, do the cold day dialogue
         
         
         

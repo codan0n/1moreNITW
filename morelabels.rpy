@@ -137,7 +137,7 @@ label houseShed:
     
 label houseBook:
     #the book contains part of the password?
-    "You checked various nooks, crannies, shelves, drawers, and boxes but no wrenches."
+    "You checked various nooks, crannies, shelves, drawers, and boxes but no tools."
     "You did however come across a book with a library sticker on it. Inside there's a slip of paper dated five years ago with your father's name next to it."
     "He must have checked out this book shortly before vanishing. Maybe he skipped town to avoid the late fee?"
     "Haha..."
@@ -156,7 +156,7 @@ label houseKey:
     jump afterExploringHouse
     
 label afterExploringHouse:
-    "You spent a few hours searching and have yet to find a wrench to open that grate. At this rate, it'll be dark by the time you figure something out."
+    "You spent a few hours searching and have yet to find a tool to open that grate. At this rate, it'll be dark by the time you figure something out."
     #for all you know, there might not even be a wrench in this house
     "Your next best option is to see if there's a hardware store in town."
     

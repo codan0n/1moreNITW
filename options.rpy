@@ -30,7 +30,7 @@ define gui.show_name = True
 
 
 ## The version of the game.
-define config.version = "0.0.2"
+define config.version = "0.0.1"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -51,7 +51,7 @@ define gui.about = _p("""A Night in the Woods fan game\n\nCredits\n
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "Afterthefall"
+define build.name = "1MNITW"
 
 
 ## Sounds and music ############################################################

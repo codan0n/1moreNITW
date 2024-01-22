@@ -269,61 +269,61 @@ label start:
     label namescript1:
 
         python:
-            povname = renpy.input("Oh shoot, what's your name again?", length = 14)
-            povname = povname.strip()
+            name = renpy.input("Oh shoot, what's your name again?", length = 14)
+            name = name.strip()
             povnameValid = True
             # prevents the player from naming themselves certain names and names them Avery if nothing is input
-            if povname.upper() == "MAE":
+            if name.upper() == "MAE":
                 "Choose another name."
                 povnameValid = False
-            if povname.upper() == "MARGARET":
+            if name.upper() == "MARGARET":
                 "Choose another name."
                 povnameValid = False
-            if povname.upper() == "BEA":
+            if name.upper() == "BEA":
                 "Choose another name."
                 povnameValid = False
-            if povname.upper() == "BEATRICE":
+            if name.upper() == "BEATRICE":
                 "Choose another name."
                 povnameValid = False
-            if povname.upper() == "GREGG":
+            if name.upper() == "GREGG":
                 "Choose another name."
                 povnameValid = False
-            if povname.upper() == "GREG":
+            if name.upper() == "GREG":
                 "Choose another name."
                 povnameValid = False
-            if povname.upper() == "ANGUS":
+            if name.upper() == "ANGUS":
                 "Choose another name."
                 povnameValid = False
-            if povname.upper() == "GERM":
+            if name.upper() == "GERM":
                 "Choose another name."
                 povnameValid = False
-            if povname.upper() == "JEREMY":
+            if name.upper() == "JEREMY":
                 "Choose another name."
                 povnameValid = False
-            if povname.upper() == "LORI":
+            if name.upper() == "LORI":
                 "Choose another name."
                 povnameValid = False
-            if povname.upper() == "SELMA":
+            if name.upper() == "SELMA":
                 "Choose another name."
                 povnameValid = False
-            if povname.upper() == "SELMERS":
+            if name.upper() == "SELMERS":
                 "Choose another name."
                 povnameValid = False
-            if povname.upper() == "STAN":
+            if name.upper() == "STAN":
                 "Choose another name."
                 povnameValid = False
-            if povname.upper() == "CANDY":
+            if name.upper() == "CANDY":
                 "Choose another name."
                 povnameValid = False
-            if povname.upper() == "TRISH":
+            if name.upper() == "TRISH":
                 "Choose another name."
                 povnameValid = False
-            if povname.upper() == "MARCIE":
+            if name.upper() == "MARCIE":
                 "Choose another name."
                 povnameValid = False
-            if not povname:
+            if not name:
                 #default name in case you don't type anything
-                povname = "Avery"
+                name = "Avery"
                 povnameValid = True
 
         if povnameValid == True:
@@ -749,6 +749,9 @@ label start:
     $ selmaQuestStarted = False
     $ officeQuestStarted = False
     
+    $ beaQuestBakery = False
+    $ beaQuestPosspresso = False
+    
     $ beaQuestComplete = False
     $ bikeQuestComplete = False
     $ libraryQuestComplete = False
@@ -771,19 +774,20 @@ label start:
     "Seriously, you need to figure out what is up with the heater."
     "It's been a long time since you were last in this house but you can recall some details from the times you visited."
     "You remember watching your father fiddle with the heater once or twice when it wasn't blasting enough heat."
-    "Unfortunately the inner workings are blocked by a grate. You try to unscrew the bolts with your fingers but they're rusted and stuck in place."
-    "Maybe there's a wrench somewhere in this house."
+    "Unfortunately the inner workings are blocked by a grate that's screwed in with small hex screws."
+    # You try to unscrew the bolts with your fingers but they're rusted and stuck in place."
+    "Maybe there's a hex key somewhere in this house."
     "You don't know where one would be though, and it's such a large house, it might be easier to see if there's a shop in town that sells them."
     "The map you downloaded at the cafe says there's a hardware store on main street."
     "What should you do?"
     
     $ exploredHouse = False
-    $ houseEvents = ["houseOffice", "houseShed", "houseBook", "houseKey"]
+    $ houseEvents = ["houseOffice", "houseBook", "houseKey"]
     
     menu:
         "{cps=0}What should you do?{/cps}"
         "Explore home":
-            call unexploredHouse
+            call unexploredHouse from _call_unexploredHouse
             #after 1 search, it's getting late and you want heat now so you're forced into town
         
             #minor event
@@ -828,11 +832,17 @@ label start:
         #"Town outskirts":
             #minor event
             #"To hell with this, you'll wander around outside somewhere."
-    
+            
+            
+label day2Evening:
+    scene bg bakery_exterior with fade
+    "day2 evening"
+    "if you explored your house in the morning, it's late and you go straight home, fix the heater and go to bed"
+    "if you did not explore your house in the morning, there's enough daylight to do something in town before going home. maybe encountering germ or seeing harley running around idk"
     
     
 label day3:    
-    
+    "day3"
     
     
     

@@ -1,20 +1,33 @@
-#if you didn't explore your home at the start of the day, there will be an small thing you can do in the evening in town square
+#if you didn't explore your home at the start of the day, there will be an small thing you can do in the evening in town square to make up for it
 label meetingBea:
     if beaQuestPosspresso == True:
-        "Bea chastises you for getting her cold coffee and going so far when the bakery was right next door, but a deal is a deal. She likes their fancier coffees more anyway."
+        scene bg olpickaxe with dissolve
+        
+        show bea apron at center with dissolve
+    
+        "Bea chastises you for getting her cold coffee and going so far when the bakery was right next door, but a deal is a deal. She likes Posspresso's fancier coffees more anyway."
+        
+        jump day2Evening
         
     elif beaQuestBakery == True:
-        "You return from the bakery and Bea thanks you for getting her hot coffee and gives you the wrench."
+        scene bg olpickaxe with dissolve
         
-
-        #when you went to bear essentials, you didn't get coffee for bea or for yourself. after bea gives you the quest, you have an option to go to bear essentials, ol pickax, or posspresso. if you go back to bear essentials, you can get the coffee for bea there, otherwise posspresso works.
+        show bea apron at center with dissolve
+        
+        "You return from the bakery and Bea thanks you for getting her hot coffee and gives you the wrench."
+        #"If you went to the bakery first, you can give her a cookie. If you went after the hardware store you'll have a cinnamon roll and bea will comment on either."
+        
+        jump day2Evening
         
         
     else:
         #first time entering the store
         $ metBea = True
         
-        scene bg ol pickax with dissolve
+        
+        #bea mentions her coworkers called in sick or got injured or something
+        
+        scene bg olpickaxe with dissolve
 
         play music "music/picknaxe_loop.mp3" fadein 1.0
 
@@ -31,21 +44,20 @@ label meetingBea:
         #"Behind the counter stands a bluish green crocodile giving off gothic vibes."
         #"Her tired eyes sluggishly drift to look in your direction."
 
-        show bea apron at right with dissolve:
-            yalign beaheight
+        show bea apron at right with dissolve
 
         beaunknown "Welcome to the Ol' Pickaxe. Let me know if I can help you find any- *yawn*"
         beaunknown "-...thing."
 
-        player "You don't happen to have any 10mm wrenches, do you?"
+        player "You don't happen to have any hex keys, do you?"
         
-        beaunknown "Check the wrench kits. Over thataway."
+        beaunknown "Check the wrench aisle. Over thataway."
         
         "She points a finger to the other side of the store."
 
-        player "I'd rather not have to buy a full set. Don't you have single wrenches for sale?"
+        #player "I'd rather not have to buy a full set. Don't you have single wrenches for sale?"
         
-        beaunknown "Yeah, they're over where the kits are."
+        #beaunknown "Yeah, they're over where the kits are."
 
         "She shrugs."
         
@@ -57,13 +69,16 @@ label meetingBea:
         
         "You go off to where she pointed to have a look."
         "There's a whole shelf with nothing but wrenches dangling off hooks for you to peruse."
-        "Let's see, 8mm, 8.5mm, 9mm, 9.6mm, 9.9mm, 9.99mm, 10.01mm... hey!"
-        "All of them are in stock except the one you need!"
-        "You catch a glimpse of the cashier girl dragging a large bag of road salt between aisles and decide to approach her."
+        "Monkey wrenches, dogbone wrenches, alligator wrenches, crowfoot wrenches..."
+        "There doesn't seem to be any hex wrenches in the size you need however."
+        "At least not any cheap ones. You spot the one you need as part of a larger kit that comes with a million other tools and has a price tag to reflect it."
+        #"Let's see, 8mm, 8.5mm, 9mm, 9.6mm, 9.9mm, 9.99mm, 10.01mm... hey!"
+        #"All of them are in stock except the one you need!"
+        "You catch a glimpse of the cashier dragging a large bag of road salt between aisles and decide to approach her."
         
         show bea apron with dissolve
 
-        player "Excuse me. You don't seem to have the wrench I need in stock."
+        player "Excuse me. You don't seem to have the tool I need in stock. I mean, outside of this overpriced kit."
         
         bea "Oh. Sorry about that."
         
@@ -73,68 +88,106 @@ label meetingBea:
         #do you need help dragging those bags?
         #I can handle it myself. Besides, it gives me an excuse not to deal with customers.
         
-        menu:
-            "When would you get a new shipment?":
-                $ gentle = gentle + 1
-                $ mature = mature + 1
-                player "When do you think you'll get a new shipment. I need this wrench as soon as possible."
-                
-                bea "Yesterday, but I'm not about to move all those boxes and open the one that might have your wrench today when I've already got a huge backlog of work to do."
-                
-                player "..."
-                
-                bea "Not unless you get me a coffee."
-                
-                player "What?"
-                
-                "She yawns again and leans agains a shelf."
-                
-                bea "Didn't get much sleep last night. If you go out and buy me a coffee, then *maybe* I can be persuaded to prioritize your request."
-                
-                "You don't really have a choice if you want to fix your heating situation at home."
-                
-                player "Deal."
-                player "What kind of coffee do you like?"
-                
-                bea "Dark. Like my soul or whatever, I don't care."
-            "What's your return policy?":
-                $ bold = bold + 1
-                "You're backed into a corner and have no choice but to cheat a little."
+        $ askedHelp = False
+        
+label beaQuestions:
+    menu:
+        "Do you need help with that?" if askedHelp == False:
+            $ sympathetic = sympathetic + 1
+            $ askedHelp = True
             
-                player "Say, what's your return policy?"
+            player "That bag looks heavy. Do you need help with that?"
+        
+            beaunknown "I can handle it myself. Besides, it gives me an excuse not to deal with customers as much."
             
-                bea "I know what you're planning. You're gonna buy the kit, use it to tighten one bolt then return it."
-                
-                player "N-no."
-                
-                "Dammit, she caught on immediately."
-                
-                bea "Tell you what."
-                bea "If you get me a coffee... *yawn* ... I'll loan you a wrench."
-                #she might have you buy her a coffee, and she'll let you borrow a wrench from the kit
-                #bea "If you get me a coffee I'll loan you a wrench from one of those kits."
-                bea "Just be sure to return it or I will hunt you down."
-                
-                player "Sheesh, wake up on the wrong side of the bed or something?"
-                
-                bea "More like never went to sleep in the first place. You gonna hook me up with some caffeine or not?"
-                
-                player "Fine. What kind of coffee do you like?"
+            jump beaQuestions
         
-                bea "Dark. Like my soul or whatever, I don't care."
+        "When would you get a new shipment?":
+            $ gentle = gentle + 1
+            $ mature = mature + 1
+            player "When do you think you'll get a new shipment. I need this tool as soon as possible."
+            
+            bea "Yesterday, but I'm not about to move all those boxes and open the one that might have your thing today when I've already got a huge backlog of work to do."
+            
+            player "..."
+            
+            bea "Not unless you get me a coffee."
+            
+            player "What?"
+            
+            "She yawns again and leans agains a shelf."
+            
+            bea "Didn't get much sleep last night. If you go out and buy me a coffee, then *maybe* I can be persuaded to prioritize your request."
+            
+            "You don't really have a choice if you want to fix your heating situation at home."
+            
+            player "Deal."
+            player "What kind of coffee do you like?"
+            
+            bea "Dark. Like my soul or whatever, I don't care."
+        "What's your return policy?":
+            $ bold = bold + 1
+            $ chaotic = chaotic + 1
+            
+            "You're backed into a corner and have no choice but to cheat a little."
         
-        hide bea with dissolve
+            player "Say, what's your return policy?"
         
-        "She drops the bag onto the stack with the others then shuffles to the back of the store, presumably to grab another one."
-        "Well that's a quest if you've ever seen one. You step outside and begin your hunt for coffee."
+            bea "I know what you're planning. You're gonna buy the kit, use it to tighten one bolt then return it."
+            
+            player "N-no."
+            
+            "Dammit, she caught on immediately."
+            
+            bea "Tell you what."
+            bea "If you get me a coffee... *yawn* ... I'll loan you a wrench."
+            #she might have you buy her a coffee, and she'll let you borrow a wrench from the kit
+            #bea "If you get me a coffee I'll loan you a wrench from one of those kits."
+            bea "Just be sure to return it or I will hunt you down."
+            
+            player "Sheesh, wake up on the wrong side of the bed or something?"
+            
+            bea "More like never went to sleep in the first place. You gonna hook me up with some caffeine or not?"
+            
+            player "Fine. What kind of coffee do you like?"
+    
+            bea "Dark. Like my soul or whatever, I don't care."
+    
+    hide bea with dissolve
+    
+    "She drops the bag onto the stack with the others then shuffles to the back of the store. You hear her start dragging another bag."
+    "Well that's a quest if you've ever seen one. You step outside and begin your hunt for coffee."
+    
+label day2roam:
+    scene bg bakery_exterior with fade
+    
+    "Where will you go?"
+    
+    menu:
+        "{cps=0}Where will you go?{/cps}"
+        "Bear Essentials Bakery":
+            $ beaQuestBakery = True
+            
+            jump meetingAngus
+
+        "Ol Pickaxe":
+            scene bg olpickaxe with dissolve
         
-        menu:
-            "Bear Essentials":
-                if metAngus == False:
-                    jump meetingAngus
-                else:
-                    "You go to the bakery and get coffee."
-            "Ol pickax":
-                bea "Oh hey you're back. Got my coffee yet?"
-            "Posspresso":
-                "You go all the way to posspresso for this stupid coffee."
+            show bea apron at center with dissolve
+            
+            beaunknown "Oh hey you're back. Got my coffee yet?"
+            
+            player "Nope."
+            
+            beaunknown "Then what are you doing here?"
+            
+            player "I dunno."
+            
+            jump day2roam
+        "Posspresso":
+            $ beaQuestPosspresso = True
+            "Where can you get a coffee in this literally nowhere town?"
+            "Posspresso of course! If they're open today."
+            "You go all the way to Posspresso for this stupid coffee then come all the way back to the hardware store."
+            
+            jump meetingBea
