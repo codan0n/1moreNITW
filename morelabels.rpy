@@ -172,6 +172,9 @@ label intoTown:
     #"You try to follow the map but without GPS "
     #"Without GPS you get a bit lost but eventually stumble upon what must be the main street."
     "blah blah blah general description of the surroundings."
+    "Old brick buildings line the streets as you approach your destination."
+    "Some of them look lived in, others look like they're about to crumble."
+    "Some look like both."
     #i think the memorial statue is between the shops?
 
     "That looks like the hardware store over there, but the aroma from the nearby bakery draws you in."

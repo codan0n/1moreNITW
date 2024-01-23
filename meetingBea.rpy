@@ -4,20 +4,137 @@ label meetingBea:
         scene bg olpickaxe with dissolve
         
         show bea apron at center with dissolve
+        
+        
+        "You returned to the hardware store to uphold you end of the bargain with the cashier."
+        "She's still moving bags of salt around."
+        
+        show bea apron at center with dissolve
+        
+        #to do: bea responds differently based on your choice earlier
+        bea "Wow, you actually came back. You must be desperate."
+        
+        "You set the coffee cup and your bag on the counter."
+        
+        bea "And you even got me a treat as well?"
+        
+        menu:
+            "Claws off, that one's mine.":
+                player "Claws off, that one's for me."
+                
+                bea "Relax, I'm just kidding."
+                bea "Thanks for the coffee though, I needed it. Here's your wrench. Be sure to bring it back once you're done with it."
+            "Err, yeah totally!":
+                $ beaAP = beaAP +1
+                
+                player "Err, yeah totally!"
+                
+                bea "Oh! How sweet of you."
+                
+                "She digs the cinnamon roll out of the bag and nibbles on it."
+                
+                player "Can I have that wrench now?"
+                
+                bea "Yeah, here you go. Just be sure to bring it back once you're done with it."
+                
+        player "Of course."
+        
+        #bea "If that's all you need"
+        bea "Now if you'll excuse me, these bags aren't gonna haul themselves."
+        
+        player "Right. I'll uh see you later then. And thanks."
+        
+        bea "Don't mention it."
+        #bea "Same."
+        
+        bea "Now if you'll excuse me, I have more salt to haul."
+        
+        "She takes a sip of the coffee you just delivered and wanders to the back room."
+        
+        hide bea with dissolve
+        
+        "As you're about to leave the store, a short cat in an orange sweater bursts in."
+
+        #"The croc sighs and pulls out an electronic cigarette. It lights up as she takes a puff from it."
+
+        #hide bea with dissolve
+
+        #"While she's away, you pass the time by taking a look around the shop."
     
         "Bea chastises you for getting her cold coffee and going so far when the bakery was right next door, but a deal is a deal. She likes Posspresso's fancier coffees more anyway."
         
-        jump day2Evening
+        jump meetingMae
+        
+        
         
     elif beaQuestBakery == True:
         scene bg olpickaxe with dissolve
+        
+        
+        "You returned to the hardware store to uphold you end of the bargain with the cashier."
+        "She's still moving bags of salt around."
         
         show bea apron at center with dissolve
         
         "You return from the bakery and Bea thanks you for getting her hot coffee and gives you the wrench."
         #"If you went to the bakery first, you can give her a cookie. If you went after the hardware store you'll have a cinnamon roll and bea will comment on either."
         
-        jump day2Evening
+        #to do: bea responds differently based on your choice earlier
+        bea "Wow, you actually came back. You must be desperate."
+        
+        "You set the coffee cup and your bag on the counter."
+        
+        bea "And you even got me a treat as well?"
+        
+        menu:
+            "Claws off, that one's mine.":
+                player "Claws off, that one's for me."
+                
+                bea "Relax, I'm just kidding."
+                bea "Thanks for the coffee though, I needed it. Here's your wrench. Be sure to bring it back once you're done with it."
+            "Err, yeah totally!":
+                $ beaAP = beaAP +1
+                
+                player "Err, yeah totally!"
+                
+                bea "Oh! How sweet of you."
+                
+                "She digs the cinnamon roll out of the bag and nibbles on it."
+                
+                player "Can I have that wrench now?"
+                
+                bea "Yeah, here you go. Just be sure to bring it back once you're done with it."
+                
+        player "Of course."
+        
+        #bea "If that's all you need"
+        bea "Now if you'll excuse me, these bags aren't gonna haul themselves."
+        
+        player "Right. I'll uh see you later then. And thanks."
+        
+        bea "Don't mention it."
+        #bea "Same."
+        
+        bea "Now if you'll excuse me, I have more salt to haul."
+        
+        "She takes a sip of the coffee you just delivered and wanders to the back room."
+        
+        hide bea with dissolve
+        
+        "As you're about to leave the store, a short cat in an orange sweater bursts in."
+
+        #"The croc sighs and pulls out an electronic cigarette. It lights up as she takes a puff from it."
+
+        #hide bea with dissolve
+
+        #"While she's away, you pass the time by taking a look around the shop."
+        
+        
+
+
+        
+        jump meetingMae
+        
         
         
     else:
@@ -189,5 +306,6 @@ label day2roam:
             "Where can you get a coffee in this literally nowhere town?"
             "Posspresso of course! If they're open today."
             "You go all the way to Posspresso for this stupid coffee then come all the way back to the hardware store."
+            #selma is there?
             
             jump meetingBea
