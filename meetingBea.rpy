@@ -63,7 +63,7 @@ label meetingBea:
     
         "Bea chastises you for getting her cold coffee and going so far when the bakery was right next door, but a deal is a deal. She likes Posspresso's fancier coffees more anyway."
         
-        jump meetingMae
+        jump day2Evening
         
         
         
@@ -133,7 +133,7 @@ label meetingBea:
 
 
         
-        jump meetingMae
+        jump day2Evening
         
         
         

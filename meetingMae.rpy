@@ -1,6 +1,14 @@
 label meetingMae:
+    $ townEvents.append("townMaeWallet")
+    $ townEvents.append("townMaeLoriRooftop1")
+
+    "You go back to the hardware store and give the wrench back to bea."
+    "She thanks you and goes back to haul more stuff from the back."
+
     show mae neutral at left with dissolve:
         xzoom -1
+        
+    #pending changes: make this scene play when you return the wrench to bea. add lori
 
     #"Wait a minute, you recognize her as the same cat who picked up the mouse girl at the bus station the other day!"
     #"You didn't notice it at the time, but one of her ears is torn and she has subtle red highlights in her fur."
@@ -8,7 +16,8 @@ label meetingMae:
 
     mae "Hey, do you know if Bea here right now?"
 
-    player "Is that the cashier?"
+    #player "Is that the cashier?"
+    player "That's the cashier, right?"
 
     mae "More like owner but yes."
 
@@ -812,4 +821,4 @@ label meetingMae:
 
     stop music fadeout 2.0
 
-    jump day2Evening
+    return

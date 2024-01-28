@@ -804,20 +804,21 @@ label start:
             
             if randomSelected == "houseOffice":
                 $ houseEvents.remove("houseOffice")
-                jump houseOffice
+                call houseOffice
             #elif randomSelected == "houseShed":
             #    $ houseEvents.remove("houseShed")
-            #    jump houseShed
+            #    call houseShed
             elif randomSelected == "houseBook":
                 $ houseEvents.remove("houseBook")
-                jump houseBook
+                call houseBook
             elif randomSelected == "houseKey":
                 $ houseEvents.remove("houseKey")
-                jump houseKey
+                call houseKey
             else:
                 "You've already explore the house enough."
                 $ houseFullyExplored = True
             
+            jump afterExploringHouse
             
         "Go into town":
             jump intoTown
@@ -836,13 +837,12 @@ label start:
             
 label day2Evening:
     scene bg bakery_exterior with fade
-    "day2 evening"
     
     if exploredHouse == False:
-        #"You still have some daylight left. Might as well do something in town."
+        "You still have some daylight left. Might as well do something in town."
         call marcieSalt
     else:
-        "The sun is already starting to set. You should hurry home."
+        "The sun is already starting to set. Getting stuck out in the dark sucks. You should hurry home."
         
     scene bg home_interior_night with fade
         
@@ -854,6 +854,92 @@ label day2Evening:
     
 label day3:    
     "day3"
+    "For the first time in a while, you awaken feeling rested and comfortable."
+    "The heater does a good job of warming you up when it actually works."
+    "You make breakfast and sit watching the snow."
+    "Now to decide what to do today."
+    
+    #options: stay home and explore (minor event), go into town and return the wrench (minor event), library if you have the book (major event), posspresso (minor event), visit bakery (non event), explore random part of town (minor event) [current available options are  exploring the underground and uhhhhh, seeing germ feeding wild cats at the food donkey, maybe merge random posspresso meets into this list]
+    
+    
+    $ townEvents = ["townGerm1", "townAngus1", "townTrolley1"]
+    
+    $ wrenchReturned = False
+    
+    menu:
+        "{cps=0}What should you do?{/cps}"
+        "Explore home":
+            #minor event
+            #need to add to list of available house exploration options if you found the key earlier
+            #re-add house description if you haven't already explored the house
+            #if exploredHouse == False:
+                
+            
+            #if houseEvents is empty, you can no longer explore the house
+            if not houseEvents:
+                $ houseFullyExplored = True
+                "You've already explored the house enough."
+            
+            $ randomSelected = renpy.random.choice(houseEvents)
+            
+            $ exploredHouse = True
+            
+            $ houseEvents.append("houseShed")
+            
+            if randomSelected == "houseOffice":
+                $ houseEvents.remove("houseOffice")
+                call houseOffice
+            elif randomSelected == "houseShed":
+                $ houseEvents.remove("houseShed")
+                call houseShed
+            elif randomSelected == "houseBook":
+                $ houseEvents.remove("houseBook")
+                call houseBook
+            elif randomSelected == "houseKey":
+                $ houseEvents.remove("houseKey")
+                call houseKey
+            else:
+                "You've already explore the house enough."
+                $ houseFullyExplored = True
+        "Explore town":
+            "You should explore Possum Springs to familiarize yourself with the area."
+            
+            $ randomSelected = renpy.random.choice(townEvents)
+            
+            if randomSelected == "townAngus1":
+                #to do: move remove and append statements into appropriate label
+                $ townEvents.remove("townAngus1")
+                $ townEvents.append("townAngus2")
+                call townAngus1
+            elif randomSelected == "townGerm1":
+                $ townEvents.remove("townGerm1")
+                $ townEvents.append("townGerm2")
+                call townGerm1
+            elif randomSelected == "townTrolley1":
+                $ townEvents.remove("townTrolley1")
+                $ townEvents.append("townTrolley2")
+                call townTrolley1
+            
+            
+        "Return wrench":
+            $ wrenchReturned = True
+            "You promised the hardware store girl that you'd return the wrench after you were done with it."
+            "You have no more use for it so you should give it back as soon as possible."
+            
+            call meetingMae
+        "Return library book" if libraryQuestStarted == True:
+            "The book is more overdue than the wrench. You should return it first."
+            
+            call libraryVisit1
+    
+    
+    "You return home and go to sleep."
+    
+    #day4
+    
+    "Day 4 start"
+    
+    
     
     
     
