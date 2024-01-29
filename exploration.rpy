@@ -136,6 +136,8 @@ label houseShed:
     return
     
 label houseBook:
+    $ haveOverdueBook = True
+    
     #the book contains part of the password?
     "You checked various nooks, crannies, shelves, drawers, and boxes but no tools."
     "You did however come across a book with a library sticker on it. Inside there's a slip of paper dated five years ago with your father's name next to it."
