@@ -1,9 +1,14 @@
-#if you didn't explore your home at the start of the day, there will be an small thing you can do in the evening in town square to make up for it
 label meetingBea:
     if beaQuestPosspresso == True:
         scene bg olpickaxe with dissolve
         
         show bea apron at center with dissolve
+        
+        "What the eff, you went all the way to posspresso? No wonder it took you so long."
+        "Bleh, this is almost frozen solid. I wanted a hot coffee!"
+        "Just go across the street to the bakery and get me a fresh one."
+        
+        call meetingangus
         
         
         "You returned to the hardware store to uphold you end of the bargain with the cashier."
@@ -141,22 +146,20 @@ label meetingBea:
         #first time entering the store
         $ metBea = True
         
-        
         #bea mentions her coworkers called in sick or got injured or something
         
         scene bg olpickaxe with dissolve
 
         play music "music/picknaxe_loop.mp3" fadein 1.0
 
-        "Plenty of boxes and miscellaneous items are strewn about like they're in the middle of reorganizing their inventory."
-        "An assortment of nails, screws, tapes, paints, and most importantly tools are on display. It's surprisingly well stocked for a little country bumpkin town."
+        #"Walking inside, you have to dodge boxes and miscellaneous items strewn about like they're in the middle of reorganizing their inventory."
+        "Walking inside, an assortment of nails, screws, tapes, paints, and most importantly tools are on display. It's surprisingly well stocked for such a small town."
         "You guess the folk around here rely on building and repairing their own stuff more than people in the city do."
         #"Then again, country folk are more likely to use these sorts of things for repairs and home improvement. You weren't even allowed to put thumbtacks in the walls in your apartment in the city but here"
         "Snow shovels sure seem to be selling quick these days."
         #"The goth crocodile behind the counter just finished selling one to a customer and yawns before welcoming you."
         "The goth crocodile behind the counter just finished selling one to a customer."
         "Her tired eyes drift to look in your direction."        
-        
         
         #"Behind the counter stands a bluish green crocodile giving off gothic vibes."
         #"Her tired eyes sluggishly drift to look in your direction."
@@ -166,7 +169,7 @@ label meetingBea:
         beaunknown "Welcome to the Ol' Pickaxe. Let me know if I can help you find any- *yawn*"
         beaunknown "-...thing."
 
-        player "You don't happen to have any hex keys, do you?"
+        player "I need a wrench."
         
         beaunknown "Check the wrench aisle. Over thataway."
         
@@ -187,8 +190,9 @@ label meetingBea:
         "You go off to where she pointed to have a look."
         "There's a whole shelf with nothing but wrenches dangling off hooks for you to peruse."
         "Monkey wrenches, dogbone wrenches, alligator wrenches, crowfoot wrenches..."
-        "There doesn't seem to be any hex wrenches in the size you need however."
-        "At least not any cheap ones. You spot the one you need as part of a larger kit that comes with a million other tools and has a price tag to reflect it."
+        #"There doesn't seem to be any hex wrenches in the size you need however."
+        "The one you need appears to be missing however."
+        "At least not as a standalone item. It's only available as part of a larger kit that comes with a million other tools and has a price tag to reflect it."
         #"Let's see, 8mm, 8.5mm, 9mm, 9.6mm, 9.9mm, 9.99mm, 10.01mm... hey!"
         #"All of them are in stock except the one you need!"
         "You catch a glimpse of the cashier dragging a large bag of road salt between aisles and decide to approach her."
@@ -213,7 +217,7 @@ label beaQuestions:
             $ sympathetic = sympathetic + 1
             $ askedHelp = True
             
-            player "That bag looks heavy. Do you need help with that?"
+            player "That bag sure looks heavy. Do you need help with that?"
         
             beaunknown "I can handle it myself. Besides, it gives me an excuse not to deal with customers as much."
             
@@ -306,6 +310,6 @@ label day2roam:
             "Where can you get a coffee in this literally nowhere town?"
             "Posspresso of course! If they're open today."
             "You go all the way to Posspresso for this stupid coffee then come all the way back to the hardware store."
-            #selma is there?
+            #selma is there
             
             jump meetingBea

@@ -120,32 +120,47 @@ label start:
     # Start day 1 (technically 2nd day in possum springs, you arrived the night of nov 29)
     #november 30 2022 (2017 nitw release year + 5 years) (wednesday)
 
-    scene bg black with fade
+    #scene bg black with fade
 
     #play music "music/americano_loop.mp3" fadein 1.0
+    #add walking in snow sound effect
     
-    "This must be the place."
-    "You could smell the roasted coffee beans from a few blocks away."
+    #"This must be the place."
+    #"You could smell the roasted coffee beans from a few blocks away."
 
     scene bg cafe with dissolve
 
     play sound "sound/storebell.mp3"
+    
+    ###to do: mention lack of internet at home and bad cell service
 
     #"Finally, you made it."
     #"A bell on the door chimes as you walk into a cozy little cafe."
     #"The sign on the door read:\nPosspresso\nEST. 2020"
     #"The smell of roasted coffee beans guided you here from a couple blocks away."
     #""
+    "Finally."
+    "You were starting to think you'd never make it, but the smell of roasted coffee beans pointed you in the right direction."
+    #"You were starting to think you'd never make it, but the smell of roasted coffee beans helped you find the right place."
+    #"You could smell the roasted coffee beans from a few blocks away."
     "You brush the snow off your jacket and take a moment to bask in the warmth of the cafe you just stepped into."
-    "The distance you travelled to get here, combined with the frigid weather have left you drained of energy."
+    "The distance you travelled to get here, along with the frigid weather have left you drained of energy."
     "What better place to rest and warm up than a coffee shop?"
     "Posspresso... It's no chain you've ever heard of. Your home city had no shortage of local restaurants but this small town cafe is as authentic as it gets."
     "While fairly clean and new looking, the place has a rustic country charm to it."
-    "No overly dramatic lighting, no intentionally weathered hardwood, no fake plants, no cheesy messages about coffee being the most important thing in life."
-    "The chairs look like leftovers from whatever this place used to be, the out of place picnic table is covered in knife etchings new and old, the walls are adorned with bad painting that must come from the locals."
-    "The cheap grandma tier wallpaper really brings it all together."
+    "No overly dramatic lighting, no artificially weathered hardwood, no hipster whiskers, no cheesy messages about coffee being the most important thing in life."
+    #"The chairs look like leftovers from whatever this place used to be, the out-of-place picnic table is covered in knife etchings new and old, the walls are adorned with bad painting that must come from the locals."
+    "Rather, Posspresso has mastered the art of furnishing on a budget."
+    "The chairs look like leftovers from whatever this place used to be, with the fake leather cushions being cracked and torn in a few places."
+    "You'd bet that picnic table was rescued from being sent to a landfill. As you pass by it, you can make out knife etchings both new and old."
+    #"one of them is from the 1970s"
+    "One would be wise to check for rusty nails before trying to sit on it."
+    #"The picnic table in the center takes up a bit too much room"
+    #"the out-of-place picnic table is covered in knife etchings new and old, the walls are adorned with bad painting that must have been made by the locals."
+    "The local artists' amateur paintings and cheap grandma tier wallpaper really brings it all together."
     #nuke possum springs carved into table
-    "This must be what they refer to as 'soul.'"
+    "Soul."
+    #"This must be what they refer to as 'soul.'"
     #quaint and unassuming
     #"This quaint local "
     #finally a modern cafe in possum springs!
@@ -254,7 +269,7 @@ label start:
         
         "30\%":
             $ gentle = gentle + 1
-            "Eff it, you're feeling generous today. She'd probably enjoy the extra cash more than you."
+            "Eff it, you're feeling generous today. Maybe she'll throw in an extra shot of espresso for you too."
         
         "No tip":
             $ chaotic = chaotic + 1
@@ -341,18 +356,20 @@ label start:
             jump namescript1
 
     trish "Alright, I'll have that ready for y'all in just a minute!"
+    
+    player "Thanks."
 
     hide trish with dissolve
 
-    "That bear girl already found a table and was busy plugging a laptop into a nearby power outlet."
-    "You quietly find a place to sit by a window, looking out at the blinding white landscape."
-    "Winter decided to come early this year. You heard there was a blizzard on its way and but you didn't think it would be this bad."
+    "You look around for a place to sit. That bear girl already found a table near the wall and plugged a laptop into a power outlet."
+    "Taking a seat by a window, you gaze at the blinding white landscape."
+    "Winter decided to come early this year. You heard there was a blizzard on its way and but you didn't think it would be this intense."
     #"It's been snowing nonstop since you arrived in Possum Springs last night and your new home was colder than the innermost circle of Hell when you woke up."
-    "It's been snowing nonstop since you arrived in Possum Springs last night. You're lucky you didn't get hypothermia."
-    "The town seemed to be caught off guard as well if the cars in ditches buried under a foot of snow you saw on the way here are any indication."
+    "It's been snowing nonstop since you arrived in Possum Springs last night. You lack a proper windbreaker for this kind of weather but all the walking you've been doing has warmed you well enough."
+    "The town seems ill-prepared as well. You lost count of how many abandoned cars you saw on the way here, stuck in a ditch and buried under a foot of snow."
     "A few people were shovelling snow off the streets but at the rate it's coming down, they need a snow plow and a few metric tons of rock salt."
     #. Most of the roads on the way here weren't plowed and you saw a couple of abandoned cars that had slid into ditches, now buried under a foot of snow."
-    "You're thankful a cafe even decided to open on a day like this."
+    "You're lucky Posspresso even decided to open on a day like this."
     "Your eyes come to focus on your reflection in the glass, noticing you still have some snow on your..."
     
     menu:
@@ -360,7 +377,7 @@ label start:
         "Scales":
             $ animaltype = "reptile"
             "...scales. Because you're a reptile, of course."
-            "Oh god how long have you been walking around with that bit of shed skin stuck to your face?"
+            "Oh god how long have you been walking around with that bit of shed skin stuck to your face? How embarassing."
         "Fur":
             $ animaltype = "mammal"
             "...fur. Because you're a mammal, of course."
@@ -401,7 +418,9 @@ label start:
             "It's hard to tell where you lie on the gender scale. Just the way you like it."
 
     "Whew, glad you got that identity crisis out of the way."
-    "The past few days have been really chaotic. It's nice to slow down for a moment and relax."
+    "Now you can focus on more important things like getting online. You look around for the wifi password and type it into your phone."
+    "The shoddy cell signal you get in this town can't even stay connected long enough to load a webpage."
+    #"The past few days have been really chaotic. It's nice to slow down for a moment and relax."
     
     show trish neutral at right with dissolve
     
@@ -409,7 +428,7 @@ label start:
 
     #"The barista's voice pulls you out of your flashback, conveniently right as it was about to end anyway."
     #"Now you remember! You were on your way to buy groceries and you stopped by this cafe on the way for breakfast!"
-    "The barista calls out and the bear finishes typing something on her laptop before going up to the counter to collect her drink."
+    "The bear waits to finish typing something on her laptop before going up to the counter to collect her drink."
 
     show selma neutral at left with dissolve:
         xzoom -1
@@ -417,34 +436,36 @@ label start:
     selma "Thanks!"
     
     trish "Of course!"
-    trish "How's the writing going?"
+    trish "How's the writin' going?"
     
     selma "Eh. Havin' a hard time with this chapter. But I'll figure it out."
     
-    trish "I hope so! Good luck!"
+    trish "You got this!"
+    
+    selma "Heh. Of course I do."
     
     hide trish
     hide selma
     with dissolve
 
-    "You can't resist taking a glance at what she ordered. It looks as good as it smells."
+    "You can't resist taking a glance at her drink as she passes by your table. It looks as good as it smells."
     "It's in a glass mug so you can see the thick chocolaty treat with a layer of froth topped by a generous helping of whipped cream with caramel sauce drizzled upon it."
-    "You eagerly wait for your own drink to be ready."
+    #"You eagerly wait for your own drink to be ready."
 
     #hide selma with dissolve
 
-    "..."
+    "After a while, the barista calls you up to the counter."
     
     show trish neutral at center with dissolve
     
     trish "[name]!"
-    trish "Here ya go, hun. Enjoy your meal!"
+    trish "Here ya go, hun. Enjoy!"
     
     hide trish with dissolve
 
     if chosendrink == "posspressospecial":
         #"You walk up to the counter and grab your breakfast"
-        "You fetch your bagel and steaming hot coffee from the counter and head back to your seat."
+        "You fetch your bagel and steaming hot beverage from the counter and head back to your seat."
         "The mug contains a dark concoction with a layer of light foam, topped with dark chocolate shavings."
         "You blow on it then take a sip."
         "..."
@@ -453,22 +474,23 @@ label start:
         "The flavor is earthy and potent with a burnt chocolate aftertaste."
         "It's an exceptionally strong drink that leaves you wanting more of it."
         "You can't resist taking another satisfying sip before moving on to your bagel."
-        "Nothing special here, just an ordinary bagel topped with seeds and herbs and ample cream cheese stuffed between its halves."
+        "Nothing special here, just an ordinary bagel topped with seeds and herbs with ample cream cheese stuffed between its halves."
     
     elif chosendrink == "americano":
-        "You fetch your bagel and steaming hot coffee from the counter and head back to your seat."
-        "The mug contains a dark-as-your-soul brew with a few bubbles on the surface."
+        "You fetch your bagel and steaming hot beverage from the counter and head back to your seat."
+        "The mug contains a plain dark brew with a few bubbles on the surface."
         "You blow on it then take a sip."
         "..."
         "So bitter. So good."
-        "Nothing says \"I hate myself\" more than drinking straight espresso with nothing but a little extra water to make it tolerable."
+        "No fancy flavors required, just a couple shots of espresso and good old fashioned water. The way god intended."
+        #"Nothing says \"I hate myself\" more than drinking straight espresso with nothing but a little extra water to make it tolerable."
         #"It's incredibly smooth and gently massages your taste buds with a light, warming flavor."
         "You can't resist taking another satisfying sip before moving on to your bagel."
-        "It's full of juicy blueberries and the honey butter spread oozes pure sweetness."
+        "It's full of juicy blueberries and the honey butter spread oozes pure sweetness. Good thing you have a strong drink to wash down this sugar overdose."
 
     elif chosendrink == "cappuccino":
-        "You fetch your waffle and steaming hot coffee from the counter and head back to your seat."
-        "The mug contains a gradient of different flavors. A creamy espresso mixture on the bottom that turns into a milky white the further up you go, topped with a layer of foam."
+        "You fetch your waffle and steaming hot beverage from the counter and head back to your seat."
+        "The mug contains a gradient of different flavors. A dark espresso mixture on the bottom that turns into a milky white cream the further up you go, topped with a layer of foam."
         "You blow on it then take a sip."
         "..."
         "It gives you two distinct flavors of steamed milk and espresso. One is light and the other is strong, neither overpowering the other."
@@ -478,21 +500,24 @@ label start:
         "The sweet chocolate chips combined with the melted butter send your taste buds to heaven with a first class ticket."
     
     elif chosendrink == "mocha":
-        "You fetch your waffle and steaming hot coffee from the counter and head back to your seat."
-        "The glass mug shows a light brown mixture with a layer of chocolate on the bottom. Up top is a layer of whipped cream, with a drizzle of caramel and sea salt"
+        "You fetch your waffle and steaming hot beverage from the counter and head back to your seat."
+        "The glass mug reveals a light brown mixture with a layer of chocolate on the bottom. Up top is a layer of whipped cream, with a drizzle of caramel and sea salt"
         "You lick away some of the cream then take a sip of the actual drink."
         "..."
         "The salt contrasts with the sugary taste of chocolate and caramel, which balance the bitterness of espresso."
         "All the flavors combine into an exquisite beverage that gives you everything you could want in a drink."
         "You can't resist taking another satisfying sip before moving on to your waffle."
         #"You slice off a chunk and pop it into your mouth."
-        "Juicy strawberries are baked right into it, and much like your drink, the combination with butter serves to give your taste buds the ultimate experience."
+        "Juicy strawberries are baked right into it, offering a sweet sensation with nearly every bite of the savory buttermilk waffle."
 
     "Meanwhile, the bear on the other side of the room taps away on her keyboard, her claws making quite a racket."
     "You can hear a lot of frustrated backspacing after she types a long block of text."
     #"You pull out your phone and get up to date on all your internet needs between bites and sips."
-    "You couldn't get online at home, so now's the perfect time to get up to date on your internet addiction."
-    "You pull out your phone and alternate between tapping and swiping on the screen, interspersed with sips and bites of your breakfast."
+    "That reminds you, you're connected to the internet now."
+    
+    
+    #"You couldn't get online at home, so now's the perfect time to get up to date on your internet addiction."
+    "You pull out your phone and alternate between poking the screen and devouring your breakfast."
     "It may be a while before you get internet again, so you should download something to keep yourself busy later on."
     
     $ chosenHobby = ""
@@ -535,9 +560,12 @@ label start:
 
     trish "Thanks for coming in! Have a nice day!"
 
-    player "Thanks, you too!"
+    player "You too!"
     
     hide trish with dissolve
+    
+    "You step out into the snowy landscape and begin your lone march."
+    #fade to white
     
     #"Feeling energized from the coffee, you set out on the next leg of your journey."
     "Now that your belly is filled and your veins are pulsating with caffeine, you're ready to set out on the next leg of your journey."
@@ -565,8 +593,8 @@ label start:
     #"Except a couple miles closer to your house apparently."
     "Rice, beans, lentils... The shelves are damn near empty but you manage to get what you need."
     #You pass by some townsfolk whose shopping carts are filled to the brim in response to the storm, though it's mostly junk food.
-    "You pass by some townsfolk whose shopping carts are filled to the brim in response to the snowstorm."
-    "Two of them were fighting over the last carton of eggs and you thought you were about to witness a murder."
+    "You pass by some townsfolk whose shopping carts are filled to the brim, no doubt in response to the snowstorm."
+    "Two of them were arguing so aggressively over the last carton of eggs, you thought you were about to witness a murder."
     "These small towns really are something."
     #"Should you pick up milk as well?"
     "Miraculously there are a few milk jugs left."
@@ -578,7 +606,7 @@ label start:
             $ sympathetic = sympathetic + 1
             "You'd think packaging the runoff water from washing almonds would be cheaper than raising a cow but somehow it's always the more expensive option."
             "Oh well, at least you've grown accustomed to the taste and it doesn't upset your tummy."
-            "Better hope it doesn't freeze on the way home and make the jug explode."
+            "Better hope it doesn't freeze on the way home and make the container explode."
             "Moving on, you pass by the deli counter. You weren't really planning on getting anything from it but the jolly old man behind the counter calls out to you."
             
             show stan working at right:
@@ -623,7 +651,6 @@ label start:
             "You grab a few more things then swing by the deli where an old cat in an apron and paper hat stands behind the counter."
             "He catches you looking at the meats on display and bellows out a jolly greeting that startles you."
 
-            #supposed to be in deli uniform, no sprite available for now :(
             show stan working at right:
                 yalign .5
             with dissolve
@@ -664,7 +691,7 @@ label start:
     #"He sports a dark grey turtleneck sweater underneath his apron, along with a chipper attitude."
     "The name tag pinned to the apron reads \"Gregg\", with a tiny, crude portrait of himself drawn next to it."
 
-    #player "Hey."
+    player "Hey."
 
     "You start unloading the contents of your basket onto the conveyor belt. The cashier rings them up with ease, not even looking at what he's scanning."
 
@@ -690,7 +717,7 @@ label start:
     gregg "Nobody ever just like, comes here to live."
     gregg "Have you tried the pierogies at the diner yet? They're *amazing!*~"
 
-    player "I just arrived yesterday. I tried that coffee shop this morning, what was it called... uhh Posspresso?"
+    player "I just arrived yesterday. I tried that coffee shop this morning, what was it called... Posspresso?"
 
     gregg "Oh yeah that one's pretty good. You should check out Bear Essentials sometime. It's a bakery on main street. Serves pretty good coffee too."
     #as long as you don't need anything fancy
@@ -720,16 +747,17 @@ label start:
     scene bg home_interior_night with fade
     
     "You've had enough of the cold by the time you reach your house. You crank the heat up to the max but the air coming through the vents is hardly any warmer than it is outside."
+    #"What the hell, it was doing this last night too."
     #"In fact, it feels colder!"
     #"You better not wake up to find yourself frozen to death because this machine "
     "You're gonna be so mad if you freeze to death in your sleep."
     "Exhausted from trudging through snow all day, you put away your groceries as quickly as possible then wrap yourself in several blankets."
     if chosenHobby == "movies":
-        "Face pressed against a cold pillow, you watch a movie until you fall asleep."
+        "With your face pressed against a cold pillow, you watch a movie until you fall asleep."
     elif chosenHobby == "music":
-        "Face pressed against a cold pillow, you listen to music until you fall asleep."
+        "With your face pressed against a cold pillow, you listen to music until you fall asleep."
     elif chosenHobby == "books":
-        "Face pressed against a cold pillow, you read a book until you fall asleep."
+        "With your head pressed against a cold pillow, you read a book until you fall asleep."
 
     # Day 2, thursday
     $ currentDay = 2
@@ -776,11 +804,13 @@ label start:
     "Seriously, you need to figure out what is up with the heater."
     "It's been a long time since you were last in this house but you can recall some details from the times you visited."
     "You remember watching your father fiddle with the heater once or twice when it wasn't blasting enough heat."
-    "Unfortunately the inner workings are blocked by a grate that's screwed in with small hex screws."
-    # You try to unscrew the bolts with your fingers but they're rusted and stuck in place."
-    "Maybe there's a hex key somewhere in this house."
-    "You don't know where one would be though, and it's such a large house, it might be easier to see if there's a shop in town that sells them."
-    "The map you downloaded at the cafe says there's a hardware store on main street."
+    "Unfortunately the inner workings are blocked by a grate that's screwed in tight."
+    "You try to unscrew the bolts with your fingers but they're rusted and stuck in place."
+    "Maybe there's a wrench somewhere in this house."
+    "Your old man left behind a ton of stuff. There's gotta be a toolbox around here."
+    "You haven't got a clue where to look though. This house is like a labrynth and there's no lack of boxes and drawers to search through."
+    "It might be faster to just go out and buy a new wrench."
+    "The map you downloaded at the cafe says there's a hardware store nearby you could try."
     "What should you do?"
     
     $ haveOverdueBook = False
@@ -792,7 +822,6 @@ label start:
         "{cps=0}What should you do?{/cps}"
         "Explore home":
             call unexploredHouse from _call_unexploredHouse
-            #after 1 search, it's getting late and you want heat now so you're forced into town
         
             #minor event
             #random whether you find the library book, office, or shed
@@ -819,7 +848,7 @@ label start:
                 $ houseEvents.remove("houseKey")
                 call houseKey
             else:
-                "You've already explore the house enough."
+                "You've already explored the house enough."
                 $ houseFullyExplored = True
             
             jump afterExploringHouse
@@ -866,7 +895,7 @@ label day3:
     #options: stay home and explore (minor event), go into town and return the wrench (minor event), library if you have the book (major event), posspresso (minor event), visit bakery (non event), explore random part of town (minor event) [current available options are  exploring the underground and uhhhhh, seeing germ feeding wild cats at the food donkey, maybe merge random posspresso meets into this list]
     
     
-    $ townEvents = ["townGerm1", "townAngus1", "townTrolley1"]
+    $ townEvents = ["townGerm1", "townAngus1", "townBridge1"]
     
     $ wrenchReturned = False
     $ midDay = False
@@ -878,6 +907,9 @@ label day3:
             #need to add to list of available house exploration options if you found the key earlier
             #re-add house description if you haven't already explored the house
             #if exploredHouse == False:
+            
+            if exploredHouse == False:
+                call unexploredHouse
             
             $ midDay = True
             
@@ -923,10 +955,10 @@ label day3:
                 $ townEvents.remove("townGerm1")
                 $ townEvents.append("townGerm2")
                 call townGerm1
-            elif randomSelected == "townTrolley1":
-                $ townEvents.remove("townTrolley1")
-                $ townEvents.append("townTrolley2")
-                call townTrolley1
+            elif randomSelected == "townBridge1":
+                $ townEvents.remove("townBridge1")
+                $ townEvents.append("townBridge2")
+                call townBridge1
             #add one more event to the pool
             
             
@@ -960,8 +992,9 @@ label day3:
         "Explore home":
             #minor event
             #need to add to list of available house exploration options if you found the key earlier
-            #re-add house description if you haven't already explored the house
-            #if exploredHouse == False:
+            
+            if exploredHouse == False:
+                call unexploredHouse
             
             $ midDay = True
             
@@ -1007,10 +1040,10 @@ label day3:
                 $ townEvents.remove("townGerm1")
                 $ townEvents.append("townGerm2")
                 call townGerm1
-            elif randomSelected == "townTrolley1":
-                $ townEvents.remove("townTrolley1")
-                $ townEvents.append("townTrolley2")
-                call townTrolley1
+            elif randomSelected == "townBridge1":
+                $ townEvents.remove("townBridge1")
+                $ townEvents.append("townBridge2")
+                call townBridge1
             #add one more event to the pool
             
             
@@ -1046,8 +1079,9 @@ label day3:
         "Explore home":
             #minor event
             #need to add to list of available house exploration options if you found the key earlier
-            #re-add house description if you haven't already explored the house
-            #if exploredHouse == False:
+            
+            if exploredHouse == False:
+                call unexploredHouse
             
             $ midDay = True
             
@@ -1093,10 +1127,10 @@ label day3:
                 $ townEvents.remove("townGerm1")
                 $ townEvents.append("townGerm2")
                 call townGerm1
-            elif randomSelected == "townTrolley1":
-                $ townEvents.remove("townTrolley1")
-                $ townEvents.append("townTrolley2")
-                call townTrolley1
+            elif randomSelected == "townBridge1":
+                $ townEvents.remove("townBridge1")
+                $ townEvents.append("townBridge2")
+                call townBridge1
             #add one more event to the pool
             
             

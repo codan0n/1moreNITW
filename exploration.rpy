@@ -3,12 +3,12 @@
 label unexploredHouse:
     #give a general description of the house to set the mood
     "The eerie emptiness of the house unsettles you as you look around."
-    "A desolate building, untouched for who knows how long."
-    "Dust has piled up on every surface and cobwebs spill from the ceiling, but everything is otherwise so tidy and neat."
+    "A desolate building, untouched for years. Dust has piled up on every surface and cobwebs spill from the ceiling, but everything is otherwise so tidy and neat."
     "It really is a tomb."
     "Your memories conflict with the current reality."
-    "The room you slept in is exactly like you remember it. The kitchen got all new tile. Was that table always there in the den?"
-    "A whirlwind of confusion and conflicting emotions makes your search for tools more difficult. You're not sure where to look. You've never even been in half the rooms."
+    "The guest room you slept in is exactly like you remember it but the kitchen got all new tile and a fresh coat of paint."
+    "There are a lot more bookshelves than you recall. Was that table always there in the den?"
+    #"A whirlwind of confusion and conflicting emotions makes your search for tools more difficult. You're not sure where to look. You've never even been in half the rooms."
     
     #jump continue
     
@@ -19,18 +19,18 @@ label houseOffice:
     
     scene bg home_office_day with fade
 
-    "While searching the house you stumble upon an unfamiliar room, the office. You were never allowed in here."
+    "While searching the house you stumble upon an unfamiliar room: the office. You were never allowed in here."
     "Books and binders are scattered along the shelves. Some of them look so old they'll fall apart if you picked them up."
     "A desk sits on the far end of the room with a computer on top of it. You wonder if it still runs."
     "But first you take a moment to play with the dial on the wall safe. You have no idea what the code might be but predictably you don't happen to guess it on your first try."
     "Heck."
     "There's probably some good loot in there too... Maybe there's a local locksmith who can crack it open."
-    "You take a seat in the swivelling chair and press the power button. The whirring of fans and disk drives fills the room for a few seconds before the monitor wakes up."
+    "You take a seat in the swivelling chair and press the power button on the desktop. The whirring of fans and disk drives fills the room for a few seconds before the monitor wakes up."
     "Immediately it asks for a password before even booting into the operating system. You try typing in a few common passwords but it won't let you in."
     "What a shame. This thing may be old but it could probably run some games."
     #"There must be a way to bypass this..."
     "There must be a way to bypass this... but you'd probably need someone to walk you through it so you don't break it."
-    "You hold the power button to shut it off and slump in your seat. The photo frame next to the monitor catches your attention."
+    "You hold the power button to shut it off and slump in your seat. You glance at the photo frame beside the monitor."
     #"A thick layer of dust cakes the various books and binders on the shelves but the desk area remains relatively clean."
     #"You poke around the safe and the computer a bit, but you're unable to crack into either of them."
     #"Much like the wifi, the PC is locked behind a password."
@@ -48,11 +48,12 @@ label houseOffice:
     # pause
 
     #"As you shut the computer down, you notice a photo frame next to the monitor."
-    "Inside there's a faded picture of you as a kid. You're holding up a fish you caught and your father is kneeling beside you with a proud look on his face."
-    "You vaguely remember when that photo was taken. It was in early spring, when all the leaves were bright green."
+    "Inside there's a faded photo of you as a kid. You're holding up a fish you caught and your father is kneeling beside you with a proud look on his face."
+    "You vaguely remember when that photo was taken. It was many years ago in early spring, when all the leaves were bright green."
     "You got up early and spent the whole day fishing, just you and your dad. Then when the sun started going down you sat on the bank and fed the fish with the remainder of your bait."
     "Simpler times, those were. Your parents were still together back then."
-    "It's hard to think of the fact that he's been missing for five years."
+    "It's hard to think he's been missing for five years."
+    "Just vanished one day without a trace."
     "You feel a lump in your throat, but you push it down because adults aren't supposed to cry."
     #"With a heavy sigh, you look back at the monitor."
     #"You half-heartedly try a few random passwords until it locks you out."
@@ -114,21 +115,21 @@ label houseOffice:
     
     #"There's just one more room left to check out."
     
-    
-    
-    
-    
-    
     return
 
 label houseShed:
-    "After searching the house, you come across a rickety looking shed in the back yard, half buried under the snow."
-    "You don't recall there ever being a shed. It must have been built after the last time you visted."
-    "After digging through the snow to reach the door handle, you realize that it's locked up tight with a chain and padlock."
+    "After searching the house, you happen to notice something unusual through one of the windows: a rickety looking shed standing in the backyard, half buried under the snow."
+    "You recall playing in the backyard but don't remember there ever being a shed. It must have been built after the last time you visted."
+    "With some effort, you manage to dig through the snow to reach the door handle, but it's locked up tight with a rusty chain and padlock."
     if hasKey == True:
-        "You recall you found a key earlier that looks like it might fit the lock."
-        "You run inside to retrieve it, but it's so rusted it snaps off inside the lock. Nothing can ever be easy and straightforward, can it?"
+        "The key you found earlier looks like it might fit the lock."
+        "You run inside to retrieve it, but when you insert it into the lock, the handle snaps off, rendering it impossible to open."
+        "Nothing can ever be easy or straightforward, can it?"
+        "With the door firmly stuck, you'll have to consider alternative methods of entry if you wanna see what's inside."
+        #maybe you could glue the handle back on or something
+        
         $ doorStuck = True
+        #if you're past week 1, add bikequest part 2 to exploration scene list
     else:
         "Maybe there's a key somewhere inside. Otherwise you'll have to find... alternative methods of entry."
     $ bikeQuestStarted = True
@@ -139,62 +140,57 @@ label houseBook:
     $ haveOverdueBook = True
     
     #the book contains part of the password?
-    "You checked various nooks, crannies, shelves, drawers, and boxes but no tools."
-    "You did however come across a book with a library sticker on it. Inside there's a slip of paper dated five years ago with your father's name next to it."
-    "He must have checked out this book shortly before vanishing. Maybe he skipped town to avoid the late fee?"
+    "You checked various nooks, crannies, shelves, drawers, and boxes but found nothing of note."
+    "Exhausted, you decide to take a break and recline on the living room sofa."
+    "Ow!"
+    "Something hard is digging into your spine."
+    "You reach between the cushions and pull out a hardcover book with a library sticker on the side."
+    "It's titled \"Cryptids of the Western Hemisphere.\""
+    "Flipping it open, you note there's a slip of paper inside with the names of everyone who checked it out along with the dates."
+    "The most recent is your father, dated five years ago. He must have checked out this book shortly before vanishing."
+    "Maybe he skipped town to avoid the late fee?"
     "Haha..."
-    "Okay, comedy isn't making you feel better."
-    "You should probably return this to the library though. They've probably been missing it."
-    
-    "old writing starts here"
-    "It's been a few days since you moved in, and you've just about settled into your new life."
-    "Most of the anxiety has melted away, and you're now comfortably living as you see fit and taking things at your own pace."
-    "This morning, you help yourself to a large breakfast, a long hot shower, and plenty of free time to browse the web."
-    "Sitting around all day can get kind of boring though."
-    "Maybe you should see if Gregg or Angus are free?"
-    "Nah, don't want to seem too clingy."
-    "You could explore town a bit. There's still a lot you've yet to see."
-    "But where exactly would you go?"
-    "You pace around the house, pondering that question, and eventually end up in what must have been the smoking room."
-    "At least, you think it is judging by the stench of cigarettes that permeates the air even after all these years."
-    "You thought these things went out of style a century ago, but here we are."
-    "Not like a little smoke bothers you at this point, though."
-    "You recline in one of the big fancy chairs in the room and close your eyes."
-    "Maybe you'll just nap away the boredom."
-    "..."
-    "No, this is too boring."
-    "Your hand wanders over to the side table and picks up the book that was resting on it."
-    "You lazily turn your head to the side and read the title."
-    "\"Cryptids of the Western Hemisphere.\""
+    "Okay, maybe comedy isn't a good coping mechanism for this."
+    "Kind of a strange book to check out though."
+    "You wonder what interest he would have had in mythological creatures."
     "Opening it up to the bookmarked page, you find an article on the Jersey Devil, a weird skinny goat thing with wings."
     "The paranormal sure loves its goats, doesn't it?"
-    "Upon reading further, it appears the Jersey Devil is nothing more than a fabrication by hysterical religious country bumpkins."
     "There's not even anything particularly evil about him, he's just a winged goat with devil connotations that sometimes steals chickens."
-    "As you close the book, your fingers brush against a bump on its spine."
-    "Turning it over reveals a sticker not unlike the kind you'd find on a library book."
-    "Hold on a second, this *is* a library book!"
-    "This thing must have been sitting here overdue for ages!"
-    "You should return this to the library soon. You're certain they're just dying to get this book back."
-    "They might even be so glad to see it again that they'll waive the late fee."
-    "It's not like they could charge you a fee if even they wanted to, right?"
-    "It's not your book, you just happened to find it."
-    "Regardless of the consequences, you've been given a quest and you intend to see it through to the end."
+    "Upon reading further, it appears this creature was nothing more than a fabrication by hysterical religious country bumpkins."
+    "You should return this book to the library. They've probably been missing it."
     
     $ libraryQuestStarted = True
     
     return
 
 label houseKey:
-    "What's this? You find a rusty key in a dusty crevice behind some spider webs."
-    "You wonder what it's for."
+    $ hasKey = True
     
+    "Your search brings you to a spare bathroom where the sound of water dripping disturbs the otherwise still area every few seconds."
+    "You pull back the curtain around the bathtub to reveal it's been filled almost to the brim, presumably from the leaky faucet over the years."
+    "You turn the knob to prevent any more water from dripping and hesitantly stick your hand elbow-deep into the frigid tub to pull the stopper and drain it."
+    "As the water spirals down the drain, the flow drags an object along the bottom, catching your eye."
+    "You reach your hand into the water once more to grab it before it can fall through the drain. It turns out to be a rusty key."
+    "You wonder how it got here and what it's for."
     
+    if bikeQuestStarted == True:
+        "Maybe it's for the shed out back?"
+        "You run outside, eager to see what the shed contains, but when you insert the rusty key into the lock, the handle snaps off."
+        "Nothing can ever be easy or straightforward, can it?"
+        "With the door firmly stuck, you'll have to consider alternative methods of entry if you wanna see what's inside."
+        #maybe you could glue the handle back on or something
+        
+        $ doorStuck = True
+        #if you're past week 1, add bikequest part 2 to exploration scene list
+    else:
+        "You put it away somewhere safe and continue about your day, satisfied that you prevented imminent water damage and didn't have to fight a giant spider or something."
+        
     return
     
 label afterExploringHouse:
     "You spent a few hours searching and have yet to find a tool to open that grate. At this rate, it'll be dark by the time you figure something out."
-    #for all you know, there might not even be a wrench in this house
-    "Your next best option is to see if there's a hardware store in town."
+    "For all you know, there might not even be a wrench in this house anymore."
+    "Your next best option is to see if the hardware store in town has what you need."
     
     jump intoTown
     
@@ -207,13 +203,13 @@ label intoTown:
     
     #"You try to follow the map but without GPS "
     #"Without GPS you get a bit lost but eventually stumble upon what must be the main street."
-    "blah blah blah general description of the surroundings."
-    "Old brick buildings line the streets as you approach your destination."
-    "Some of them look lived in, others look like they're about to crumble."
+    #"blah blah blah general description of the surroundings."
+    "Old brick buildings line the streets as you approach your destination. Some of them look lived in, others look like they're about to crumble."
     "Some look like both."
     #i think the memorial statue is between the shops?
+    #"pass by the trolley station but it's boarded up. You take a peek inside."
 
-    "That looks like the hardware store over there, but the aroma from the nearby bakery draws you in."
+    "That looks like the hardware store up ahead, but the aroma from the nearby bakery draws you in."
     "Where will you go?"
     
     menu:
@@ -227,7 +223,6 @@ label intoTown:
             jump meetingBea
                             
             #what about pliers?
-            #maybe need to make the bolt an allen screw
             #where do i know her (mae) from? :flashback:
             #if you didn't explore the house in the morning, you automatically do it at night after fixing the heater
         
@@ -274,6 +269,13 @@ label townAngus1:
 
     return
 
+
+label townBridge1:
+    "You visit the bridge to the east of town."
+    
+    
+    
+    return
     
     
 label townTrolley1:

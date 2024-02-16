@@ -1,5 +1,14 @@
 label meetingAngus:
-    if metBea == True and metAngus == False:
+    if beaQuestPosspresso == True:
+        #"this happens if you got posspresso for bea and she sent you to the bakery to get fresh coffee"
+        if metAngus == True:
+            
+        else:
+            
+        
+        return
+
+    elif metBea == True and metAngus == False:
         #on the quest to get bea coffee, this is first time in bakery
         $ metAngus = True
         
@@ -57,20 +66,19 @@ label meetingAngus:
         #"You feel bad for the baker behind the counter who has to put up with this for hours every day."
         #"At least he probably comes home smelling nice."
         
-        "A bell on the door chimes as you step inside. A voice calls out from the back of the shop."
+        "A bell on the door chimes as you step inside and a voice calls out from the back of the shop."
         
         angusunknown "I'll be with you in just a moment!"
         
-        "You look over the treats behind the glass case while waiting."
+        "You look over the treats behind the glass case while you wait."
         
         "A bear comes around the corner, holding a tray of peppermint frosted cookies between mittened paws."
         
         show angus neutral at left with dissolve:
             xzoom -1
         
-        angusunknown "Sorry for the wait, these cookies were ready to come out of the oven."
+        angusunknown "Sorry for the wait, these were ready to come out of the oven."
         angusunknown "What can I get you?"
-        
         
         #"He pulls a tray full of holiday themed cookies out from the oven then turns to you with a warm smile."
 
@@ -122,20 +130,19 @@ label meetingAngus:
         
         angusunknown "Please do be careful. I know it's freezing outside but I literally just pulled those out of the oven."
         
-        player "I couldn't resist. It's good though!"
+        player "I couldn't resist."
         
-        angusunknown "Thanks! I'm glad you like it!"
-        angusunknown "Have a good day!"
+        angusunknown "I'll take you willing to burn your tongue for my baking as a compliment."
         
-        player "Thanks, you too!"
+        "The bear rings up your order and you swipe your card on the machine."
         
-        "You say between tongue-scorching bites of your cookie on your way out."
+        angusunknown "Thanks, have a good day!"
+        
+        player "You too!"
         
         hide angus with dissolve
         
-        scene bg bakery_exterior with dissolve
-        
-        "You make your way to the hardware store."
+        "You exit the store satisfied with your sugary snack and make your way to the hardware store."
         
         jump meetingBea
         
