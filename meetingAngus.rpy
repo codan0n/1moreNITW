@@ -1,14 +1,5 @@
 label meetingAngus:
-    if beaQuestPosspresso == True:
-        #"this happens if you got posspresso for bea and she sent you to the bakery to get fresh coffee"
-        if metAngus == True:
-            
-        else:
-            
-        
-        return
-
-    elif metBea == True and metAngus == False:
+    if metBea == True and metAngus == False:
         #on the quest to get bea coffee, this is first time in bakery
         $ metAngus = True
         

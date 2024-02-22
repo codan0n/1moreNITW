@@ -1,4 +1,12 @@
 label marcieSalt:
+    "Might as well have a look around to see if there's anything else here you could use."
+    "The bell at the door chimes as another customer steps in"
+    
+    
+    
+    
+    
+    
     "After aquiring your new doo-dad, you watch as a mousey older lady drags a particularly massive bag of salt to the register. Bea eyes it with apprehension as she rings it through."
 
     marcie "Either they keep putting more salt in these bags every year, or I keep getting older! How've you been, Beatrice? Work isn't treating you too hard?"

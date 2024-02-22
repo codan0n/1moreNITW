@@ -2,13 +2,41 @@ label meetingBea:
     if beaQuestPosspresso == True:
         scene bg olpickaxe with dissolve
         
+        "One long trek back to the hardware store later..."
+        
         show bea apron at center with dissolve
         
-        "What the eff, you went all the way to posspresso? No wonder it took you so long."
-        "Bleh, this is almost frozen solid. I wanted a hot coffee!"
-        "Just go across the street to the bakery and get me a fresh one."
+        bea "What the eff, you went all the way to Posspresso?! No wonder it took you so long."
+        bea "This coffee's nearly frozen solid..."
         
-        call meetingangus
+        player "You should have been more specific."
+        player "So about that wrench..."
+        
+        bea "Ugh. I guess a deal's a deal. Here, take it."
+        bea "Just remember to bring it back as soon as you're done with it."
+        
+        player "I will. I literally just need to loosen two bolts."
+        
+        if exploredHouse == False:
+            call marcieSalt
+        else:
+            bea "Good for you. Now if that's all you need, I've still got rock salt to move."
+            
+            hide bea with dissolve
+            
+            "Through the window, you can see the sun going down. It's about time for you to head back home."
+            
+            jump day2Evening
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         "You returned to the hardware store to uphold you end of the bargain with the cashier."
@@ -228,7 +256,7 @@ label beaQuestions:
             $ mature = mature + 1
             player "When do you think you'll get a new shipment. I need this tool as soon as possible."
             
-            bea "Yesterday, but I'm not about to move all those boxes and open the one that might have your thing today when I've already got a huge backlog of work to do."
+            bea "Yesterday. But I'm not about to move all those boxes and open the one that might have your thing today when I've already got a huge backlog of work to do."
             
             player "..."
             
@@ -261,7 +289,7 @@ label beaQuestions:
             "Dammit, she caught on immediately."
             
             bea "Tell you what."
-            bea "If you get me a coffee... *yawn* ... I'll loan you a wrench."
+            bea "If you get me a coffee... *yawn* ...I'll loan you a wrench."
             #she might have you buy her a coffee, and she'll let you borrow a wrench from the kit
             #bea "If you get me a coffee I'll loan you a wrench from one of those kits."
             bea "Just be sure to return it or I will hunt you down."
@@ -276,8 +304,10 @@ label beaQuestions:
     
     hide bea with dissolve
     
-    "She drops the bag onto the stack with the others then shuffles to the back of the store. You hear her start dragging another bag."
-    "Well that's a quest if you've ever seen one. You step outside and begin your hunt for coffee."
+    "She drops the salt bag into a pile with the others then shuffles to the back of the store. You hear her start dragging another bag."
+    #"Well that's a quest if you've ever heard one. You step outside and begin your hunt for coffee."
+    "It feels like you've just been given a quest. You better get that gator some coffee. It's a hell of a lot cheaper than buying that whole wrench kit."
+    
     
 label day2roam:
     scene bg bakery_exterior with fade
@@ -304,12 +334,72 @@ label day2roam:
             
             player "I dunno."
             
+            beaunknown "..."
+            beaunknown "I've got work to do."
+            
+            hide bea with dissolve
+            
             jump day2roam
         "Posspresso":
             $ beaQuestPosspresso = True
+            
             "Where can you get a coffee in this literally nowhere town?"
-            "Posspresso of course! If they're open today."
-            "You go all the way to Posspresso for this stupid coffee then come all the way back to the hardware store."
-            #selma is there
+            "Well, you got some at Posspresso yesterday, so it's worth a shot to see if they're open today."
+            "It's a bit of a walk though."
+            
+            scene bg cafe with fade
+            
+            show trish neutral at center with dissolve
+            
+            trish "Heya! Welcome back! I knew ya couldn't resist another cup o' joe but I didn't expect to see ya so soon!"
+            
+            player "Heh, it was pretty good, but I'm here on a fetch quest today."
+            
+            trish "Playin' delivery for someone else, huh?"
+            
+            player "Something like that."
+            
+            trish "Aww, I bet yer gettin' a gift for a cutie ya fancy~ Don't lie, I can see it in yer eyes!"
+            trish "So what'll it be? It's on the house~"
+            
+            #player "Gimme the most bitter drink you've got."
+            #player "She specifically requested it."
+            
+            player "Gimme something bitter."
+            player "Something to match her bitter attitude..."
+            
+            trish "What was that?"
+            
+            player "Oh just a plain black coffee will do."
+            
+            trish "Comin' right up!"
+            
+            hide trish with dissolve
+            
+            "You find a place to sit while Trish makes the drink."
+            "You're not looking forward to the long walk you have back towards town."
+            "Hopefully the shop will still be open by the time you get there."
+            
+            show trish neutral at center
+            
+            trish "Aaaaand done!"
+            trish "Hope yer date enjoys it!"
+            
+            player "She's not my..."
+            
+            trish "Here ya are riskin' life and limb out there in the snowstorm to get here, it warms my heart knowin' people love my coffee that much!"
+            
+            player "Right... well, thanks for the free coffee."
+            
+            trish "Anytime! Er no, not anytime. This is the one and only time actually."
+            
+            player "Fair. See you later!"
+            
+            trish "Come back soon!"
+            
+            hide trish with dissolve
+            
+            
+            
             
             jump meetingBea
