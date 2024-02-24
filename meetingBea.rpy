@@ -28,88 +28,14 @@ label meetingBea:
             
             jump day2Evening
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        "You returned to the hardware store to uphold you end of the bargain with the cashier."
-        "She's still moving bags of salt around."
-        
-        show bea apron at center with dissolve
-        
-        #to do: bea responds differently based on your choice earlier
-        bea "Wow, you actually came back. You must be desperate."
-        
-        "You set the coffee cup and your bag on the counter."
-        
-        bea "And you even got me a treat as well?"
-        
-        menu:
-            "Claws off, that one's mine.":
-                player "Claws off, that one's for me."
-                
-                bea "Relax, I'm just kidding."
-                bea "Thanks for the coffee though, I needed it. Here's your wrench. Be sure to bring it back once you're done with it."
-            "Err, yeah totally!":
-                $ beaAP = beaAP +1
-                
-                player "Err, yeah totally!"
-                
-                bea "Oh! How sweet of you."
-                
-                "She digs the cinnamon roll out of the bag and nibbles on it."
-                
-                player "Can I have that wrench now?"
-                
-                bea "Yeah, here you go. Just be sure to bring it back once you're done with it."
-                
-        player "Of course."
-        
-        #bea "If that's all you need"
-        bea "Now if you'll excuse me, these bags aren't gonna haul themselves."
-        
-        player "Right. I'll uh see you later then. And thanks."
-        
-        bea "Don't mention it."
-        #bea "Same."
-        
-        bea "Now if you'll excuse me, I have more salt to haul."
-        
-        "She takes a sip of the coffee you just delivered and wanders to the back room."
-        
-        hide bea with dissolve
-        
-        "As you're about to leave the store, a short cat in an orange sweater bursts in."
-
-        #"The croc sighs and pulls out an electronic cigarette. It lights up as she takes a puff from it."
-
-        #hide bea with dissolve
-
-        #"While she's away, you pass the time by taking a look around the shop."
-    
-        "Bea chastises you for getting her cold coffee and going so far when the bakery was right next door, but a deal is a deal. She likes Posspresso's fancier coffees more anyway."
-        
-        jump day2Evening
-        
-        
-        
     elif beaQuestBakery == True:
         scene bg olpickaxe with dissolve
         
-        
         "You returned to the hardware store to uphold you end of the bargain with the cashier."
-        "She's still moving bags of salt around."
+        #"She's still moving bags of salt around."
         
         show bea apron at center with dissolve
         
-        "You return from the bakery and Bea thanks you for getting her hot coffee and gives you the wrench."
         #"If you went to the bakery first, you can give her a cookie. If you went after the hardware store you'll have a cinnamon roll and bea will comment on either."
         
         #to do: bea responds differently based on your choice earlier
@@ -130,51 +56,49 @@ label meetingBea:
                 
                 player "Err, yeah totally!"
                 
-                bea "Oh! How sweet of you."
+                bea "Oh! That's surprising. How sweet of you."
                 
-                "She digs the cinnamon roll out of the bag and nibbles on it."
+                "She digs the remaining cookie out of the bag and nibbles on it."
                 
                 player "Can I have that wrench now?"
                 
-                bea "Yeah, here you go. Just be sure to bring it back once you're done with it."
+                bea "Yeah sure. Just remember to bring it back once you're done with it."
                 
         player "Of course."
         
         #bea "If that's all you need"
         bea "Now if you'll excuse me, these bags aren't gonna haul themselves."
         
-        player "Right. I'll uh see you later then. And thanks."
+        player "Right, I guess I'll see you later then. And thanks."
         
         bea "Don't mention it."
+        
+        "She takes a sip of the coffee you just delivered before heading to the back room."
         #bea "Same."
-        
-        bea "Now if you'll excuse me, I have more salt to haul."
-        
-        "She takes a sip of the coffee you just delivered and wanders to the back room."
         
         hide bea with dissolve
         
-        "As you're about to leave the store, a short cat in an orange sweater bursts in."
+        if exploredHouse == False:
+            call marcieSalt
+        else:
+            jump day2Evening
+            
+            #bea "Now if you'll excuse me, I have more salt to haul."
+            
+            #"She takes a sip of the coffee you just delivered and wanders to the back room."
+            
+            #"As you're about to leave the store, a short cat in an orange sweater bursts in."
 
-        #"The croc sighs and pulls out an electronic cigarette. It lights up as she takes a puff from it."
+            #"The croc sighs and pulls out an electronic cigarette. It lights up as she takes a puff from it."
 
-        #hide bea with dissolve
+            #hide bea with dissolve
 
-        #"While she's away, you pass the time by taking a look around the shop."
-        
-        
-
-
-        
-        jump day2Evening
-        
+            #"While she's away, you pass the time by taking a look around the shop."
         
         
     else:
         #first time entering the store
         $ metBea = True
-        
-        #bea mentions her coworkers called in sick or got injured or something
         
         scene bg olpickaxe with dissolve
 
@@ -186,7 +110,7 @@ label meetingBea:
         #"Then again, country folk are more likely to use these sorts of things for repairs and home improvement. You weren't even allowed to put thumbtacks in the walls in your apartment in the city but here"
         "Snow shovels sure seem to be selling quick these days."
         #"The goth crocodile behind the counter just finished selling one to a customer and yawns before welcoming you."
-        "The goth crocodile behind the counter just finished selling one to a customer."
+        "The gothy crocodile behind the counter just finished selling one to a customer."
         "Her tired eyes drift to look in your direction."        
         
         #"Behind the counter stands a bluish green crocodile giving off gothic vibes."

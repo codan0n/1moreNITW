@@ -817,6 +817,7 @@ label start:
     "What should you do?"
     
     $ haveOverdueBook = False
+    $ cinnamonRoll = False
     
     $ exploredHouse = False
     $ houseEvents = ["houseOffice", "houseBook", "houseKey"]
@@ -874,18 +875,12 @@ label start:
 label day2Evening:
     scene bg bakery_exterior with fade
     
-    if exploredHouse == False:
-        "You still have some daylight left. Might as well do something in town."
-        call marcieSalt
-    else:
-        "The sun is already starting to set. Getting stuck out in the dark sucks. You should hurry home."
+    "The sky is already turning dark. You should hurry home."
         
     scene bg home_interior_night with fade
         
+    #to do: elaborate    
     "You fix the heater and go to bed."
-    
-    #"if you explored your house in the morning, it's late and you go straight home, fix the heater and go to bed"
-    #"if you did not explore your house in the morning, there's enough daylight to do something in town before going home. maybe encountering germ or seeing harley running around idk"
     
     
 label day3:    
