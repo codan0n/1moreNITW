@@ -58,7 +58,11 @@ label meetingBea:
                 
                 bea "Oh! That's surprising. How sweet of you."
                 
-                "She digs the remaining cookie out of the bag and nibbles on it."
+                if cinnamonRoll == True:
+                    "She digs the cinnamon roll out of the bag and nibbles on it."
+                
+                else:
+                    "She digs the remaining cookie out of the bag and nibbles on it."
                 
                 player "Can I have that wrench now?"
                 

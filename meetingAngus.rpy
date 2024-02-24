@@ -1,16 +1,17 @@
 label meetingAngus:
     if metBea == True and metAngus == True:
         "Your quest brings you back to the bakery."
+        "It's the same as before but with the addition of a fox sitting atop the main counter, chatting with the baker."
     
+        show angus neutral at left with dissolve
     
-    #to do: change so gregg is already here, sitting on the counter
+        angus "Welcome back! Gregg, get off the counter, I have a customer."
     
+        "The fox pouts and whines as he slides off the counter, but makes a point of leaning on it."
     
-    
-    
-    show gregg neutral at right with dissolve
-
-        "A familiar fox swaggers up to the counter and makes a grandiose gesture toward you, grinning from ear to ear."
+        show gregg neutral at right with dissolve
+        
+        gregg "Hey, it's you! I had a feeling we'd meet again!"
         
         gregg "Remember me?"
         
@@ -56,30 +57,47 @@ label meetingAngus:
 
         "It seems everyone knows each other in this town. Like everyone's in one big family."
         "It's kinda heartwarming."
-
-        play sound "sound/storebell.mp3"
-
-        "The bear's ears perk up in response to the toaster oven's timer. As he removes it, Gregg leans over the counter and sniffs at it."
-
-        gregg "Cinnamon, yum. Angus makes the best food."
         
-        "Angus drops the cinnamon bun into a small bag, then places that inside a bigger bag and sets it on the counter alongside your coffee."
+        angus "You came back pretty quick. Was there something wrong with your order?"
         
-        #angus "Here you go. Just swipe your card when the machine lights up."
+        gregg "Impossible! They must have come back for more snacks!"
         
-        #"He taps a few buttons on his cash register and you "
-        "He rings up your order and you swipe your card on the machine."
+        player "That's... actually why I'm here."
+        player "I need a coffee to go. Black."
         
-        angus "Thanks, have a good day!"
+        angus "Can do!"
         
-        player "You too!"
+        "While the baker pours your cup of coffee, Gregg turns to you with a grin."
+        
+        gregg "So how are ya enjoying Possum Springs?"
+        
+        player "It's... fine? I still haven't explored that much but the shops are cute."
+        
+        gregg "Don't go to Snack Falcon, that place sucks."
+        
+        angus "They never were the same after that fire."
+        
+        gregg "Too bad they never found the perp."
+        
+        "Gregg bursts into a laughing fit, holding his paws over his mouth in a vain attempt to cover up his snickering."
+        "Angus shakes his head disapprovingly."
+        
+        angus "In any case, welcome to Possum Springs. You learn to make the most of this place. It's honestly not so bad."
+        
+        gregg "Could do a lot worse."
+        
+        "Angus rings up your order and you swipe your card on the machine before taking hold of the coffee cup."
+        
+        angus "Enjoy!"
+        
+        player "Thanks!"
         
         gregg "Hey wait, before you go-!"
-        gregg "Wanna play Constellation Conquest with us?"
+        gregg "Wanna come and play Constellation Conquest with us?"
         
         angus "Gregg, they probably don't even know what that is. Nobody plays that game but us."
         
-        gregg "Yeah, which is why we need more players. We can't let the game die out!"
+        gregg "Which is exactly why we need more players. We can't let the game die out!"
         
         player "What is it?"
         
@@ -122,47 +140,6 @@ label meetingAngus:
         
         jump meetingBea
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        #means you are doing bea's coffee quest and you visited the bakery before meeting Bea
-        
-        scene bg bakery_interior with dissolve
-        
-        show angus neutral at left with dissolve:
-            xzoom -1
-            
-        show gregg neutral at right with dissolve
-        
-        angus "Back already?"
-        
-        gregg "I bet [heshethey] Couldn't resist another one of your snacks~"
-        
-        "blah blah blah get coffee, then return to bea"
-        
-        jump meetingBea
-        
     elif beaQuestBakery == True:
         $ metAngus = True
         
