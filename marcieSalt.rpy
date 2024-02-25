@@ -1,4 +1,5 @@
 label marcieSalt:
+    #written by punchoid, edited by codanon
     "Might as well have a look around to see if there's anything else here you could use."
     "You wander through the aisles but nothing really cathes your eye."
     "The bell at the door chimes as another customer steps in. You hear the sound of a heavy bag being hefted up onto the counter."

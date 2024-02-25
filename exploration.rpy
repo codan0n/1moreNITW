@@ -266,6 +266,8 @@ label townAngus1:
     
     angus "Oh sorry, is this spot taken?"
     angus "I usually come here to feed the squirrels around this time. They've come to expect me."
+    
+    $ metAngus = True
 
     return
 

@@ -1,7 +1,7 @@
 label libraryVisit1:
     $ haveOverdueBook = False
 
-    "This is the most excited you've ever been to go to the library."
+    #"This is the most excited you've ever been to go to the library."
 
     scene bg library_floor1 with fade
 

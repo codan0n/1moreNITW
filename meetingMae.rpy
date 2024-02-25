@@ -1,18 +1,52 @@
 label meetingMae:
+    #include an option to visit the bakery while you're here. Either that or force a bakery visit if you haven't already been.
     $ townEvents.append("townMaeWallet")
     $ townEvents.append("townMaeLoriRooftop1")
-
-    "You go back to the hardware store and give the wrench back to bea."
-    "She thanks you and goes back to haul more stuff from the back."
-
-    show mae neutral at left with dissolve:
+    
+    scene bg olpickaxe with dissolve
+    
+    "No one is at the counter when you arrive at the hardware store."
+    "You ring the bell and only after a few minutes does the cashier shuffle over."
+    
+    show bea apron neutral at center with dissolve
+    
+    bea "*Yaawwwwn*"
+    bea "Welcome to the Ol' Pickax. You want it, we probably got it."
+    #bea "Welcome to the Ol' Pickax, what is it that ya need?"
+    bea "Oh it's you. You got my wrench?"
+    
+    player "Yup. Thanks for letting me borrow it. My heater was broken and I needed to loosen the bolts to-"
+    
+    bea "Fascinating. I guess I won't be needing to sic a collection agency on you after all."
+    bea "Will that be all?"
+    
+    player "I think so."
+    
+    bea "Good. Have a nice day."
+    
+    hide bea with dissolve
+    
+    "She looks like she's sleepwalking as she returns to the backroom. You'd be tired too if you spent all day hauling heavy stuff."
+    
+    show mae neutral at offscreenleft
+    show lori neutral at offscreenleft
+    
+    "You decide not to bother her any further and try to quietly leave the store but someone bursts through the door as you reach out to the handle."
+    
+    play sound "sound/storebell.mp3"
+    
+    show mae at left:
         xzoom -1
-        
-    #pending changes: make this scene play when you return the wrench to bea. add lori
+        xpos 400
+    show lori at left:
+        xzoom -1
+        xpos 450
+    with move
 
     #"Wait a minute, you recognize her as the same cat who picked up the mouse girl at the bus station the other day!"
     #"You didn't notice it at the time, but one of her ears is torn and she has subtle red highlights in her fur."
-    "She frantically looks around the store before coming up to you."
+    #"She frantically looks around the store before coming up to you."
+    "The cat frantically looks around turning to you."
 
     mae "Hey, do you know if Bea here right now?"
 
@@ -30,12 +64,20 @@ label meetingMae:
     "She narrows her eyes at you."
 
     mae "Do I know you from somewhere?"
+    
+    "A girl steps out from behind the cat. She had practically been clinging to her but now that you get a good look at her, you recognize her from a few days ago."
+    
+    show lori with move:
+        xpos 500
+     
+    lori "I know [himherthem]!"
+    lori "We met on the bus, remember?"
 
-    player "I don't think so?"
+    #player "I don't think so?"
     
-    mae "I thought I saw you at the bus station the other day."
+    #mae "I thought I saw you at the bus station the other day."
     
-    "You think back to a few days ago when you first arrived in Possum Springs."
+    #"You think back to a few days ago when you first arrived in Possum Springs."
     #n "The memory comes flooding back to you."
     
     #(flashback to day 0, nov 29/30 tuesday)
@@ -50,7 +92,7 @@ label meetingMae:
     "Taking a peek over it, there's a mouse slumped back watching a movie on her phone and doodling in a notepad."
     "Thankfully she has earphones but sounds were still leaking through."
     #"You sit back, starting to relax"
-    "It's already dark out but the snow illuminates the surrounding hills. This blizzard came out of nowhere."
+    "It's already dark out but the reflections off the snow illuminate the surrounding hills."
     "You tap your phone to check the time. It's only 6:15."
     "Your phone signal dies as soon as you pass by the 'Welcome to Possum Springs' sign."
     "Great."
@@ -88,11 +130,15 @@ label meetingMae:
 
             player "Yeah, I'm moving in today."
             
-            loriunknown "It's quite a small and quiet town! Only a couple murders in the past few years!"
+            loriunknown "It's quite a small and uneventful town! Only a couple murders in the past few years!"
             
             player "That's uh, reassuring."
             
-            loriunknown "I lived there my whole life until I started going to film school a couple years ago."
+            loriunknown "I lived there my whole life until recently. I'm going to college now but it's not too far away so I visit as much as I can."
+            
+            player "Oh? What are you studying?"
+
+            loriunknown "Film! Like movies and stuff."
             
             player "Ah, that explains the movie and notebook. Studying for a test I'm sure."
             

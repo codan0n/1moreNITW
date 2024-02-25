@@ -18,7 +18,7 @@ label meetingBea:
         player "I will. I literally just need to loosen two bolts."
         
         if exploredHouse == False:
-            call marcieSalt
+            call marcieSalt from _call_marcieSalt
         else:
             bea "Good for you. Now if that's all you need, I've still got rock salt to move."
             
@@ -83,7 +83,7 @@ label meetingBea:
         hide bea with dissolve
         
         if exploredHouse == False:
-            call marcieSalt
+            call marcieSalt from _call_marcieSalt_1
             
             jump day2Evening
         else:

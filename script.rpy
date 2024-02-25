@@ -841,16 +841,16 @@ label start:
             
             if randomSelected == "houseOffice":
                 $ houseEvents.remove("houseOffice")
-                call houseOffice
+                call houseOffice from _call_houseOffice
             #elif randomSelected == "houseShed":
             #    $ houseEvents.remove("houseShed")
             #    call houseShed
             elif randomSelected == "houseBook":
                 $ houseEvents.remove("houseBook")
-                call houseBook
+                call houseBook from _call_houseBook
             elif randomSelected == "houseKey":
                 $ houseEvents.remove("houseKey")
-                call houseKey
+                call houseKey from _call_houseKey
             else:
                 "You've already explored the house enough."
                 $ houseFullyExplored = True
@@ -879,16 +879,21 @@ label day2Evening:
         
     scene bg home_interior_night with fade
         
-    #to do: elaborate    
-    "You fix the heater and go to bed."
     
+    "Fixing the heater ended up being a quick and simple fix."
+    #"luckily nothing exploded"
+    "Just had to loosen the bolts, turn the gas valve, and reignite the flame with a lighter."
+    "Exactly as you had watched your father do all those years ago."
+    "You return the grate to its original position and tighten the bolts by hand so you don't need the wrench anymore."
+    "It's been a long day and you're exhausted. Time to go to bed."    
     
-label day3:    
-    "day3"
+label day3:
+    #outline: you can explore your home or possum springs. You can also return the wrench where you'll end up meeting mae and lori
     "For the first time in a while, you awaken feeling rested and comfortable."
     "The heater does a good job of warming you up when it actually works."
-    "You make breakfast and sit watching the snow."
-    "Now to decide what to do today."
+    "You make breakfast and sit watching the snow through the dining room window. It looks so... lonely out there."
+    "A barren landscape of frost and dead trees. You can't see any neighboring houses past the forests surrounding you. It's a far cry from the city life you're used to."
+    "You finish your breakfast and ponder what you'll do with the rest of your day as you wash the dishes."
     
     #options: stay home and explore (minor event), go into town and return the wrench (minor event), library if you have the book (major event), posspresso (minor event), visit bakery (non event), explore random part of town (minor event) [current available options are  exploring the underground and uhhhhh, seeing germ feeding wild cats at the food donkey, maybe merge random posspresso meets into this list]
     
@@ -898,6 +903,9 @@ label day3:
     $ wrenchReturned = False
     $ midDay = False
     
+    #if you explore first then try to visit the hardware store, it'll be closed early. can still visit the bakery though.
+
+label day3choice:
     menu:
         "{cps=0}What should you do?{/cps}"
         "Explore home":
@@ -907,7 +915,7 @@ label day3:
             #if exploredHouse == False:
             
             if exploredHouse == False:
-                call unexploredHouse
+                call unexploredHouse from _call_unexploredHouse_1
             
             $ midDay = True
             
@@ -924,16 +932,16 @@ label day3:
             
             if randomSelected == "houseOffice":
                 $ houseEvents.remove("houseOffice")
-                call houseOffice
+                call houseOffice from _call_houseOffice_1
             elif randomSelected == "houseShed":
                 $ houseEvents.remove("houseShed")
-                call houseShed
+                call houseShed from _call_houseShed
             elif randomSelected == "houseBook":
                 $ houseEvents.remove("houseBook")
-                call houseBook
+                call houseBook from _call_houseBook_1
             elif randomSelected == "houseKey":
                 $ houseEvents.remove("houseKey")
-                call houseKey
+                call houseKey from _call_houseKey_1
             else:
                 "You've already explore the house enough."
                 $ houseFullyExplored = True
@@ -948,15 +956,15 @@ label day3:
                 #to do: move remove and append statements into appropriate label
                 $ townEvents.remove("townAngus1")
                 $ townEvents.append("townAngus2")
-                call townAngus1
+                call townAngus1 from _call_townAngus1
             elif randomSelected == "townGerm1":
                 $ townEvents.remove("townGerm1")
                 $ townEvents.append("townGerm2")
-                call townGerm1
+                call townGerm1 from _call_townGerm1
             elif randomSelected == "townBridge1":
                 $ townEvents.remove("townBridge1")
                 $ townEvents.append("townBridge2")
-                call townBridge1
+                call townBridge1 from _call_townBridge1
             #add one more event to the pool
             
             
@@ -965,11 +973,11 @@ label day3:
             "You promised the hardware store girl that you'd return the wrench after you were done with it."
             "You have no more use for it so you should give it back as soon as possible."
             
-            call meetingMae
+            call meetingMae from _call_meetingMae
         "Return library book" if haveOverdueBook == True:
             "The book is more overdue than the wrench. You should return it first."
             
-            call libraryVisit1
+            call libraryVisit1 from _call_libraryVisit1
         
     if midDay == True:
         "There's still some light in the day. What else should you do with your time?"
@@ -992,7 +1000,7 @@ label day3:
             #need to add to list of available house exploration options if you found the key earlier
             
             if exploredHouse == False:
-                call unexploredHouse
+                call unexploredHouse from _call_unexploredHouse_2
             
             $ midDay = True
             
@@ -1009,16 +1017,16 @@ label day3:
             
             if randomSelected == "houseOffice":
                 $ houseEvents.remove("houseOffice")
-                call houseOffice
+                call houseOffice from _call_houseOffice_2
             elif randomSelected == "houseShed":
                 $ houseEvents.remove("houseShed")
-                call houseShed
+                call houseShed from _call_houseShed_1
             elif randomSelected == "houseBook":
                 $ houseEvents.remove("houseBook")
-                call houseBook
+                call houseBook from _call_houseBook_2
             elif randomSelected == "houseKey":
                 $ houseEvents.remove("houseKey")
-                call houseKey
+                call houseKey from _call_houseKey_2
             else:
                 "You've already explore the house enough."
                 $ houseFullyExplored = True
@@ -1033,15 +1041,15 @@ label day3:
                 #to do: move remove and append statements into appropriate label
                 $ townEvents.remove("townAngus1")
                 $ townEvents.append("townAngus2")
-                call townAngus1
+                call townAngus1 from _call_townAngus1_1
             elif randomSelected == "townGerm1":
                 $ townEvents.remove("townGerm1")
                 $ townEvents.append("townGerm2")
-                call townGerm1
+                call townGerm1 from _call_townGerm1_1
             elif randomSelected == "townBridge1":
                 $ townEvents.remove("townBridge1")
                 $ townEvents.append("townBridge2")
-                call townBridge1
+                call townBridge1 from _call_townBridge1_1
             #add one more event to the pool
             
             
@@ -1050,11 +1058,11 @@ label day3:
             "You promised the hardware store girl that you'd return the wrench after you were done with it."
             "You have no more use for it so you should give it back as soon as possible."
             
-            call meetingMae
+            call meetingMae from _call_meetingMae_1
         "Return library book" if haveOverdueBook == True:
             "The book is more overdue than the wrench. You should return it first."
             
-            call libraryVisit1
+            call libraryVisit1 from _call_libraryVisit1_1
             
     if midDay == True:
         "There's still some light in the day. What else should you do with your time?"
@@ -1079,7 +1087,7 @@ label day3:
             #need to add to list of available house exploration options if you found the key earlier
             
             if exploredHouse == False:
-                call unexploredHouse
+                call unexploredHouse from _call_unexploredHouse_3
             
             $ midDay = True
             
@@ -1096,16 +1104,16 @@ label day3:
             
             if randomSelected == "houseOffice":
                 $ houseEvents.remove("houseOffice")
-                call houseOffice
+                call houseOffice from _call_houseOffice_3
             elif randomSelected == "houseShed":
                 $ houseEvents.remove("houseShed")
-                call houseShed
+                call houseShed from _call_houseShed_2
             elif randomSelected == "houseBook":
                 $ houseEvents.remove("houseBook")
-                call houseBook
+                call houseBook from _call_houseBook_3
             elif randomSelected == "houseKey":
                 $ houseEvents.remove("houseKey")
-                call houseKey
+                call houseKey from _call_houseKey_3
             else:
                 "You've already explore the house enough."
                 $ houseFullyExplored = True
@@ -1120,15 +1128,15 @@ label day3:
                 #to do: move remove and append statements into appropriate label
                 $ townEvents.remove("townAngus1")
                 $ townEvents.append("townAngus2")
-                call townAngus1
+                call townAngus1 from _call_townAngus1_2
             elif randomSelected == "townGerm1":
                 $ townEvents.remove("townGerm1")
                 $ townEvents.append("townGerm2")
-                call townGerm1
+                call townGerm1 from _call_townGerm1_2
             elif randomSelected == "townBridge1":
                 $ townEvents.remove("townBridge1")
                 $ townEvents.append("townBridge2")
-                call townBridge1
+                call townBridge1 from _call_townBridge1_2
             #add one more event to the pool
             
             
@@ -1137,11 +1145,11 @@ label day3:
             "You promised the hardware store girl that you'd return the wrench after you were done with it."
             "You have no more use for it so you should give it back as soon as possible."
             
-            call meetingMae
+            call meetingMae from _call_meetingMae_2
         "Return library book" if haveOverdueBook == True:
             "The book is more overdue than the wrench. You should return it first."
             
-            call libraryVisit1
+            call libraryVisit1 from _call_libraryVisit1_2
             
         "Play DnD with Gregg" if tabletopInvitation == True:
             "Tonight is when Gregg said he's gathering people to play Conquests and Constellations."
