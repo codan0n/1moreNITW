@@ -3,7 +3,7 @@ label libraryVisit1:
 
     #"This is the most excited you've ever been to go to the library."
 
-    scene bg library_floor1 with fade
+    scene bg library with fade
 
     play music "music/deweydecimal_loop.mp3" fadein 1.0
 
@@ -11,15 +11,14 @@ label libraryVisit1:
     "It's a three-story building with lavish old-timey architecture, and has been very well maintained."
     "Gargoyles adorn the outside while giant pillars and arches frame the murals on the inside."
     "The interior has been modernized with new carpet and a fresh coat of paint that accentuate the comforting dim lighting."
-    "You stare at the multitude of books organized neatly on shelves as you walk up to the reception desk. Sitting there is a bear currently writing something down in a notepad."
-    "Unexpectedly, she looks somewhat familiar. It takes you a moment to place where you know her from."
+    "You stare at the multitude of books organized neatly on shelves as you walk up to the reception desk. Sitting there is a bear currently writing something on a notepad."
+    "You think you've seen her before. It takes you a moment to place where you know her from."
     "She was the bear you saw at the café the other day!"
     "What did the barista call her?"
     "\"Selmers?\""
     "She looks up from her task as you approach."
 
-    show selma neutral flip at right with dissolve:
-        yalign selmaheight
+    show selma neutral at right with dissolve
 
     selma "Oh hey. It's you."
 
@@ -31,9 +30,9 @@ label libraryVisit1:
     selma "That's what most folks call me."
     selma "I remember seeing you at Posspresso, but I didn't get your name."
 
-    player "[newname]."
+    player "[name]."
 
-    selma "Nice to officially meet you, [newname]."
+    selma "Nice to officially meet you, [name]."
     selma "Welcome to the Possum Springs Public Library. Is there anything I can do for you?"
 
     "You take one last look at the book in your hand then slide it over the counter."

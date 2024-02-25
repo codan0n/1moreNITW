@@ -2,6 +2,7 @@ label meetingMae:
     #include an option to visit the bakery while you're here. Either that or force a bakery visit if you haven't already been.
     $ townEvents.append("townMaeWallet")
     $ townEvents.append("townMaeLoriRooftop1")
+    $ townEvents.append("townLoriTracks1")
     
     scene bg olpickaxe with dissolve
     
@@ -28,19 +29,19 @@ label meetingMae:
     
     "She looks like she's sleepwalking as she returns to the backroom. You'd be tired too if you spent all day hauling heavy stuff."
     
-    show mae neutral at offscreenleft
     show lori neutral at offscreenleft
+    show mae neutral at offscreenleft
     
     "You decide not to bother her any further and try to quietly leave the store but someone bursts through the door as you reach out to the handle."
     
     play sound "sound/storebell.mp3"
     
-    show mae at left:
+    show mae:
         xzoom -1
-        xpos 400
-    show lori at left:
+        xpos 800
+    show lori:
         xzoom -1
-        xpos 450
+        xpos 950
     with move
 
     #"Wait a minute, you recognize her as the same cat who picked up the mouse girl at the bus station the other day!"
@@ -68,7 +69,7 @@ label meetingMae:
     "A girl steps out from behind the cat. She had practically been clinging to her but now that you get a good look at her, you recognize her from a few days ago."
     
     show lori with move:
-        xpos 500
+        xpos 1100
      
     lori "I know [himherthem]!"
     lori "We met on the bus, remember?"
@@ -140,34 +141,59 @@ label meetingMae:
 
             loriunknown "Film! Like movies and stuff."
             
-            player "Ah, that explains the movie and notebook. Studying for a test I'm sure."
+            player "I see. Studying for a test?"
+            
+            "You gesture to the movie paused on her screen."
             
             loriunknown "Something like that!"
             
             "She flips to a page and shows you some of her drawings. They're all of creatures and monsters with bloody knives, elongated claws, jagged teeth or some combination of those."
             
-            loriunknown "I'm working on monster design right now. I mean I kinda always have been but that's something I'm focusing on at the moment."
+            loriunknown "I'm working on monster design right now. I mean I kinda always have been but it's something I'm focusing on at the moment."
             
-            player "Those are some pretty cool sketches."
+            menu:
+                "Reminds me of some of my own sketches":
+                    $ loriAP = loriAP + 1
+                    
+                    player "Reminds me of my own sketches."
+                    
+                    lori "Really? I'd love to see them sometime!"
+                "Looks scary":
+                    $ loriAP = loriAP + 1
+                    
+                    player "Looks pretty scary"
+                    
+                    lori "Thanks! I wanna make movies that frighten people. Really unnerve them, ya know?"
+                "2spooky4me":
+                    player "Too spooky for me. Good sketches though."
+                    
+                    lori "Thanks. They're not spooky enough for me but I'm glad they scare someone."
             
+            #player "Nice. Those are some pretty cool sketches."
+            
+            #lori "Thanks! I'm Lori by the way!"
             lori "I'm Lori by the way!"
             
             player "[name]. Nice meeting you!"
             
-            "The bus pulls into the station. If the lights weren't on, you'd think it was abandoned."
-            "Grafitti covers the walls and windows, and dead plants sprout from every crack."
+            driver "Here we are! Final stop -*cough cough WHEEEEZE*- ...Possum Springs!"
             
-            lori "I have a feeling we'll meet again~"
+            player "I guess this is where we get off."
+            
+            lori "Yup! But don't worry, I have a feeling we'll meet again~"
             
             hide lori with dissolve
             
-            #"Lori stands up and starts walking toward the exit. You check your pockets to make sure you got everything and head out yourself."
+            "The bus pulls into the station. Grafitti covers the walls and windows, and dead plants sprout from every crack."
+            "If the lights weren't on, you'd think it was abandoned."
+            
+            "Lori stands up and starts walking toward the exit. You check your pockets to make sure you got everything and head out yourself."
             
             scene bg bus_station with fade
             
             #"After grabbing your luggage from "
-            "You enter the bus terminal building, hoping the restroom is cleaner than the exterior. It's surprisingly nice inside."
-            "Your new friend apparently had someone to pick her up and was waiting indoors."
+            "You enter the bus terminal building, hoping the restroom is cleaner than the exterior. It's surprisingly welcoming inside."
+            #"Your new friend apparently had someone to pick her up and was waiting indoors."
             
             show mae neutral at right
             show lori neutral at left:
@@ -178,19 +204,21 @@ label meetingMae:
 
             lori "Mae!"
 
-            mae "Welcome back to Possum Springs!"
+            mae "Welcome home!"
             
             "The two embrace each other tightly."
 
             lori "Haha it's good to be back!"
 
-            mae "Glad to see you again!"
+            mae "Glad to see you again! I was starting to think you'd never show up!"
             
-            lori "Thanks for coming to pick me up on such short notice. The school let us out for winter break early 'cause of the blizzard!"
+            #lori "The bus was delayed because of the snow"
+            lori "Thanks for coming to pick me up on such short notice. The school let us out early 'cause of the blizzard!"
             
-            mae "Haha it's no trouble at all! You ready to go home?"
+            #mae "Haha it's no trouble at all! You ready to go home?"
+            mae "Anytime! Got everything?"
             
-            lori "Yeah!"
+            lori "Yeah, let's go!"
 
             hide lori
             hide mae
@@ -238,40 +266,69 @@ label meetingMae:
 
             player "Yeah, I'm moving in today."
             
-            loriunknown "It's quite a small and quiet town! Only a couple murders in the past few years!"
+            loriunknown "It's quite a small and uneventful town! Only a couple murders in the past few years!"
             
             player "That's uh, reassuring."
             
-            loriunknown "I lived there my whole life until I started going to film school a couple years ago."
+            loriunknown "I lived there my whole life until recently. I'm going to college now but it's not too far away so I visit as much as I can."
             
-            player "Ah, that explains the movie and notebook. Studying for a test I'm sure."
+            player "Oh? What are you studying?"
+
+            loriunknown "Film! Like movies and stuff."
+            
+            player "I see. Studying for a test?"
+            
+            "You gesture to the movie paused on her screen."
             
             loriunknown "Something like that!"
             
             "She flips to a page and shows you some of her drawings. They're all of creatures and monsters with bloody knives, elongated claws, jagged teeth or some combination of those."
             
-            loriunknown "I'm working on monster design right now. I mean I kinda always have been but that's something I'm focusing on at the moment."
+            loriunknown "I'm working on monster design right now. I mean I kinda always have been but it's something I'm focusing on at the moment."
             
-            player "Those are some pretty cool sketches."
+            menu:
+                "Reminds me of some of my own sketches":
+                    $ loriAP = loriAP + 1
+                    
+                    player "Reminds me of my own sketches."
+                    
+                    lori "Really? I'd love to see them sometime!"
+                "Looks scary":
+                    $ loriAP = loriAP + 1
+                    
+                    player "Looks pretty scary"
+                    
+                    lori "Thanks! I wanna make movies that frighten people. Really unnerve them, ya know?"
+                "2spooky4me":
+                    player "Too spooky for me. Good sketches though."
+                    
+                    lori "Thanks. They're not spooky enough for me but I'm glad they scare someone."
             
+            #player "Nice. Those are some pretty cool sketches."
+            
+            #lori "Thanks! I'm Lori by the way!"
             lori "I'm Lori by the way!"
             
             player "[name]. Nice meeting you!"
             
-            "The bus pulls into the station. If the lights weren't on, you'd think it was abandoned."
-            "Grafitti covers the walls and windows, and dead plants sprout from every crack."
+            driver "Here we are! Final stop -*cough cough WHEEEEZE*- ...Possum Springs!"
             
-            lori "I have a feeling we'll meet again~"
+            player "I guess this is where we get off."
+            
+            lori "Yup! But don't worry, I have a feeling we'll meet again~"
             
             hide lori with dissolve
             
-            #"Lori stands up and starts walking toward the exit. You check your pockets to make sure you got everything and head out yourself."
+            "The bus pulls into the station. Grafitti covers the walls and windows, and dead plants sprout from every crack."
+            "If the lights weren't on, you'd think it was abandoned."
+            
+            "Lori stands up and starts walking toward the exit. You check your pockets to make sure you got everything and head out yourself."
             
             scene bg bus_station with fade
             
             #"After grabbing your luggage from "
-            "You enter the bus terminal building, hoping the restroom is cleaner than the exterior. It's surprisingly nice inside."
-            "Your new friend apparently had someone to pick her up and was waiting indoors."
+            "You enter the bus terminal building, hoping the restroom is cleaner than the exterior. It's surprisingly welcoming inside."
+            #"Your new friend apparently had someone to pick her up and was waiting indoors."
             
             show mae neutral at right
             show lori neutral at left:
@@ -282,19 +339,21 @@ label meetingMae:
 
             lori "Mae!"
 
-            mae "Welcome back to Possum Springs!"
+            mae "Welcome home!"
             
             "The two embrace each other tightly."
 
             lori "Haha it's good to be back!"
 
-            mae "Glad to see you again!"
+            mae "Glad to see you again! I was starting to think you'd never show up!"
             
-            lori "Thanks for coming to pick me up on such short notice. The school let us out for winter break early 'cause of the blizzard!"
+            #lori "The bus was delayed because of the snow"
+            lori "Thanks for coming to pick me up on such short notice. The school let us out early 'cause of the blizzard!"
             
-            mae "Haha it's no trouble at all! You ready to go home?"
+            #mae "Haha it's no trouble at all! You ready to go home?"
+            mae "Anytime! Got everything?"
             
-            lori "Yeah!"
+            lori "Yeah, let's go!"
 
             hide lori
             hide mae
@@ -318,10 +377,6 @@ label meetingMae:
             #lori mentions to mae sorry for the short notice, they let us out early for winter break due to the blizzard
             
             #lori thanks you and you ask about her movie and sketches
-            
-            
-            
-            #lori thanks you and is surprised someone else is going to possum springs
         "Kick it away":
             $ chaotic = chaotic + 1
             
@@ -333,7 +388,7 @@ label meetingMae:
             
             player "Uhh, it's fine?"
             
-            loriunknown "Hah... I thought I was the last one on the bus."
+            loriunknown "I thought I was the last one on the bus."
             loriunknown "Excuse me..."
             
             "She grabs her pencil and awkwardly returns to her own seat."
@@ -345,46 +400,76 @@ label meetingMae:
             
             loriunknown "Did he say Possum Springs?"
             
-            player "Yeah. That's my stop."
+            player "Yeah. You getting off there too?"
             
-            loriunknown "No way! No one else ever gets off at Possum Springs!"
+            loriunknown "Depends, are you a serial killer?"
             
-            player "Yeah, I'm moving in today. Why does nobody ever go there?"
+            player "Haven't reached serial status yet."
+            player "I'm kidding. I only asked because I'm moving there today and could use some directions."
             
-            loriunknown "Oh it's just a small and quiet town! Only a couple murders in the past few years!"
+            loriunknown "Ah, that makes sense. I dunno if I can be much help but they have maps of the town at the station."
             
-            player "That's uh, reassuring."
+            player "That's good to know."
+            player "*You* wouldn't happen to be a serial killer, would you?"
             
-            loriunknown "I lived there my whole life until I started going to film school a couple years ago."
+            #loriunknown "Only in my dreams."
+            loriunknown "Only in my film projects."
             
-            player "Ah, that explains the movie and notebook. Studying for a test I'm sure."
+            player "Your what?"
             
-            loriunknown "Something like that!"
+            loriunknown "My films! I did short films for fun. And now I do them for grades."
+            loriunknown "After I graduate I wanna work on horror movies."
             
-            "She flips to a page and shows you some of her drawings. They're all of creatures and monsters with bloody knives, elongated claws, jagged teeth or some combination of those."
+            player "I guess that explains your drawings."
             
-            loriunknown "I'm working on monster design right now. I mean I kinda always have been but that's something I'm focusing on at the moment."
+            "You point down to the notebook in her lap."
+            "The page is filled with creatures and monsters with bloody knives, elongated claws, jagged teeth or some combination of those."
             
-            player "Those are some pretty cool sketches."
+            loriunknown "Oh these? I'm working on monster design right now. I mean I kinda always have been but it's something I'm focusing on at the moment."
             
+            menu:
+                "Reminds me of some of my own sketches":
+                    $ loriAP = loriAP + 1
+                    
+                    player "Reminds me of my own sketches."
+                    
+                    lori "Really? I'd love to see them sometime!"
+                "Looks scary":
+                    $ loriAP = loriAP + 1
+                    
+                    player "Looks pretty scary"
+                    
+                    lori "Thanks! I wanna make movies that frighten people. Really unnerve them, ya know?"
+                "2spooky4me":
+                    player "Too spooky for me. Good sketches though."
+                    
+                    lori "Thanks. They're not spooky enough for me but I'm glad they scare someone."
+            
+            #player "Nice. Those are some pretty cool sketches."
+            
+            #lori "Thanks! I'm Lori by the way!"
             lori "I'm Lori by the way!"
             
             player "[name]. Nice meeting you!"
             
-            "The bus pulls into the station. If the lights weren't on, you'd think it was abandoned."
-            "Grafitti covers the walls and windows, and dead plants sprout from every crack."
+            driver "Here we are! Final stop -*cough cough WHEEEEZE*- ...Possum Springs!"
             
-            lori "I gotta go but I'm sure this won't be the last time we run into each other."
+            player "I guess this is where we get off."
+            
+            lori "Yup! But don't worry, I have a feeling we'll meet again~"
             
             hide lori with dissolve
             
-            #"Lori stands up and starts walking toward the exit. You check your pockets to make sure you got everything and head out yourself."
+            "The bus pulls into the station. Grafitti covers the walls and windows, and dead plants sprout from every crack."
+            "If the lights weren't on, you'd think it was abandoned."
+            
+            "Lori stands up and starts walking toward the exit. You check your pockets to make sure you got everything and head out yourself."
             
             scene bg bus_station with fade
             
             #"After grabbing your luggage from "
-            "You enter the bus terminal building, hoping the restroom is cleaner than the exterior. It's surprisingly nice inside."
-            "Your new friend apparently had someone to pick her up and was waiting indoors."
+            "You enter the bus terminal building, hoping the restroom is cleaner than the exterior. It's surprisingly welcoming inside."
+            #"Your new friend apparently had someone to pick her up and was waiting indoors."
             
             show mae neutral at right
             show lori neutral at left:
@@ -395,19 +480,21 @@ label meetingMae:
 
             lori "Mae!"
 
-            mae "Welcome back to Possum Springs!"
+            mae "Welcome home!"
             
             "The two embrace each other tightly."
 
             lori "Haha it's good to be back!"
 
-            mae "Glad to see you again!"
+            mae "Glad to see you again! I was starting to think you'd never show up!"
             
-            lori "Thanks for coming to pick me up on such short notice. The school let us out for winter break early 'cause of the blizzard!"
+            #lori "The bus was delayed because of the snow"
+            lori "Thanks for coming to pick me up on such short notice. The school let us out early 'cause of the blizzard!"
             
-            mae "Haha it's no trouble at all! You ready to go home?"
+            #mae "Haha it's no trouble at all! You ready to go home?"
+            mae "Anytime! Got everything?"
             
-            lori "Yeah!"
+            lori "Yeah, let's go!"
 
             hide lori
             hide mae
@@ -431,9 +518,6 @@ label meetingMae:
             #lori mentions to mae sorry for the short notice, they let us out early for winter break due to the blizzard
             
             #lori thanks you and you ask about her movie and sketches
-            
-                            
-            #lori assumes it was an accident, comes crawling under the seat for it
     
     
     #lori drops her pencil, you can return it for her, or she crawls under the seat for it. can maybe kick it away or pull it closer?
@@ -795,18 +879,26 @@ label meetingMae:
     # restore default music volume
     #$ renpy.music.set_volume(0.7, 0, channel='music')
 
-    scene bg ol pickax with fade
+    scene bg olpickaxe with fade
+    
+    show lori neutral at offscreenleft
+    show mae neutral at offscreenleft
 
     #"From there you remember walking through the woods to get to your new home."
 
-    show mae neutral at left:
+    show mae neutral:
         xzoom -1
+        xpos 900
+    show lori neutral:
+        xzoom -1
+        xpos 1300
 
-    "A look of realization dawns on her."
+    "A look of realization dawns on the cat."
 
-    mae "Oh yeah! I do remember seeing you! It's not every day someone new arrives in Possum Springs!"
+    mae "Oh yeah! I do remember seeing you! At the bus station!"
+    mae "It's not every day someone new arrives in Possum Springs!"
 
-    player "Ah right, you left with that mouse girl. I just moved here. My name's [name]."
+    player "Ah right, I saw you for just a moment. I just moved into town the other day. My name's [name]."
 
     mae "Mae. Mae Borowski. Nice to meet you!"
 
@@ -821,7 +913,7 @@ label meetingMae:
 
     "Mae looks away and mumbles to herself."
 
-    mae "Died..."
+    mae "Died...?"
 
     show mae panic at left
     
@@ -832,24 +924,28 @@ label meetingMae:
     "She suddenly looks like she's seen a ghost."
 
     mae "Uhh, look at the time Ihavetogobye!"
+    mae "Come on Lori, I just remembered we have to be somewhere."
     
     show mae at offscreenleft with move
     
-    #actually, move the whole mae bit and lori flashback to after you return from the bakery
+    lori "Mae! Wait up!"
+    lori "Sorry to run off so quickly, [name]. I'll see you around though, I'm sure."
     
-    "She runs out of the store just as the crocodile comes back."
+    show lori at offscreenleft with move
+    
+    "You look out the window and watch the pair run through the streets just as the crocodile cashier comes back."
 
     show bea apron at right with dissolve
 
-    bea "Was that Mae just now?"
+    bea "Was that Mae and Lori just now?"
 
     "You're still processing what just happened. You snap out of it and turn to the shop owner."
 
-    player "Uh, yeah. You know her?"
+    player "Uh, yeah. You know them?"
 
-    bea "You could say that. What did she want?"
+    bea "You could say that. What did they want?"
 
-    player "I dunno. She just came in, asked if you were here, then left."
+    player "I dunno. They just came in, asked if you were here, then left."
 
     bea "Huh. Weird."
     bea "Anyway, is there anything else you needed?"

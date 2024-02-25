@@ -884,10 +884,15 @@ label day2Evening:
     #"luckily nothing exploded"
     "Just had to loosen the bolts, turn the gas valve, and reignite the flame with a lighter."
     "Exactly as you had watched your father do all those years ago."
+    "Luckily you didn't mess it up and blow up the house."
     "You return the grate to its original position and tighten the bolts by hand so you don't need the wrench anymore."
-    "It's been a long day and you're exhausted. Time to go to bed."    
+    "It's been a long day and you're exhausted. Time to go to bed."  
+    
+    scene bg black with dissolve  
     
 label day3:
+    scene bg home_interior_day with fade
+    
     #outline: you can explore your home or possum springs. You can also return the wrench where you'll end up meeting mae and lori
     "For the first time in a while, you awaken feeling rested and comfortable."
     "The heater does a good job of warming you up when it actually works."
@@ -970,6 +975,8 @@ label day3choice:
             
         "Return wrench":
             $ wrenchReturned = True
+            $ midDay = False
+            
             "You promised the hardware store girl that you'd return the wrench after you were done with it."
             "You have no more use for it so you should give it back as soon as possible."
             
@@ -983,12 +990,18 @@ label day3choice:
         "There's still some light in the day. What else should you do with your time?"
         $ midDay = False
 
+    scene bg home_interior_night with fade
+
+    "Night casts its shadow and you retire to your bedroom to slumber until sunrise."
     
-    "You return home and go to sleep."
+    scene bg black with dissolve
     
-    #day4
+label day4:
+    scene bg home_interior_day with fade
     
-    "Day 4 start"
+    "You're starting to get used to things. A new home, a new town, a new independent routine..."
+    "You've got a lot of freedom to do what you want for now, but you're going to have to find a way to make money soon."
+    "For now though, your savings will hold you over and you can focus on settling in."
     "What will you do today?"
     
     $ midDay = False
