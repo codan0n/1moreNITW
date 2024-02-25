@@ -4,8 +4,9 @@ label marcieSalt:
     "The bell at the door chimes as another customer steps in. You hear the sound of a heavy bag being hefted up onto the counter."
     #You overhear her conversation with the cashier from a couple of aisles away."
     
-    show marcie at left
-    show bea at right
+    show marcie neutral at left:
+        xzoom -1
+    show bea apron neutral at right
     with dissolve
     
     #"After aquiring your new doo-dad, you watch as a mousey older lady drags a particularly massive bag of salt to the register. Bea eyes it with apprehension as she rings it through."
@@ -50,7 +51,7 @@ label marcieSalt:
             player "Hi there! I couldn't help but notice what a heavy load you've got there. Would you like some help carrying that?"
             
             "Bea looks at you with mild surprise while the elderly woman greets you with a welcoming expression."
-#            "bea and the older woman look back at you with surprise, but you catch something else in Bea's face that she quickly hides. Relief? Respect?"
+            #"bea and the older woman look back at you with surprise, but you catch something else in Bea's face that she quickly hides. Relief? Respect?"
 
             marcie "Oh how kind of you, young [manladycreature]. I'll take you up on that offer!"
             
@@ -81,88 +82,89 @@ label marcieSalt:
             
             player "I guess I can spare some time. Let me grab that for you."
             
-             You put on a friendly face and hoist the bag up to your shoulder with a grunt."
+            "You put on a friendly face and hoist the bag up to your shoulder with a grunt."
             "This thing is heavier than it looks and the jagged edges dig into your skin."
             "With your free hand, you grab the cash and stuff it in your pocket."
             
-        bea "You got it?"
-        
-        player "Y-yeah, it's just an awkward shape."
-        
-        bea "Welcome to my world."
-        bea "Just try not to slip and die, I'm not liable if you do."
-        
-        player "I'll try my best."
-        player "Lead the way, miss."
-        
-        marcie "Right this way dear."
-        
-        scene bg roads_day with dissolve
-        
-        "You look around at the few cars on the street outside and wonder which one belongs to the old lady."
-        "You follow her along the sidewalk, straining with each step as the heavy bag cuts into your shoulder."
-        
-        player "Excuse me, which car is yours, ma'am?"
-        
-        show marcie at left with dissolve
+    bea "You got it?"
+    
+    player "Y-yeah, it's just an awkward shape."
+    
+    bea "Welcome to my world."
+    bea "Just try not to slip and die, I'm not liable if you do."
+    
+    player "I'll try my best."
+    player "Lead the way, miss."
+    
+    marcie "Right this way dear."
+    
+    scene bg roads_day with dissolve
+    
+    "You look around at the few cars on the street outside and wonder which one belongs to the old lady."
+    "You follow her along the sidewalk, straining with each step as the heavy bag cuts into your shoulder."
+    
+    player "Excuse me, which car is yours, ma'am?"
+    
+    show marcie neutral at left with dissolve:
+        xzoom -1
 
-        marcie "Hm? Oh, I don't have one. How's that rock salt? Not too heavy is it?"
-        
-        player "N-no but I didn't sign up to drag this thing all the way across town."
-        
-        "The old mouse laughs and waves her hand dismissively."
-        
-        marcie "Don't worry, I don't live that far away! We're almost there."
-        marcie "By the way, my name's Marcie."
-        
-        player "Nice to meet you Marcie, I'm..."
-        
-        marcie "[name], I know. We've met before, don't you remember?"
-        
-        player "Huh? I just got here like two days ago."
-        
-        marcie "Maybe so, but you've been here before, haven't you?"
-        
-        player "A couple of times. But that was more than a decade ago!"
-        
-        marcie "Has it been that long? My, time flies. You've grown so tall since I last saw you!"
-        
-        player "You recognized me? I was just a kid back then."
-        
-        marcie "I know those eyes anywhere. Striking, just like your father's. I'm so sorry about what happened to him."
-        
-        player "..."
-        player "Yeah."
-        player "You knew him well?"
-        
-        marcie "Not really, no. He mostly kept to himself. But he was kind whenever our paths crossed."
-        marcie "Anyway, here we are! Just leave it by the front step there."
-        
-        "Thank goodness. You weren't sure how much further you could carry this thing uphill. You dump the bag on the ground and stretch out your spine."
-        
-        marcie "I truly appreciate your help, you know. Lots of folk are too focussed on their own problems and interests to help out others, but not you."
-        
-        player "That's awfully kind of you to say."
+    marcie "Hm? Oh, I don't have one. How's that rock salt? Not too heavy is it?"
+    
+    player "N-no but I didn't sign up to drag this thing all the way across town."
+    
+    "The old mouse laughs and waves her hand dismissively."
+    
+    marcie "Don't worry, I don't live that far away! We're almost there."
+    marcie "By the way, my name's Marcie."
+    
+    player "Nice to meet you Marcie, I'm..."
+    
+    marcie "[name], I know. We've met before, don't you remember?"
+    
+    player "Huh? I just got here like two days ago."
+    
+    marcie "Maybe so, but you've been here before, haven't you?"
+    
+    player "A couple of times. But that was more than a decade ago!"
+    
+    marcie "Has it been that long? My, time flies. You've grown so tall since I last saw you!"
+    
+    player "You recognized me? I was just a kid back then."
+    
+    marcie "I know those eyes anywhere. Striking, just like your father's. I'm so sorry about what happened to him."
+    
+    player "..."
+    player "Yeah."
+    player "You knew him well?"
+    
+    marcie "Not really, no. He mostly kept to himself. But he was kind whenever our paths crossed."
+    marcie "Anyway, here we are! Just leave it by the front step there."
+    
+    "Thank goodness. You weren't sure how much further you could carry this thing uphill. You dump the bag on the ground and stretch out your spine."
+    
+    marcie "I truly appreciate your help, you know. Lots of folk are too focussed on their own problems and interests to help out others, but not you."
+    
+    player "That's awfully kind of you to say."
 
-        "You take a breath and rub your shoulder."
-        
-        marcie "You alright? Didn't straing yourself too hard, did you?"
-        
-        player "I'm fine. Just never had to do that before."
-        player "I need to head home soon though. Sun's coming down and the wind is starting to pick up."
-        
-        marcie "Well don't let me keep you! I'm sure we'll run into each other soon."
-        marcie "And you're welcome to stop by whenever you have the time! I'll make tea for us and we can catch up."
-        
-        player "Heh, I'd appreciate that. See you around, Marcie."
-        
-        marcie "See you around, [name]!"
+    "You take a breath and rub your shoulder."
+    
+    marcie "You alright? Didn't straing yourself too hard, did you?"
+    
+    player "I'm fine. Just never had to do that before."
+    player "I need to head home soon though. Sun's coming down and the wind is starting to pick up."
+    
+    marcie "Well don't let me keep you! I'm sure we'll run into each other soon."
+    marcie "And you're welcome to stop by whenever you have the time! I'll make tea for us and we can catch up."
+    
+    player "Heh, I'd appreciate that. See you around, Marcie."
+    
+    marcie "See you around, [name]!"
 
-        "You raise a hand in farewell and continue your walk, feeling lighter, literally and figuratively. What a pushy woman. Still, it feels good to help."
-        
-        
-        #marcie "And don't worry, I can spread this myself. I'm not *that* old!"
-        #marcie "I'll see you around, [player]! I could always use someone to help out, and there's something in it for you next time!"
-        
+    "You raise a hand in farewell and continue your walk, feeling lighter, literally and figuratively. What a pushy woman. Still, it feels good to help."
+    
+    
+    #marcie "And don't worry, I can spread this myself. I'm not *that* old!"
+    #marcie "I'll see you around, [player]! I could always use someone to help out, and there's something in it for you next time!"
+    
 
     return

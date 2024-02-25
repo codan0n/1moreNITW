@@ -199,7 +199,7 @@ label afterExploringHouse:
 label intoTown:
     "You put on a jacket and boots and make your way towards the center of the town."
             
-    scene bg towncenter
+    scene bg roads_day
     
     #"You try to follow the map but without GPS "
     #"Without GPS you get a bit lost but eventually stumble upon what must be the main street."

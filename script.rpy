@@ -873,7 +873,7 @@ label start:
             
             
 label day2Evening:
-    scene bg bakery_exterior with fade
+    scene bg roads_day with fade
     
     "The sky is already turning dark. You should hurry home."
         

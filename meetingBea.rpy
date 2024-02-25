@@ -84,6 +84,8 @@ label meetingBea:
         
         if exploredHouse == False:
             call marcieSalt
+            
+            jump day2Evening
         else:
             jump day2Evening
             
@@ -238,7 +240,7 @@ label beaQuestions:
     
     
 label day2roam:
-    scene bg bakery_exterior with fade
+    scene bg roads_day with fade
     
     "Where will you go?"
     
