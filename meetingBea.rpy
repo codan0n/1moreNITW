@@ -155,7 +155,8 @@ label meetingBea:
         #"All of them are in stock except the one you need!"
         "You catch a glimpse of the cashier dragging a large bag of road salt between aisles and decide to approach her."
         
-        show bea apron with dissolve
+        show bea apron at center with dissolve:
+            ypos 1150
 
         player "Excuse me. You don't seem to have the tool I need in stock. I mean, outside of this overpriced kit."
         

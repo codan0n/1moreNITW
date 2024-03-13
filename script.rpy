@@ -82,6 +82,8 @@ label start:
     $ mature = 0
 
     # scene specific variables
+    $ weekNumber = 1
+    $ libraryCard = False
     $ beenToChurch = False
     $ chosendrink = ""
     $ wentWithGregg = ""
@@ -685,7 +687,7 @@ label start:
 
     "You go down a few more aisles, tossing some extras into your basket until it's nearly overflowing, then proceed to the check out."
 
-    show gregg apron at center with dissolve:
+    show gregg apron at center with dissolve
 
     greggunknown "Heya!"
 
@@ -818,6 +820,10 @@ label start:
     
     $ haveOverdueBook = False
     $ cinnamonRoll = False
+    
+    $ libraryGuests = []
+    
+    $ posspressoGuests = []
     
     $ exploredHouse = False
     $ houseEvents = ["houseOffice", "houseBook", "houseKey"]
@@ -1177,7 +1183,7 @@ label day4:
     #day6
     #if you haven't already seen the poster for the band gig, you stumble upon it somehow and decide to check it out that night.
     
-    if foundBandGig = False:
+    if foundBandGig == False:
         "As you wonder through town, a sheet of paper flutters through the wind. By chance it flies directly in your face."
         "You see it's a flyer for some sort of band gig happening... tonight?!"
         

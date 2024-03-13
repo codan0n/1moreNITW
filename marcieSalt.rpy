@@ -143,7 +143,7 @@ label marcieSalt:
     
     "Thank goodness. You weren't sure how much further you could carry this thing uphill. You dump the bag on the ground and stretch out your spine."
     
-    marcie "I truly appreciate your help, you know. Lots of folk are too focussed on their own problems and interests to help out others, but not you."
+    marcie "I truly appreciate your help, you know. Lots of folk are too focused on their own problems and interests to help out others, but not you."
     
     player "That's awfully kind of you to say."
 

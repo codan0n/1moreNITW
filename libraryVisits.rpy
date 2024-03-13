@@ -44,14 +44,16 @@ label libraryVisit1:
 
     selma "Whoa, this was checked out way before I even started working here."
     selma "Where'd you find this?"
+    
+    player "It was in my house. I just moved in and the previous owner must have left it behind."
 
-    player "I found it...uh..."
+    #player "I found it...uh..."
 
-    menu:
-        "Left in an abandoned house":
-            player "...left in an abandoned house. Was just lying there, and I figured you'd probably want it back!"
-        "In my new home":
-            player "...in my new home. I just moved into Possum Springs, and I found this in one of the rooms of the place I'm living in."
+    #menu:
+    #    "Left in an abandoned house":
+    #        player "...left in an abandoned house. Was just lying there, and I figured you'd probably want it back!"
+    #    "In my new home":
+    #        player "...in my new home. I just moved into Possum Springs, and I found this lying around the house."
 
     #suspicious selma sprite goes here
     selma "Hmm."
@@ -74,16 +76,16 @@ label libraryVisit1:
     player "How'd you know I didn't have one?"
 
     selma "I know everyone who has one."
-    selma "Possum Springs is a small town and the number of people here who have a library card in 2021 is even smaller."
+    selma "Possum Springs is a small town and the number of people here who have a library card in the current year is even smaller."
 
     player "Oh."
-    player "Well since I'm here, I might as well."
+    player "I might as well, since I'm already here."
 
-    selma "Aight. Just need you to fill out this form and show me a valid ID."
+    selma "I'll need you to fill out this form and show me a valid ID."
 
     "She pulls a sheet of paper out from a filing cabinet and pushes it toward you."
     "You grab a pen from the holder and quickly fill it out."
-    "Once you're done, you pull out your driver's license and pass both it and the sheet back to Selmers."
+    "Once you're done, you pull out your driver's license and pass both it and the sheet back."
 
     selma "Just have to type this in real quick..."
 
@@ -93,31 +95,222 @@ label libraryVisit1:
 
     "She waves the application form in the air."
 
-    selma "...then scan it in and print your card from the office."
+    selma "...plus some more stuff, then scan it in and finally print your card from the office."
     selma "You're welcome to explore for a bit while I do this. I'll have your card ready by the time you're done."
 
     player "Okay! Be back in a bit."
 
     hide selma with dissolve
 
-    "You leave her to her work and go over to the bookshelves across the room, skimming over titles without really reading them."
-    "You're not looking for anything in particular but maybe something will grab your attention."
-    "...Nope, nothing here stands out in the slightest."
-    "That elevator in the corner of your eye, however, is a different story."
-    "This floor seems to be dedicated to nonfiction, so the fiction section must be up above."
-    "That's probably where that book you just returned will get shelved. You wonder if there are any others like it your father might have checked out as well."
+    "You leave her to her work and go over to the bookshelves across the room, skimming over titles."
+    "You're not really looking for anything in particular, you're just browsing what's available."
+    "It seems this floor is primarily used for nonfiction books but there are a few more floors to explore."
+    
+    #elevator is broken on week 1
+    #"After a quick look around, you take the elevator up to the second floor to see if there's anything more interesting up there."
+    
+    menu:
+        "Pick a nonfiction book":
+            "You decide to pass the time by picking a book at random and reading until Selmers has your card."
+            "You end up grabbing a biography from the \'Local History\' section."
+            "It's about a band called the Deep Hollow Hollerers that formed in the 1920s. You skip around the book but you get the gist of it."
+            "Popular band who brought people together and provided local entertainment suddenly becomes spiritual and disappears in the woods."
+            "A tale as old as time."
+            "Surely your card must be ready by now. You place the book back on the shelf and return to the counter."
+        "Take the elevator":
+            "The fiction section is probably one floor up. You push the button to call the elevator and wait."
+            "...and wait. You cross your arms and tap your foot. Is it coming or not?"
+            "You notice a sheet of paper lying on the floor with a piece of tape stuck to it. Picking it up, you realize it must have been fallen off the elevator door."
+            "It reads \'Out of service.\'"
+            "Great."
+            "Your legs are sore from all the walking you've been doing, so you're in no mood to climb stairs. You'll come back later when the elevator is fixed."
+            "Surely your card must be ready by now. You head back to the counter."
+            
+    show selma neutral at right
+    
+    selma "Hey there. Find what you were looking for?"
+    
+    "You shrug."
+
+    player "Wasn't really looking for anything. I was just wandering around."
+
+    selma "Fair enough. Not all who wander are lost."
+    
+    player "I can be both."
+    
+    "That gets a giggle out of her."
+    
+    selma "Well if you need help finding anything, I can direct you to it. I know where every book should be."
+
+    player "Thanks, I'll keep that in mind."
+    
+    selma "Also, I got your card right here."
+
+    selma "It expires three years from today, or one year after your last check out. Whichever comes first."
+
+    "She slides the card over the counter."
+    
+    player "Thank you!"
+
+    selma "Wish I got paid commission for this. But I don't. Haha."
+
+    player "How often do you convince someone to sign up for a card?"
+
+    selma "About as often as someone new comes in."
+    selma "I have experience in sales. But also these are free so there's no reason not to get one."
+    selma "Having fun's not hard when you've got a library card~"
+    #selma "I grew up poor in the 90s. The library was like, *the* place to go."
+
+    player "Heh, I guess not. Especially now that libraries have wifi."
+    
+    selma "It's faster than my internet at home."
+    
+    player "I get zero megabits per second at home."
+    
+    selma "Haha, I know right?"
+    
+    player "I mean that literally. I don't get service at home."
+    
+    selma "Oh damn."
+    
+    player "So I might actually be here from time to time to like, do taxes and stuff."
+    
+    selma "Well we've got computers available for that."
+    
+    player "Sweet."
+    
+    selma "Is there anything else I can do for you?"
+    
+    player "I don't think so."
+        
+    selma "Okay. Hope you have a nice day!"
+
+    player "Thanks, you too!"
+
+    hide selma with dissolve
+    
+    "On your way out, a bulletin board catches your attention. It's full of flyers and business cards. Might as well check it out and see if there's anything interesting coming up."
+    
+    #menu thing like in coda that gives you the choice to read various fliers. after you leave you notice one more for the band gig coming up at the end of the week
+    
+    label bulletinboard1:
+        menu:
+            "TRACKTOR WANTED":
+                "TRACKTOR WANTED: HELO MY NAME IS RYAN BRUSSELS I AM A A 65 YEAR OLD VETERAN IN NEED OF A TRACKTOR TO PLOW SOME FARM LAND I RECENLTY PURCHASED FROM A KIND FELLOW OUT TO THE SOUTHWEST OF TOWN"
+                "BACK IN THE DAY I WOULD HAV JUST DONE IT THE OLD FASHIONED WAY WITH NOTHING BUT A SHOVEL AND A HOE BUT MY, DOCTOR SAYSTO AVOID HEAVY LABOR AFTER I PULELD MY BACK OUT FROM LIFTING A BAG OF ROCK SALT..."
+                "SO LONG STORY SHORT I NEED A TRACKTOR SO I CAN PLANT A NEW VEGETABLE GARDEN FOR MY WIFE SHE LIKES TOMATOES AND YAMS AND WE WOULD LIKE TO HOPEFULLY SELL SOME AT THE FARMERS MARKET IN TOWN..."
+                "Blah blah blah it goes on like this for a while."
+                "ANYWAY IF ANYBDOY WOULD HAPPEN TO BE SELING A TRACKTOR PLAESE CONTACT ME"
+                "Tracktor Wanted: Helo my name is Ryan Brussels I am a veteran in need of a "
+                "blah blah tractor"
+                jump bulletinboard1
+            "RARE TRUCK FOR SALE":
+                #"It's printed in size 15 font on A4 printer paper with a beer stain on the bottom right corner, most of the page is blank except for a grainy 240p photo of the truck."
+                "1989 Fodge Ram50 4X4 pickup truck\nGood body, No visible rust..."
+                "Some panels have dents, MISSING drivers side quarter panel and tail lights..\n4 Wheel drive DOES NOT work"
+                "Sometimes it comes back on the highway when you get above 48mph, have to swerve left just as it happens or TRUCK WILL HIT DITCH"
+                "No mice, EXCEPT in carburetor... Killed them with BRAKE CLEANER but the nest is still in there.."
+                "Accidentally shot through the floor pan with my .45, MAY HAVE DAMAGED WIRING HARNESS"
+                "Doesn't start unless you hold gas and brake pedal to the floor and pull the keys halfway out of the ignition"
+                "$22,000 OBO\nNO. LOWBALLERS."
+                "If interested, come out to range road 22 and turn LEFT at Gilbert's farm, go up the road about 5 MILES until it turns to GRAVEL, then drive around the old mill and cross the bridge over the ditch, if you see Darrel's house you've gone TOO FAR.."
+                "Yeah you're not risking getting shot for some broken ass car that costs way too much."
+                jump bulletinboard1
+            "Bi-monthly tea meet":
+                "Put on your finest Victorian dress and join us for a luxurious afternoon tea. Enjoy a variety of exquisite loose leaf teas among good company as we dance to classical music, show off our latest crocheted creations, and even partake in a bit of town gossip."
+                #"Put on your finest Victorian dress and join us for a luxurious afternoon tea. Enjoy a variety of exquisite loose leaf teas among the company of well-mannered citizens with good morals. , dance to classical music"
+                #over a cup of  tea
+                "Come meet us at tea time on the first and last Tuesday of every other month!"
+                "That's one way to define bi-monthly."
+                "Tea is cool and all but this sounds like this is exclusively for old ladies. Should have just called it the Old Lady Club."
+                jump bulletinboard1
+            "Missing person":
+                "A faded missing person poster for some teenager."
+                "Well, he might have been a teenager when that photo was taken but he was last seen 6 years ago."
+                "Chances aren't looking good that he'll be found."
+                "You shudder to think what could have happened to all the missing people in the world."
+                #"It's faded. Last seen like 6 years ago. Yeah I don't think anyone's gonna find him."
+                jump bulletinboard1
+            "Leave":
+                "The rest of the pinned items are things like lawyers' business cards or ads for events from last summer."
+                "Well that was a waste of time."
+                "Oh, what's this?"
+                "Hidden underneath one of the other papers is a flyer for an upcoming event. Apparently a local band called The Pumpkin Head Guys is gonna play at the Party Barn(?) this Saturday."
+                "You'd think this was some farmercore band but the poster is designed more like a Harfest event with drawings of skulls and bats flying around."
+                "There's only one demographic that loves Harfest more than children and farmers, and that's goth chicks."
+                "You might have to check them out, but you're leaving the second you hear country music."
+                #"They don't seem like the type to do country music. You might actually have to check them out."
+                "If Possum Springs has any sort of alt scene, this is probably where you'd go to find it."
+                "You've got nothing better planned for the weekend, so you take a photo of the address listed and set a reminder to attend. Admission is free too."
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    if weekNumber > 1:
+        if not libraryGuests:
+            "You don't see anyone you know here."
+        else:
+            $ randomSelected = renpy.random.choice(libraryGuests)
+            if randomSelected == "trishLibrary1":
+                    $ libraryGuests.remove("trishLibrary1")
+                    call trishLibraryScene1
+            if randomSelected == "marcieLibrary1":
+                    $ libraryGuests.remove("marcieLibrary1")
+                    call marcieLibraryScene1
+            if randomSelected == "greggLibrary1":
+                    $ libraryGuests.remove("greggLibrary1")
+                    call greggLibraryScene1
+            if randomSelected == "maeLibrary1":
+                    $ libraryGuests.remove("maeLibrary1")
+                    call maeLibraryScene1
+            if randomSelected == "beaLibrary1":
+                    $ libraryGuests.remove("beaLibrary1")
+                    call beaLibraryScene1
+            if randomSelected == "germLibrary1":
+                    $ libraryGuests.remove("germLibrary1")
+                    call germLibraryScene1
+            if randomSelected == "selmaLibrary1":
+                    $ libraryGuests.remove("selmaLibrary1")
+                    call selmaLibraryScene1
+            if randomSelected == "stanLibrary1":
+                    $ libraryGuests.remove("stanLibrary1")
+                    call stanLibraryScene1
+            if randomSelected == "angusLibrary1":
+                    $ libraryGuests.remove("angusLibrary1")
+                    call angusLibraryScene1
+            if randomSelected == "loriLibrary1":
+                    $ libraryGuests.remove("loriLibrary1")
+                    call loriLibraryScene1
+        
+    # on 2nd visit selma is surprised to see you. on 3rd visit she invites you to an event
+    #as you leave, you see an ad for the band gig on the cork board (along with other ads)
+    #library is another hub where you can stumble upon other characters
+    #have an alt scene where you stumble upon the library while exploring town
+    
+    
+    "The fiction section is probably housed there. That's probably where that book you just returned will get shelved."
+    "You wonder if there are any others like it your father might have checked out as well."
     "It's kinda weird. Like you're retracing the footsteps your father took at some point."
     "You feel like you're following a treasure map and slowly piecing together his interests along the way."
     "It's neat seeing what his interests might have been, but it also fills you with remorse for not getting to know him better while he was alive."
     "He'll always be some distant, vague idea of a person in your mind instead of a man you had an actual, real bond with."
     "You shake off the feelings bubbling inside you and go call down the elevator."
 
-    stop music fadeout 1.0
+    #stop music fadeout 1.0
 
     "You've kind of lost interest in the books around you but you still want to finish exploring the library at least."
     "The doors open with a mechanical grinding sound and you ride up to the second floor."
 
-    play music "music/Stagnant_Tone-down.mp3" fadein 2.0
+    #play music "music/Stagnant_Tone-down.mp3" fadein 2.0
 
     "The walls here are painted salmon pink and minty green, and the lights are brighter. It no longer has that regal feeling of the first floor, but it's still warm and comforting here."
     "Desks with computers line the nearest wall and lead into the children's section, as evidenced by the mural in the corner with some sort of cartoon bear emblazoned on it."
@@ -417,31 +610,7 @@ label libraryVisit1:
     show selma neutral at right with dissolve:
         yalign selmaheight
 
-    selma "Find what you were looking for?"
-
-    player "Not quite, but that's more my fault than the library's."
-
-    selma "If you're looking for a book in particular, I can help you find it if we have it."
-
-    player "Thanks, I'll keep that in mind."
-
-    selma "I also got your card printed. Here you go."
-
-    "She slides the card over the counter."
-
-    selma "It expires three years from today, or one year after your last check out. Whichever comes first."
-
-    player "Thank you!"
-
-    selma "Wish I got paid commission for these. But I don't. Haha."
-
-    player "How often do you convince someone to sign up for a card?"
-
-    selma "Almost as often as someone new comes in."
-    selma "I have experience in sales."
-
-    player "Wow."
-
+    
     selma "And if you don't mind me trying to sell you on something else, the library's hosting an event this coming Tuesday at 4:00 PM where we read books aloud to younger children."
     selma "We're short on staff, so we're asking for volunteers."
     selma "It'd be nice if you could, y'know, come and read for the kids. We'll have juice and cookies too."
