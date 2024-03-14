@@ -1,4 +1,5 @@
 label marcieSalt:
+    $ metMarcie = True
     #written by punchoid, edited by codanon
     "Might as well have a look around to see if there's anything else here you could use."
     "You wander through the aisles but nothing really cathes your eye."

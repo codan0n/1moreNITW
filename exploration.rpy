@@ -15,6 +15,7 @@ label unexploredHouse:
     return
 
 label houseOffice:
+    # day or night
     $ officeQuestStarted = True
     
     scene bg home_office_day with fade
@@ -118,6 +119,7 @@ label houseOffice:
     return
 
 label houseShed:
+    #daytime exclusive
     "After searching the house, you happen to notice something unusual through one of the windows: a rickety looking shed standing in the backyard, half buried under the snow."
     "You recall playing in the backyard but don't remember there ever being a shed. It must have been built after the last time you visted."
     "With some effort, you manage to dig through the snow to reach the door handle, but it's locked up tight with a rusty chain and padlock."
@@ -137,6 +139,7 @@ label houseShed:
     return
     
 label houseBook:
+    #day or night
     $ haveOverdueBook = True
     
     #the book contains part of the password?
@@ -164,6 +167,7 @@ label houseBook:
     return
 
 label houseKey:
+    #day or night
     $ hasKey = True
     
     "Your search brings you to a spare bathroom where the sound of water dripping disturbs the otherwise still area every few seconds."
@@ -187,7 +191,7 @@ label houseKey:
         
     return
     
-label afterExploringHouse:
+label afterLookingForTool:
     "You spent a few hours searching and have yet to find a tool to open that grate. At this rate, it'll be dark by the time you figure something out."
     "For all you know, there might not even be a wrench in this house anymore."
     "Your next best option is to see if the hardware store in town has what you need."
@@ -217,14 +221,12 @@ label intoTown:
         "Bakery":
             jump meetingAngus
             #gregg mentions he's on a long lunch break since it's a slow day, but that he is still clocked in  
-            #if you visit 1st time after visitng pickaxe, you order 2 coffees
         
         "Hardware store":
             jump meetingBea
                             
             #what about pliers?
             #where do i know her (mae) from? :flashback:
-            #if you didn't explore the house in the morning, you automatically do it at night after fixing the heater
         
         #"underground":
             #minor event
@@ -233,13 +235,15 @@ label intoTown:
             #minor event
             
             
-label midday:
+label nightlabel:
     "It'll get dark in a couple hours. Is there anything else you want to do today?"
     
     jump continue
     
     
 label townGerm1:
+    #day exclusive
+    
     "You go west toward the outskirts of town. There lies a barren parking lot next to an large abandoned building."
     "In the distance you can make out a figure. As you get closer you can see he's petting stray cats."
     "There are tins of cat food strewn about. You accidentally kick one, making a loud clattering sound."
@@ -256,6 +260,8 @@ label townGerm1:
     return
     
 label townAngus1:
+    #day exclusive
+    
     "Walking along main street, you decide to sit on a bench for a rest. You push aside the snow and take a seat next to a statue commemorating old soldiers."
     
     show angus at center with dissolve
@@ -273,6 +279,7 @@ label townAngus1:
 
 
 label townBridge1:
+    #day or night
     "You visit the bridge to the east of town."
     
     
@@ -281,6 +288,7 @@ label townBridge1:
     
     
 label townTrolley1:
+    #day or night
     "You descend the stairway into what appears to be an underground trolley station."
     "It's like the small town version of the metro."
     "not sure what to put here. maybe talking with a minor character"

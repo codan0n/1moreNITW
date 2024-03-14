@@ -1,4 +1,8 @@
 label libraryVisit1:
+    #day only
+    #there are some night scenes though for events
+    #this part is if you have the overdue book and have not been to the library before
+    $ nightTime = False
     $ haveOverdueBook = False
 
     #"This is the most excited you've ever been to go to the library."
@@ -240,8 +244,8 @@ label libraryVisit1:
                 "There's only one demographic that loves Harfest more than children and farmers, and that's goth chicks."
                 "You might have to check them out, but you're leaving the second you hear country music."
                 #"They don't seem like the type to do country music. You might actually have to check them out."
-                "If Possum Springs has any sort of alt scene, this is probably where you'd go to find it."
-                "You've got nothing better planned for the weekend, so you take a photo of the address listed and set a reminder to attend. Admission is free too."
+                #"If Possum Springs has any sort of alt scene, this is probably where you'd go to find it."
+                #"You've got nothing better planned for the weekend, so you take a photo of the address listed and set a reminder to attend. Admission is free too."
     
 
     
@@ -297,6 +301,9 @@ label libraryVisit1:
     #have an alt scene where you stumble upon the library while exploring town
     
     
+    return
+    
+label libraryFloor2:    
     "The fiction section is probably housed there. That's probably where that book you just returned will get shelved."
     "You wonder if there are any others like it your father might have checked out as well."
     "It's kinda weird. Like you're retracing the footsteps your father took at some point."
