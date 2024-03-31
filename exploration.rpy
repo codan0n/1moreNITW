@@ -244,36 +244,194 @@ label nightlabel:
 label townGerm1:
     #day exclusive
     
-    "You go west toward the outskirts of town. There lies a barren parking lot next to an large abandoned building."
-    "In the distance you can make out a figure. As you get closer you can see he's petting stray cats."
-    "There are tins of cat food strewn about. You accidentally kick one, making a loud clattering sound."
-    "The cats scatter and the figure looks to you."
+    "You venture west toward the outskirts of town. There lies a barren parking lot next to a large abandoned building."
+    "In the distance you can make out a silhouette in against the sun. As you get closer you can see him petting stray cats."
+    "There are tins of cat food strewn about. Your foot accidentally sends one flying, making a loud clattering sound when it hits the asphalt."
+    "The cats scatter and the figure turns to you."
     
     show germ neutral at center with dissolve
     
     germ "..."
     
-    #if metGerm == True:
+    if metGerm == True:
+    
+    player "Oh hey... Germ, right? These your cats?"
+    
+    germ "Nah."
+    germ "But I look after them."
+    
+    
     
     #else:
+    
+    hide germ with dissolve
+    
+    $ metGerm = True
     
     return
     
 label townAngus1:
     #day exclusive
     
-    "Walking along main street, you decide to sit on a bench for a rest. You push aside the snow and take a seat next to a statue commemorating old soldiers."
+    #if you've met angus already, he is alreaded sitting there
+    #if you haven't met angus, he comes up after you sit down
     
-    show angus at center with dissolve
+    if metAngus == True:
+        "As you wander through main street, you decide to find a place to sit for a rest. Luckily there's a conveniently placed bench nearby, and it looks like someone you know had the same idea as you."
+        
+        show angus at center with dissolve
+        
+        angus "Hello there. It's nice to see you again."
+        
+        player "Is this seat taken?"
+        
+        angus "Not at all."
+        
+        "You brush aside the snow that's accumulated on the bench and sit next to the baker."
+        
+        angus "What brings you here today?"
+        
+        player "Nothing in particular. I'm just wandering aimlessly."
+        player "You?"
+        
+        angus "I'm just on break. I come out here to feed the squirrels around this time every day. They've grown to expect me."
+        
+        "Angus pulls some bread from a paper bag. The crinkling sound attracts the attention of several nearby squirrels and they come running over."
+        "He tears off small pieces of bread and the squirrels either wait patiently for him to toss them or snatch it directly out of his claws."
+        
+        menu:
+            "Did you train them to do that?":
+                player "Whoa I've never had a squirrel come so close to me. Did you train them to do that?"
+            
+                angus "Not really, they sort of trained themselves."
+                angus "Animals will do anything for food."
+                
+                #player "So will I."
+                
+            "Do they ever bite you?":
+                "You flinch as a squirrel skitters across your lap toward the bread."
+                
+                player "Whoa! Do they bite?"
+                
+                angus "Thankfully they haven't bitten me yet. I hear they have a pretty nasty bite. Those teeth are made to crack walnuts after all."
+        
+        "Angus offers the loaf of bread to you."
+        
+        angus "You wanna try?"
+        
+        "Might as well see what the fuss is all about."
+        "You take hold of the loaf and tear off a bit. The squirrels are more apprehensive towards you but seem eager for more bread."
+        "You toss it onto the snow and a few of them gather around it until one takes it and hops away."
+        "You watch him gnaw on it as you rip another piece and start the process over again."
+        
+        player "I have to admit, they are pretty cute."
+        
+        angus "They can get fierce when they fight. They usually play nice though as long as there's enough food."
+        #I usually bring enough food for all of them though."
+        
+        "You tear off pieces of bread and distribute them until there's none left and the squirrels disperse."
+        
+        player "Well, that was fun while it lasted."
+        
+        angus "Indeed."
+        
+        "Angus stands up."
+        
+        angus "I should get back to work now but you're more than welcome to join me in feeding the squirrels anytime."
+        
+        player "For sure. I'll see you around."
+        
+        angus "Later."
+        
+        
+        #angus "Haha they get impatient if I'm late to feed them. "
+        #angus "I like to view them as my friends."
+        
+        #it gets hot and stuffy in the bakery
     
-    #if met == True:
-    
-    #else:
-    
-    angus "Oh sorry, is this spot taken?"
-    angus "I usually come here to feed the squirrels around this time. They've come to expect me."
-    
+    else:
+        "Walking along main street, you decide to sit on a bench for a quick rest. You push aside the snow and take a seat next to some kind of old war monument."
+        "As you're distracted watching squirrels burying nuts in the snow, you don't notice when somebody approaches."
+        
+        show angus neutral with dissolve
+        
+        angus "Oh sorry, is this spot taken?"
+        
+        player "No no, I'm just sitting by myself. I can move if you want."
+        
+        angus "It's fine. I usually come here to feed the squirrels around this time of day. They've come to expect me."
+        
+        "The bear sits beside you and the squirrels gather around as he pulls a loaf of bread out from a paper bag."
+        "You watch as he tears chunks from it and tosses them to the little critters."
+        
+        player "This your hobby or something?"
+        
+        angus "Not exactly. I work at the bakery so I often end up with stale bread. Not that these guys seem to mind."
+        
+        "One brave squirrel comes up and snatches the bread piece out of his paw."
+        
+        menu:
+            "Did you train them to do that?":
+                player "Whoa I've never had a squirrel come so close to me. Did you train them to do that?"
+            
+                angus "Not really, they sort of trained themselves."
+                angus "Animals will do anything for food."
+                
+                #player "So will I."
+                
+            "Do they ever bite you?":
+                "You flinch as a squirrel skitters across your lap toward the bread."
+                
+                player "Whoa! Do they bite?"
+                
+                angus "Thankfully they haven't bitten me yet. I hear they have a pretty nasty bite. Those teeth are made to crack walnuts after all."
+                
+        "He offers the loaf of bread to you."
+        
+        angus "You wanna try?"
+        
+        "Might as well see what the fuss is all about."
+        "You take hold of the loaf and tear off a bit. The squirrels are more apprehensive towards you but seem eager for more bread."
+        "You toss it onto the snow and a few of them gather around it until one takes it and hops away."
+        "You watch him gnaw on it as you rip another piece and start the process over again."
+        
+        player "I have to admit, they are pretty cute."
+        
+        angus "They can get fierce when they fight. They usually play nice though as long as there's enough food."
+        #I usually bring enough food for all of them though."
+        
+        "You tear off pieces of bread and distribute them until there's none left and the squirrels disperse."
+        
+        player "Well, that was fun while it lasted."
+        
+        angus "Indeed."
+        angus "I'm Angus by the way. Are you new in town?"
+        
+        player "I'm [name]. And yeah, I just moved here."
+        
+        angus "In that case, welcome to Possum Springs! It's a small town but there's always stuff to do if you look hard enough."
+        
+        player "Like feeding squirrels?"
+        
+        angus "Like feeding squirrels!"
+        
+        "Angus stands up."
+        
+        angus "I'd love to stay and chat more but I need to get back to work."
+        
+        player "Fair enough. It was nice meeting you."
+        
+        angus "Same! You should stop by the bakery sometime. We've got more than just squirrel food."
+        
+        player "For sure. I'll see you around."
+        
+        angus "Later."
+        
+        
+        
     $ metAngus = True
+    
+    hide angus with dissolve
 
     return
 

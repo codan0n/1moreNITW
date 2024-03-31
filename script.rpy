@@ -142,7 +142,13 @@ label start:
     #"The smell of roasted coffee beans guided you here from a couple blocks away."
     #""
     "Finally."
-    "You were starting to think you'd never make it, but the smell of roasted coffee beans pointed you in the right direction."
+    #"You were starting to think you'd never find the place, but the smell of roasted coffee beans pointed you in the right direction."
+    #"You were starting to think you'd never find the place, but the smell of roasted coffee beans set you on the right track."
+    "You were starting to think you'd never find the place. Thankfully the smell of roasted coffee beans guided you here from a couple blocks away."
+    
+    
+    
+    
     #"You were starting to think you'd never make it, but the smell of roasted coffee beans helped you find the right place."
     #"You could smell the roasted coffee beans from a few blocks away."
     "You brush the snow off your jacket and take a moment to bask in the warmth of the cafe you just stepped into."
@@ -814,8 +820,8 @@ label start:
     "Unfortunately the inner workings are blocked by a grate that's screwed in tight."
     "You try to unscrew the bolts with your fingers but they're rusted and stuck in place."
     "Maybe there's a wrench somewhere in this house."
-    "Your old man left behind a ton of stuff. There's gotta be a toolbox around here."
-    "You haven't got a clue where to look though. This house is like a labrynth and there's no lack of boxes and drawers to search through."
+    "Your old man left behind a ton of stuff. There's gotta be a toolbox around here somewhere."
+    "You haven't got a clue where to look though. This house is like a labrynth and there's no lack of nooks and crannies to search through."
     "It might be faster to just go out and buy a new wrench."
     "The map you downloaded at the cafe says there's a hardware store nearby you could try."
     "What should you do?"
@@ -928,7 +934,7 @@ label day3:
     $ houseEventsDay.append("houseShed")
     
     if not houseEventsDay:
-        "You've already explored the house enough for now."
+        "You've already explored the house enough for now. You should find something else to do."
     if not townEventsDay:
         "You're tired of exploring the town. You should find something else to do for now."
     
@@ -1009,6 +1015,10 @@ label day3choice:
             "The book is more overdue than the wrench. You should return it first."
             
             call libraryVisit1 
+            
+        "Do nothing":
+            "Yeahhh you don't really feel like doing anything today."
+            "You sit back and mindlessly stare at your phone for a few hours."
         
     if nightTime == True:
         "The sun has set and it's gotten dark out, but the night is still young. What should you do?"
@@ -1082,6 +1092,10 @@ label day3choice:
                 "You have no more use for it so you should give it back as soon as possible."
                 
                 call meetingMae 
+                
+            "Do nothing":
+                "Yeahhh you don't really feel like doing anything today."
+                "You sit back and mindlessly stare at your phone for a few hours."
 
     scene bg home_interior_night with fade
 
@@ -1405,46 +1419,46 @@ label day4:
     #"Do you want to stay in or go out?"
     #"You've done a lot of walking lately so you're inclined to stay here and relax."
     #"You haven't really explored your new home yet. You should at least familiarize yourself with the general layout before you start wandering around town."
-    "Curiosity gets the better of you and, after eating, you put on a coat and head out to investigate it."
+    #"Curiosity gets the better of you and, after eating, you put on a coat and head out to investigate it."
 
     #scene bg home_office_day with fade
 
     
     #stop music fadeout 1.0
 
-    scene bg shed with fade
+    #scene bg shed with fade
 
-    play music "music/woulditmatter_loop.mp3" fadein 1.0
+    #play music "music/woulditmatter_loop.mp3" fadein 1.0
     
-    "It's pretty large for a shed. It's more like a garage, really."
-    "It's cold and echoey and smells like gasoline in here. Old leaves crunch under your feet as you explore and dodge cobwebs."
+    #"It's pretty large for a shed. It's more like a garage, really."
+    #"It's cold and echoey and smells like gasoline in here. Old leaves crunch under your feet as you explore and dodge cobwebs."
     #"Judging by the debris and tools strewn about, it hasn't been cleaned in a while. Nobody even bothered to sweep the leaves from the floor."
-    "In the darkness you make out a tarp covering something big."
-    "Probably a lawnmower"
+    #"In the darkness you make out a tarp covering something big."
+    #"Probably a lawnmower"
     #"A pile of skeletons, used for a demon-summoning ritual perhaps?"
     #"Or maybe it's a stockpile of cocaine. Never know when you might need a couple hundred pounds of that stuff."
-    "Nothing makes an old man happier than mowing the lawn at the crack of dawn on weekends."
-    "Bracing yourself for disappointment, you grab a corner of the tarp and take a peek."
-    "..."
-    "No way."
-    "Your hand reaches out to touch it. The cold metal stings your fingertips."
-    "You pull aside the rest of the tarp, revealing a gorgeous classy motorcycle."
-    "Shiny chrome contrasts with the leathery black upholstery. You just need a pair of aviators and you can become a biker."
-    "You take back what you thought about your dad being a lame boomer, he was in fact a cool boomer."
-    "Now you can ride around town instead of having to walk everywhere *and* you can do so stylishly!"
+    #"Nothing makes an old man happier than mowing the lawn at the crack of dawn on weekends."
+    #"Bracing yourself for disappointment, you grab a corner of the tarp and take a peek."
+    #"..."
+    #"No way."
+    #"Your hand reaches out to touch it. The cold metal stings your fingertips."
+    #"You pull aside the rest of the tarp, revealing a gorgeous classy motorcycle."
+    #"Shiny chrome contrasts with the leathery black upholstery. You just need a pair of aviators and you can become a biker."
+    #"You take back what you thought about your dad being a lame boomer, he was in fact a cool boomer."
+    #"Now you can ride around town instead of having to walk everywhere *and* you can do so stylishly!"
     #"You can't wait to feel the wind on your face when you take her for a spin."
-    "You look around for a spare key. The original is probably long gone, wherever your dad ended up."
-    "Luckily you found it relatively quickly. It was just inside the nearby toolbox, which has been left open for who knows how long. Thankfully nobody stole it."
-    "The engine makes a weird noise when you insert the key."
-    "You try again and it makes another pathetic dying noise."
-    "Heck."
-    "Welp, time to roll up your sleeves and mess around with an engine you've never seen before and no access to documentation."
-    "You spend a few hours tinkering with it trying everything you can think of but you're hindered by a lack of tools."
-    "The one wrench size you need is missing from the tool box. You searched everywhere for it, even inside the house, but it's nowhere to be found."
+    #"You look around for a spare key. The original is probably long gone, wherever your dad ended up."
+    #"Luckily you found it relatively quickly. It was just inside the nearby toolbox, which has been left open for who knows how long. Thankfully nobody stole it."
+    #"The engine makes a weird noise when you insert the key."
+    #"You try again and it makes another pathetic dying noise."
+    #"Heck."
+    #"Welp, time to roll up your sleeves and mess around with an engine you've never seen before and no access to documentation."
+    #"You spend a few hours tinkering with it trying everything you can think of but you're hindered by a lack of tools."
+    #"The one wrench size you need is missing from the tool box. You searched everywhere for it, even inside the house, but it's nowhere to be found."
     #you break the tool you needed?
-    "You recall seeing a hardware store on the map that's within walking distance. Surely they'd have what you need, right?"
-    "They damn well better if you're going through all this trouble."
-    "You grab your wallet and a pair of mittens before setting out toward town, trudging through the snow."
+    #"You recall seeing a hardware store on the map that's within walking distance. Surely they'd have what you need, right?"
+    #"They damn well better if you're going through all this trouble."
+    #"You grab your wallet and a pair of mittens before setting out toward town, trudging through the snow."
     
     
     #"Still nothing. Out of fuel maybe?"
@@ -1467,19 +1481,19 @@ label day4:
     #"One of the related results however is a local hardware store in town, not that much further away than the cafe. Maybe they have what you need?"
     
 
-    stop music fadeout 2.0
+    #stop music fadeout 2.0
 
-    scene bg park with fade
+    #scene bg park with fade
 
 
-    "Ah here it is, the Ol' Pickaxe."
-    "You ascend the couple of steps leading to the front door and head inside."
+    #"Ah here it is, the Ol' Pickaxe."
+    #"You ascend the couple of steps leading to the front door and head inside."
 
     
     
     
     
-    scene bg ol pickax with fade
+    #scene bg ol pickax with fade
     
 
     #scene bg park with fade
@@ -1502,38 +1516,38 @@ label day4:
     #"He hesitantly comes over and picks it up with its little hands then shoves it into its mouth before skittering off."
     #"You're welcome."
 
-    scene bg home_interior_night with fade
+    #scene bg home_interior_night with fade
     
-    "After the long walk back home, you crashed on the sofa and mulled over everything."
+    #"After the long walk back home, you crashed on the sofa and mulled over everything."
     #"You walk out the door and take a few aimless steps down the street, mulling over everything."
     #"Well that sure was disappointing."
     #"Not getting any of the parts you need, that is."
-    "You're too tired to try fixing your bike, even though you finally got the tool you needed."
-    "Hardly matters anyway since you've got Gregg coming over to fix your bike, and he can probably do it better than you can."
-    if wentWithGregg == True:
-        "That's two favors you owe him now."
-    "Was it you or was he especially friendly with that baker, Angus?"
-    "Maybe he has a crush on him or something."
-    "At least you successfully bartered with that angry goth crocodile."
-    "But then there was that chat with Mae that sure felt strange."
-    "Maybe you should stop parading the fact that your dad died. It's probably freaking people out."
-    "..."
-    "No, it's definitely freaking people out. You should stop doing that."
-    "Lost in thought and exhausted from today's quest, you end up falling asleep right there on the couch."
+    #"You're too tired to try fixing your bike, even though you finally got the tool you needed."
+    #"Hardly matters anyway since you've got Gregg coming over to fix your bike, and he can probably do it better than you can."
+    #if wentWithGregg == True:
+    #    "That's two favors you owe him now."
+    #"Was it you or was he especially friendly with that baker, Angus?"
+    #"Maybe he has a crush on him or something."
+    #"At least you successfully bartered with that angry goth crocodile."
+    #"But then there was that chat with Mae that sure felt strange."
+    #"Maybe you should stop parading the fact that your dad died. It's probably freaking people out."
+    #"..."
+    #"No, it's definitely freaking people out. You should stop doing that."
+    #"Lost in thought and exhausted from today's quest, you end up falling asleep right there on the couch."
     
     
-    "You crawl under the covers and think about your future here."
-    "You need to get a job at some point. Sooner or later you'll need the income."
-    "You wouldn't mind making some friends too while you're here."
-    "It's been so long since you've hung out with anyone, you can hardly remember what it's like."
-    "At least Gregg is coming over tomorrow. He seems like a nice guy."
-    "You yawn and turn over, clutching your pillow as sleep overtakes you."
+    #"You crawl under the covers and think about your future here."
+    #"You need to get a job at some point. Sooner or later you'll need the income."
+    #"You wouldn't mind making some friends too while you're here."
+    #"It's been so long since you've hung out with anyone, you can hardly remember what it's like."
+    #"At least Gregg is coming over tomorrow. He seems like a nice guy."
+    #"You yawn and turn over, clutching your pillow as sleep overtakes you."
 
-    scene bg black with fade
+    #scene bg black with fade
     
     # Day 3, friday
-    $ currentDay = 3
-    $ currentDate = "December 3"
+    #$ currentDay = 3
+    #$ currentDate = "December 3"
     
     
     
@@ -1541,141 +1555,141 @@ label day4:
     #"It draws you to the source, a shop called Bear Essentials Bakery."
     #"After the long walk here, you might as well grab a snack for the road."
     
-    scene bg home_interior_day with fade
+    #scene bg home_interior_day with fade
     
-    "The following morning, you get up and walk around the house, stretching your legs and awaiting Gregg's arrival."
+    #"The following morning, you get up and walk around the house, stretching your legs and awaiting Gregg's arrival."
     
-    scene bg home_office_day with dissolve
+    #scene bg home_office_day with dissolve
     
     
-    "The sound of a motor revving in the distance fills the air and gradually gets louder as it approaches."
+    #"The sound of a motor revving in the distance fills the air and gradually gets louder as it approaches."
     
-    play sound "sound/motorbike arriving.mp3"
+    #play sound "sound/motorbike arriving.mp3"
     
-    "That must be Gregg!"
-    "You pull yourself together and go to the front door to meet him."
+    #"That must be Gregg!"
+    #"You pull yourself together and go to the front door to meet him."
     
-    scene bg home_interior_day with dissolve
+    #scene bg home_interior_day with dissolve
     
-    "*Knock knock knock*"
+    #"*Knock knock knock*"
     
-    show gregg neutral at center with dissolve
+    #show gregg neutral at center with dissolve
     
-    play music "music/cozycidersipping_loop.mp3" fadein 1.0
+    #play music "music/cozycidersipping_loop.mp3" fadein 1.0
     
-    gregg "Heya!"
+    #gregg "Heya!"
     
-    player "Hey! Glad you could make it!"
+    #player "Hey! Glad you could make it!"
     
-    gregg "I only have an hour before I have to be at work."
-    gregg "Well? Where's the bike?"
+    #gregg "I only have an hour before I have to be at work."
+    #gregg "Well? Where's the bike?"
     
-    player "Oh uh, right this way."
+    #player "Oh uh, right this way."
     
-    "You slip on your shoes and show him to the shed."
+    #"You slip on your shoes and show him to the shed."
     
-    scene bg shed with fade
+    #scene bg shed with fade
     
-    "Gregg's eyes go wide at the sight of the motorcycle as you open the door."
+    #"Gregg's eyes go wide at the sight of the motorcycle as you open the door."
     
-    show gregg neutral at center with dissolve:
-        xzoom -1
+    #show gregg neutral at center with dissolve:
+    #    xzoom -1
         
-    gregg "She's beautiful. I love her."
+    #gregg "She's beautiful. I love her."
     
     #if male do the sex joke bit
     
-    player "I'd love her more if I could turn her on."
+    #player "I'd love her more if I could turn her on."
     
-    gregg "*Snrk*"
+    #gregg "*Snrk*"
     
-    player "What?"
+    #player "What?"
     
-    gregg "Nothing ahahaha!"
+    #gregg "Nothing ahahaha!"
     
-    player "I tried fiddling around underneath, but I guess I just didn't have the right tool for the job."
+    #player "I tried fiddling around underneath, but I guess I just didn't have the right tool for the job."
     
-    gregg "Pffft hahahaha!"
+    #gregg "Pffft hahahaha!"
     
-    player "What??"
+    #player "What??"
     
-    gregg "You're doing that on purpose aren't you?"
+    #gregg "You're doing that on purpose aren't you?"
     
-    player "Doing what?"
+    #player "Doing what?"
     
-    gregg "Ah forget it. Do you have a wrench I can use?"
+    #gregg "Ah forget it. Do you have a wrench I can use?"
     
     #player "Yeah but it just wasn't big enough..."
     #mine wasn't big enough so I had to borrow one from the hardware store
-    "You pull out the wrench you got from Bea and hand it to him."
+    #"You pull out the wrench you got from Bea and hand it to him."
     
-    player "Here. I went through a whole ordeal to borrow this from the hardware store yesterday."
-    player "Because apparently my own equipment wasn't the right size."
+    #player "Here. I went through a whole ordeal to borrow this from the hardware store yesterday."
+    #player "Because apparently my own equipment wasn't the right size."
     
     #player "Or at least I didn't have one big enough"
     
     #something something maybe you just need the right tool
     #in just the perfect size
     
-    "Gregg busts out laughing hysterically and only then do you realize the inadvertent innuendos you've been saying."
+    #"Gregg busts out laughing hysterically and only then do you realize the inadvertent innuendos you've been saying."
     
-    player "I mean uhh..."
+    #player "I mean uhh..."
     
     #gregg "Hahaha don't worry dude, I'll get her running and you can ride her to your heart's content!"
-    gregg "Hahaha I get what you mean! Don't worry though, I'll get her running and you can ride her to your heart's content!"
+    #gregg "Hahaha I get what you mean! Don't worry though, I'll get her running and you can ride her to your heart's content!"
   
-    player "You didn't have to say it like that..."
+    #player "You didn't have to say it like that..."
     
-    gregg "I know, but it's more fun that way."
+    #gregg "I know, but it's more fun that way."
     
-    "Gregg gets to work on the engine while you hold a light for him."
+    #"Gregg gets to work on the engine while you hold a light for him."
     #"He takes out a few pieces and disconnects some wires"
-    "You can't really see what he's doing but he works pretty fast. He soon has a pile of bolts, wires and random engine parts strewn around him."
+    #"You can't really see what he's doing but he works pretty fast. He soon has a pile of bolts, wires and random engine parts strewn around him."
     
-    gregg "There! That should do it!"
-    gregg "Hopefully!"
+    #gregg "There! That should do it!"
+    #gregg "Hopefully!"
     
-    "He just as quickly puts it all back together, turning back to you with a proud grin and an oil stain on his fur."
+    #"He just as quickly puts it all back together, turning back to you with a proud grin and an oil stain on his fur."
     
-    player "You got a little something on your cheek."
+    #player "You got a little something on your cheek."
     
-    gregg "Huh? This one?"
+    #gregg "Huh? This one?"
     
-    "He wipes the wrong cheek with his paw."
+    #"He wipes the wrong cheek with his paw."
     
-    player "Other one."
+    #player "Other one."
     
-    "He manages to wipe his face everywhere except the stain."
+    #"He manages to wipe his face everywhere except the stain."
     
-    menu:
-        "Wipe it off for him":
-            player "Here, let me just..."
+    #menu:
+        #"Wipe it off for him":
+            #player "Here, let me just..."
             
-            "You grab a nearby towel and rub at the oil, trying not to spread it further."
-            "Gregg freezes like a deer in headlights while you clean his fur in the most awkward way possible."
+            #"You grab a nearby towel and rub at the oil, trying not to spread it further."
+            #"Gregg freezes like a deer in headlights while you clean his fur in the most awkward way possible."
             
-            player "There. Sorry if I pulled some whiskers. Just didn't want you going in to work looking like that."
+            #player "There. Sorry if I pulled some whiskers. Just didn't want you going in to work looking like that."
             
-            gregg "Hahaha thanks? I think?"
+            #gregg "Hahaha thanks? I think?"
             
-            player "And I guess it was the least I could do since you just fixed my bike."
+            #player "And I guess it was the least I could do since you just fixed my bike."
             
-            gregg "Correction: probably fixed your bike!"
-            gregg "We still have to test it first!"
+            #gregg "Correction: probably fixed your bike!"
+            #gregg "We still have to test it first!"
             
-            "You insert the key into the ignition and look to Gregg as you start to turn it, praying it doesn't explode."
+            #"You insert the key into the ignition and look to Gregg as you start to turn it, praying it doesn't explode."
             
             #engine noises
-            play sound "sound/motorcycle start.mp3"
+            #play sound "sound/motorcycle start.mp3"
             
-            "You're pleasantly surprised when it starts up just fine."
+            #"You're pleasantly surprised when it starts up just fine."
             
-            gregg "Yes!"
+            #gregg "Yes!"
             
             ###your reaction should be different depending on your personality points
             
             
-            "FROM THIS POINT ON IS VERY OLD AND UNFINISHED STUFF"
+            #"FROM THIS POINT ON IS VERY OLD AND UNFINISHED STUFF"
             
             
             
@@ -1683,36 +1697,36 @@ label day4:
             
             
             
-            gregg "I had something similar happen to my bike before so this was a piece of cake!"
+            #gregg "I had something similar happen to my bike before so this was a piece of cake!"
             
             
             
-            gregg "And you'll probably wanna take it to a real mechanic sometime."
+            #gregg "And you'll probably wanna take it to a real mechanic sometime."
 
-            player "At least now I can drive it to one."
+            #player "At least now I can drive it to one."
 
-            gregg "Yup!"
-            gregg "Well, I better get going before I'm late for work."
+            #gregg "Yup!"
+            #gregg "Well, I better get going before I'm late for work."
 
-            player "Ok! Thanks so much for fixing my bike!"
+            #player "Ok! Thanks so much for fixing my bike!"
 
-            gregg "No problem! It was more exciting than standing around scanning groceries all day, that's for sure!"
-            gregg "Oh that reminds me, we're having a little get together at the bakery this evening if you wanna come. Me, Angus, and a friend of ours."
+            #gregg "No problem! It was more exciting than standing around scanning groceries all day, that's for sure!"
+            #gregg "Oh that reminds me, we're having a little get together at the bakery this evening if you wanna come. Me, Angus, and a friend of ours."
             
-            player "Sure, I'm not doing anything tonight anyway."
+            #player "Sure, I'm not doing anything tonight anyway."
 
     #        gregg "Cool, we're meeting at six."
 
     #        player "Sounds good. See ya then!"
             
             
-            gregg "Alright, see ya later!"
+            #gregg "Alright, see ya later!"
 
     #        "He jogs over to his own bike and rides off into the sunrise."
             
             
-        "Give him a towel":
-            "FROM THIS POINT ON IS VERY OLD AND UNFINISHED STUFF"
+        #"Give him a towel":
+            #"FROM THIS POINT ON IS VERY OLD AND UNFINISHED STUFF"
             ###unfinished
     
     
@@ -2565,26 +2579,26 @@ label day4:
 
     #scene bg parkdark with dissolve
 
-    "It was refreshing to hang out with a group again."
-    "Gregg's upbeat personality is fun to be around, and Angus is a really sweet guy."
-    "It's hard to pin down how you really feel about Germ since he was so quiet, but he seems cool."
-    "You hop onto your bike and ride back home, reflecting on how much your life has changed in just a few short days."
-    "You're enjoying a fresh independent lifestyle but you're also making new friends and coming out of your shell. It feels good."
+    #"It was refreshing to hang out with a group again."
+    #"Gregg's upbeat personality is fun to be around, and Angus is a really sweet guy."
+    #"It's hard to pin down how you really feel about Germ since he was so quiet, but he seems cool."
+    #"You hop onto your bike and ride back home, reflecting on how much your life has changed in just a few short days."
+    #"You're enjoying a fresh independent lifestyle but you're also making new friends and coming out of your shell. It feels good."
 
-    scene bg home_interior_night with fade
+    #scene bg home_interior_night with fade
 
-    "When you arrive at home, you notice both Gregg and Angus sent you a message on Chattrbox."
+    #"When you arrive at home, you notice both Gregg and Angus sent you a message on Chattrbox."
 
-    gregg "Awesome night dude, can't wait to hang again!"
-    gregg "I usually get off work at ham panther in the afternoon if you wanna swing by and ride bikes and stuff."
+    #gregg "Awesome night dude, can't wait to hang again!"
+    #gregg "I usually get off work at ham panther in the afternoon if you wanna swing by and ride bikes and stuff."
 
-    angus "Just making sure you made it home safely."
-    angus "Had a fun night with you all. Come by the bakery anytime if you're ever in the area and just wanna chat or something."
-    angus "You won't be a bother, I don't get that many customers."
+    #angus "Just making sure you made it home safely."
+    #angus "Had a fun night with you all. Come by the bakery anytime if you're ever in the area and just wanna chat or something."
+    #angus "You won't be a bother, I don't get that many customers."
 
-    "You send them both a short thank you message and let them know you had fun too before turning in for the night."
+    #"You send them both a short thank you message and let them know you had fun too before turning in for the night."
 
-    scene bg black with fade
+    #scene bg black with fade
 
     # Day 4, saturday
     $ currentDay = 4
@@ -2593,570 +2607,570 @@ label day4:
     play music "music/home_again.mp3" fadein 1.0
     scene bg home_interior_day with fade
 
-    "It's been a few days since you moved in and you've just about settled into your new life."
-    "Most of the anxiety has melted away, and you're now comfortable living as you see fit and taking things at your own pace."
-    "This morning you help yourself to a large breakfast, a long hot shower, and plenty of free time to browse the web."
-    "Sitting around all day can get kinda boring though."
-    "Maybe you should see if Gregg or Angus are free?"
-    "Nah, don't want to seem too clingy."
-    "You could explore town a bit. There's still a lot you've yet to see."
-    "But where exactly would you go?"
-    "You pace around the house pondering this question and wind up in what must have been the smoking room, judging by the stench of cigarette smoke permeating the air even after all these years."
-    "You thought these things went out of style a century ago but here we are."
-    "Not like a little smoke bothers you at this point though."
-    "You recline in one of the big fancy chairs in the room and close your eyes."
-    "Maybe you'll just nap away the boredom."
-    "..."
-    "No, this is too boring."
-    "Your hand wanders over to the side table and picks up the book that was resting on it."
-    "You lazily turn your head to the side and read the title."
-    "\"Cryptids of the Western Hemisphere.\""
-    "Opening it up to the bookmarked page, you find an article on the Jersey Devil, a weird skinny goat thing with wings."
-    "The paranormal sure loves its goats, doesn't it?"
-    "Upon reading further, it appears the Jersey Devil is nothing more than a fabrication by hysterical religious country bumpkins."
-    "There's not even anything unique about him, he's just a winged goat with devil connotations who sometimes steals chickens."
-    "As you close the book, your fingers brush against a bump on its spine."
-    "Turning it over reveals a sticker, not unlike the kind you'd find on a library book."
-    "Hold on a second, this *is* a library book!"
-    "This thing must have been sitting here overdue for ages!"
-    "You should return this to the library soon. You're certain they're just dying to get this book back."
-    "They might even be so glad to see it again that they'll waive the late fee."
-    "It's not like they could charge you a fee if even they wanted to, right?"
-    "It's not your book, you just happened to find it."
-    "Regardless of the consequences, you've been given a quest and you intend to see it through to the end."
+    #"It's been a few days since you moved in and you've just about settled into your new life."
+    #"Most of the anxiety has melted away, and you're now comfortable living as you see fit and taking things at your own pace."
+    #"This morning you help yourself to a large breakfast, a long hot shower, and plenty of free time to browse the web."
+    #"Sitting around all day can get kinda boring though."
+    #"Maybe you should see if Gregg or Angus are free?"
+    #"Nah, don't want to seem too clingy."
+    #"You could explore town a bit. There's still a lot you've yet to see."
+    #"But where exactly would you go?"
+    #"You pace around the house pondering this question and wind up in what must have been the smoking room, judging by the stench of cigarette smoke permeating the air even after all these years."
+    #"You thought these things went out of style a century ago but here we are."
+    #"Not like a little smoke bothers you at this point though."
+    #"You recline in one of the big fancy chairs in the room and close your eyes."
+    #"Maybe you'll just nap away the boredom."
+    #"..."
+    #"No, this is too boring."
+    #"Your hand wanders over to the side table and picks up the book that was resting on it."
+    #"You lazily turn your head to the side and read the title."
+    #"\"Cryptids of the Western Hemisphere.\""
+    #"Opening it up to the bookmarked page, you find an article on the Jersey Devil, a weird skinny goat thing with wings."
+    #"The paranormal sure loves its goats, doesn't it?"
+    #"Upon reading further, it appears the Jersey Devil is nothing more than a fabrication by hysterical religious country bumpkins."
+    #"There's not even anything unique about him, he's just a winged goat with devil connotations who sometimes steals chickens."
+    #"As you close the book, your fingers brush against a bump on its spine."
+    #"Turning it over reveals a sticker, not unlike the kind you'd find on a library book."
+    #"Hold on a second, this *is* a library book!"
+    #"This thing must have been sitting here overdue for ages!"
+    #"You should return this to the library soon. You're certain they're just dying to get this book back."
+    #"They might even be so glad to see it again that they'll waive the late fee."
+    #"It's not like they could charge you a fee if even they wanted to, right?"
+    #"It's not your book, you just happened to find it."
+    #"Regardless of the consequences, you've been given a quest and you intend to see it through to the end."
 
-    stop music fadeout 1.5
+    #stop music fadeout 1.5
 
-    "This is the most excited you've ever been to go to the library."
+    #"This is the most excited you've ever been to go to the library."
 
-    scene bg library_floor1 with fade
+    #scene bg library_floor1 with fade
 
-    play music "music/deweydecimal_loop.mp3" fadein 1.0
+    #play music "music/deweydecimal_loop.mp3" fadein 1.0
 
-    "Possum Springs sure has an impressive library."
-    "It's a three story building with lavish old-timey architecture and has been very well maintained."
-    "Gargoyles adorn the outside while giant pillars and arches frame the murals on the inside."
-    "The interior has been modernized with new carpet and a fresh coat of paint that accentuate the comfortingly dim lighting."
-    "You stare at the multitude of books organized neatly on shelves as you walk up to the reception desk. Sitting there is the same bear you met at the cafe the other day."
-    "What did the barista call her?"
-    "\"Selmers?\""
-    "She looks up from writing something in a notepad."
+    #"Possum Springs sure has an impressive library."
+    #"It's a three story building with lavish old-timey architecture and has been very well maintained."
+    #"Gargoyles adorn the outside while giant pillars and arches frame the murals on the inside."
+    #"The interior has been modernized with new carpet and a fresh coat of paint that accentuate the comfortingly dim lighting."
+    #"You stare at the multitude of books organized neatly on shelves as you walk up to the reception desk. Sitting there is the same bear you met at the cafe the other day."
+    #"What did the barista call her?"
+    #"\"Selmers?\""
+    #"She looks up from writing something in a notepad."
 
-    show selma neutral flip at right with dissolve
+    #show selma neutral flip at right with dissolve
 
-    selma "Oh hey, it's you."
+    #selma "Oh hey, it's you."
 
-    player "Hey."
-    player "You're... Selmers, right?"
+    #player "Hey."
+    #player "You're... Selmers, right?"
 
-    "Her carefree demeanor wavers slightly and there's a hint of disdain in her voice."
+    #"Her carefree demeanor wavers slightly and there's a hint of disdain in her voice."
 
-    selma "That's what most folk call me."
-    selma "I remember you from Posspresso but I didn't get your name."
+    #selma "That's what most folk call me."
+    #selma "I remember you from Posspresso but I didn't get your name."
 
-    player "[name]."
+    #player "[name]."
 
-    selma "Nice to officially meet you, [name]."
-    selma "Welcome to the Possum Springs Public Library. Is there anything I can do for you?"
+    #selma "Nice to officially meet you, [name]."
+    #selma "Welcome to the Possum Springs Public Library. Is there anything I can do for you?"
 
-    "You take one last look at the book in your hand then slide it over the counter."
+    #"You take one last look at the book in your hand then slide it over the counter."
 
-    player "I found a book that belongs here and wanted to return it."
+    #player "I found a book that belongs here and wanted to return it."
 
-    "Selmers picks up the book and gives it a look over with an intrigued expression before scanning it into the system."
-    "She rotates her chair to face the computer monitor and clicks the mouse a few times."
+    #"Selmers picks up the book and gives it a look over with an intrigued expression before scanning it into the system."
+    #"She rotates her chair to face the computer monitor and clicks the mouse a few times."
 
-    selma "Wow, this was checked out way before I even started working here."
-    selma "Where'd you find this?"
+    #selma "Wow, this was checked out way before I even started working here."
+    #selma "Where'd you find this?"
 
-    player "It was uhh..."
+    #player "It was uhh..."
 
-    menu:
-        "Lying at the bottom of a well":
-            player "...lying at the bottom of a well."
-        "Left in an abandoned house":
-            player "...left in an abandoned house."
-        "Sitting on a bench":
-            player "...sitting on a bench."
+    #menu:
+    #    "Lying at the bottom of a well":
+    #        player "...lying at the bottom of a well."
+    #    "Left in an abandoned house":
+    #        player "...left in an abandoned house."
+    #    "Sitting on a bench":
+    #        player "...sitting on a bench."
 
     #suspicious selma sprite goes here
-    selma "Hmm."
+    #selma "Hmm."
 
     #back to normal sprite
-    selma "That explains why it never found its way back here until now. Glad you returned it, it's the only copy we had."
+    #selma "That explains why it never found its way back here until now. Glad you returned it, it's the only copy we had."
 
-    player "I don't have to pay the late fee, do I?"
+    #player "I don't have to pay the late fee, do I?"
 
-    "That gets a chuckle out of her as she sets the book aside."
+    #"That gets a chuckle out of her as she sets the book aside."
 
-    selma "Naw, consider it on the house. It was probably written off as lost forever, so thanks for bringing it back."
+    #selma "Naw, consider it on the house. It was probably written off as lost forever, so thanks for bringing it back."
 
-    player "No problem."
+    #player "No problem."
 
-    selma "Will that be all? Or would you like to get a library card while you're here?"
+    #selma "Will that be all? Or would you like to get a library card while you're here?"
 
-    "You raise a brow."
+    #"You raise a brow."
 
-    player "How'd you know I didn't have one?"
+    #player "How'd you know I didn't have one?"
 
-    selma "I know everyone who has one."
-    selma "Possum Springs is a small town and the number of people here who have a library card in 2021 is even smaller."
+    #selma "I know everyone who has one."
+    #selma "Possum Springs is a small town and the number of people here who have a library card in 2021 is even smaller."
 
-    player "Oh."
-    player "Well since I'm here, I might as well."
+    #player "Oh."
+    #player "Well since I'm here, I might as well."
 
-    selma "Aight. Just need you to fill out this form and show me a valid ID."
+    #selma "Aight. Just need you to fill out this form and show me a valid ID."
 
-    "She pulls a sheet of paper out from a filing cabinet and pushes it toward you."
-    "You grab a pen from the holder and quickly fill it out."
-    "Once you're done, you pull out your driver's license and pass both it and the sheet back to Selmers."
+    #"She pulls a sheet of paper out from a filing cabinet and pushes it toward you."
+    #"You grab a pen from the holder and quickly fill it out."
+    #"Once you're done, you pull out your driver's license and pass both it and the sheet back to Selmers."
 
-    selma "K, just have to type this in real quick..."
+    #selma "K, just have to type this in real quick..."
 
-    "She looks over your license and makes a few keystrokes before handing it back."
+    #"She looks over your license and makes a few keystrokes before handing it back."
 
-    selma "...and now all of this..."
+    #selma "...and now all of this..."
 
-    "She waves the application form in the air."
+    #"She waves the application form in the air."
 
-    selma "...then scan it in and print your card from the office."
-    selma "You're welcome to explore and find some books to check out while I do that. I'll have your card ready by the time you're done."
+    #selma "...then scan it in and print your card from the office."
+    #selma "You're welcome to explore and find some books to check out while I do that. I'll have your card ready by the time you're done."
 
-    player "Ok! Be back in a bit."
+    #player "Ok! Be back in a bit."
 
-    hide selma with dissolve
+    #hide selma with dissolve
 
-    "You leave her to her work and go over to the bookshelves across the room, skimming over book titles without really reading them."
-    "You're not looking for anything in particular but maybe something will grab your attention."
-    "Nope, nothing here stands out."
-    "That elevator in the corner of your eye however is a different story."
-    "This floor seems to be dedicated to boring nonfiction, so the fiction section must be up above."
-    "That's probably where that book you just returned will get shelved. You wonder if there are any others like it your father might have checked out as well."
-    "It's kinda weird. Like you're retracing the footsteps your father took at some point."
-    "You feel like you're following a treasure map and slowly piecing together his interests along the way."
-    "It's neat seeing what he was like, but it also fills you with remorse for not getting to know him better while he was alive."
-    "He'll always be some vague idea of a man in your mind and not someone you had a real bond with."
-    "You shake off the feelings bubbling inside you and go call down the elevator."
+    #"You leave her to her work and go over to the bookshelves across the room, skimming over book titles without really reading them."
+    #"You're not looking for anything in particular but maybe something will grab your attention."
+    #"Nope, nothing here stands out."
+    #"That elevator in the corner of your eye however is a different story."
+    #"This floor seems to be dedicated to boring nonfiction, so the fiction section must be up above."
+    #"That's probably where that book you just returned will get shelved. You wonder if there are any others like it your father might have checked out as well."
+    #"It's kinda weird. Like you're retracing the footsteps your father took at some point."
+    #"You feel like you're following a treasure map and slowly piecing together his interests along the way."
+    #"It's neat seeing what he was like, but it also fills you with remorse for not getting to know him better while he was alive."
+    #"He'll always be some vague idea of a man in your mind and not someone you had a real bond with."
+    #"You shake off the feelings bubbling inside you and go call down the elevator."
 
-    stop music fadeout 1.0
+    #stop music fadeout 1.0
 
-    "You've kind of lost interest in the books around you but you still want to finish exploring the library at least."
-    "The doors open with a mechanical grinding sound and you ride up to the second floor."
+    #"You've kind of lost interest in the books around you but you still want to finish exploring the library at least."
+    #"The doors open with a mechanical grinding sound and you ride up to the second floor."
 
-    play music "music/Stagnant_Tone-down.mp3" fadein 2.0
+    #play music "music/Stagnant_Tone-down.mp3" fadein 2.0
 
-    "Here the walls are painted a salmon pink and minty green and the lights are brighter. It no longer has that regal feeling of the first floor, but it's still warm and comforting here."
-    "Desks with computers line the nearest wall and lead into the children's book section, as evidenced by the Charity Bearity mural thing in the corner."
-    "You turn away from it and head down an aisle more suited to your age, where you spend some time reading titles and a few back cover descriptions to get your mind off things."
-    "Your browsing leads you down each aisle until you reach the last one, where you discover a young mouse sitting on the floor among a pile of books."
-    "She seems to be so engrossed in the book in her hands, she doesn't notice of your presence."
-    "You consider leaving so as to not disturb her, but then you spot the poorly lit sign indicating that this is the horror section."
-    "This would be where where the cryptids book and any others similar to it would be found, right?"
-    "You curiously enter the aisle and make your way through it, scouring the titles."
-    "You keep an eye out for anything related to cryptids, trying not to make any noise."
-    "As you're perusing a shelf, you feel your leg bump into something and hear a startled squeak from beside you."
+    #"Here the walls are painted a salmon pink and minty green and the lights are brighter. It no longer has that regal feeling of the first floor, but it's still warm and comforting here."
+    #"Desks with computers line the nearest wall and lead into the children's book section, as evidenced by the Charity Bearity mural thing in the corner."
+    #"You turn away from it and head down an aisle more suited to your age, where you spend some time reading titles and a few back cover descriptions to get your mind off things."
+    #"Your browsing leads you down each aisle until you reach the last one, where you discover a young mouse sitting on the floor among a pile of books."
+    #"She seems to be so engrossed in the book in her hands, she doesn't notice of your presence."
+    #"You consider leaving so as to not disturb her, but then you spot the poorly lit sign indicating that this is the horror section."
+    #"This would be where where the cryptids book and any others similar to it would be found, right?"
+    #"You curiously enter the aisle and make your way through it, scouring the titles."
+    #"You keep an eye out for anything related to cryptids, trying not to make any noise."
+    #"As you're perusing a shelf, you feel your leg bump into something and hear a startled squeak from beside you."
 
-    show lori anxious3 at left with dissolve:
-        xzoom -1
+    #show lori anxious3 at left with dissolve:
+    #    xzoom -1
 
-    "You look down and see the mouse girl pressed up against the bookshelf, frozen in place with the look of a deer caught in the headlights."
-    "You step back and clear your throat, about to say \"Excuse me\" when suddenly she lets out the breath she'd been holding in."
+    #"You look down and see the mouse girl pressed up against the bookshelf, frozen in place with the look of a deer caught in the headlights."
+    #"You step back and clear your throat, about to say \"Excuse me\" when suddenly she lets out the breath she'd been holding in."
 
-    show lori breath flip
+    #show lori breath flip
 
-    lori "*Huff huff huff* Sorry, sorry!"
+    #lori "*Huff huff huff* Sorry, sorry!"
 
-    show lori sad2 flip
+    #show lori sad2 flip
 
-    "She hastily shovels her books aside so you can get past."
+    #"She hastily shovels her books aside so you can get past."
 
-    player "No, I'm the one who should be apologizing..."
+    #player "No, I'm the one who should be apologizing..."
 
-    show lori anxious3 flip
+    #show lori anxious3 flip
 
-    "She glances back up to you."
+    #"She glances back up to you."
 
-    lori "Wait a minute... Haven't I seen you before?"
+    #lori "Wait a minute... Haven't I seen you before?"
 
-    "Your memory finally catches up and you recognize her as the girl who was listening to that weird music on the ride into town."
+    #"Your memory finally catches up and you recognize her as the girl who was listening to that weird music on the ride into town."
 
-    lori "You were on the bus the other day, weren't you?"
+    #lori "You were on the bus the other day, weren't you?"
 
     # if player asked her to turn down music and was rude:
-    if loriInteractionRude == True:
+    #if loriInteractionRude == True:
 
-        player "Oh yeah, I remember you!"
-        player "I think your music is what's been giving me nightmares lately."
+        #player "Oh yeah, I remember you!"
+        #player "I think your music is what's been giving me nightmares lately."
 
-        show lori sad flip
+        #show lori sad flip
 
-        lori "I just keep getting in your way I guess..."
+        #lori "I just keep getting in your way I guess..."
 
-        "She mumbles, looking away."
-        "You shrink down, realizing how rude you're being."
-        "You should try being more amicable."
-        "And if that doesn't work, you could always just leave her alone."
-        "The girl clears her throat and looks back up to you."
+        #"She mumbles, looking away."
+        #"You shrink down, realizing how rude you're being."
+        #"You should try being more amicable."
+        #"And if that doesn't work, you could always just leave her alone."
+        #"The girl clears her throat and looks back up to you."
 
-        show lori anxious2 flip
+        #show lori anxious2 flip
 
-        lori "So are you visiting Possum Springs or something?"
+        #lori "So are you visiting Possum Springs or something?"
 
-        player "I just moved in actually."
-        player "My name's [name]."
+        #player "I just moved in actually."
+        #player "My name's [name]."
 
-        lori "Lori."
+        #lori "Lori."
 
-        "You squat down and crane your neck to read the titles of the books in her little pile."
+        #"You squat down and crane your neck to read the titles of the books in her little pile."
 
-        player "Whatcha reading?"
+        #player "Whatcha reading?"
 
-        show lori neutral flip
+        #show lori neutral flip
 
-        "She seems to lighten up in response to your interest in her reading material."
+        #"She seems to lighten up in response to your interest in her reading material."
 
-        lori "Oh these? Just some spooky stories to read in the dark."
+        #lori "Oh these? Just some spooky stories to read in the dark."
 
-        player "You a big horror fan?"
+        #player "You a big horror fan?"
 
-        lori "Well, I *am* going to film school to make horror movies."
+        #lori "Well, I *am* going to film school to make horror movies."
 
-        player "Really? What kind of movies do you watch?"
+        #player "Really? What kind of movies do you watch?"
 
-        show lori nervous2 flip
+        #show lori nervous2 flip
 
-        lori "Uh, scary ones? Ones about existential dread and incomprehensible terrors mostly but I also watch a ton of monster movies."
+        #lori "Uh, scary ones? Ones about existential dread and incomprehensible terrors mostly but I also watch a ton of monster movies."
 
-        player "Nice! That reminds me, I just returned a book on monsters. \"Cryptids of the Western Hemisphere\" is what it was called I think."
+        #player "Nice! That reminds me, I just returned a book on monsters. \"Cryptids of the Western Hemisphere\" is what it was called I think."
 
-        show lori neutral flip
+        #show lori neutral flip
 
-        "Lori's eyes go wide in excitement."
+        #"Lori's eyes go wide in excitement."
 
-        lori "I've been looking for that book for forever! I used to check it out all the time when I was a kid!"
-        lori "It's kind of a cliché but my favorite cryptid is the skinwalker. The stories about them always felt the most realistic, even if they did get samey."
+        #lori "I've been looking for that book for forever! I used to check it out all the time when I was a kid!"
+        #lori "It's kind of a cliché but my favorite cryptid is the skinwalker. The stories about them always felt the most realistic, even if they did get samey."
 
-        player "Yeah? Mine's uh, the Jersey Devil. It's supposed to live around this area haha."
+        #player "Yeah? Mine's uh, the Jersey Devil. It's supposed to live around this area haha."
 
-        lori "That's true!"
-        lori "I tried hunting for it when I was younger. I'm still not convinced it won't show up out of nowhere one day."
+        #lori "That's true!"
+        #lori "I tried hunting for it when I was younger. I'm still not convinced it won't show up out of nowhere one day."
 
-        "You can tell she's really into this kind of stuff. Her ears are perked up and her voice is eager to go on and on about it."
-        "You listen to her ramble about scary things, just smiling and nodding your head until she asks a question."
+        #"You can tell she's really into this kind of stuff. Her ears are perked up and her voice is eager to go on and on about it."
+        #"You listen to her ramble about scary things, just smiling and nodding your head until she asks a question."
 
-        lori "Hey, have you seen the movie The Nightmare Before Longest Night?"
-        lori "Some friends of mine are throwing a little party this evening at the bakery and we're gonna watch it."
-        lori "And I figured since you're new in town and like spooky things you might wanna come?"
+        #lori "Hey, have you seen the movie The Nightmare Before Longest Night?"
+        #lori "Some friends of mine are throwing a little party this evening at the bakery and we're gonna watch it."
+        #lori "And I figured since you're new in town and like spooky things you might wanna come?"
 
-        player "Sure, that'll be fun!"
+        #player "Sure, that'll be fun!"
 
-        lori "Awesome! See you there!"
+        #lori "Awesome! See you there!"
 
-        player "You bet!"
-        player "I guess I'll let you get back to your books now. See you later!"
+        #player "You bet!"
+        #player "I guess I'll let you get back to your books now. See you later!"
 
 
 
     # if player changed seats without talking to her
-    if loriInteractionNull == True:
+    #if loriInteractionNull == True:
 
-        player "Oh yeah, I remember you!"
-        player "Do you live here? I just moved in the other day."
+        #player "Oh yeah, I remember you!"
+        #player "Do you live here? I just moved in the other day."
 
-        show lori neutral flip
+        #show lori neutral flip
 
-        lori "Yup! Been here my whole life til I started going to film school a few months ago. I'm here on break now."
+        #lori "Yup! Been here my whole life til I started going to film school a few months ago. I'm here on break now."
 
-        player "Nice! What kind of films do you like?"
+        #player "Nice! What kind of films do you like?"
 
-        lori "Most kinds, but horror in particular. Like, existential dread and incomprehensible terrors but regular monster movies are cool too!"
+        #lori "Most kinds, but horror in particular. Like, existential dread and incomprehensible terrors but regular monster movies are cool too!"
 
-        player "Yeah I noticed you have a knack for horror. Funny enough, I just got finished returning a book on cryptids."
+        #player "Yeah I noticed you have a knack for horror. Funny enough, I just got finished returning a book on cryptids."
 
-        "You squat down and pick up a book from the pile scattered on the floor, reading the title. \"Picnic by the Roadside.\""
+        #"You squat down and pick up a book from the pile scattered on the floor, reading the title. \"Picnic by the Roadside.\""
 
-        lori "It wouldn't happen to have been \"Cryptids of the Western Hemisphere\" would it?"
+        #lori "It wouldn't happen to have been \"Cryptids of the Western Hemisphere\" would it?"
 
-        player "How'd you know?"
+        #player "How'd you know?"
 
-        lori "I've been looking for that book forever! I used to check it out all the time as a kid but I haven't seen it in a while. It's one of the best encyclopedias on cryptids!"
+        #lori "I've been looking for that book forever! I used to check it out all the time as a kid but I haven't seen it in a while. It's one of the best encyclopedias on cryptids!"
 
-        player "Hopefully they'll put it on the shelf soon and you can snag it before anyone else does."
+        #player "Hopefully they'll put it on the shelf soon and you can snag it before anyone else does."
 
-        lori "That would make my day."
-        lori "What's your favorite cryptid?"
-        lori "I know it's kind of cliché but mine's the skinwalker. The stories about them always felt the most realistic, even if they did get samey."
+        #lori "That would make my day."
+        #lori "What's your favorite cryptid?"
+        #lori "I know it's kind of cliché but mine's the skinwalker. The stories about them always felt the most realistic, even if they did get samey."
 
-        player "Yeah? Mine's uh, the Jersey Devil. It's supposed to live around this area haha."
+        #player "Yeah? Mine's uh, the Jersey Devil. It's supposed to live around this area haha."
 
-        lori "That's true!"
-        lori "I tried hunting for it when I was younger. I'm still not convinced it won't show up out of nowhere one day."
+        #lori "That's true!"
+        #lori "I tried hunting for it when I was younger. I'm still not convinced it won't show up out of nowhere one day."
 
-        "You can tell she's really into this kind of stuff. Her ears are perked up and her voice is eager to go on and on about it."
-        "You listen to her ramble about scary things, just smiling and nodding your head until she asks a question."
+        #"You can tell she's really into this kind of stuff. Her ears are perked up and her voice is eager to go on and on about it."
+        #"You listen to her ramble about scary things, just smiling and nodding your head until she asks a question."
 
-        lori "Hey, have you seen the movie The Nightmare Before Longest Night?"
-        lori "Some friends of mine are throwing a little party this evening at the bakery and we're gonna watch it."
-        lori "And I figured since you're new in town and like spooky things you might wanna come?"
+        #lori "Hey, have you seen the movie The Nightmare Before Longest Night?"
+        #lori "Some friends of mine are throwing a little party this evening at the bakery and we're gonna watch it."
+        #lori "And I figured since you're new in town and like spooky things you might wanna come?"
 
-        player "Sure, that'll be fun!"
+        #player "Sure, that'll be fun!"
 
-        lori "Awesome!"
-        lori "Before I forget, what's your name?"
+        #lori "Awesome!"
+        #lori "Before I forget, what's your name?"
 
-        player "[name]."
+        #player "[name]."
 
-        lori "Lori."
+        #lori "Lori."
 
-        player "Nice to meet you Lori!"
+        #player "Nice to meet you Lori!"
 
-        lori "Likewise!"
+        #lori "Likewise!"
 
-        player "I guess I'll let you get back to your books now. See you later!"
+        #player "I guess I'll let you get back to your books now. See you later!"
 
 
     # if player asked about the music and was bold
-    if loriInteractionBold == True:
+    #if loriInteractionBold == True:
 
-        player "Hey! What a coincidence seeing you here!"
+        #player "Hey! What a coincidence seeing you here!"
 
-        lori "Not really. Possum Springs is like, really small. We would have run into each other sooner or later."
+        #lori "Not really. Possum Springs is like, really small. We would have run into each other sooner or later."
 
-        player "Seems like it! I don't believe I caught your name earlier. I'm [name]."
+        #player "Seems like it! I don't believe I caught your name earlier. I'm [name]."
 
-        lori "Nice to meet you again, [name]! I'm Lori!"
+        #lori "Nice to meet you again, [name]! I'm Lori!"
 
-        player "I still haven't gotten around to listening to that album yet but it's on my to do list. Been adjusting after moving in."
+        #player "I still haven't gotten around to listening to that album yet but it's on my to do list. Been adjusting after moving in."
 
-        show lori neutral flip
+        #show lori neutral flip
 
-        lori "I get that, resettling and stuff. I've been away from home for a while and I'm getting used to living next to train tracks again."
+        #lori "I get that, resettling and stuff. I've been away from home for a while and I'm getting used to living next to train tracks again."
 
-        player "Oof. I live a little bit away from them and have a bunch of trees to block out most of the noise but the trains are still pretty loud."
+        #player "Oof. I live a little bit away from them and have a bunch of trees to block out most of the noise but the trains are still pretty loud."
 
-        lori "To think I used to play and take naps and read books right between the tracks."
+        #lori "To think I used to play and take naps and read books right between the tracks."
 
-        player "That sounds... dangerous."
+        #player "That sounds... dangerous."
 
-        lori "It is."
+        #lori "It is."
 
-        player "Huh."
+        #player "Huh."
 
-        "You squat down and take a look at some of the books strewn about. Most of them are from this aisle apparently."
+        #"You squat down and take a look at some of the books strewn about. Most of them are from this aisle apparently."
 
-        player "So are you reading here?"
+        #player "So are you reading here?"
 
-        lori "Just some spooky stories to read in the dark. It's technically studying material."
+        #lori "Just some spooky stories to read in the dark. It's technically studying material."
 
-        player "Studying for what?"
+        #player "Studying for what?"
 
-        lori "Film school assignments!"
+        #lori "Film school assignments!"
 
-        "She holds up a book, \"Monster Design in Cinema.\""
+        #"She holds up a book, \"Monster Design in Cinema.\""
 
-        player "Cool! That reminds me, I just returned an encyclopedia on weird creatures. \"Cryptids of the Western Hemisphere\" is what it was called I think."
+        #player "Cool! That reminds me, I just returned an encyclopedia on weird creatures. \"Cryptids of the Western Hemisphere\" is what it was called I think."
 
-        "Lori's eyes go wide in excitement."
+        #"Lori's eyes go wide in excitement."
 
-        lori "I've been looking for that book for forever! I used to check it out all the time when I was a kid!"
-        lori "It's kind of a cliché but my favorite cryptid is the skinwalker. The stories about them always felt the most realistic, even if they did get samey."
+        #lori "I've been looking for that book for forever! I used to check it out all the time when I was a kid!"
+        #lori "It's kind of a cliché but my favorite cryptid is the skinwalker. The stories about them always felt the most realistic, even if they did get samey."
 
-        player "Yeah? Mine's uh, the Jersey Devil. It's supposed to live around this area haha."
+        #player "Yeah? Mine's uh, the Jersey Devil. It's supposed to live around this area haha."
 
-        lori "That's true!"
-        lori "I tried hunting for it when I was younger. I'm still not convinced it won't show up out of nowhere one day."
+        #lori "That's true!"
+        #lori "I tried hunting for it when I was younger. I'm still not convinced it won't show up out of nowhere one day."
 
-        "You can tell she's really into this kind of stuff. Her ears are perked up and her voice is eager to go on and on about it."
-        "You listen to her ramble about scary things, just smiling and nodding your head until she asks a question."
+        #"You can tell she's really into this kind of stuff. Her ears are perked up and her voice is eager to go on and on about it."
+        #"You listen to her ramble about scary things, just smiling and nodding your head until she asks a question."
 
-        lori "Hey, have you seen the movie The Nightmare Before Longest Night?"
-        lori "Some friends of mine are throwing a little party this evening at the bakery and we're gonna watch it."
-        lori "And I figured since you're new in town and like spooky things you might wanna come?"
+        #lori "Hey, have you seen the movie The Nightmare Before Longest Night?"
+        #lori "Some friends of mine are throwing a little party this evening at the bakery and we're gonna watch it."
+        #lori "And I figured since you're new in town and like spooky things you might wanna come?"
 
-        player "Sure, that'll be fun!"
+        #player "Sure, that'll be fun!"
 
-        lori "Awesome!"
+        #lori "Awesome!"
 
-        player "I guess I'll let you get back to your books now. See you later!"
+        #player "I guess I'll let you get back to your books now. See you later!"
 
 
 
-    "You give her a friendly smile and stand back up."
+    #"You give her a friendly smile and stand back up."
 
-    lori "Bye!"
+    #lori "Bye!"
 
-    "She waves a tiny paw at you then resumes reading while you scoot around her and out of the aisle."
+    #"She waves a tiny paw at you then resumes reading while you scoot around her and out of the aisle."
 
-    hide lori with dissolve
+    #hide lori with dissolve
 
-    "Where to now?"
-    "There's still another floor to explore. You've just about exhausted your options on this floor so it's time to head up."
-    "The elevator rattles louder this time as its doors open and close, making you question just how safe this thing really is."
+    #"Where to now?"
+    #"There's still another floor to explore. You've just about exhausted your options on this floor so it's time to head up."
+    #"The elevator rattles louder this time as its doors open and close, making you question just how safe this thing really is."
 
-    stop music fadeout 2.0
+    #stop music fadeout 2.0
 
-    "Safe enough to get you to the third floor unharmed is the answer you get soon enough."
-    "Dust floats through the air, tickling your nostrils as soon as the elevator doors open."
-    "The lighting on this floor is much more subdued and the walls are painted a dark blue. "
-    "You creep forward, wondering if there's anybody up here."
-    "It's dead silent save for the sounds of the heating unit. You pass by each aisle and confirm you're alone."
-    "Come to think of it, this whole building is pretty empty. It's just you, Selmers, and Lori, each on different floors."
-    "Selmers was right about not many people using the library these days."
-    "Getting back to the matter at hand, you wonder what the purpose of this floor in particular is."
-    "A quick look around reveals it's for really old media and records apparently."
-    "Things like last century's yearbooks, outdated almanacs, newspaper clippings, and even some tomes that remind you of the ones back home."
-    "As you're scouting the area, something catches your eye: a big glowing box on one of the desks."
-    "It looks like one of those old tube computer monitors, but even bulkier."
-    "And warmer."
-    "You can feel the heat coming off it from a few feet away."
-    "This must be one of those microfilm projector things."
-    "A microfiche, you think it's called."
-    "There's no film loaded into it though so there's nothing on the screen."
-    "Someone must have forgotten to turn it off when they used it last."
-    "You flip the power switch off, plunging the room into near total darkness."
-    "Welp, that about concludes your tour of the library today."
-    "You make your way back to the elevator and return to the ground floor. Selmers should have your card ready by now."
-    "As you walk up to the counter empty handed, the bear looks up with a casual grin."
+    #"Safe enough to get you to the third floor unharmed is the answer you get soon enough."
+    #"Dust floats through the air, tickling your nostrils as soon as the elevator doors open."
+    #"The lighting on this floor is much more subdued and the walls are painted a dark blue. "
+    #"You creep forward, wondering if there's anybody up here."
+    #"It's dead silent save for the sounds of the heating unit. You pass by each aisle and confirm you're alone."
+    #"Come to think of it, this whole building is pretty empty. It's just you, Selmers, and Lori, each on different floors."
+    #"Selmers was right about not many people using the library these days."
+    #"Getting back to the matter at hand, you wonder what the purpose of this floor in particular is."
+    #"A quick look around reveals it's for really old media and records apparently."
+    #"Things like last century's yearbooks, outdated almanacs, newspaper clippings, and even some tomes that remind you of the ones back home."
+    #"As you're scouting the area, something catches your eye: a big glowing box on one of the desks."
+    #"It looks like one of those old tube computer monitors, but even bulkier."
+    #"And warmer."
+    #"You can feel the heat coming off it from a few feet away."
+    #"This must be one of those microfilm projector things."
+    #"A microfiche, you think it's called."
+    #"There's no film loaded into it though so there's nothing on the screen."
+    #"Someone must have forgotten to turn it off when they used it last."
+    #"You flip the power switch off, plunging the room into near total darkness."
+    #"Welp, that about concludes your tour of the library today."
+    #"You make your way back to the elevator and return to the ground floor. Selmers should have your card ready by now."
+    #"As you walk up to the counter empty handed, the bear looks up with a casual grin."
 
-    show selma neutral at right with dissolve
+    #show selma neutral at right with dissolve
 
-    selma "Find what you were looking for?"
+    #selma "Find what you were looking for?"
 
-    player "Not quite, but that's more my fault than the library's."
+    #player "Not quite, but that's more my fault than the library's."
 
-    selma "If you're looking for a book in particular, I can help you find it if we have it."
+    #selma "If you're looking for a book in particular, I can help you find it if we have it."
 
-    player "Thanks, I'll keep that in mind."
+    #player "Thanks, I'll keep that in mind."
 
-    selma "I also got your card printed. Here ya go."
+    #selma "I also got your card printed. Here ya go."
 
-    "She slides the card over the counter."
+    #"She slides the card over the counter."
 
-    selma "It expires three years from today, or one year after your last check out. Whichever comes first."
+    #selma "It expires three years from today, or one year after your last check out. Whichever comes first."
 
-    player "Thank you!"
+    #player "Thank you!"
 
-    selma "Wish I got paid commission for these. But I don't. Haha."
+    #selma "Wish I got paid commission for these. But I don't. Haha."
 
-    player "How often do you convince someone to sign up for a card?"
+    #player "How often do you convince someone to sign up for a card?"
 
-    selma "Almost as often as someone new comes in."
-    selma "I have experience in sales."
+    #selma "Almost as often as someone new comes in."
+    #selma "I have experience in sales."
 
-    player "Wow."
+    #player "Wow."
 
-    selma "And if you don't mind me trying to sell you on something else, the library's hosting an event this coming Tuesday at 4:00PM where we read books aloud to small children."
-    selma "We're short on staff so we're asking for volunteers."
-    selma "It'd be nice if you could, y'know, come and read for the kids. We'll have juice and cookies too."
+    #selma "And if you don't mind me trying to sell you on something else, the library's hosting an event this coming Tuesday at 4:00PM where we read books aloud to small children."
+    #selma "We're short on staff so we're asking for volunteers."
+    #selma "It'd be nice if you could, y'know, come and read for the kids. We'll have juice and cookies too."
 
-    menu:
-        "I'll think about it.":
-            $ selmaNeutral = True
+    #menu:
+        #"I'll think about it.":
+            #$ selmaNeutral = True
 
-            player "I'll think about it."
+            #player "I'll think about it."
 
-            selma "That's better than a flat out no I guess."
+            #selma "That's better than a flat out no I guess."
 
-            "You can't help but feel a twinge of guilt. You look away momentarily, mulling over whether you should go or not."
+            #"You can't help but feel a twinge of guilt. You look away momentarily, mulling over whether you should go or not."
 
-            selma "Anyway is that all I can do for you?"
+            #selma "Anyway is that all I can do for you?"
 
-            "You refocus your attention back to her."
+            #"You refocus your attention back to her."
 
-            player "Oh, yeah. Thanks, have a nice day."
+            #player "Oh, yeah. Thanks, have a nice day."
 
-            selma "You too."
+            #selma "You too."
 
-        "Sorry, don't think I can make it.":
-            $ selmaBad = True
+        #"Sorry, don't think I can make it.":
+            #$ selmaBad = True
 
-            player "Sorry, don't think I can make it."
+            #player "Sorry, don't think I can make it."
 
-            selma "I expected as much. Don't worry, we'll find someone else."
-            selma "Or I'll just pull double duty like last time."
+            #selma "I expected as much. Don't worry, we'll find someone else."
+            #selma "Or I'll just pull double duty like last time."
 
-            player "That understaffed, huh?"
+            #player "That understaffed, huh?"
 
-            selma "Yup."
+            #selma "Yup."
 
-            "You can't help but feel some sympathy toward her. Maybe you could come out and help for an hour or two."
+            #"You can't help but feel some sympathy toward her. Maybe you could come out and help for an hour or two."
 
-            selma "Well if you change your mind, let me know."
+            #selma "Well if you change your mind, let me know."
 
-            player "Will do."
+            #player "Will do."
 
-            selma "Anyway, do you need assistance with anything else?"
+            #selma "Anyway, do you need assistance with anything else?"
 
-            player "Nope. I'm good, thanks."
+            #player "Nope. I'm good, thanks."
 
-            selma "K. Have a nice day."
+            #selma "K. Have a nice day."
 
-            player "You too."
+            #player "You too."
 
-        "I'd be happy to!":
-            player "I'd be happy to!"
-            $ selmaGood = True
+        #"I'd be happy to!":
+            #player "I'd be happy to!"
+            #$ selmaGood = True
 
-            selma "That- was not the response I was expecting. You sure? Those kids can be real punks sometimes."
+            #selma "That- was not the response I was expecting. You sure? Those kids can be real punks sometimes."
 
-            player "It's no trouble, I can handle them."
+            #player "It's no trouble, I can handle them."
 
-            selma "If you say so. Let me know if you change your mind later."
+            #selma "If you say so. Let me know if you change your mind later."
 
-            player "Sure."
+            #player "Sure."
 
-            selma "Thanks though. It means a lot and it would be cool seeing you here."
+            #selma "Thanks though. It means a lot and it would be cool seeing you here."
 
-            "She has a genuinely appreciative smile on her face, but there's something else behind it you can't quite grasp."
-            "Does she just want you to come help out or is there more to it?"
+            #"She has a genuinely appreciative smile on her face, but there's something else behind it you can't quite grasp."
+            #"Does she just want you to come help out or is there more to it?"
 
-            selma "Anyway is there anything else I can do for you?"
+            #selma "Anyway is there anything else I can do for you?"
 
-            "You refocus your attention back to the conversation at hand."
+            #"You refocus your attention back to the conversation at hand."
 
-            player "Oh yeah, no I'm good."
+            #player "Oh yeah, no I'm good."
 
-            selma "Ok. Hope you have a nice day!"
+            #selma "Ok. Hope you have a nice day!"
 
-            player "Thanks, you too!"
+            #player "Thanks, you too!"
 
-    hide selma with dissolve
+    #hide selma with dissolve
 
-    scene bg bakery with dissolve
+    #scene bg bakery with dissolve
 
-    "On your way home, you think about how surprisingly lively Possum Springs is."
-    "Already you've been invited to several events and met some pretty cool people."
-    "You never imagined how much happier you'd be living out here."
-    "When you get to your house, you decide to make some lunch and chill out until evening."
-    "Nightfall creeps up on you quickly and you suddenly realize you don't have a specific time to be at the bakery."
-    "Wait a minute, bakery? Like the one Gregg and Angus live above?"
-    "Surely they'd know something about a party underneath their apartment."
-    "You shoot them both a text and wait a while."
-    "No response."
-    "Screw it, you should just head out now. Better to be early than to arrive after the party's over."
-    "You hastily freshen up, then hop on your bike and ride into town."
-    "As you pull up to the store, you hear the final notes of a song blasting from inside, rattling the windows."
-    "Bright light leaking through inhibits your view of the interior until you step inside and your eyes adjust."
+    #"On your way home, you think about how surprisingly lively Possum Springs is."
+    #"Already you've been invited to several events and met some pretty cool people."
+    #"You never imagined how much happier you'd be living out here."
+    #"When you get to your house, you decide to make some lunch and chill out until evening."
+    #"Nightfall creeps up on you quickly and you suddenly realize you don't have a specific time to be at the bakery."
+    #"Wait a minute, bakery? Like the one Gregg and Angus live above?"
+    #"Surely they'd know something about a party underneath their apartment."
+    #"You shoot them both a text and wait a while."
+    #"No response."
+    #"Screw it, you should just head out now. Better to be early than to arrive after the party's over."
+    #"You hastily freshen up, then hop on your bike and ride into town."
+    #"As you pull up to the store, you hear the final notes of a song blasting from inside, rattling the windows."
+    #"Bright light leaking through inhibits your view of the interior until you step inside and your eyes adjust."
 
-    play music "music/whenskiesclear_loop.mp3" fadein .5
+    #play music "music/whenskiesclear_loop.mp3" fadein .5
 
-    "Standing on the stage are some familiar faces who are just as shocked to see you as you are to find them here."
-    "Gregg with a guitar, Angus at the mic, Mae on bass, and Bea from the hardware store next to a keyboard and laptop."
+    #"Standing on the stage are some familiar faces who are just as shocked to see you as you are to find them here."
+    #"Gregg with a guitar, Angus at the mic, Mae on bass, and Bea from the hardware store next to a keyboard and laptop."
 
-    show bea at right:
-        xalign 2.0
+    #show bea at right:
+        #xalign 2.0
 
-    show angus at left:
-        xalign -1.0
+    #show angus at left:
+        #xalign -1.0
 
-    "On the wall behind them is a DVD player screensaver being displayed from a projector mounted on the ceiling."
+    #"On the wall behind them is a DVD player screensaver being displayed from a projector mounted on the ceiling."
 
-    show lori neutral at right:
-        yalign loriheight
-        xalign 1.02
-    with dissolve
+    #show lori neutral at right:
+        #yalign loriheight
+        #xalign 1.02
+    #with dissolve
 
-    lori "[name]! You made it!"
+    #lori "[name]! You made it!"
 
     "You look to the source of the voice. You didn't even notice the mouse girl sitting at one of the tables. She stands up and runs toward you."
 
