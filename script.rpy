@@ -1351,13 +1351,21 @@ label day4:
             
             call libraryVisit1 from _call_libraryVisit1_2
             
-        "Play DnD with Gregg" if tabletopInvitation == True:
-            "Tonight is when Gregg said he's gathering people to play Conquests and Constellations."
-            "You spend the day relaxing and preparing for an epic evening."
+        
             
     if nightTime == True:
         "The sun has set and it's gotten dark out, but the night is still young. What should you do?"
         #"There's still some light in the day. What else should you do with your time?"
+        
+        menu:
+            "Play tabletop game with Gregg and co" if tabletopInvitation == True:
+                #give option to explore during the day and do the game at night
+                "Tonight is when Gregg said he's gathering people to play Conquests and Constellations."
+                "You head to the bakery where he said they're hosting it."
+                
+                
+                call cnc1
+        
         $ nightTime = False
     
     
