@@ -254,37 +254,36 @@ label townGerm1:
     germ "..."
     
     if metGerm == True:
-    
-    player "Oh hey... Germ, right? These your cats?"
-    
-    germ "Nah."
-    germ "But I look after them."
-    
-    #player "That's nice of you."
-    
-    #germ "I guess."
-    
-    "One of them brushes against Germ's leg and glares at you."
-    "You crouch down and hold your hand out but it doesn't come any closer."
-    
-    #player "Good kitty?"
-    
-    #germ "They're curious about you but don't trust you."
-    germ "You gotta feed them to gain their trust."
-    
-    player "Oh."
-    
-    germ "Bring food next time if you want to befriend them."
-    
-    hide germ with dissolve
-    
-    "Germ begins to walk towards a bicycle resting against a lamp post. There's a plastic bag hanging from one of the handle bars that appears to be full of more cat food."
-    
-    player "Er, see you later I guess?"
-    
-    "He either didn't hear you or purposely ignores you as he hops on the bike and rides away."
-    
-    
+        player "Oh hey... Germ, right? These your cats?"
+        
+        germ "Nah."
+        germ "But I look after them."
+        
+        #player "That's nice of you."
+        
+        #germ "I guess."
+        
+        "One of them brushes against Germ's leg and glares at you."
+        "You crouch down and hold your hand out but it doesn't come any closer."
+        
+        #player "Good kitty?"
+        
+        #germ "They're curious about you but don't trust you."
+        germ "You gotta feed them to gain their trust."
+        
+        player "Oh."
+        
+        germ "Bring food next time if you want to befriend them."
+        
+        hide germ with dissolve
+        
+        "Germ begins to walk towards a bicycle resting against a lamp post. There's a plastic bag hanging from one of the handle bars that appears to be full of more cat food."
+        
+        player "Er, see you later I guess?"
+        
+        "He either didn't hear you or purposely ignores you as he hops on the bike and rides away."
+        
+        
     else:
         player "Sorry, I didn't mean to scare you all. These your cats?"
     
@@ -341,7 +340,7 @@ label townAngus1:
     if metAngus == True:
         "As you wander through main street, you decide to find a place to sit for a rest. Luckily there's a conveniently placed bench nearby, and it looks like someone you know had the same idea as you."
         
-        show angus at center with dissolve
+        show angus neutral at center with dissolve
         
         angus "Hello there. It's nice to see you again."
         
@@ -528,23 +527,23 @@ label townBridge1:
     "At least the boot prints lead back the way they came so you know whatever crazy bad-ass came out here to do that didn’t fall. It was probably one of those hooligan children from town, with no sense of self-preservation."
     "You can’t believe someone would actually risk their life for fun like that. No way you’d do that. No matter how cool that is."
 
-	menu:
+    menu:
         "Fuck it we ball":
-		$ bold = bold + 1
-		$ chaotic = chaotic + 1
-		$ railingclimb = True
+            $ bold = bold + 1
+            $ chaotic = chaotic + 1
+            $ railingclimb = True
 
-		"In a moment of manic carelessness, you put one hand on the girder and hoist yourself shakily up onto the railing."
-        "The world tilts around you with vertigo, but for a split second, you are flooded with a powerful feeling of freedom and elation."
-        "Your life is in your own hands!"
-		"Then you slip and almost fall."
-		"You windmill your arms for a frantic moment before regaining your tenuous balance."
-		"Holy shit."
-		"You step off the railing and catch your breath. Fuck."
-		"Well it was cool for a second."
+            "In a moment of manic carelessness, you put one hand on the girder and hoist yourself shakily up onto the railing."
+            "The world tilts around you with vertigo, but for a split second, you are flooded with a powerful feeling of freedom and elation."
+            "Your life is in your own hands!"
+            "Then you slip and almost fall."
+            "You windmill your arms for a frantic moment before regaining your tenuous balance."
+            "Holy shit."
+            "You step off the railing and catch your breath. Fuck."
+            "Well it was cool for a second."
 
 
-        "Pussy out:"
+        "Pussy out":
             "Yeah you’d definitely slip and die, nobody would find your broken corpse at the bottom of the ditch for days, if not weeks. Maybe months."
             "You wonder if anyone would actually miss you if you did fall."
             "The thought depresses you."

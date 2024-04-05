@@ -236,6 +236,7 @@ label libraryVisit1:
                 #"It's faded. Last seen like 6 years ago. Yeah I don't think anyone's gonna find him."
                 jump bulletinboard1
             "Leave":
+                $ foundBandGig = True
                 "The rest of the pinned items are things like lawyers' business cards or ads for events from last summer."
                 "Well that was a waste of time."
                 "Oh, what's this?"

@@ -1,9 +1,12 @@
 label meetingAngus:
     if metBea == True and metAngus == True:
+        scene bg bakery_interior
+    
         "Your quest brings you back to the bakery."
         "It's the same as before but with the addition of a fox sitting atop the main counter, chatting with the baker."
     
-        show angus neutral at left with dissolve
+        show angus neutral at left with dissolve:
+            xzoom -1
     
         angus "Welcome back! Gregg, get off the counter, I have a customer."
     
