@@ -54,7 +54,7 @@ label cnc1:
     #13. Corvin the thief - a thief who believed in stealing everything - see everything through the lens of theivery. can steal the unstealable.
     
 
-    #selma shows up as a merchant/weakened wizard
+    #selma shows up as a merchant/nice weakened wizard
     #lori is the final boss
     
     scene bg bakery_interior with fade
@@ -85,7 +85,11 @@ label cnc1:
     
     "Angus guides you to the back room, letting you go in front of him."
     "You grip your pocket knife in your jacket pocket, half expecting to get jumped."
-    "To your surprise, you're welcomed with warm smiles by Gregg and the bear from the cafe sitting inside a cozy gaming room."
+    if metSelma == False:
+        "To your surprise, you're welcomed with warm smiles by Gregg and the bear from the cafe sitting inside a cozy gaming room."
+    else:
+        "To your surprise, you're welcomed with warm smiles by Gregg and Selmers sitting inside a cozy gaming room."
+    $ metSelma = True
     #say library if you've been to the library
     
     
@@ -146,6 +150,9 @@ label cnc1:
     angus "Cookies, check. Dice, check. Oh hold on..."
     
     "Angus pulls out his phone and types something. A moment later, dungeon synth starts playing from the speaker."
+    #use vylet pony's girls who are wizards intro
+    #musicians of ponyville
+    #potion seller
     
     angus "Aaaand ready."
     
@@ -492,14 +499,90 @@ label zodiacChoice:
     
     selma "Alright then, our story begins with a roguish fox, getting himself into trouble as usual, but this time he may be in over his head."
     selma "It was an unspoken rule in this town to keep your windows barred at night and whatever you do, don't look outside after dark. Especially don't *be* outside."
-    selma "Our first hero isn't very good at following directions however, and stumbles upon the local "
+    selma "Our first hero isn't very good at following directions however, and stumbles upon the a ritual being performed by the local wizard gang in the dead of night."
     
     gregg "\'Shit heck darn eff arse\' and several other obscenities spew from my mouth as I run for my life, through pitch black alleys and empty streets."
-    gregg "I chance a look behind me, seeing men in hooded black coats on my tail. They seem to phase through the walls, inching ever closer no matter where I run."
+    gregg "Using my superior flexibility and athleticism, I vault over barrels, climb up fences, and jump across rooftops. Anything to escape my pursuers."
     
-    selma "Eventually he's cornered"
+    selma "Chancing a look behind you, the men in dark hooded robes are right on your tail. 
+    selma "They seem to phase through walls and ceilings, inching ever closer no matter where you run."
     
-    #daylight comes and their pursuit ends
+    gregg "These guys don't give up, do they?"
+    
+    selma "They seemingly don't."
+    
+    gregg "Ohh am I supposed to fight them?"
+    
+    angus "One low level rogue versus several experienced spellcasters?"
+    
+    gregg "Come on, Selmers wouldn't let me die this early."
+    gregg "Enough of this nonsense! Come and get me, nerds!"
+    gregg "I brandish my iconic dagger, waving it at any wizard brave enough to step forth."
+    
+    selma "None of them step into range. They're busy charging up their spells from a safe distance."
+    selma "However..."
+    selma "A lone figure stands undetected, watching the scene unfold."
+    selma "This is where you come in, [name]. How do you wish to proceed?"
+    
+    menu:
+        "Direct confrontation":
+            player "I'll help Gregg out in this fight."
+        "Indirect assault":
+        "Distraction":
+    
+    
+    
+    
+    
+    #allow the player to intervene
+    
+    
+    selma "Eventually you're cornered, but just before they can fire off their destructive spells, a gleam of sunlight appears."
+    selma "Like phantoms, the wizards disappear into the shadows and make their retreat."
+    selma "The rogue waits only to catch his breath, then hurriedly makes his way to the only person he knows can help him."
+    
+    gregg "Angus!"
+    
+    angus "What?"
+    
+    gregg "No, I'm saying you're who can help me."
+    
+    angus "Oh right. Probably."
+    
+    selma "Gregg arrives at an apartment. The door is locked."
+    
+    gregg "I frantically knock on the door"
+    
+    gregg "I kick down the door - wait, can I kick down the door?"
+    
+    selma "Roll for strength."
+    
+    $ roll = renpy.random.randint(1, 20)
+    
+    "Gregg picks up the 20 sided die and rolls it down the table."
+    
+    selma "[roll]."
+    
+    if roll < 5:
+        gregg "Aw man."
+    
+        selma "You raise your foot and bring it down on the heavy wooden door, but you boot slips and causes your heel to turn farther than it should."
+        selma "Your ankle is now sprained."
+    
+    elif roll < 13:
+        selma "Your boot collides with the door repeatedly, flexing the boards but comes just shy of kicking it down."
+        
+    elif roll < 20:
+        selma "Your boot comes down hard on the door, flinging it along its hinges inward."
+        
+    elif roll == 20:
+        selma "Your boot hits just the right spot with enough power to break it free from its hinges. The door goes flying inside the building."
+        
+    gregg "The commotion rouses a gruff bear"
+
+    gregg "Whew"
+    
+    
     #gregg on the run from cultists after witnessing a kidnapping and getting caught
     #he goes to angus, an adventurer, and asks him to take him far away
 

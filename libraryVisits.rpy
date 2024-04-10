@@ -8,6 +8,8 @@ label libraryVisit1:
     #"This is the most excited you've ever been to go to the library."
 
     scene bg library with fade
+    
+    
 
     play music "music/deweydecimal_loop.mp3" fadein 1.0
 
@@ -23,86 +25,173 @@ label libraryVisit1:
     "She looks up from her task as you approach."
 
     show selma neutral at right with dissolve
-
-    selma "Oh hey. It's you."
-
-    player "Hey."
-    player "You're... Selmers, right?"
-
-    "Her carefree demeanor wavers slightly and there's a hint of disdain in her voice."
-
-    selma "That's what most folks call me."
-    selma "I remember seeing you at Posspresso, but I didn't get your name."
-
-    player "[name]."
-
-    selma "Nice to officially meet you, [name]."
-    selma "Welcome to the Possum Springs Public Library. Is there anything I can do for you?"
-
-    "You take one last look at the book in your hand then slide it over the counter."
-
-    player "I found a book that belongs here and wanted to return it."
-
-    "Selmers picks up the book and gives it a look over with an intrigued expression before scanning it into the system."
-    "She rotates her chair to face the computer monitor and clicks the mouse a few times."
-
-    selma "Whoa, this was checked out way before I even started working here."
-    selma "Where'd you find this?"
     
-    player "It was in my house. I just moved in and the previous owner must have left it behind."
-
-    #player "I found it...uh..."
-
-    #menu:
-    #    "Left in an abandoned house":
-    #        player "...left in an abandoned house. Was just lying there, and I figured you'd probably want it back!"
-    #    "In my new home":
-    #        player "...in my new home. I just moved into Possum Springs, and I found this lying around the house."
-
-    #suspicious selma sprite goes here
-    selma "Hmm."
     
-    #back to normal sprite
-    selma "That explains why it never found its way back here until now. Glad you returned it, it's the only copy we had."
+    if metSelma == False:
+        $ metSelma = True
 
-    player "I don't have to pay the late fee, do I?"
+        selma "Oh hey. It's you."
 
-    "That gets a chuckle out of her as she sets the book aside."
+        player "Hey."
+        player "You're... Selmers, right?"
 
-    selma "Nah, consider it on the house. It was probably written off as lost forever, so thanks for bringing it back."
+        "Her carefree demeanor wavers slightly and there's a hint of disdain in her voice."
 
-    player "No problem."
+        selma "That's what most folks call me."
+        selma "I remember seeing you at Posspresso, but I didn't get your name."
 
-    selma "Will that be all? Or would you like to get a library card while you're here?"
+        player "[name]."
 
-    "You raise a brow."
+        selma "Nice to officially meet you, [name]."
+        selma "Welcome to the Possum Springs Public Library. Is there anything I can do for you?"
 
-    player "How'd you know I didn't have one?"
+        "You take one last look at the book in your hand then slide it over the counter."
 
-    selma "I know everyone who has one."
-    selma "Possum Springs is a small town and the number of people here who have a library card in the current year is even smaller."
+        player "I found a book that belongs here and wanted to return it."
 
-    player "Oh."
-    player "I might as well, since I'm already here."
+        "Selmers picks up the book and gives it a look over with an intrigued expression before scanning it into the system."
+        "She rotates her chair to face the computer monitor and clicks the mouse a few times."
 
-    selma "I'll need you to fill out this form and show me a valid ID."
+        selma "Whoa, this was checked out way before I even started working here."
+        selma "Where'd you find this?"
+        
+        player "It was in my house. I just moved in and the previous owner must have left it behind."
 
-    "She pulls a sheet of paper out from a filing cabinet and pushes it toward you."
-    "You grab a pen from the holder and quickly fill it out."
-    "Once you're done, you pull out your driver's license and pass both it and the sheet back."
+        #player "I found it...uh..."
 
-    selma "Just have to type this in real quick..."
+        #menu:
+        #    "Left in an abandoned house":
+        #        player "...left in an abandoned house. Was just lying there, and I figured you'd probably want it back!"
+        #    "In my new home":
+        #        player "...in my new home. I just moved into Possum Springs, and I found this lying around the house."
 
-    "She looks over your license and makes a few keystrokes before handing it back."
+        #suspicious selma sprite goes here
+        selma "Hmm."
+        
+        #back to normal sprite
+        selma "That explains why it never found its way back here until now. Glad you returned it, it's the only copy we had."
 
-    selma "...and now all of this..."
+        player "I don't have to pay the late fee, do I?"
 
-    "She waves the application form in the air."
+        "That gets a chuckle out of her as she sets the book aside."
 
-    selma "...plus some more stuff, then scan it in and finally print your card from the office."
-    selma "You're welcome to explore for a bit while I do this. I'll have your card ready by the time you're done."
+        selma "Nah, consider it on the house. It was probably written off as lost forever, so thanks for bringing it back."
 
-    player "Okay! Be back in a bit."
+        player "No problem."
+
+        selma "Will that be all? Or would you like to get a library card while you're here?"
+
+        "You raise a brow."
+
+        player "How'd you know I didn't have one?"
+
+        selma "I know everyone who has one."
+        selma "Possum Springs is a small town and the number of people here who have a library card in the current year is even smaller."
+
+        player "Oh."
+        player "I might as well, since I'm already here."
+
+        selma "I'll need you to fill out this form and show me a valid ID."
+
+        "She pulls a sheet of paper out from a filing cabinet and pushes it toward you."
+        "You grab a pen from the holder and quickly fill it out."
+        "Once you're done, you pull out your driver's license and pass both it and the sheet back."
+
+        selma "Just have to type this in real quick..."
+
+        "She looks over your license and makes a few keystrokes before handing it back."
+
+        selma "...and now all of this..."
+
+        "She waves the application form in the air."
+
+        selma "...plus some more stuff, then scan it in and finally print your card from the office."
+        selma "You're welcome to explore for a bit while I do this. I'll have your card ready by the time you're done."
+
+        player "Okay! Be back in a bit."
+    else:
+        selma "Oh hey. It's you."
+
+        player "Hey Selmers!"
+        player "I didn't know you worked at the library."
+        
+        selma "I do haha."
+        selma "I came here so often they offered me a job one day."
+        
+        player "I wish every job worked that way."
+        
+        #selma "Think I could become an astronaut that way?"
+        
+        #player "If you showed up at the international space station on your own, you'd already be an astronaut."
+        
+        selma "Just gotta be persistent I guess."
+        selma "Anyway."
+        selma "Welcome to the Possum Springs Public Library. Is there anything I can do for you?"
+
+        "You take one last look at the book in your hand then slide it over the counter."
+
+        player "I found a book that belongs here and wanted to return it."
+
+        "Selmers picks up the book and gives it a look over with an intrigued expression before scanning it into the system."
+        "She rotates her chair to face the computer monitor and clicks the mouse a few times."
+
+        selma "Whoa, this was checked out way before I even started working here."
+        selma "Where'd you find this?"
+        
+        player "It was in my house. I just moved in and the previous owner must have left it behind."
+
+        #player "I found it...uh..."
+
+        #menu:
+        #    "Left in an abandoned house":
+        #        player "...left in an abandoned house. Was just lying there, and I figured you'd probably want it back!"
+        #    "In my new home":
+        #        player "...in my new home. I just moved into Possum Springs, and I found this lying around the house."
+
+        #suspicious selma sprite goes here
+        selma "Hmm."
+        
+        #back to normal sprite
+        selma "That explains why it never found its way back here until now. Glad you returned it, it's the only copy we had."
+
+        player "I don't have to pay the late fee, do I?"
+
+        "That gets a chuckle out of her as she sets the book aside."
+
+        selma "Nah, consider it on the house. It was probably written off as lost forever, so thanks for bringing it back."
+
+        player "No problem."
+
+        selma "Will that be all? Or would you like to get a library card while you're here?"
+
+        "You raise a brow."
+
+        player "How'd you know I didn't have one?"
+
+        selma "I know everyone who has one."
+        selma "Possum Springs is a small town and the number of people here who have a library card in the current year is even smaller."
+
+        player "Oh."
+        player "I might as well, since I'm already here."
+
+        selma "I'll need you to fill out this form and show me a valid ID."
+
+        "She pulls a sheet of paper out from a filing cabinet and pushes it toward you."
+        "You grab a pen from the holder and quickly fill it out."
+        "Once you're done, you pull out your driver's license and pass both it and the sheet back."
+
+        selma "Just have to type this in real quick..."
+
+        "She looks over your license and makes a few keystrokes before handing it back."
+
+        selma "...and now all of this..."
+
+        "She waves the application form in the air."
+
+        selma "...plus some more stuff, then scan it in and finally print your card from the office."
+        selma "You're welcome to explore for a bit while I do this. I'll have your card ready by the time you're done."
+
+        player "Okay! Be back in a bit."
 
     hide selma with dissolve
 
