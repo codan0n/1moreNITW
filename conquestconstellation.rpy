@@ -526,20 +526,97 @@ label zodiacChoice:
     
     menu:
         "Direct confrontation":
-            player "I'll help Gregg out in this fight."
+            player "I'll help Gregg out in this fight. I uhh swoop down and back him up?"
+            
+            angus "You should say something heroic."
+            
+            player "Okay umm..."
+            player "Leave the fox alone or pay with your lives?"
+            
+            gregg "That sounded kinda ominous."
+            
+            player "Don't complain! I'm trying to save you!"
+            
+            "You pick up the 20 sided die and roll in across the table."
+            
+            player "I cast punch on the nearest wizard!"
+            
+            $ roll = renpy.random.randint(1, 20)
+            
+            "The die rolls off the table. Selmers picks it up for you."
+            
+            selma "You rolled a [roll]."
+            
+            if roll < 4:
+                selma "In the darkness, you mistake Gregg for a wizard and punch him in the snout."
+                
+                gregg "Ow! Who's side are you on?!"
+                
+                player "Sorry."
+                
+                selma "If it's any consolation, now the wizards are confused who's side you're on as well."
+                selma "They ignore [player] for now and focus their spells on Gregg."
+                selma "Bolts of lightning go over his head, narrowly missing."
+                selma "I would caution against getting any closer out in the open. They simply hold the advantage with their longer range."
+                
+                gregg "What else am I supposed to do? I'm outnumbered and outranged!"
+                
+                player "Maybe you could sneak around them while I get their attention?"
+                
+                gregg "Excellent plan, kind stranger!"
+                gregg "I'll go around these barrels and go in for a backstab."
+                
+                player "And I'll just uh... sit here getting lightning bolts thrown at me."
+                
+                "Gregg picks up the die and rolls it."
+                
+                gregg "14. Come on, that's gotta be good enough for a successful sneak!"
+                
+                selma "It is."
+                selma "You keep to the shadows and flank around the fiendish group. They don't suspect a thing until one of them screams out, feeling the business end of your blade cut into his leg."
+                selma "His buddies turn around and spot Gregg. They angrily chant an incantation and direct their aim at the rogue..."
+                selma "...but before they can finish, the night sky brightens and beams of sunlight appear from over the horizon."
+                selma "Your enemies recoil and hiss in pain, melting into shadows that disperse."
+                
+                gregg "I catch my breath then turn to the stranger who helped me."
+                gregg "\'Are you alright? You can come out now, they're all gone.\'"
+                
+                player "I pop my head over the wooden crate I was taking cover behind."
+                player "Yeah, they didn't even scratch me. Name's [name] by the way."
+                
+                gregg "A pleasure to fight by your side, [name]! You might already know me by the wanted dead or alive signs around town Gregg the Great!"
+                
+                selma "They don't say that, they just say Gregg the nuissance."
+                
+                
+                player "\'So it was the sunlight that drove them away? We should be safe until sundown then.\'"
+                
+                
+                #gregg slices one's leg then sun rises and they disappear
+            
+            elif roll < 10:
+                selma "You direct your attack at a wizard but he deflects it with a ward spell."
+            
+            elif roll < 20:
+                selma "Before the poor wizard has a chance to react, you take a crack at his jaw, knocking him to the floor."
+            
+            elif roll = 20:
+                selma "You swiftly kick a wizard in the face, knocking him backward into a couple of his friends."
+            
+            
         "Indirect assault":
+            player "I hit them from afar"
         "Distraction":
+            player "I cause a distraction"
     
     
     
     
     
-    #allow the player to intervene
     
-    
-    selma "Eventually you're cornered, but just before they can fire off their destructive spells, a gleam of sunlight appears."
-    selma "Like phantoms, the wizards disappear into the shadows and make their retreat."
-    selma "The rogue waits only to catch his breath, then hurriedly makes his way to the only person he knows can help him."
+    #selma "Eventually you're cornered, but just before they can fire off their destructive spells, a gleam of sunlight appears."
+    #selma "Like phantoms, the wizards disappear into the shadows and make their retreat."
+    #selma "The rogue waits only to catch his breath, then hurriedly makes his way to the only person he knows can help him."
     
     gregg "Angus!"
     
@@ -579,6 +656,8 @@ label zodiacChoice:
         selma "Your boot hits just the right spot with enough power to break it free from its hinges. The door goes flying inside the building."
         
     gregg "The commotion rouses a gruff bear"
+    
+    angus "I'm \'gruff\'?"
 
     gregg "Whew"
     
@@ -592,7 +671,7 @@ label zodiacChoice:
     
     
     
-    
+    #germ shows up on the way to the mountains
     
     
     
