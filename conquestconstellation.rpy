@@ -69,7 +69,7 @@ label cnc1:
     
     show angus neutral with dissolve
     
-    angus "Hey there! Sorry, I went to the backroom for literally one minute and missed your entrance."
+    angus "Hey there! Sorry, I went to the backroom for literally one minute and missed your arrival."
     
     player "It's fine."
     player "Is it just us or..?"
@@ -257,7 +257,7 @@ label cnc1:
                 
                 player "Tell me more about those."
                 
-                selma "The fighter role is one who leads the party to victory through valor and bravery. resistance"
+                selma "The fighter role is one who leads the party to victory through valor and bravery."
                 selma "Thematically, your story will revolve around seeking freedom, resistance to your oppressors, and the thankless struggle of fighting for your beliefs."
                 
                 player "And the seer?"
@@ -306,7 +306,7 @@ label cnc1:
                 
                 player "Tell me more about those."
                 
-                selma "The fighter role is one who leads the party to victory through valor and bravery. resistance"
+                selma "The fighter role is one who leads the party to victory through valor and bravery."
                 selma "Thematically, your story will revolve around seeking freedom, resistance to your oppressors, and the thankless struggle of fighting for your beliefs."
                 
                 player "And the firemaker?"
@@ -364,132 +364,132 @@ label cnc1:
     selma "All characters have an important role to play for the success of your party's mission."
     selma "Gregg is a sneaky smooth-talker who can infiltrate any fortress. Angus's travel knowledge will keep your expedition running smoothly."
     selma "And you, [name], will be the glue that holds it all together and directs the party to their goal."
-    selma "We just need one last thing for character creation: what is your zodiac sign?"
-    selma "You can pick whatever you want but for this instance we decided to go with our real life zodiac constellations."
-    selma "This determines some minor skills, buffs, and themes."
-    
-$ zodiac = ""
-    
-label zodiacChoice:
-    menu:
-        "What is your zodiac?"
-        "Tollmetron":
-            $ zodiac = "tollmetron"
-            player "Tollmetron."
-            
-            selma "Oh dear, two tollmetron players in this instance..."
-            
-            player "Is that bad?"
-            
-            selma "Not necessarily... Unless you consider death following wherever you go to be bad."
-            
-            gregg "We're supposed to be solving murders though, right? So that might lead us right to the killers!"
-            
-            selma "Perhaps~"
-            #selma "But in this story you're chasing the death cult, so this might provide clues!"
-        "Rubello":
-            $ zodiac = "rubello"
-            
-            player "Rubello."
-            
-            selma "The firebreather... they got real creative with this one and determined that this would \'generally enhance your abilities in relation to your proximity to fire\' as per the guidebook."
-        "The Mice Writers":
-            $ zodiac = "micewriters"
-            
-            player "The Mice Writers"
-            
-            gregg "Hey me too!"
-            
-            player "What do I win?"
-            
-            selma "You'll have a heightened proficiency in linguistics and literature."
-            
-            gregg "Unfortunately this does not affect your grades in English class."
-        "The Broken Snake":
-            $ zodiac = "brokensnake"
-            player "The Broken Snake."
-            
-            selma "You can talk to animals. The Broken Snake was the first creature that talked. And was an animal. That's literally the rationale the guidebook gives for this ability."
-        "Quinona":
-            $ zodiac = "quinona"
-            player "Quinona."
-            
-            selma "You gain the talkative perk. Use it wisely."
-            
-            player "What does that mean?"
-            
-            angus "Gregg played with this one time. He abused it to ask endless questions and drive NPCs mad."
-            
-            selma "Along with the GM."
-        "Something else":
-            menu:
-                "What is your zodiac?"
-                "Mundy":
-                    $ zodiac = "mundy"
-                    player "Mundy."
-                    
-                    selma "While Mundy literally carries the world on his back, you carry it figuratively. Or more likely metanarratively."
-                    selma "Gameplay wise, status effects afflicted on you will affect everyone, friend or foe."
-                "Marmanodes":
-                    $ zodiac = "marmanodes"
-                    player "Marmanodes."
-                    
-                    selma "Royal blood makes you more charismatic and you're more likely to convince others to aide you."
-                "Lucio":
-                    $ zodiac = "lucio"
-                    player "Lucio."
-                    
-                    selma "Your ability is that you can't be kept down in combat."
-                    selma "Unless you're literally kept down like if you're pinned."
-                    selma "But otherwise if you're knocked out, you'll be back on your feet in no time."
-                "Invenerus":
-                    $ zodiac = "invenerus"
-                    player "Invenerus."
-                    
-                    selma "No way, me too!"
-                    selma "As the inventor of music, Invenerus bestows upon you bard powers. If you can come up with a rhyme related to your action, it'll add +1 to your roll."
-                "Ibon":
-                    $ zodiac = "ibon"
-                    player "Ibon."
-                    
-                    selma "Okay this one is a bit of a stretch but the official guidebook claims that Ibon had the power of hypnosis because he could teach fish to sing."
-                    selma "So now you get hypnosis."
-                "Something else":
-                    menu:
-                        "What is your zodiac?"
-                        "Harmonium":
-                            $ zodiac = "harmonium"
-                            player "Harmonium."
-                            
-                            selma "The head of singing angels grants you... the ability to make it stop raining."
-                            
-                            player "What."
-                            player "How is that useful?"
-                            
-                            selma "I dunno, I think the developers were running out of ideas when they got to this one."
-                        "The Fish":
-                            $ zodiac = "fish"
-                            player "The Fish."
-                            
-                            angus "Hey, same!"
-                            angus "Fish bros gotta stick together."
-                            
-                            selma "This one just means that your abilities are enhanced when you're in your home environment but they're worse in any other environment."
-                            
-                            angus "Like a fish in water versus on land."
-                            
-                            selma "Exactly!"
-                        "Corvin":
-                            $ zodiac = "corvin"
-                            player "Corvin."
-                            
-                            selma "Corvin gives you the ability to steal things that are otherwise unstealable."
-                            
-                            player "*Steals your heart*"
-                            
-                            gregg "Hey, give that back!"
-                        "Something else":
-                            jump zodiacChoice
+#    selma "We just need one last thing for character creation: what is your zodiac sign?"
+#    selma "You can pick whatever you want but for this instance we decided to go with our real life zodiac constellations."
+#    selma "This determines some minor skills, buffs, and themes."
+#    
+#$ zodiac = ""
+#    
+#label zodiacChoice:
+#    menu:
+#        "What is your zodiac?"
+#        "Tollmetron":
+#            $ zodiac = "tollmetron"
+#            player "Tollmetron."
+#            
+#            selma "Oh dear, two tollmetron players in this instance..."
+#            
+#            player "Is that bad?"
+#            
+#            selma "Not necessarily... Unless you consider death following wherever you go to be bad."
+#            
+#            gregg "We're supposed to be solving murders though, right? So that might lead us right to the killers!"
+#            
+#            selma "Perhaps~"
+#            #selma "But in this story you're chasing the death cult, so this might provide clues!"
+#        "Rubello":
+#            $ zodiac = "rubello"
+#            
+#            player "Rubello."
+#            
+#            selma "The firebreather... they got real creative with this one and determined that this would \'generally enhance your abilities in relation to your proximity to fire\' as per the guidebook."
+#        "The Mice Writers":
+#            $ zodiac = "micewriters"
+#            
+#            player "The Mice Writers"
+#            
+#            gregg "Hey me too!"
+#            
+#            player "What do I win?"
+#            
+#            selma "You'll have a heightened proficiency in linguistics and literature."
+#            
+#            gregg "Unfortunately this does not affect your grades in English class."
+#        "The Broken Snake":
+#            $ zodiac = "brokensnake"
+#            player "The Broken Snake."
+#            
+#            selma "You can talk to animals. The Broken Snake was the first creature that talked. And was an animal. That's literally the rationale the guidebook gives for this ability."
+#        "Quinona":
+#            $ zodiac = "quinona"
+#            player "Quinona."
+#            
+#            selma "You gain the talkative perk. Use it wisely."
+#            
+#            player "What does that mean?"
+#            
+#            angus "Gregg played with this one time. He abused it to ask endless questions and drive NPCs mad."
+#            
+#            selma "Along with the GM."
+#        "Something else":
+#            menu:
+#                "What is your zodiac?"
+#                "Mundy":
+#                    $ zodiac = "mundy"
+#                    player "Mundy."
+#                    
+#                    selma "While Mundy literally carries the world on his back, you carry it figuratively. Or more likely metanarratively."
+#                    selma "Gameplay wise, status effects afflicted on you will affect everyone, friend or foe."
+#                "Marmanodes":
+#                    $ zodiac = "marmanodes"
+#                    player "Marmanodes."
+#                    
+#                    selma "Royal blood makes you more charismatic and you're more likely to convince others to aide you."
+#                "Lucio":
+#                    $ zodiac = "lucio"
+#                    player "Lucio."
+#                    
+#                    selma "Your ability is that you can't be kept down in combat."
+#                    selma "Unless you're literally kept down like if you're pinned."
+#                    selma "But otherwise if you're knocked out, you'll be back on your feet in no time."
+#                "Invenerus":
+#                    $ zodiac = "invenerus"
+#                    player "Invenerus."
+#                    
+#                    selma "No way, me too!"
+#                    selma "As the inventor of music, Invenerus bestows upon you bard powers. If you can come up with a rhyme related to your action, it'll add +1 to your roll."
+#                "Ibon":
+#                    $ zodiac = "ibon"
+#                    player "Ibon."
+#                    
+#                    selma "Okay this one is a bit of a stretch but the official guidebook claims that Ibon had the power of hypnosis because he could teach fish to sing."
+#                    selma "So now you get hypnosis."
+#                "Something else":
+#                    menu:
+#                        "What is your zodiac?"
+#                        "Harmonium":
+#                            $ zodiac = "harmonium"
+#                            player "Harmonium."
+#                            
+#                            selma "The head of singing angels grants you... the ability to make it stop raining."
+#                            
+#                            player "What."
+#                            player "How is that useful?"
+#                            
+#                            selma "I dunno, I think the developers were running out of ideas when they got to this one."
+#                        "The Fish":
+#                            $ zodiac = "fish"
+#                            player "The Fish."
+#                            
+#                            angus "Hey, same!"
+#                            angus "Fish bros gotta stick together."
+#                            
+#                            selma "This one just means that your abilities are enhanced when you're in your home environment but they're worse in any other environment."
+#                            
+#                            angus "Like a fish in water versus on land."
+#                            
+#                            selma "Exactly!"
+#                        "Corvin":
+#                            $ zodiac = "corvin"
+#                            player "Corvin."
+#                            
+#                            selma "Corvin gives you the ability to steal things that are otherwise unstealable."
+#                            
+#                            player "*Steals your heart*"
+#                            
+#                            gregg "Hey, give that back!"
+#                        "Something else":
+#                            jump zodiacChoice
                     
     angus "Alright, it sounds like we've got characters and setting sorted out. Are you all ready to start?"
     
@@ -504,7 +504,7 @@ label zodiacChoice:
     gregg "\'Shit heck darn eff arse\' and several other obscenities spew from my mouth as I run for my life, through pitch black alleys and empty streets."
     gregg "Using my superior flexibility and athleticism, I vault over barrels, climb up fences, and jump across rooftops. Anything to escape my pursuers."
     
-    selma "Chancing a look behind you, the men in dark hooded robes are right on your tail. 
+    selma "Chancing a look behind you, the men in dark hooded robes are right on your tail."
     selma "They seem to phase through walls and ceilings, inching ever closer no matter where you run."
     
     gregg "These guys don't give up, do they?"
@@ -526,26 +526,45 @@ label zodiacChoice:
     
     menu:
         "Direct confrontation":
-            player "I'll help Gregg out in this fight. I uhh swoop down and back him up?"
+            player "I'll help Gregg out in this fight. I uhh swoop in and back him up?"
             
-            angus "You should say something heroic."
+            angus "You should say something heroic so he doesn't think you're one of them."
             
-            player "Okay umm..."
-            player "Leave the fox alone or pay with your lives?"
+            player "Okay how about..."
+            player "You look like you could use a little help?"
             
-            gregg "That sounded kinda ominous."
+            gregg "That's kinda cringe."
             
             player "Don't complain! I'm trying to save you!"
             
+            #throws a die in-universe
             "You pick up the 20 sided die and roll in across the table."
             
             player "I cast punch on the nearest wizard!"
             
-            $ roll = renpy.random.randint(1, 20)
+            $ roll = renpy.random.randint(1, 19)
             
             "The die rolls off the table. Selmers picks it up for you."
             
             selma "You rolled a [roll]."
+            
+            if roll < 4:
+                if cnc_class == "fighter":
+                    selma "I'll just uh, bump that up a few points thanks to your warrior class. Your combat skills should offset your luck some."
+                    
+                    $ roll = roll + 10
+            
+            elif roll < 10:
+                if cnc_class == "fighter":
+                    selma "I'll bump that up a bit because you're a warrior. Your combat skills should offset your luck some."
+                    
+                    $ roll = roll + 7
+            
+            elif roll < 20:
+                if cnc_class == "fighter":
+                    selma "I'll bump that up a bit because you're a warrior. Your combat skills should offset your luck some."
+                    
+                    $ roll = roll + 10
             
             if roll < 4:
                 selma "In the darkness, you mistake Gregg for a wizard and punch him in the snout."
@@ -557,59 +576,202 @@ label zodiacChoice:
                 selma "If it's any consolation, now the wizards are confused who's side you're on as well."
                 selma "They ignore [player] for now and focus their spells on Gregg."
                 selma "Bolts of lightning go over his head, narrowly missing."
-                selma "I would caution against getting any closer out in the open. They simply hold the advantage with their longer range."
-                
-                gregg "What else am I supposed to do? I'm outnumbered and outranged!"
-                
-                player "Maybe you could sneak around them while I get their attention?"
-                
-                gregg "Excellent plan, kind stranger!"
-                gregg "I'll go around these barrels and go in for a backstab."
-                
-                player "And I'll just uh... sit here getting lightning bolts thrown at me."
-                
-                "Gregg picks up the die and rolls it."
-                
-                gregg "14. Come on, that's gotta be good enough for a successful sneak!"
-                
-                selma "It is."
-                selma "You keep to the shadows and flank around the fiendish group. They don't suspect a thing until one of them screams out, feeling the business end of your blade cut into his leg."
-                selma "His buddies turn around and spot Gregg. They angrily chant an incantation and direct their aim at the rogue..."
-                selma "...but before they can finish, the night sky brightens and beams of sunlight appear from over the horizon."
-                selma "Your enemies recoil and hiss in pain, melting into shadows that disperse."
-                
-                gregg "I catch my breath then turn to the stranger who helped me."
-                gregg "\'Are you alright? You can come out now, they're all gone.\'"
-                
-                player "I pop my head over the wooden crate I was taking cover behind."
-                player "Yeah, they didn't even scratch me. Name's [name] by the way."
-                
-                gregg "A pleasure to fight by your side, [name]! You might already know me by the wanted dead or alive signs around town Gregg the Great!"
-                
-                selma "They don't say that, they just say Gregg the nuissance."
                 
                 
-                player "\'So it was the sunlight that drove them away? We should be safe until sundown then.\'"
-                
-                
-                #gregg slices one's leg then sun rises and they disappear
             
             elif roll < 10:
-                selma "You direct your attack at a wizard but he deflects it with a ward spell."
+                selma "You direct your attack at a wizard who got too close but he deflects it with a ward spell."
             
             elif roll < 20:
                 selma "Before the poor wizard has a chance to react, you take a crack at his jaw, knocking him to the floor."
             
-            elif roll = 20:
+            elif roll <= 20:
                 selma "You swiftly kick a wizard in the face, knocking him backward into a couple of his friends."
+                
             
+            
+            
+            #selma "I would caution against getting any closer out in the open. They simply hold the advantage with their longer range."
+            selma "You're both forced into cover behind some wooden crates as a volley of elemental magic is hurled your way."
+            
+            gregg "Thanks for the save! But uh, I think we're kinda screwed now."
+            
+            player "Maybe you could sneak around them while I get their attention?"
+            
+            gregg "Excellent plan, kind stranger!"
+            gregg "I'll stick to the shadows and go in for a backstab."
+            
+            player "And I'll just uh... sit here getting lightning bolts thrown at me."
+            
+            "Gregg picks up the die and rolls it."
+            
+            gregg "14. Come on, that's gotta be good enough for a successful sneak!"
+            
+            selma "It is."
+            selma "Gregg remains unseen as he flanks around the fiendish group. They don't suspect a thing until one of them screams out, feeling the business end of your blade cut into his leg."
+            selma "His buddies turn around and spot Gregg. They angrily chant an incantation and direct their aim at the rogue..."
+            selma "...but before they can finish, the night sky brightens and beams of sunlight appear from over the horizon."
+            selma "Your enemies recoil and hiss in pain, melting into shadows that disperse."
+            
+            gregg "I catch my breath then turn to the stranger who helped me."
+            gregg "\'Are you alright? You can come out now, they're all gone.\'"
+            
+            player "I pop my head over the wooden crate I was taking cover behind."
+            player "Yeah, they didn't even scratch me. Name's [name] by the way."
+            
+            gregg "A pleasure to fight by your side, [name]! You might already know me by the wanted dead or alive signs around town Gregg the Great!"
+            
+            selma "They don't say that, they just say Gregg the Nuissance."
+            
+            if cnc_class == "seer":
+                player "\'So it was the sunlight that drove them away? We should be safe until sundown then.\'"
+                
+                gregg "Ohh is that what happened? I thought they just got startled when I snuck up on them and decided to flee."
+                
+                player "I'm not gonna stick around and find out. They're probably regrouping and will hunt us down come sundown."
+                
+                gregg "Hmm... In that case, I think I know someone who can help us!"
+            else:
+                player "We should get out of here before reinforcements arrive."
+                
+                gregg "Good thinking! I'm gonna stop by a friend's place before skipping town entirely. He'll be able to help chart a course for me."
+                gregg "Since you bailed me out in that fight, you're welcome to come with. I could use a bodyguard hahaha!"
+                
+                player "Sounds like a plan. Who's this friend of yours?"
+                
             
         "Indirect assault":
-            player "I hit them from afar"
+            player "Hiden in the shadows, I pick up a nearby rock and throw it at a wizard."
+            
+            selma "Ooh, taking a more subtle approach, I like it!"
+            
+            player "No need to jump into the fray and put myself in danger just yet. I wanted to help but I'm not that committed."
+            
+            gregg "Any help is appreciated!"
+            
+            selma "Roll for the efficacy of your stone throw."
+            
+            $ roll = renpy.random.randint(1, 19)
+            
+            "The die rolls off the table. Selmers picks it up for you."
+            
+            selma "You rolled a [roll]."
+            
+            if roll < 4:
+                if cnc_class == "seer":
+                    selma "I'll just uh, bump that up a few points thanks to your seer class. You should have more intuition as to where the rock will land."
+                    
+                    $ roll = roll + 10
+            
+            elif roll < 10:
+                if cnc_class == "seer":
+                    selma "I'll bump that up a bit because you're a seer. You should have more intuition as to where the rock will land."
+                    
+                    $ roll = roll + 7
+            
+            elif roll < 20:
+                if cnc_class == "seer":
+                    selma "I'll bump that up a bit because you're a seer. You should have more intuition as to where the rock will land."
+                    
+                    $ roll = roll + 10
+            
+            if roll < 4:
+                selma "Your rock sails through the air and hits Gregg on the snout."
+                
+                gregg "Ow! Who's casting rock over there?"
+                
+                player "Sorry! That was supposed to be for the guy in the spooky cloak."
+                
+                gregg "That's alright, try again!"
+                
+                selma "Your element of surprise has been spoiled by your poor aim."
+                selma "But on the bright side, the wizard group is now split into two, facing opposite directions."
+                
+                
+            elif roll < 10:
+                selma "Your rock sails through the air and plinks a wizard on the head. Enough to be an annoyance but not really to cause any damage."
+                selma "Confused, the wizards look around for the unknown assailant."
+                
+                player "Yay I did something useful!"
+                
+                selma "Your position is concealed for now, but don't expect your foes to fall for the same trick again."
+            
+            elif roll < 20:
+                selma "Your rock sails through the air and bounces off a wizard's head, knocking him to the ground."
+                selma "Confused, the wizards look around for the unknown assailant."
+                
+                player "Yay I did something useful!"
+                
+                selma "Your position is concealed for now, but don't expect your foes to fall for the same trick again."
+            
+            elif roll >= 20:
+                selma "Your rock sails through the air and strikes a wizard just before he could fire off his spell at Gregg. He spins as he falls to the ground and blasts one of his allies with a beam of light."
+                selma "Confused, the wizards look around for the unknown assailant."
+                
+                player "Yay I did something useful!"
+                
+                selma "Your position is concealed for now, but don't expect your foes to fall for the same trick again."
+                
+            angus "At least now it's not so one-sided."
+                
+            gregg "Now it's a game of rock-dagger-fireball."
+            gregg "Speaking of which, I'm rolling for stab damage."
+            
+            selma "I'm afraid you'll find it rather hard to stab someone from 30 feet away."
+            
+            gregg "Whaaaat?! Come on, let me stab someone already!"
+            
+            selma "You could charge in but you'll probably get shot with a lightning bolt before you get close enough."
+            
+            gregg "That's what I invest points in luck for!"
+            gregg "CHAAAAARGE!!!"
+            
+            selma "You're a very lucky fox indeed. As you charge forward, blade pointed at the nearest foe, a gleam of light shines from the horizon."
+            selma "Your enemies cover their faces and hiss. Their bodies seem to melt into the ground and their shadows scatter, leaving the battlefield empty."
+            
+            player "I guess it's safe for me to come out of hiding now?"
+            
+            gregg "Lemme sheath my dagger so it doesn't look like I'm gonna stab you for helping me. I promise I'm not that crazy."
+            gregg "You alright? I didn't see them throw any spells your way."
+            
+            player "Yeah, I'm good. What about you? Those guys looked ready to vaporize you."
+            
+            gregg "They might have if you didn't show up! Thanks for the help, kind stranger!"
+            
+            player "Name's [name]. I can't really stand those creeps ruining my nightwalks so I thought I'd mess with them a little."
+            
+            gregg "Well I'm glad ya did! You from around here? I don't think we've met. Around these parts I'm known as Gregg the Magnificent!"
+                
+            selma "Nobody calls him that, they call him Gregg the Nuissance."
+            
+            gregg "Aww, why you gotta ruin my introduction?"
+            
+            if cnc_class == "seer":
+                player "\'So it was the sunlight that drove them away? We should be safe until sundown then.\'"
+                
+                gregg "Ohh is that what happened? I thought they just got scared and left."
+                
+                player "I'm not gonna stick around and find out. They're probably regrouping and will hunt us down come sundown."
+                
+                gregg "Hmm... In that case, I think I know someone who can help us!"
+            else:
+                player "We should get out of here before reinforcements arrive."
+                
+                gregg "Good thinking! I'm gonna stop by a friend's place before skipping town entirely. He'll be able to help chart a course for me."
+                gregg "Since you bailed me out in that fight, you're welcome to come with. I could use a bodyguard hahaha!"
+                
+                player "Sounds like a plan. Who's this friend of yours?"
+            
+            
+            
+
+            
         "Distraction":
             player "I cause a distraction"
-    
-    
+            #firemaker starts a fire
+            #non-firemaker makes noise and knocks stuff over
+            #firemaker bonus
+            gregg "My instincts are telling me this would be a good time to flee!"
     
     
     
@@ -628,7 +790,7 @@ label zodiacChoice:
     
     selma "Gregg arrives at an apartment. The door is locked."
     
-    gregg "I frantically knock on the door"
+    #gregg "I frantically knock on the door"
     
     gregg "I kick down the door - wait, can I kick down the door?"
     
@@ -645,6 +807,8 @@ label zodiacChoice:
     
         selma "You raise your foot and bring it down on the heavy wooden door, but you boot slips and causes your heel to turn farther than it should."
         selma "Your ankle is now sprained."
+        
+        gregg "Ow."
     
     elif roll < 13:
         selma "Your boot collides with the door repeatedly, flexing the boards but comes just shy of kicking it down."
@@ -655,10 +819,13 @@ label zodiacChoice:
     elif roll == 20:
         selma "Your boot hits just the right spot with enough power to break it free from its hinges. The door goes flying inside the building."
         
-    gregg "The commotion rouses a gruff bear"
+    selma "The commotion catches the attention of the lone resident, a gruff explorer in the middle of preparing for his next expedition."
     
     angus "I'm \'gruff\'?"
 
+    selma "Gruff enough."
+    
+    
     gregg "Whew"
     
     

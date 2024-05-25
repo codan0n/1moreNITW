@@ -337,6 +337,8 @@ label townAngus1:
     #if you've met angus already, he is alreaded sitting there
     #if you haven't met angus, he comes up after you sit down
     
+    scene bg roads_day
+    
     if metAngus == True:
         "As you wander through main street, you decide to find a place to sit for a rest. Luckily there's a conveniently placed bench nearby, and it looks like someone you know had the same idea as you."
         

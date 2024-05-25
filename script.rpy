@@ -146,7 +146,73 @@ label start:
     #"You were starting to think you'd never find the place, but the smell of roasted coffee beans set you on the right track."
     "You were starting to think you'd never find the place. Thankfully the smell of roasted coffee beans guided you here from a couple blocks away."
     
+    #########testing
     
+    #$ pastry = 0
+    #
+    #python:
+    #    from enum import Enum
+    #    
+    #    #slot = Enum('A', 'B', 'C', 'D', 'E')
+    #
+    #    #class Weekday(Enum):
+    #    #
+    #    #    MONDAY = 1
+    #    #
+    #    #    TUESDAY = 2
+    #    #
+    #    #    WEDNESDAY = 3
+    #    #
+    #    #    THURSDAY = 4
+    #    #
+    #    #    FRIDAY = 5
+    #    #
+    #    #    SATURDAY = 6
+    #    #
+    #    #    SUNDAY = 7
+    #    #
+    #    #n(str(Weekday.WEDNESDAY.name))
+    #    #
+    #    #n(str(Weekday(1).name))
+    #    #
+    #    #i = 2
+    #    #
+    #    #if i == 1:
+    #    #    n(str(Weekday(i).name))
+    #    #elif i == 2:
+    #    #    n(str(Weekday(i).name))
+    #        
+    #        
+    #    pastryenum = Enum('pastryenum', 'MUFFIN CUPCAKE CROISSANT')
+    #        
+    #    #later
+    #    "later..."
+    #    
+    #menu:
+    #    "What pastry do you want?"
+    #    "muffin":
+    #        "you have chosen your pastry"
+    #        $ pastry = pastryenum.MUFFIN
+    #    "cupcake":
+    #        "you have chosen your pastry"
+    #        $ pastry = pastryenum.CUPCAKE
+    #    "croissant":
+    #        "you have chosen your pastry"
+    #        $ pastry = pastryenum.CROISSANT
+    ##python:
+    #    #from enum import Enum
+    #if pastry == pastryenum.MUFFIN:
+    #    "ya got a muffin"
+    #elif pastry == pastryenum.CUPCAKE:
+    #    "ya got a cupcake"
+    #elif pastry == pastryenum.CROISSANT:
+    #    "ya got a croissant"
+    #else:
+    #    "code ain't working"
+    #    
+    #"fin"
+
+    ######### end testing
     
     
     #"You were starting to think you'd never make it, but the smell of roasted coffee beans helped you find the right place."
@@ -1271,6 +1337,8 @@ label day4:
                     #$ townEventsDay.append("townAngus1")
                     #$ townEventsNight.append("townAngus1")
                     call townAngus1
+                else:
+                    "There's nothing nowhere else to go for now."
                 
                 
                 
