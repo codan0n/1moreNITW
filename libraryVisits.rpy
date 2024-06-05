@@ -714,7 +714,7 @@ label libraryFloor2:
 
     menu:
         "I'll think about it.":
-            $ selmaNeutral = True
+            #$ selmaNeutral = True
 
             player "I'll think about it."
 
@@ -729,7 +729,7 @@ label libraryFloor2:
             selma "You too."
 
         "Sorry, don't think I can make it.":
-            $ selmaBad = True
+            #$ selmaBad = True
 
             player "Sorry, don't think I can make it."
 
@@ -756,7 +756,7 @@ label libraryFloor2:
 
         "I'd be happy to!":
             player "I'd be happy to!"
-            $ selmaGood = True
+           # $ selmaGood = True
 
             selma "That...that was not the response I was expecting. You sure? Those kids can be real punks sometimes."
 

@@ -109,47 +109,47 @@ label meetingMae:
             
             show lori neutral at center with dissolve
             
-            loriunknown "Ohmygosh *huff huff* you startled me!"
+            lori "Ohmygosh *huff huff* you startled me!"
             
             player "Sorry."
             
-            loriunknown "It's alright! I just thought I was the last one on the bus."
+            lori "It's alright! I just thought I was the last one on the bus."
             
             "She takes her earphones out and grabs the pencil."
             
-            loriunknown "Thanks~ *huff huff*"
+            lori "Thanks~ *huff huff*"
             
             "The bus driver clears his throat before sputtering out an announcement."
             
             driver "Next stop *cough cough WHEEEEZE* ...Possum Springs!"
             
-            loriunknown "Oop, that's my stop!"
+            lori "Oop, that's my stop!"
 
             player "Really? It's mine too!"
 
-            loriunknown "No way! No one else ever gets off at Possum Springs!"
+            lori "No way! No one else ever gets off at Possum Springs!"
 
             player "Yeah, I'm moving in today."
             
-            loriunknown "It's quite a small and uneventful town! Only a couple murders in the past few years!"
+            lori "It's quite a small and uneventful town! Only a couple murders in the past few years!"
             
             player "That's uh, reassuring."
             
-            loriunknown "I lived there my whole life until recently. I'm going to college now but it's not too far away so I visit as much as I can."
+            lori "I lived there my whole life until recently. I'm going to college now but it's not too far away so I visit as much as I can."
             
             player "Oh? What are you studying?"
 
-            loriunknown "Film! Like movies and stuff."
+            lori "Film! Like movies and stuff."
             
             player "I see. Studying for a test?"
             
             "You gesture to the movie paused on her screen."
             
-            loriunknown "Something like that!"
+            lori "Something like that!"
             
             "She flips to a page and shows you some of her drawings. They're all of creatures and monsters with bloody knives, elongated claws, jagged teeth or some combination of those."
             
-            loriunknown "I'm working on monster design right now. I mean I kinda always have been but it's something I'm focusing on at the moment."
+            lori "I'm working on monster design right now. I mean I kinda always have been but it's something I'm focusing on at the moment."
             
             menu:
                 "Reminds me of some of my own sketches":
@@ -200,7 +200,7 @@ label meetingMae:
                 xzoom -1
             with dissolve
             
-            maeunknown "Lori!"
+            mae "Lori!"
 
             lori "Mae!"
 
@@ -252,39 +252,39 @@ label meetingMae:
             
             show lori neutral at center with dissolve
             
-            loriunknown "Thanks."
+            lori "Thanks."
             
             "The bus driver clears his throat before sputtering out an announcement."
             
             driver "Next stop *cough cough WHEEEEZE* ...Possum Springs!"
             
-            loriunknown "Oop, that's my stop!"
+            lori "Oop, that's my stop!"
 
             player "Mine as well."
 
-            loriunknown "No way! No one else ever gets off at Possum Springs!"
+            lori "No way! No one else ever gets off at Possum Springs!"
 
             player "Yeah, I'm moving in today."
             
-            loriunknown "It's quite a small and uneventful town! Only a couple murders in the past few years!"
+            lori "It's quite a small and uneventful town! Only a couple murders in the past few years!"
             
             player "That's uh, reassuring."
             
-            loriunknown "I lived there my whole life until recently. I'm going to college now but it's not too far away so I visit as much as I can."
+            lori "I lived there my whole life until recently. I'm going to college now but it's not too far away so I visit as much as I can."
             
             player "Oh? What are you studying?"
 
-            loriunknown "Film! Like movies and stuff."
+            lori "Film! Like movies and stuff."
             
             player "I see. Studying for a test?"
             
             "You gesture to the movie paused on her screen."
             
-            loriunknown "Something like that!"
+            lori "Something like that!"
             
             "She flips to a page and shows you some of her drawings. They're all of creatures and monsters with bloody knives, elongated claws, jagged teeth or some combination of those."
             
-            loriunknown "I'm working on monster design right now. I mean I kinda always have been but it's something I'm focusing on at the moment."
+            lori "I'm working on monster design right now. I mean I kinda always have been but it's something I'm focusing on at the moment."
             
             menu:
                 "Reminds me of some of my own sketches":
@@ -335,7 +335,7 @@ label meetingMae:
                 xzoom -1
             with dissolve
             
-            maeunknown "Lori!"
+            mae "Lori!"
 
             lori "Mae!"
 
@@ -384,12 +384,12 @@ label meetingMae:
             
             show lori neutral at center with dissolve
             
-            loriunknown "Ohmygosh sorry! *Huff huff* I didn't realize someone was sitting here!"
+            lori "Ohmygosh sorry! *Huff huff* I didn't realize someone was sitting here!"
             
             player "Uhh, it's fine?"
             
-            loriunknown "I thought I was the last one on the bus."
-            loriunknown "Excuse me..."
+            lori "I thought I was the last one on the bus."
+            lori "Excuse me..."
             
             "She grabs her pencil and awkwardly returns to her own seat."
             "Suddenly the bus driver clears his throat before sputtering out an announcement."
@@ -398,34 +398,34 @@ label meetingMae:
             
             "The mouse takes an earbud out."
             
-            loriunknown "Did he say Possum Springs?"
+            lori "Did he say Possum Springs?"
             
             player "Yeah. You getting off there too?"
             
-            loriunknown "Depends, are you a serial killer?"
+            lori "Depends, are you a serial killer?"
             
             player "Haven't reached serial status yet."
             player "I'm kidding. I only asked because I'm moving there today and could use some directions."
             
-            loriunknown "Ah, that makes sense. I dunno if I can be much help but they have maps of the town at the station."
+            lori "Ah, that makes sense. I dunno if I can be much help but they have maps of the town at the station."
             
             player "That's good to know."
             player "*You* wouldn't happen to be a serial killer, would you?"
             
-            #loriunknown "Only in my dreams."
-            loriunknown "Only in my film projects."
+            #lori "Only in my dreams."
+            lori "Only in my film projects."
             
             player "Your what?"
             
-            loriunknown "My films! I did short films for fun. And now I do them for grades."
-            loriunknown "After I graduate I wanna work on horror movies."
+            lori "My films! I did short films for fun. And now I do them for grades."
+            lori "After I graduate I wanna work on horror movies."
             
             player "I guess that explains your drawings."
             
             "You point down to the notebook in her lap."
             "The page is filled with creatures and monsters with bloody knives, elongated claws, jagged teeth or some combination of those."
             
-            loriunknown "Oh these? I'm working on monster design right now. I mean I kinda always have been but it's something I'm focusing on at the moment."
+            lori "Oh these? I'm working on monster design right now. I mean I kinda always have been but it's something I'm focusing on at the moment."
             
             menu:
                 "Reminds me of some of my own sketches":
@@ -476,7 +476,7 @@ label meetingMae:
                 xzoom -1
             with dissolve
             
-            maeunknown "Lori!"
+            mae "Lori!"
 
             lori "Mae!"
 
@@ -579,7 +579,7 @@ label meetingMae:
 
             #"Easing back into her seat, she takes her earphones out and makes a concentrated effort to slow her breathing."
 
-            #loriunknown "Oh goodness, you scared me! Hah hah... hah..."
+            #lori "Oh goodness, you scared me! Hah hah... hah..."
 
             #"You chuckle lightheartedly."
 
@@ -589,37 +589,37 @@ label meetingMae:
 
             #"The girl looks confused for a moment then realizes her earphones still playing and are audible from a distance."
 
-            #loriunknown "Oh gosh, you could hear that? I'm so sorry!"
+            #lori "Oh gosh, you could hear that? I'm so sorry!"
 
             #stop music fadeout 2.0
 
             #"She mashes the volume down button on her phone in a panicked, embarrassed fashion."
 
-            #loriunknown "*Huff huff*"
+            #lori "*Huff huff*"
 
             #player "No, it's fine. Actually I wanted to get the name of it before one of us got off the bus."
 
             #"You confidently smile as you reassure her. She looks at you like you're crazy for a second then smiles back, scooting closer to you."
 
-            #loriunknown "Well uh, it's called Deathterrors. The album, that is. It's by Kerosinners."
+            #lori "Well uh, it's called Deathterrors. The album, that is. It's by Kerosinners."
 
             #player "Nice. I'll check it out once I get to my place."
 
             #"She seems excited to talk more about it, but the bus driver cuts your conversation short as he announces you'll be arriving in Possum Springs momentarily."
 
-            #loriunknown "Oop, that's my stop!"
+            #lori "Oop, that's my stop!"
 
             #player "Really? It's mine too!"
 
-            #loriunknown "No way! No one else ever gets off at Possum Springs!"
+            #lori "No way! No one else ever gets off at Possum Springs!"
 
             #player "Yeah, I'm moving in today."
 
-            #loriunknown "Cool! Maybe I'll see you around town later... Whoops!"
+            #lori "Cool! Maybe I'll see you around town later... Whoops!"
 
             #"She reaches down to grab her pen that had just rolled off her notebook, but you get to it first and hand it back."
 
-            #loriunknown "Hah, thanks! Guess I better pack up before our stop, huh?"
+            #lori "Hah, thanks! Guess I better pack up before our stop, huh?"
 
             #player "Yeah, that might be a good idea haha."
 
@@ -655,7 +655,7 @@ label meetingMae:
             #show lori neutral at right with dissolve:
             #    yalign loriheight
 
-            #loriunknown "See you around!"
+            #lori "See you around!"
 
             #"You look up to see the mouse waving goodbye to you with her free hand as she totes her suitcase to a car that had just pulled up to the curb."
             #"You take a break from pulling your bags out to wave back."
@@ -668,7 +668,7 @@ label meetingMae:
             #show mae neutral flip at left with dissolve:
             #    yalign maeheight
 
-            #maeunknown "Lori!"
+            #mae "Lori!"
 
             #lori "Mae!"
 
@@ -722,7 +722,7 @@ label meetingMae:
 
             #show lori breath
 
-            #loriunknown "Um, hey? Huff huff... Did you need something?"
+            #lori "Um, hey? Huff huff... Did you need something?"
 
             #"You point to her earphones lying on her journal."
 
@@ -730,13 +730,13 @@ label meetingMae:
 
             #"She glances down at her earphones then back up to you with a panicked, embarrassed expression."
 
-            #loriunknown "Oh gosh, you could hear that? I'm so sorry, hang on!"
+            #lori "Oh gosh, you could hear that? I'm so sorry, hang on!"
 
             #stop music fadeout 2.0
 
             #"She mashes the volume down button on her phone."
 
-            #loriunknown "Huff huff... Huff huff..."
+            #lori "Huff huff... Huff huff..."
 
             #player "Appreciate it."
 
@@ -777,7 +777,7 @@ label meetingMae:
             #show mae neutral flip at left
             #with dissolve
 
-            #maeunknown "Lori!"
+            #mae "Lori!"
 
             #lori "Mae!"
 
@@ -848,7 +848,7 @@ label meetingMae:
         #        yalign maeheight
         #    with dissolve
 
-        #    maeunknown "Lori!"
+        #    mae "Lori!"
 
         #    lori "Mae!"
 

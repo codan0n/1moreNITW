@@ -1,4 +1,4 @@
-label cnc1:
+label tg1:
     #notes
     #arrive at bakery, angus/gregg welcomes you and invites you to back room. selma is there shuffling cards. she briefly explains the rules of the game and you begin. germ pops in shortly afterwards and joins the game
     
@@ -197,7 +197,7 @@ label cnc1:
         menu:
             "Play as the fighter?"
             "Sure":
-                $ cnc_class = "fighter"
+                $ tg_class = "fighter"
                 player "Sure, that sounds like my kinda character."
             "What are my other options?":
                 player "What other characters are there?"
@@ -224,13 +224,13 @@ label cnc1:
                 menu:
                     "Who will you be?"
                     "The fighter":
-                        $ cnc_class = "fighter"
+                        $ tg_class = "fighter"
                         player "I'll be the fighter."
                     "The firemaker":
-                        $ cnc_class = "firemaker"
+                        $ tg_class = "firemaker"
                         player "I'll be the firemaker."
                     "The seer":
-                        $ cnc_class = "seer"
+                        $ tg_class = "seer"
                         player "I'll be the seer."
                             
     elif animaltype == "bird":
@@ -246,7 +246,7 @@ label cnc1:
         menu:
             "Play as the firemaker?"
             "Sure":
-                $ cnc_class = "firemaker"
+                $ tg_class = "firemaker"
                 player "Sure, that sounds like my kinda character."
             "What are my other options?":
                 player "What other characters are there?"
@@ -272,13 +272,13 @@ label cnc1:
                 menu:
                     "Who will you be?"
                     "The fighter":
-                        $ cnc_class = "fighter"
+                        $ tg_class = "fighter"
                         player "I'll be the fighter."
                     "The firemaker":
-                        $ cnc_class = "firemaker"
+                        $ tg_class = "firemaker"
                         player "I'll be the firemaker."
                     "The seer":
-                        $ cnc_class = "seer"
+                        $ tg_class = "seer"
                         player "I'll be the seer."
                         
                 
@@ -295,7 +295,7 @@ label cnc1:
         menu:
             "Play as the seer?"
             "Sure":
-                $ cnc_class = "seer"
+                $ tg_class = "seer"
                 player "Sure, that sounds like my kinda character."
             "What are my other options?":
                 player "What other characters are there?"
@@ -322,13 +322,13 @@ label cnc1:
                 menu:
                     "Who will you be?"
                     "The fighter":
-                        $ cnc_class = "fighter"
+                        $ tg_class = "fighter"
                         player "I'll be the fighter."
                     "The firemaker":
-                        $ cnc_class = "firemaker"
+                        $ tg_class = "firemaker"
                         player "I'll be the firemaker."
                     "The seer":
-                        $ cnc_class = "seer"
+                        $ tg_class = "seer"
                         player "I'll be the seer."
                             
     selma "Excellent! I'll have to make some minor adjustments to the story I had planned but that's not a problem."
@@ -549,19 +549,19 @@ label cnc1:
             selma "You rolled a [roll]."
             
             if roll < 4:
-                if cnc_class == "fighter":
+                if tg_class == "fighter":
                     selma "I'll just uh, bump that up a few points thanks to your warrior class. Your combat skills should offset your luck some."
                     
                     $ roll = roll + 10
             
             elif roll < 10:
-                if cnc_class == "fighter":
+                if tg_class == "fighter":
                     selma "I'll bump that up a bit because you're a warrior. Your combat skills should offset your luck some."
                     
                     $ roll = roll + 7
             
             elif roll < 20:
-                if cnc_class == "fighter":
+                if tg_class == "fighter":
                     selma "I'll bump that up a bit because you're a warrior. Your combat skills should offset your luck some."
                     
                     $ roll = roll + 10
@@ -623,7 +623,7 @@ label cnc1:
             
             selma "They don't say that, they just say Gregg the Nuissance."
             
-            if cnc_class == "seer":
+            if tg_class == "seer":
                 player "\'So it was the sunlight that drove them away? We should be safe until sundown then.\'"
                 
                 gregg "Ohh is that what happened? I thought they just got startled when I snuck up on them and decided to flee."
@@ -658,19 +658,19 @@ label cnc1:
             selma "You rolled a [roll]."
             
             if roll < 4:
-                if cnc_class == "seer":
+                if tg_class == "seer":
                     selma "I'll just uh, bump that up a few points thanks to your seer class. You should have more intuition as to where the rock will land."
                     
                     $ roll = roll + 10
             
             elif roll < 10:
-                if cnc_class == "seer":
+                if tg_class == "seer":
                     selma "I'll bump that up a bit because you're a seer. You should have more intuition as to where the rock will land."
                     
                     $ roll = roll + 7
             
             elif roll < 20:
-                if cnc_class == "seer":
+                if tg_class == "seer":
                     selma "I'll bump that up a bit because you're a seer. You should have more intuition as to where the rock will land."
                     
                     $ roll = roll + 10
@@ -746,7 +746,7 @@ label cnc1:
             
             gregg "Aww, why you gotta ruin my introduction?"
             
-            if cnc_class == "seer":
+            if tg_class == "seer":
                 player "\'So it was the sunlight that drove them away? We should be safe until sundown then.\'"
                 
                 gregg "Ohh is that what happened? I thought they just got scared and left."
@@ -869,329 +869,329 @@ label cnc1:
     gregg "[name], what do you say? Should we go around and enjoy a pint at the village pub or should we keep getting lost in the abyss?"
     
     #menu:
-    "Keep getting lost":
-        player "It'll be faster if we go over it."
+        #"Keep getting lost":
+    player "It'll be faster if we go over it."
+    
+    angus "Also I heard there's an amazing view at the top once you get above the clouds."
+    
+    if tg_class == "seer":
+        player "If anyone is trailing us, they'll lose track of us in the mist."
         
-        angus "Also I heard there's an amazing view at the top once you get above the clouds."
+        gregg "I guess I can accept that... Just stay close okay? I don't want anyone getting lost out here."    
+    else:
+        gregg "Hrmmmmmfine. I've got a bad feeling about this thought..."
+    
+    n "Gregg suddenly gasps."
         
-        if cnc_class == "seer":
-            player "If anyone is trailing us, they'll lose track of us in the mist."
+    gregg "What was that noise?"
+    
+    selma "A shadowy figure emerges from the fog. It flaps its wings, clearing up the air and revealing his true form."
+    
+    show germ neutral with dissolve
+    
+    germ "Hey guys."
+    germ "What's up?"
+    
+    gregg "Germ!!"
+    
+    angus "I've heard legends of you but I never thought I'd come across you here of all places."
+    
+    if metGerm == true:
+        player "Oh hey it's you."
+        
+        "Germ gives you a nod of acknowledgement."    
+        
+        germ "I remember seeing you somewhere but I don't think we spoke."
+        germ "I'm Germ, descendant of Tehrn the Medium. I bear a terrible curse. Death follows wherever I go, so I've isolated myself in these lonely mountains."
+        germ "If I'm seeing you here, a tragic fate must be coming your way soon."
+        germ "But at least we can still chat after you're dead. That's my other ability."
+        
+        player "That's... ominous."
+        
+        germ "Out of character, I'm just a bird."
+    else:
+        player "Who?"
+        
+        germ "I'm Germ, descendant of Tehrn the Medium. I bear a terrible curse. Death follows wherever I go, so I've isolated myself in these lonely mountains."
+        germ "If I'm seeing you here, a tragic fate must be coming your way soon."
+        germ "But at least we can still chat after you're dead. That's my main ability."
+        
+        player "That's... ominous."
+        
+        germ "Oh you meant in real life? I'm just a bird."
+        
+    germ "Sorry I'm late. I had to bury a dead body."
+    
+    gregg "Classic Germ!"
+    
+    angus "Glad you could make it Germ. It wouldn't be the same without you."
+        
+    player "Well it's nice to meet the legend himself. I'm [name]."
+    
+    if tg_class == "fighter":
+        player "I'm a fighter on bodyguard duty for our frail rogue."
+        
+        gregg "Hey I can take care of myself! I'm no pushover!"
+        gregg "Roll for putting [name] in a chokehold!"
+        
+        "Gregg picks up the die and rolls it."
+        
+        $ roll = renpy.random.randint(1, 20)
+        
+        "Selma sighs."
+        
+        selma "[roll]."
+        
+        if roll < 5:
+            selma "Gregg attempts to climb up [name]'s back and put them in a chokehold but their fighter's instinct quickly reverses the situation and Gregg ends up being choked."
             
-            gregg "I guess I can accept that... Just stay close okay? I don't want anyone getting lost out here."    
+            gregg "Ack lemme go! Uncle, uncle!"
+            
+            player "Sorry Gregg, it was a reflex."
+            
+            "Angus chuckles at the display."
+            
+            angus "Not so easy when your opponent doesn't let you win, huh?"
+            
+            "Gregg suddenly becomes flustered and his face turns red."
+            
+            gregg "Shshshshhhhh! I could knock you both out if I wanted to!"
+            
+            selma "Thanks to your distraction, a lone figure manages to approach from behind undetected."
+            
+        elif roll < 13:
+            selma "Gregg attempts to climb up [name] but the fighter's instincts kick in and fends him off."
+            
+            gregg "Aw what? That's not gonna stop me. Angus, give me a boost!"
+            
+            angus "Do I have to?"
+            
+            selma "It's not required for the plot to progress."
+            
+            gregg "But it would be pretty sweet."
+            
+            angus "Fine, just this once."
+            
+            "Angus hoists Gregg up and throws him into the air, allowing him to dive right on top of you."
+            "You push away his paws as he clings to your clothing and reaches for your neck."
+            
+            player "Hey cut it out! Is this how you thank your bodyguard?"
+            
+            selma "Thanks to your distraction, a lone figure manages to approach from behind undetected."
+        
+        elif roll < 20:
+            selma "Wow okay. Gregg manages to climb onto [name]'s back and get an arm around [hishertheir] neck."
+            selma "I have my doubts whether your strength is high enough to cause anything more than being a minor annoyance however."
+            
+            player "Is he always like this?"
+            
+            angus "No, he's usually worse."
+            
+            gregg "You're next for a choking, Angus!"
+            
+            angus "*blush*"
+            
+            selma "Thanks to your distraction, a lone figure manages to approach from behind undetected."
+        
         else:
-            gregg "Hrmmmmmfine. I've got a bad feeling about this thought..."
+            selma "You don't deserve that roll but whatever."
+            selma "Gregg manages to bring [name] down to the ground in an inescapable chokehold."
+            
+            angus "Gregg please don't knock out our warrior before a combat encounter."
+            
+            gregg "How do you know we're about to get in a fight?"
+            
+            angus "Because we're in a spooky desolate location and we just gained a party member. Of course we're gonna have to fight some fog demon or something."
+            
+            #gregg "And you brought us here?!?"
+            
+            selma "Angus's meta senses are correct, but it's not a fog demon. A lone figure approaches from behind, taking advantage of your distraction to quietly sneak right up to you."
+            
+        angus "Hm? Who goes there?"
         
-        n "Gregg suddenly gasps."
-            
-        gregg "What was that noise?"
+        selma "A blade slashes through the fog, narrowly missing Angus's throat as he jumps away from the attack just in the nick of time."
         
-        selma "A shadowy figure emerges from the fog. It flaps its wings, clearing up the air and revealing his true form."
+        angus "Whoa! Who the hell is that?"
         
-        show germ neutral with dissolve
+        selma "It's hard to make out in the fog, but your assailant appears to be wearing a cloak with an insignia similar to the ones worn by the village wizards."
         
-        germ "Hey guys."
-        germ "What's up?"
+        gregg "They followed us all this way?!"
         
-        gregg "Germ!!"
+        germ "I tried to warn you. Finding me here was a bad omen. Now someone is going to die."
         
-        angus "I've heard legends of you but I never thought I'd come across you here of all places."
+        player "It's four against one, we can win this easily!"
         
-        if metGerm == true:
-            player "Oh hey it's you."
-            
-            "Germ gives you a nod of acknowledgement."    
-            
-            germ "I remember seeing you somewhere but I don't think we spoke."
-            germ "I'm Germ, descendant of Tehrn the Medium. I bear a terrible curse. Death follows wherever I go, so I've isolated myself in these lonely mountains."
-            germ "If I'm seeing you here, a tragic fate must be coming your way soon."
-            germ "But at least we can still chat after you're dead. That's my other ability."
-            
-            player "That's... ominous."
-            
-            germ "Out of character, I'm just a bird."
-        else:
-            player "Who?"
-            
-            germ "I'm Germ, descendant of Tehrn the Medium. I bear a terrible curse. Death follows wherever I go, so I've isolated myself in these lonely mountains."
-            germ "If I'm seeing you here, a tragic fate must be coming your way soon."
-            germ "But at least we can still chat after you're dead. That's my main ability."
-            
-            player "That's... ominous."
-            
-            germ "Oh you meant in real life? I'm just a bird."
-            
-        germ "Sorry I'm late. I had to bury a dead body."
+        germ "Eh, I'm just gonna sit this out since I don't really have a stake in your conflict. Have fun fighting though."
         
-        gregg "Classic Germ!"
+        "Angus twirls a grappling hook attached to a length of rope."
         
-        angus "Glad you could make it Germ. It wouldn't be the same without you."
-            
-        player "Well it's nice to meet the legend himself. I'm [name]."
+        angus "Draw your weapons! Ready for combat!"
         
-        if cnc_class == "fighter":
-            player "I'm a fighter on bodyguard duty for our frail rogue."
-            
-            gregg "Hey I can take care of myself! I'm no pushover!"
-            gregg "Roll for putting [name] in a chokehold!"
-            
-            "Gregg picks up the die and rolls it."
-            
-            $ roll = renpy.random.randint(1, 20)
-            
-            "Selma sighs."
-            
-            selma "[roll]."
-            
-            if roll < 5:
-                selma "Gregg attempts to climb up [name]'s back and put them in a chokehold but their fighter's instinct quickly reverses the situation and Gregg ends up being choked."
+        selma "The party prepares to fight for their life against the unknown assailant. Who could it be? What are their abilities? Why have they come so far to attack our petty band of misfits?"
+        selma "I suppose we'll find out next week~"
+        #selma "And with that, we'll conlcude our session for tonight."
+        
+    if tg_class == "seer":
+        player "I'm the seer of the group. Something tells me our meeting was fated."
+        
+        germ "Probably! It's a small town- err mountain range after all!"
+        
+        selma "Your seer's intuition warns you of an oncoming stranger from behind."
+        
+        "Selma leans close to you and whispers something so the others can't hear."
+        #roll for seer's intuition. affects direction of approach, description, distance
+        
+        player "Ah perfect timing! I see... a lone figure. Cloaked and hooded. They're wearing a familiar insignia... The same kind as the wizards at the village!"
+        
+        angus "Oh shoot, they followed us all the way out here?"
+        
+        gregg "They must have sent an assassin to silence me!"
+        
+        player "Everybody draw your weapons!"
+        
+        selma "The party prepares to fight for their life against the unknown assailant. Who could it be? What are their abilities? Why have they come so far to attack our petty band of misfits?"
+        selma "I suppose we'll find out next week~"
+        
+    if tg_class == "firemaker":
+        #add lighting your torch earlier in scene
+        player "I'm the party's firemaker. I make fires."
+        
+        "You wave your torch around."
+        
+        germ "I see! You should have no trouble navigating the mountains then."
+        germ "...And what about your other friend? Is he shy or something?"
+        
+        angus "Huh? It's just the three of us."
+        
+        "Germ points into the distance."
+        
+        germ "Something was moving over that way. Looked like a person."
+        
+        gregg "Germ you better not be effing with us!"
+        
+        germ "I'm not! He moved behind that bush!"
+        
+        angus "Oh god, he's not just a passerby if he's creeping around in the bushes."
+        
+        menu:
+            "Investigate":
+                gregg "Someone go check it out."
                 
-                gregg "Ack lemme go! Uncle, uncle!"
+                angus "You do it. You're the strongest member of our party."
                 
-                player "Sorry Gregg, it was a reflex."
+                gregg "Nuh uh. I mean I am the strongest but I'm not going over there to get ambushed."
                 
-                "Angus chuckles at the display."
+                angus "What, so you're saying we should send our weakest as bait?"
                 
-                angus "Not so easy when your opponent doesn't let you win, huh?"
+                gregg "I didn't say that but if that's your plan I'll go with it."
                 
-                "Gregg suddenly becomes flustered and his face turns red."
+                angus "Germ?"
                 
-                gregg "Shshshshhhhh! I could knock you both out if I wanted to!"
+                germ "Nah, I'm sitting this out."
                 
-                selma "Thanks to your distraction, a lone figure manages to approach from behind undetected."
+                player "I guess I'll be the one to go investigate."
                 
-            elif roll < 13:
-                selma "Gregg attempts to climb up [name] but the fighter's instincts kick in and fends him off."
+                selma "How very firemaker of you. Taking initiative and finding your own path."
                 
-                gregg "Aw what? That's not gonna stop me. Angus, give me a boost!"
+                player "I'm only doing this because I'm the only one qualified to hold the light stick."
                 
-                angus "Do I have to?"
+                gregg "Fire scary."
                 
-                selma "It's not required for the plot to progress."
+                angus "I mean, we can all hold a torch. Gregg probably doesn't have the skills to build a fire but I obviously do for campfires."
+                angus "But thematically it does make sense that you'd be the one to go check it out."
                 
-                gregg "But it would be pretty sweet."
+                "You sigh and hold your torch in the direction of the rustling in the bushes."
                 
-                angus "Fine, just this once."
+                selma "Slowly you creep up to the leaves, straining your eyes to see through the fog."
+                selma "Your torch illuminates the silhouette of a mysterious person hiding among the leaves."
+                #selma "The flames reflect off a pair of eyes staring you down from just a few feet away!"
+                selma "The stranger leaps back from their hiding spot and you lose track of their position."
+                selma "In the brief moment you got a look at them you could make out they were wearing a cloak with a familiar insignia stitched on..."
+                selma "The same one the wizards you fought previously wore!"
                 
-                "Angus hoists Gregg up and throws him into the air, allowing him to dive right on top of you."
-                "You push away his paws as he clings to your clothing and reaches for your neck."
+            "GTFO":
+                player "We should get out of here. I dunno if it's just a wild animal or a serial killer or what but we still need to get off this mountain sooner or later."
                 
-                player "Hey cut it out! Is this how you thank your bodyguard?"
+                angus "Agreed. We might be able to get some distance between it and us and throw it off our trail."
                 
-                selma "Thanks to your distraction, a lone figure manages to approach from behind undetected."
-            
-            elif roll < 20:
-                selma "Wow okay. Gregg manages to climb onto [name]'s back and get an arm around [hishertheir] neck."
-                selma "I have my doubts whether your strength is high enough to cause anything more than being a minor annoyance however."
+                gregg "We still don't know where we're going, do we?"
                 
-                player "Is he always like this?"
+                angus "Not really. If only we had a guide who was familiar with this area."
                 
-                angus "No, he's usually worse."
+                "Everyone looks at Germ."
                 
-                gregg "You're next for a choking, Angus!"
+                germ "Me? I guess I could, as recompense for accidentally cursing you all with imminent death..."
                 
-                angus "*blush*"
+                player "Yeah I think we're gonna have to work on getting that curse lifted soon."
                 
-                selma "Thanks to your distraction, a lone figure manages to approach from behind undetected."
-            
-            else:
-                selma "You don't deserve that roll but whatever."
-                selma "Gregg manages to bring [name] down to the ground in an inescapable chokehold."
+                angus "Welcome aboard, Germ! Curse or no curse, traveling is always better with friends!"
                 
-                angus "Gregg please don't knock out our warrior before a combat encounter."
+                gregg "Yeah! Now let's GTFO before our stalker tries to \'befriend\' us next!"
                 
-                gregg "How do you know we're about to get in a fight?"
+                germ "Can I make a request?"
+                germ "Can I ride inside Angus's backpack?"
                 
-                angus "Because we're in a spooky desolate location and we just gained a party member. Of course we're gonna have to fight some fog demon or something."
+                angus "I don't see why not. Hop in, buddy!"
                 
-                #gregg "And you brought us here?!?"
+                "Germ flaps over to perch on the bag and dives right in. He pokes his head out and points out where to go next."
                 
-                selma "Angus's meta senses are correct, but it's not a fog demon. A lone figure approaches from behind, taking advantage of your distraction to quietly sneak right up to you."
+                germ "To get to the summit we have to go that way."
                 
-            angus "Hm? Who goes there?"
-            
-            selma "A blade slashes through the fog, narrowly missing Angus's throat as he jumps away from the attack just in the nick of time."
-            
-            angus "Whoa! Who the hell is that?"
-            
-            selma "It's hard to make out in the fog, but your assailant appears to be wearing a cloak with an insignia similar to the ones worn by the village wizards."
-            
-            gregg "They followed us all this way?!"
-            
-            germ "I tried to warn you. Finding me here was a bad omen. Now someone is going to die."
-            
-            player "It's four against one, we can win this easily!"
-            
-            germ "Eh, I'm just gonna sit this out since I don't really have a stake in your conflict. Have fun fighting though."
-            
-            "Angus twirls a grappling hook attached to a length of rope."
-            
-            angus "Draw your weapons! Ready for combat!"
-            
-            selma "The party prepares to fight for their life against the unknown assailant. Who could it be? What are their abilities? Why have they come so far to attack our petty band of misfits?"
-            selma "I suppose we'll find out next week~"
-            #selma "And with that, we'll conlcude our session for tonight."
-            
-        if cnc_class == "seer":
-            player "I'm the seer of the group. Something tells me our meeting was fated."
-            
-            germ "Probably! It's a small town- err mountain range after all!"
-            
-            selma "Your seer's intuition warns you of an oncoming stranger from behind."
-            
-            "Selma leans close to you and whispers something so the others can't hear."
-            #roll for seer's intuition. affects direction of approach, description, distance
-            
-            player "Ah perfect timing! I see... a lone figure. Cloaked and hooded. They're wearing a familiar insignia... The same kind as the wizards at the village!"
-            
-            angus "Oh shoot, they followed us all the way out here?"
-            
-            gregg "They must have sent an assassin to silence me!"
-            
-            player "Everybody draw your weapons!"
-            
-            selma "The party prepares to fight for their life against the unknown assailant. Who could it be? What are their abilities? Why have they come so far to attack our petty band of misfits?"
-            selma "I suppose we'll find out next week~"
-            
-        if cnc_class == "firemaker":
-            #add lighting your torch earlier in scene
-            player "I'm the party's firemaker. I make fires."
-            
-            "You wave your torch around."
-            
-            germ "I see! You should have no trouble navigating the mountains then."
-            germ "...And what about your other friend? Is he shy or something?"
-            
-            angus "Huh? It's just the three of us."
-            
-            "Germ points into the distance."
-            
-            germ "Something was moving over that way. Looked like a person."
-            
-            gregg "Germ you better not be effing with us!"
-            
-            germ "I'm not! He moved behind that bush!"
-            
-            angus "Oh god, he's not just a passerby if he's creeping around in the bushes."
-            
-            menu:
-                "Investigate":
-                    gregg "Someone go check it out."
-                    
-                    angus "You do it. You're the strongest member of our party."
-                    
-                    gregg "Nuh uh. I mean I am the strongest but I'm not going over there to get ambushed."
-                    
-                    angus "What, so you're saying we should send our weakest as bait?"
-                    
-                    gregg "I didn't say that but if that's your plan I'll go with it."
-                    
-                    angus "Germ?"
-                    
-                    germ "Nah, I'm sitting this out."
-                    
-                    player "I guess I'll be the one to go investigate."
-                    
-                    selma "How very firemaker of you. Taking initiative and finding your own path."
-                    
-                    player "I'm only doing this because I'm the only one qualified to hold the light stick."
-                    
-                    gregg "Fire scary."
-                    
-                    angus "I mean, we can all hold a torch. Gregg probably doesn't have the skills to build a fire but I obviously do for campfires."
-                    angus "But thematically it does make sense that you'd be the one to go check it out."
-                    
-                    "You sigh and hold your torch in the direction of the rustling in the bushes."
-                    
-                    selma "Slowly you creep up to the leaves, straining your eyes to see through the fog."
-                    selma "Your torch illuminates the silhouette of a mysterious person hiding among the leaves."
-                    #selma "The flames reflect off a pair of eyes staring you down from just a few feet away!"
-                    selma "The stranger leaps back from their hiding spot and you lose track of their position."
-                    selma "In the brief moment you got a look at them you could make out they were wearing a cloak with a familiar insignia stitched on..."
-                    selma "The same one the wizards you fought previously wore!"
-                    
-                "GTFO":
-                    player "We should get out of here. I dunno if it's just a wild animal or a serial killer or what but we still need to get off this mountain sooner or later."
-                    
-                    angus "Agreed. We might be able to get some distance between it and us and throw it off our trail."
-                    
-                    gregg "We still don't know where we're going, do we?"
-                    
-                    angus "Not really. If only we had a guide who was familiar with this area."
-                    
-                    "Everyone looks at Germ."
-                    
-                    germ "Me? I guess I could, as recompense for accidentally cursing you all with imminent death..."
-                    
-                    player "Yeah I think we're gonna have to work on getting that curse lifted soon."
-                    
-                    angus "Welcome aboard, Germ! Curse or no curse, traveling is always better with friends!"
-                    
-                    gregg "Yeah! Now let's GTFO before our stalker tries to \'befriend\' us next!"
-                    
-                    germ "Can I make a request?"
-                    germ "Can I ride inside Angus's backpack?"
-                    
-                    angus "I don't see why not. Hop in, buddy!"
-                    
-                    "Germ flaps over to perch on the bag and dives right in. He pokes his head out and points out where to go next."
-                    
-                    germ "To get to the summit we have to go that way."
-                    
-                    #gregg "You said you afflicted us with a curse of imminent death? Well you're coming with us until it's lifted!"
-                    
-            selma "*Yaaaawn*"
-            selma "I think we'll have to call this the stopping point for tonight."
+                #gregg "You said you afflicted us with a curse of imminent death? Well you're coming with us until it's lifted!"
+                
+        selma "*Yaaaawn*"
+        selma "I think we'll have to call this the stopping point for tonight."
+    
+    selma "Good work everybody, you played your characters quite well~"
         
-        selma "Good work everybody, you played your characters quite well~"
-            
-        angus "And you provided an intriguing story to play out!"
-            
-        gregg "I like the part where the entire wizard mafia wants me dead."
+    angus "And you provided an intriguing story to play out!"
         
-        germ "I just hope I don't end up being responsible for the party dying."
+    gregg "I like the part where the entire wizard mafia wants me dead."
+    
+    germ "I just hope I don't end up being responsible for the party dying."
+    
+    gregg "I'm sure we'll find a way to lift the curse so we don't die and you don't have to live in isolation!"
+    
+    selma "Well, what do you think [tg_class]? Did you have fun?"
+    
+    player "Yeah! I still don't really know what I'm doing but it's cool imagining we're all in some steampunk wizard realm going on a big adventure."
+    
+    selma "Good to hear~"
+    selma "Think you'll make it to the next session? Same time same place next week."
+    
+    player "I'll try to!"
+    
+    selma "Great! See ya there!"
+    
+    "Everyone lingers around for a little while longer, just chilling, cleaning up and eating the rest of the snacks."
+    
+    scene bg black with dissolve
+    
+    "Eventually you make it back home and take a well earned rest."
+                
+        #approach or leave, keep torch or put it out   
+            #rather, keep torch or bury it somewhere as a distraction
+        #throw your torch, it either goes nowhere, illuminates the stranger, or hits the stranger. low roll value to drop torch.
         
-        gregg "I'm sure we'll find a way to lift the curse so we don't die and you don't have to live in isolation!"
+        #your torch attracted the assassin but also let you see him before he attacks. can blow fire at him?
         
-        selma "Well, what do you think [cnc_class]? Did you have fun?"
+        #get into fight with assassin next session
         
-        player "Yeah! I still don't really know what I'm doing but it's cool imagining we're all in some steampunk wizard realm going on a big adventure."
-        
-        selma "Good to hear~"
-        selma "Think you'll make it to the next session? Same time same place next week."
-        
-        player "I'll try to!"
-        
-        selma "Great! See ya there!"
-        
-        "Everyone lingers around for a little while longer, just chilling, cleaning up and eating the rest of the snacks."
-        
-        scene bg black with dissolve
-        
-        "Eventually you make it back home and take a well earned rest."
-                    
-            #approach or leave, keep torch or put it out   
-                #rather, keep torch or bury it somewhere as a distraction
-            #throw your torch, it either goes nowhere, illuminates the stranger, or hits the stranger. low roll value to drop torch.
-            
-            #your torch attracted the assassin but also let you see him before he attacks. can blow fire at him?
-            
-            #get into fight with assassin next session
-            
-            
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        #an assassin sent after gregg falls off a cliff and dies, fulfilling germ's curse
-        #gregg then has to explain why he's being followed so hard
         
     
-    #"Head back down the mountain":
+    
+    
+    
+    
+    
+    
+    
+    
+    #an assassin sent after gregg falls off a cliff and dies, fulfilling germ's curse
+    #gregg then has to explain why he's being followed so hard
+    
+
+#"Head back down the mountain":
 
 
 
@@ -1214,11 +1214,11 @@ label cnc1:
 
 
 
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
 return

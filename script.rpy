@@ -1,6 +1,6 @@
 # This is the main script called upon when a new game is selected
 
-# Define characters
+#### Define characters
 define mae = Character("Mae", color="#ff3f54")
 define bea = Character("Bea", color="#4f7175")
 define gregg = Character("Gregg", color="#e8971a")
@@ -13,16 +13,8 @@ define player = Character("Wayfarer")
 define candy = Character("Candy")
 define stan = Character("Stan")
 define name = Character("Avery")
-define cafebird = Character("Trish")
 define driver = Character("Driver")
-define loriunknown = Character("???", color="#c1e0fc")
-define maeunknown = Character("???", color="#ff3f54")
-define selmaunknown = Character("???", color="#d15384")
-define trishunknown = Character("???")
-define trish = Character("Trish")
-define greggunknown = Character("???", color="#e8971a")
-define beaunknown = Character("???", color="#4f7175")
-define angusunknown = Character("???", color="#6fbc92")
+define trish = Character("???")
 define harleyunknown = Character("???")
 define harley = Character("Harley")
 define receptionist = Character("???")
@@ -44,13 +36,15 @@ define madamespectre = Character("Madame Spectre")
 
 label start:
 
-    # variables and definitions
+    #### variables
 
+    #### misc
     $ currentDate = "December 1"
     $ currentDay = 1
+    $ weekNumber = 1
     $ gender = ""
 
-    # keeps track of how much the characters like the player (AP = affinity points)
+    #### character affinity
     $ maeAP = 0
     $ beaAP = 0
     $ greggAP = 0
@@ -59,7 +53,7 @@ label start:
     $ selmaAP = 0
     $ germAP = 0
 
-    # personality values. they correspond to defining traits of each character and act as a secondary way to appeal to them. unlocks some dialogue options.
+    #### personality points
     #lori
     $ introverted = 0
 
@@ -81,25 +75,13 @@ label start:
     #selma
     $ mature = 0
 
-    # scene specific variables
-    $ weekNumber = 1
+    #### scene specific variables
+    
     $ libraryCard = False
-    $ beenToChurch = False
-    $ chosendrink = ""
-    $ wentWithGregg = ""
-    $ confectionChoice = "treat"
-    $ loriInteractionRude = False
-    $ loriInteractionNull = False
-    $ loriInteractionBold = False
-    $ loriInteractionNotBold = False
-    $ loriInteractionNeutral = False
-    $ firstWander = True
-    $ audiencepoet = ""
-    $ selmaNeutral = False
-    $ selmaGood = False
-    $ selmaBad = False
+    $ tgInvite = False
+    $ tgFailsafe = False
 
-    # Scene completion status (as in, has the player experienced this scene on their playthrough)
+    #### quest completion status
     $ beaSelmaPoetryCompleted = False
     $ maeLoriSleepoverCompleted = False
     $ maeChurch1Completed = False
@@ -110,41 +92,10 @@ label start:
     $ greggTownCompleted = False
     $ selmaLibraryReadingCompleted = False
     $ loriFilmCompleted = False
-    $ dragonsDungeons1Completed = False
     $ artsCouncilCompleted = False
-
-    # note: if you want to quickly test a scene, put "jump [sceneName]" right below this line
-
-
-
-    ####################
     
-    # Start day 1 (technically 2nd day in possum springs, you arrived the night of nov 29)
-    #november 30 2022 (2017 nitw release year + 5 years) (wednesday)
-
-    #scene bg black with fade
-
-    #play music "music/americano_loop.mp3" fadein 1.0
-    #add walking in snow sound effect
     
-    #"This must be the place."
-    #"You could smell the roasted coffee beans from a few blocks away."
-
-    scene bg cafe with dissolve
-
-    play sound "sound/storebell.mp3"
     
-    ###to do: mention lack of internet at home and bad cell service
-
-    #"Finally, you made it."
-    #"A bell on the door chimes as you walk into a cozy little cafe."
-    #"The sign on the door read:\nPosspresso\nEST. 2020"
-    #"The smell of roasted coffee beans guided you here from a couple blocks away."
-    #""
-    "Finally."
-    #"You were starting to think you'd never find the place, but the smell of roasted coffee beans pointed you in the right direction."
-    #"You were starting to think you'd never find the place, but the smell of roasted coffee beans set you on the right track."
-    "You were starting to think you'd never find the place. Thankfully the smell of roasted coffee beans guided you here from a couple blocks away."
     
     #########testing
     
@@ -215,117 +166,109 @@ label start:
     ######### end testing
     
     
-    #"You were starting to think you'd never make it, but the smell of roasted coffee beans helped you find the right place."
+    
+    # Start day 1
+    
+    python:
+        from enum import Enum
+
+    ####add walking in snow sound effect
+    
+    #"This must be the place."
     #"You could smell the roasted coffee beans from a few blocks away."
-    "You brush the snow off your jacket and take a moment to bask in the warmth of the cafe you just stepped into."
-    "The distance you travelled to get here, along with the frigid weather have left you drained of energy."
-    "What better place to rest and warm up than a coffee shop?"
-    "Posspresso... It's no chain you've ever heard of. Your home city had no shortage of local restaurants but this small town cafe is as authentic as it gets."
-    "While fairly clean and new looking, the place has a rustic country charm to it."
-    "No overly dramatic lighting, no artificially weathered hardwood, no hipster whiskers, no cheesy messages about coffee being the most important thing in life."
-    #"The chairs look like leftovers from whatever this place used to be, the out-of-place picnic table is covered in knife etchings new and old, the walls are adorned with bad painting that must come from the locals."
-    "Rather, Posspresso has mastered the art of furnishing on a budget."
-    "The chairs look like leftovers from whatever this place used to be, with the fake leather cushions being cracked and torn in a few places."
-    "You'd bet that picnic table was rescued from being sent to a landfill. As you pass by it, you can make out knife etchings both new and old."
-    #"one of them is from the 1970s"
-    "One would be wise to check for rusty nails before trying to sit on it."
-    #"The picnic table in the center takes up a bit too much room"
-    #"the out-of-place picnic table is covered in knife etchings new and old, the walls are adorned with bad painting that must have been made by the locals."
+
+    scene bg cafe with dissolve
+
+    play sound "sound/storebell.mp3"
+    
+    ###mention lack of internet at home and bad cell service
+    
+    "After treking through the snow for what felt like hours, you bask in the warmth and delectable aroma of the cafe, the only one in town if that map you got from the bus station is to be believed."
+    "Back home there were so many coffee shops you could simply walk across the street to chill at another one if the one you were sitting in didn't tickle your fancy."
+    "Posspresso... That's a new one. Either it's some hick chain you've never heard of or it's a local joint."
+    "The interior looks like someone's old home repurposed into a diner, then repurposed into a coffee shop."
+    "The picnic table is a nice touch to make the place stand out. As you pass by it, you notice it's covered in etchings of peoples initials and crude sayings."
     "The local artists' amateur paintings and cheap grandma tier wallpaper really brings it all together."
     #nuke possum springs carved into table
-    "Soul."
-    #"This must be what they refer to as 'soul.'"
-    #quaint and unassuming
-    #"This quaint local "
-    #finally a modern cafe in possum springs!
-    #"It's the only one in Possum Springs if that map you got from the bus station is to be believed."
-    #running joke about how every door in possum springs has a bell, even people's residences surprisingly ("it's just for the holidays. it's festive!")
-    #"Hardwood flooring, homely wallpaper, a chalkboard menu, the works."
-    #"Crude paintings adorn the walls, no doubt bought on the cheap from local artists."
-    #"You wonder how the hell they fit that giant picnic table through the door."
-    #"There's even a large picnic table occupies the center of the room."
-    #"How did they even fit that through the door, you wonder?"
+    "Dare you say, this place has... soul."
     "Behind the counter, a young bird lady with brick red feathers smiles and waves at you."
 
     show trish neutral at right with dissolve
 
-    trishunknown "Hi there, welcome to Posspresso! I'll be with you in just a minute!"
+    trish "Hi there, welcome to Posspresso! I'll be with you in just a minute!"
     
-    #hide trish with dissolve
-
     "She's busy helping another customer at the moment, giving you time to look over the menu."
     #"There's a variety of breakfast-y food and drinks to choose from as well as some sweets."
-
-    #show trish neutral at right
+    
     show selma neutral at left:
         xzoom -1
     with dissolve
     
-    selmaunknown "Crazy snow we're havin' today, huh?"
+    selma "Crazy snow we're getting, huh?"
     
-    trishunknown "I know right! Perfect day for a hot drink though!"
-    #trishunknown "Perfect day for a coffee!"
+    trish "I know right! Perfect day for a hot drink though!"
 
-    #selmaunknown "I'll drink to that"
-    selmaunknown "For real."
-    selmaunknown "Hmm, I'm feelin' a salted caramel mocha today."
+    #selma "I'll drink to that"
+    selma "For real."
+    selma "Hmm, I'm feelin' a salted caramel mocha today."
 
-    trishunknown "Ya want whipped cream on top?"
+    trish "Ya want whipped cream on top?"
 
-    selmaunknown "Hell yeah."
+    selma "Hell yeah."
 
-    trishunknown "Hahaha will that be all for you, Selmers?"
+    trish "Hahaha will that be all for you, Selmers?"
 
     #selma "Throw in a cinnamon roll too please."
     selma "Throw in a strawberry waffle too please."
     
-    trishunknown "Alright, that'll be... seven dollars and eighty five cents!"
-
-    #trishunknown "Alright, that'll be... six dollars and sixy six cents!"
-    
-    #selma "What a lucky number..."
-    
-    #trishunknown "Hahaha I know, right? Hopefully it's not like a bad omen or something!"
+    trish "Alright, that'll be... seven dollars and eighty five cents!"
 
     "The bear pulls a crumpled $10 bill out of her pocket and slides it over."
 
     selma "Keep the change."
 
-    trishunknown "Thank you very much!"
+    trish "Thank you very much! I'll have that ready for you just as soon as I can!"
+    
+    selma "Thanks~"
 
     hide selma with dissolve
     
     show trish neutral at center with move
 
-    "The bear steps aside and the barista looks over to you."
+    "The bear steps away and the barista looks over to you."
 
-    trishunknown "Ain't seen you around before!"
+    trish "Ain't seen you around before!"
+    
+    define trish = Character("Trish")
+    
     trish "Welcome to Posspresso! You can call me Trish!"
     trish "Have you decided what you'd like?"
+    
+    $ drinkenum = Enum('drinkenum', 'MOCHA SPECIAL AMERICANO CAPPUCCINO')
+    $ chosenDrink = 0
 
     menu:
         "{cps=0}I'll have uh...{/cps}"
         "What she had":
             $ selmaAP = selmaAP + 1
-            $ chosendrink = "mocha"
+            $ chosenDrink = drinkenum.MOCHA
             "Not sure what else to get, you just order the same thing the previous customer got."
         
         "Posspresso Special":
-        #surprise me
             $ bold = bold + 1
-            $ chosendrink = "posspressospecial"
+            $ chosenDrink = drinkenum.SPECIAL
             "You order the Posspresso Special. There's no description for it, but you wanted to try something new and local."
             "You also get an everything bagel with cream cheese to go along with it."
 
         "Americano":
             $ cynical = cynical + 1
-            $ chosendrink = "americano"
+            $ chosenDrink = drinkenum.AMERICANO
             "You order an americano and a blueberry bagel with honey butter spread to go along with it."
             "Gotta have something sweet to balance out the bitterness."
 
         "You're not sure...":
             $ introverted = introverted + 1
-            $ chosendrink = "cappuccino"
+            $ chosenDrink = drinkenum.CAPPUCCINO
             "You can't really decide."
             "The barista suggests a cappuccino. You go with that and order a chocolate chip waffle on the side."
 
@@ -344,6 +287,7 @@ label start:
         "30\%":
             $ gentle = gentle + 1
             "Eff it, you're feeling generous today. Maybe she'll throw in an extra shot of espresso for you too."
+            #cute baristas get bigger tips
         
         "No tip":
             $ chaotic = chaotic + 1
@@ -354,7 +298,7 @@ label start:
 
     $ povnameValid = False
     $ player = Character("[name]")
-    jump namescript1
+    #jump namescript1
     label namescript1:
 
         python:
@@ -429,39 +373,40 @@ label start:
         "That's wrong":
             jump namescript1
 
-    trish "Alright, I'll have that ready for y'all in just a minute!"
+    trish "Alright [name], I'll have that ready for y'all in just a minute!"
     
     player "Thanks."
 
     hide trish with dissolve
 
-    "You look around for a place to sit. That bear girl already found a table near the wall and plugged a laptop into a power outlet."
-    "Taking a seat by a window, you gaze at the blinding white landscape."
-    "Winter decided to come early this year. You heard there was a blizzard on its way and but you didn't think it would be this intense."
-    #"It's been snowing nonstop since you arrived in Possum Springs last night and your new home was colder than the innermost circle of Hell when you woke up."
-    "It's been snowing nonstop since you arrived in Possum Springs last night. You lack a proper windbreaker for this kind of weather but all the walking you've been doing has warmed you well enough."
+    "You look around for a place to sit. That bear girl already found a table near the wall and has plugged a laptop into a power outlet."
+    "Taking a seat by a window, you gaze out at the blinding white landscape."
+    "It seems winter decided to come early this year. It's the beginning of December but the entire county is coated in a blanket of snow.
+    "You heard there was a blizzard on its way and but you didn't think it would be this intense."
+    "It's been snowing nonstop since you arrived in Possum Springs last night and sadly you left your favorite jacket behind at your old place."
     "The town seems ill-prepared as well. You lost count of how many abandoned cars you saw on the way here, stuck in a ditch and buried under a foot of snow."
     "A few people were shovelling snow off the streets but at the rate it's coming down, they need a snow plow and a few metric tons of rock salt."
-    #. Most of the roads on the way here weren't plowed and you saw a couple of abandoned cars that had slid into ditches, now buried under a foot of snow."
     "You're lucky Posspresso even decided to open on a day like this."
     "Your eyes come to focus on your reflection in the glass, noticing you still have some snow on your..."
+
+    $ animalenum = Enum('animalenum', 'REPTILE BIRD MAMMAL')
+    $ animaltype = 0
     
     menu:
         "{cps=0}Your eyes come to focus on your reflection in the glass, noticing you still have some snow on your...{/cps}"
         "Scales":
-            $ animaltype = "reptile"
+            $ animaltype = animalenum.REPTILE
             "...scales. Because you're a reptile, of course."
             "Oh god how long have you been walking around with that bit of shed skin stuck to your face? How embarassing."
         "Fur":
-            $ animaltype = "mammal"
+            $ animaltype = animalenum.MAMMAL
             "...fur. Because you're a mammal, of course."
             "You pat down a patch of fur that the wind blew out of place but it keeps sticking up."
         "Feathers":
-            $ animaltype = "bird"
+            $ animaltype = animalenum.BIRD
             "...feathers. Because you're a bird, of course."
             "You try to pat down a few that are sticking up, but they are refusing to cooperate."
             
-    #"Guess you should have done a better job grooming yourself this morning, but you really needed to get something to eat ASAP."
     "You look like a wreck."
 
     menu:
@@ -540,7 +485,8 @@ label start:
     
     hide trish with dissolve
 
-    if chosendrink == "posspressospecial":
+    #if chosendrink == "posspressospecial":
+    if chosenDrink == drinkenum.SPECIAL:
         #"You walk up to the counter and grab your breakfast"
         "You fetch your bagel and steaming hot beverage from the counter and head back to your seat."
         "The mug contains a dark concoction with a layer of light foam, topped with dark chocolate shavings."
@@ -553,7 +499,8 @@ label start:
         "You can't resist taking another satisfying sip before moving on to your bagel."
         "Nothing special here, just an ordinary bagel topped with seeds and herbs with ample cream cheese stuffed between its halves."
     
-    elif chosendrink == "americano":
+    #elif chosendrink == "americano":
+    elif chosenDrink == drinkenum.AMERICANO:
         "You fetch your bagel and steaming hot beverage from the counter and head back to your seat."
         "The mug contains a plain dark brew with a few bubbles on the surface."
         "You blow on it then take a sip."
@@ -565,7 +512,8 @@ label start:
         "You can't resist taking another satisfying sip before moving on to your bagel."
         "It's full of juicy blueberries and the honey butter spread oozes pure sweetness. Good thing you have a strong drink to wash down this sugar overdose."
 
-    elif chosendrink == "cappuccino":
+    #elif chosendrink == "cappuccino":
+    elif chosenDrink == drinkenum.CAPPUCCINO:
         "You fetch your waffle and steaming hot beverage from the counter and head back to your seat."
         "The mug contains a gradient of different flavors. A dark espresso mixture on the bottom that turns into a milky white cream the further up you go, topped with a layer of foam."
         "You blow on it then take a sip."
@@ -576,7 +524,8 @@ label start:
         #"You cut a slice and pop it into your mouth."
         "The sweet chocolate chips combined with the melted butter send your taste buds to heaven with a first class ticket."
     
-    elif chosendrink == "mocha":
+    #elif chosendrink == "mocha":
+    elif chosenDrink == drinkenum.MOCHA:
         "You fetch your waffle and steaming hot beverage from the counter and head back to your seat."
         "The glass mug reveals a light brown mixture with a layer of chocolate on the bottom. Up top is a layer of whipped cream, with a drizzle of caramel and sea salt"
         "You lick away some of the cream then take a sip of the actual drink."
@@ -761,7 +710,7 @@ label start:
 
     show gregg apron at center with dissolve
 
-    greggunknown "Heya!"
+    gregg "Heya!"
 
     "A chipper fox greets you as you approach the register."
     #"A fox with amber orange fur mans the register you wandered up to."
@@ -1184,6 +1133,13 @@ label day4:
     
     $ nightTime = False
     
+    if tgInvite = False:
+        $ tgFailsafe = True
+        
+        "You wake up in the mood for a nice warm pastry and coffee. You should check out that bakery Bea mentioned. It's a lot closer than Posspresso, and you might as well see who has the better drinks."
+        
+        call meetingAngus
+    
     menu:
         "{cps=0}What should you do?{/cps}"
         "Explore home" if houseEventsDay:
@@ -1366,7 +1322,7 @@ label day4:
     
     
     #day5
-    #optional dnd with gregg and co
+    #dnd with gregg and co
     
     scene bg home_interior_day with fade    
     
@@ -1465,7 +1421,7 @@ label day4:
                 "Tonight is when Gregg said he's gathering people to play Conquests and Constellations."
                 "You head to the bakery where he said they're hosting it."
                                 
-                call cnc1
+                call tg1
                 
             "Do nothing":
                 "Yeahhh you don't really feel like doing anything today."
@@ -3966,8 +3922,8 @@ label nextday:
                 jump artsCouncilScene
             "Train Tracks" if loriFilmCompleted == False:
                 jump loriFilm
-            "DnD with Gregg and Angus" if dragonsDungeons1Completed == False:
-                jump dragonsDungeons1
+            #"tabletop gaming" 
+                
 
 
     label day13:
