@@ -39,7 +39,7 @@ label start:
     #### variables
 
     #### misc
-    $ currentDate = "December 1"
+    #$ currentDate = "December 1"
     $ currentDay = 1
     $ weekNumber = 1
     $ gender = ""
@@ -76,10 +76,29 @@ label start:
     $ mature = 0
 
     #### scene specific variables
-    
     $ libraryCard = False
     $ tgInvite = False
     $ tgFailsafe = False
+    $ exploredHouse = False
+    $ hasKey = False
+    $ doorStuck = False
+    $ hasCoffee = False    
+    $ hasShedKey = False
+    $ seenFlyer = False
+    $ foundBandGig = False
+    $ haveOverdueBook = False
+    $ cinnamonRoll = False
+    
+    #### quest started status
+    $ beaQuestStarted = False
+    $ bikeQuestStarted = False
+    $ libraryQuestStarted = False
+    $ selmaQuestStarted = False
+    $ officeQuestStarted = False
+    
+    #### quest status
+    $ beaQuestBakery = False
+    $ beaQuestPosspresso = False
 
     #### quest completion status
     $ beaSelmaPoetryCompleted = False
@@ -93,6 +112,35 @@ label start:
     $ selmaLibraryReadingCompleted = False
     $ loriFilmCompleted = False
     $ artsCouncilCompleted = False
+    $ beaQuestComplete = False
+    $ bikeQuestComplete = False
+    $ libraryQuestComplete = False
+    $ selmaQuestComplete = False
+    $ officeQuestComplete = False
+    
+    
+    $ metLori = False
+    $ metMae = False
+    $ metBea = False
+    $ metAngus = False
+    $ metSelma = False
+    $ metGerm = False
+    $ metMarcie = False
+
+    
+    $ libraryVisits = 0
+    $ posspressoVisits = 0
+    
+    
+    $ libraryGuests = []
+    $ posspressoGuests = []
+    
+    ####events options
+    $ houseEventsDay = ["houseOffice", "houseBook", "houseKey"]
+    $ houseEventsNight = ["houseOffice", "houseBook", "houseKey"]
+    
+    
+
     
     
     
@@ -174,14 +222,11 @@ label start:
 
     ####add walking in snow sound effect
     
-    #"This must be the place."
-    #"You could smell the roasted coffee beans from a few blocks away."
-
     scene bg cafe with dissolve
 
     play sound "sound/storebell.mp3"
     
-    ###mention lack of internet at home and bad cell service
+    ###mention lack of internet at home
     
     "After treking through the snow for what felt like hours, you bask in the warmth and delectable aroma of the cafe, the only one in town if that map you got from the bus station is to be believed."
     "Back home there were so many coffee shops you could simply walk across the street to chill at another one if the one you were sitting in didn't tickle your fancy."
@@ -381,7 +426,7 @@ label start:
 
     "You look around for a place to sit. That bear girl already found a table near the wall and has plugged a laptop into a power outlet."
     "Taking a seat by a window, you gaze out at the blinding white landscape."
-    "It seems winter decided to come early this year. It's the beginning of December but the entire county is coated in a blanket of snow.
+    "It seems winter decided to come early this year. It's the beginning of December but the entire county is coated in a blanket of snow."
     "You heard there was a blizzard on its way and but you didn't think it would be this intense."
     "It's been snowing nonstop since you arrived in Possum Springs last night and sadly you left your favorite jacket behind at your old place."
     "The town seems ill-prepared as well. You lost count of how many abandoned cars you saw on the way here, stuck in a ditch and buried under a foot of snow."
@@ -447,9 +492,7 @@ label start:
     show trish neutral at right with dissolve
     
     trish "Selmers!"
-
-    #"The barista's voice pulls you out of your flashback, conveniently right as it was about to end anyway."
-    #"Now you remember! You were on your way to buy groceries and you stopped by this cafe on the way for breakfast!"
+    
     "The bear waits to finish typing something on her laptop before going up to the counter to collect her drink."
 
     show selma neutral at left with dissolve:
@@ -483,23 +526,23 @@ label start:
     trish "[name]!"
     trish "Here ya go, hun. Enjoy!"
     
+    player "Thanks."
+    #player "How could I not enjoy it?"
+    #player "I couldn't imagine not enjoying coffee."
+    
     hide trish with dissolve
 
-    #if chosendrink == "posspressospecial":
     if chosenDrink == drinkenum.SPECIAL:
-        #"You walk up to the counter and grab your breakfast"
         "You fetch your bagel and steaming hot beverage from the counter and head back to your seat."
         "The mug contains a dark concoction with a layer of light foam, topped with dark chocolate shavings."
         "You blow on it then take a sip."
         "..."
-        #"This is the most bitter thing you've ever tasted."
         "It's a mixture of overwhelming bitterness and sweetness."
         "The flavor is earthy and potent with a burnt chocolate aftertaste."
         "It's an exceptionally strong drink that leaves you wanting more of it."
         "You can't resist taking another satisfying sip before moving on to your bagel."
         "Nothing special here, just an ordinary bagel topped with seeds and herbs with ample cream cheese stuffed between its halves."
     
-    #elif chosendrink == "americano":
     elif chosenDrink == drinkenum.AMERICANO:
         "You fetch your bagel and steaming hot beverage from the counter and head back to your seat."
         "The mug contains a plain dark brew with a few bubbles on the surface."
@@ -507,12 +550,9 @@ label start:
         "..."
         "So bitter. So good."
         "No fancy flavors required, just a couple shots of espresso and good old fashioned water. The way god intended."
-        #"Nothing says \"I hate myself\" more than drinking straight espresso with nothing but a little extra water to make it tolerable."
-        #"It's incredibly smooth and gently massages your taste buds with a light, warming flavor."
         "You can't resist taking another satisfying sip before moving on to your bagel."
         "It's full of juicy blueberries and the honey butter spread oozes pure sweetness. Good thing you have a strong drink to wash down this sugar overdose."
 
-    #elif chosendrink == "cappuccino":
     elif chosenDrink == drinkenum.CAPPUCCINO:
         "You fetch your waffle and steaming hot beverage from the counter and head back to your seat."
         "The mug contains a gradient of different flavors. A dark espresso mixture on the bottom that turns into a milky white cream the further up you go, topped with a layer of foam."
@@ -521,10 +561,8 @@ label start:
         "It gives you two distinct flavors of steamed milk and espresso. One is light and the other is strong, neither overpowering the other."
         "Can't go wrong with a classic drink like this, even if it is kinda plain."
         "You can't resist taking another satisfying sip before moving on to your waffle."
-        #"You cut a slice and pop it into your mouth."
         "The sweet chocolate chips combined with the melted butter send your taste buds to heaven with a first class ticket."
     
-    #elif chosendrink == "mocha":
     elif chosenDrink == drinkenum.MOCHA:
         "You fetch your waffle and steaming hot beverage from the counter and head back to your seat."
         "The glass mug reveals a light brown mixture with a layer of chocolate on the bottom. Up top is a layer of whipped cream, with a drizzle of caramel and sea salt"
@@ -533,39 +571,36 @@ label start:
         "The salt contrasts with the sugary taste of chocolate and caramel, which balance the bitterness of espresso."
         "All the flavors combine into an exquisite beverage that gives you everything you could want in a drink."
         "You can't resist taking another satisfying sip before moving on to your waffle."
-        #"You slice off a chunk and pop it into your mouth."
         "Juicy strawberries are baked right into it, offering a sweet sensation with nearly every bite of the savory buttermilk waffle."
 
     "Meanwhile, the bear on the other side of the room taps away on her keyboard, her claws making quite a racket."
     "You can hear a lot of frustrated backspacing after she types a long block of text."
-    #"You pull out your phone and get up to date on all your internet needs between bites and sips."
     "That reminds you, you're connected to the internet now."
-    
-    
-    #"You couldn't get online at home, so now's the perfect time to get up to date on your internet addiction."
     "You pull out your phone and alternate between poking the screen and devouring your breakfast."
     "It may be a while before you get internet again, so you should download something to keep yourself busy later on."
     
-    $ chosenHobby = ""
+    
+    $ hobbyenum = Enum('hobbyenum', 'MOVIES BOOKS MUSIC')
+    $ playerHobby = 0
     
     menu:
         "{cps=0}It may be a while before you get internet again, so you should download something to keep yourself busy later on.{/cps}"
         "Download movies":
-            $ chosenHobby = "movies"
+            $ playerHobby = hobbyenum.MOVIES
             $ loriAP = loriAP + 1 #because she's known for liking movies
             #$ greggAP = greggAP + 1 #because choosing movies over books is something gregg would relate to, idk
             "This will give you something to pass the time. Hopefully the TV at home is modern enough for you to stream from your phone, you don't wanna get stuck watching these on a 5 inch screen."
             "You spend some time curating which movies you're interested in and finding working links."
         
         "Download books":
-            $ chosenHobby = "books"
+            $ playerHobby = hobbyenum.BOOKS
             $ mature = mature + 1
             $ selmaAP = selmaAP + 1
             "Books will last longer than movies and are more enjoyable anyway. Plus you can brag about being an adult who reads, an endangered species in the modern age."
             "You spend some time curating which books you're interested in and finding working links."
             
         "Download music":
-            $ chosenHobby = "music"
+            $ playerHobby = hobbyenum.MUSIC
             $ beaAP = beaAP + 1
             #$ maeAP = maeAP + 1
             "You'd rather not suffer in silence. Even if you've got nothing else to do you can always rock out to something."
@@ -573,8 +608,6 @@ label start:
     
     "Hours go by and the setting sun reminds you that you still need to go shopping to stock your pantry, preferably before it gets dark."
     
-    # It will get dark soon so you better hit the road."
-    #"You're in dire need of food to stock your pantry, so you look up a route to the nearest grocery store and memorize it before you're cut off from the internet."
     "You look up a route to the nearest grocery store and memorize it before you're cut off from the internet."
     "The map app says they're open today but you're skeptical. You guess you'll find out when you get there."
     "You rise from your seat and put away your dishes."
@@ -590,38 +623,22 @@ label start:
     
     hide trish with dissolve
     
-    "You step out into the snowy landscape and begin your lone march."
+    "You step out into the snowy landscape and begin the next leg of your journey. Next stop: Ham Panther."
     #fade to white
     
-    #"Feeling energized from the coffee, you set out on the next leg of your journey."
-    "Now that your belly is filled and your veins are pulsating with caffeine, you're ready to set out on the next leg of your journey."
-    #"You push away the snow that had accumulated at the door"
-
     stop music fadeout 2.0
-
-    #scene bg woods_day
-
-    #"Now that you've had your morning coffee, you're in a position to get things done."
-    #"Now that your belly is filled and your veins are pulsating with caffeine, you're in a position to get things done."
-    #"Next stop: Ham Panther."
-    "The nearest store right at the limit of what you'd call walking distance. Better get a move on while there's still daylight."
-    #"It's almost noon already judging by the position of the sun. Best hurry if you want to make it home before dark."
-    #"Best hurry if you want to make it home before dark. Longest Night is coming up soon, which means you don't have a lot of daylight to work with."
-    #Longest Night is in just a few weeks so you don't have much daylight to burn."
     
     scene bg ham_panther with fade
 
-    play music "music/itsadrag_loop.mp3" fadein 1.0
+    #play music "music/itsadrag_loop.mp3" fadein 1.0
 
     "Now here's a familiar place. The soulless, sterile, yet gross corporate chain grocery store, Ham Panther."
     "You kick the snow off your boots and venture in. You're just shopping for the basics so you grab a basket and get to work."
-    #"Ham Panthers are basically the same everywhere. And man are they everywhere."
-    #"Except a couple miles closer to your house apparently."
-    "Rice, beans, lentils... The shelves are damn near empty but you manage to get what you need."
+    "Rice, beans, lentils... The shelves are damn near empty but you manage to get what you need to survive."
     #You pass by some townsfolk whose shopping carts are filled to the brim in response to the storm, though it's mostly junk food.
     "You pass by some townsfolk whose shopping carts are filled to the brim, no doubt in response to the snowstorm."
     "Two of them were arguing so aggressively over the last carton of eggs, you thought you were about to witness a murder."
-    "These small towns really are something."
+    #"These small towns really are something."
     #"Should you pick up milk as well?"
     "Miraculously there are a few milk jugs left."
     "Which one should you get, almond milk or normal milk?"
@@ -663,11 +680,11 @@ label start:
             "You shrug and place it in your basket. Can't be that bad. At least it's cheap."
             
             stan "Hope you enjoy it! Let me know how it is!"
-
+    
             player "Sure thing. Have a nice day."
             
             stan "You do the same!"
-
+    
             hide stan with dissolve
             
         "Moo cow milk":
@@ -676,34 +693,34 @@ label start:
             "Alright, what's next?"
             "You grab a few more things then swing by the deli where an old cat in an apron and paper hat stands behind the counter."
             "He catches you looking at the meats on display and bellows out a jolly greeting that startles you."
-
+    
             show stan working at right:
                 yalign .5
             with dissolve
-
+    
             stan "Howdy!"
             stan "Let me know if you need anything and I'd be happy to assist you."
-
+    
             "You give him a nod of acknowledgement then go back to deliberating which meat to get."
-
+    
             player "Hey there..."
-
+    
             "You glance at his nametag."
-
+    
             player "...Stan."
             player "Can I get some..."
             
             "You pick out a few meats to stock your freezer with so you won't have to make frequent trips back here."
-
+    
             stan "Sure thing! I'll have that ready for you in a jiffy!"
-
+    
             "You shift your weight from one foot to the other while the clerk prepares the meats."
             "Once he's finished, he slides the packaged product toward you and you cross it off your shopping list."
-
+    
             stan "Have a nice day!"
-
+    
             player "Thanks, you too!"
-
+    
             hide stan with dissolve
 
     "You go down a few more aisles, tossing some extras into your basket until it's nearly overflowing, then proceed to the check out."
@@ -713,8 +730,6 @@ label start:
     gregg "Heya!"
 
     "A chipper fox greets you as you approach the register."
-    #"A fox with amber orange fur mans the register you wandered up to."
-    #"He sports a dark grey turtleneck sweater underneath his apron, along with a chipper attitude."
     "The name tag pinned to the apron reads \"Gregg\", with a tiny, crude portrait of himself drawn next to it."
 
     player "Hey."
@@ -745,7 +760,7 @@ label start:
 
     player "I just arrived yesterday. I tried that coffee shop this morning, what was it called... Posspresso?"
 
-    gregg "Oh yeah that one's pretty good. You should check out Bear Essentials sometime. It's a bakery on main street. Serves pretty good coffee too."
+    gregg "Oh yeah that one's pretty good. You should check out Bear Essentials sometime. It's the bakery on main street. Serves pretty good coffee too."
     #as long as you don't need anything fancy
     
     player "I'll be sure to pop in sometime."
@@ -754,7 +769,7 @@ label start:
     
     player "I'll uh, keep an eye out I guess?"
     
-    gregg "There's a ton of abandoned buildings to explore, the lake should be frozen enough for ice skating by now, uhhh some people go fishing in the old trolley station but it smells like somebody died down there so I don't often go, oh and my band is getting together to do this-"
+    gregg "There's a ton of abandoned buildings to explore, the lake should be frozen enough for ice skating soon, uhhh some people go fishing in the old trolley station but it smells like somebody died down there so I don't often go, oh and my band is getting together to do this-"
     
     player "Haha yeah that sure sounds exciting! Can I pay for my groceries now?"
     
@@ -768,7 +783,7 @@ label start:
     
     hide gregg with dissolve
     
-    "You grab your bagged groceries and begin the long journey back home as the sun descends into the hilly landscape."
+    "You grab your bagged groceries and begin walking back to your new home as the sun descends into the hilly landscape, only getting mildly lost along the way."
     
     scene bg home_interior_night with fade
     
@@ -776,82 +791,51 @@ label start:
     #"What the hell, it was doing this last night too."
     #"In fact, it feels colder!"
     #"You better not wake up to find yourself frozen to death because this machine "
-    "You're gonna be so mad if you freeze to death in your sleep."
+    #"You're gonna be so mad if you freeze to death in your sleep."
     "Exhausted from trudging through snow all day, you put away your groceries as quickly as possible then wrap yourself in several blankets."
-    if chosenHobby == "movies":
+    if playerHobby == hobbyenum.MOVIES:
         "With your face pressed against a cold pillow, you watch a movie until you fall asleep."
-    elif chosenHobby == "music":
+    elif playerHobby == hobbyenum.MUSIC:
         "With your face pressed against a cold pillow, you listen to music until you fall asleep."
-    elif chosenHobby == "books":
+    elif playerHobby == hobbyenum.BOOKS:
         "With your head pressed against a cold pillow, you read a book until you fall asleep."
 
     # Day 2, thursday
     $ currentDay = 2
-    $ currentDate = "December 2"
+    #$ currentDate = "December 2"
     $ nightTime = False
     
-    #code stuff
-    $ metLori = False
-    $ metMae = False
-    $ metBea = False
-    $ metAngus = False
-    $ metSelma = False
-    $ metGerm = False
-    $ metMarcie = False
-    
-    $ beaQuestStarted = False
-    $ bikeQuestStarted = False
-    $ libraryQuestStarted = False
-    $ selmaQuestStarted = False
-    $ officeQuestStarted = False
-    
-    $ beaQuestBakery = False
-    $ beaQuestPosspresso = False
-    
-    $ beaQuestComplete = False
-    $ bikeQuestComplete = False
-    $ libraryQuestComplete = False
-    $ selmaQuestComplete = False
-    $ officeQuestComplete = False
-    
-    $ libraryVisits = 0
-    $ posspressoVisits = 0
-
-    $ hasKey = False
-    $ doorStuck = False
-    $ hasCoffee = False    
-    $ hasShedKey = False
-    $ seenFlyer = False
-    $ tabletopInvitation = False
-    $ foundBandGig = False
     
     scene bg home_interior_day with fade
     
-    "You awaken just as warm as you were when you went to bed."
-    "Which is to say you've been in cryogenic sleep. You'd have a better time sleeping in the fridge."
-    "Seriously, you need to figure out what is up with the heater."
-    "It's been a long time since you were last in this house but you can recall some details from the times you visited."
-    "You remember watching your father fiddle with the heater once or twice when it wasn't blasting enough heat."
-    "Unfortunately the inner workings are blocked by a grate that's screwed in tight."
-    "You try to unscrew the bolts with your fingers but they're rusted and stuck in place."
-    "Maybe there's a wrench somewhere in this house."
-    "Your old man left behind a ton of stuff. There's gotta be a toolbox around here somewhere."
-    "You haven't got a clue where to look though. This house is like a labrynth and there's no lack of nooks and crannies to search through."
-    "It might be faster to just go out and buy a new wrench."
-    "The map you downloaded at the cafe says there's a hardware store nearby you could try."
+    "You awaken just as warm as you were when you went to bed. The air blowing through the vents never got any warmer."
+    #"Which is to say you've been in cryogenic sleep. You'd have a better time sleeping in the fridge."
+    "Seriously, you need to figure out what is up with the furnace."
+    "A memory arises from when you were a young child watching your father reignite the heater. Makes sense that this place would need the heater restarted after being abandoned for so long."
+    #"It's been a long time since you were last in this house but you can recall some details from the times you visited."
+    #"You remember watching your father fiddle with the heater once or twice when it wasn't blasting enough heat."
+    "Unfortunately the inner workings are blocked by a grate that's screwed in tight with some weird proprietary screw type you've never seen before."
+    "You try using various tools and objects to you found lying around to loosen the bolts but" 
+    "even resorting to attempting to pry it open"
+    #"You try to unscrew the bolts with your fingers but they're rusted and stuck in place."
+    
+    #"Maybe there's a wrench somewhere in this house."
+    "Your old man left behind a ton of stuff in this house. There's gotta be a toolbox around here somewhere."
+    #"You haven't got a clue where to look though. This house is like a labrynth and there's no lack of nooks and crannies to search through."
+    #It might be faster to just go out and buy a new wrench."
+    #"The map you downloaded at the cafe says there's a hardware store nearby you could try."
     "What should you do?"
+    ####change to force you to go to hardware store after briefly looking through the house?
+    #what to get from the hardware store?
+    #maybe just drop the heater subplot and go for something else
+        #this way it doesn't need to be super urgent, it just needs to be something you'll bother getting bea a coffee for sooner or later so she'll go through the new shipments for your niche thing instead of hauling rock salt and snow shovels all day
+    #2 stage furnace, 1 not igniting
+    #low power heater not enough. you recall fixing a loose wire on a heater before and think it's the same thing (or your dad did when you were little at your city house)
+    #screws on the heater cover are weird proprietary ones, have to get a screwdriver at store
     
-    $ haveOverdueBook = False
-    $ cinnamonRoll = False
     
-    $ libraryGuests = []
-    
-    $ posspressoGuests = []
-    
-    $ exploredHouse = False
-    $ houseEventsDay = ["houseOffice", "houseBook", "houseKey"]
-    $ houseEventsNight = ["houseOffice", "houseBook", "houseKey"]
-    
+    #### to do: if there aren't any more scenes for exploring the house, remove option to explore house. Add it back when more options are available
+    #### 
     if not houseEventsDay:
         "You've already explored the house enough for now."
     
