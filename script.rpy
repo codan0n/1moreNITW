@@ -808,7 +808,7 @@ label start:
     
     scene bg home_interior_day with fade
     
-    "You awaken just as warm as you were when you went to bed. The air blowing through the vents never got any warmer."
+    "You awaken just as cold as you were when you went to bed. The air blowing through the vents never got any warmer."
     #"Which is to say you've been in cryogenic sleep. You'd have a better time sleeping in the fridge."
     "Seriously, you need to figure out what is up with the furnace."
     "A memory arises from when you were a young child watching your father reignite the heater. Makes sense that this place would need the heater restarted after being abandoned for so long."
@@ -832,6 +832,8 @@ label start:
     #2 stage furnace, 1 not igniting
     #low power heater not enough. you recall fixing a loose wire on a heater before and think it's the same thing (or your dad did when you were little at your city house)
     #screws on the heater cover are weird proprietary ones, have to get a screwdriver at store
+    #if you didn't visit the bakery to get bea coffee, you visit it after getting the tools to get a snack for yourself instead of doing marcie's quest
+    #or just say fuck it all and make this segment linear
     
     
     #### to do: if there aren't any more scenes for exploring the house, remove option to explore house. Add it back when more options are available
