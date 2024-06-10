@@ -1,11 +1,103 @@
-label angusBakery1:
+label angusBakeryIntro:
+    #this variant is for visiting the bakery before ever going to the hardware store
+    
+    $ metAngus = True
+        
+    scene bg bakery_exterior with dissolve
+    
+    "You decide to check out the bakery first."
+    "The smell of pastries, confections, and coffee fills the air around it."
+
+    scene bg bakery_interior with fade
+
+    #play sound "sound/storebell.mp3"
+    #play music "music/Indecisive_Redux.mp3" fadein 1.0
+    
+    "A bell on the door chimes as you step inside and a voice calls out from the back of the shop."
+    
+    angus "I'll be with you in just a moment!"
+    
+    "You look over the treats behind the glass case while you wait, trying to decide what to get."
+    "Before long, a bear comes around the corner, holding a tray of peppermint frosted cookies between mittened paws."
+    
+    show angus neutral at left with dissolve:
+        xzoom -1
+    
+    angus "Sorry for the wait, these were ready to come out of the oven."
+    angus "What can I get you?"
+    
+    player "Those smell really good! Can I get a couple to go?"
+    
+    angus "Of course! Will that be all for you?"
+    
+    player "Yep. For now at least."
+    
+    "The baker uses a pair of tongs to grab a couple of cookies and drops them into a paper bag."
+    
+    angus "Here you go! I'll ring you up over here."
+    
+    "You pull a piping hot cookie from the bag and nibble on it while completing your purchase."
+    
+    player "Ow! Hot!"
+    
+    angus "Please do be careful. I know it's freezing outside but I literally just pulled those out of the oven."
+    
+    player "I couldn't resist. It's so good!"
+    
+    angus "I'm glad you enjoy it enough to scald your tongue, but I assure you they're just as good after they've cooled down."
+    
+    "The bear rings up your order and you swipe your card on the machine."
+    
+    angus "Thanks, have a good day!"
+    
+    player "You too!"
+    
+    hide angus with dissolve
+    
+    "You exit the store satisfied with your sugary snack and make your way to the hardware store."
+    
+    jump meetingBea
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
     $ confectionChoice = "treat"
 
     if tgFailsafe = True:
         $ tgInvite = True
         
         
-        #add alt lines for if you've met angus before
+        ####add alt lines for if you've met angus before
         
         scene bg bakery_exterior with dissolve
         
@@ -758,104 +850,3 @@ label angusBakery1:
         
         #"You warm your hands on the coffee cup while waiting for the transaction to process."
         
-
-    else:
-        #means you have not visited Bea and this is your first time in the bakery
-        $ metAngus = True
-        
-        scene bg bakery_exterior with dissolve
-        
-        "You decide to check out the bakery first."
-        "The smell of confections, pastries, and coffee fills the air around it."
-
-        scene bg bakery_interior with fade
-
-        play sound "sound/storebell.mp3"
-        play music "music/Indecisive_Redux.mp3" fadein 1.0
-
-        #"As soon as you walk in, the scent of peppermint hits you like a truck."
-        #"You feel bad for the baker behind the counter who has to put up with this for hours every day."
-        #"At least he probably comes home smelling nice."
-        
-        "A bell on the door chimes as you step inside and a voice calls out from the back of the shop."
-        
-        angus "I'll be with you in just a moment!"
-        
-        "You look over the treats behind the glass case while you wait."
-        
-        "A bear comes around the corner, holding a tray of peppermint frosted cookies between mittened paws."
-        
-        show angus neutral at left with dissolve:
-            xzoom -1
-        
-        angus "Sorry for the wait, these were ready to come out of the oven."
-        angus "What can I get you?"
-        
-        #"He pulls a tray full of holiday themed cookies out from the oven then turns to you with a warm smile."
-
-        #angus "Welcome! I'll be with you in just a second!"
-
-        #"You nod to him as he sets the tray on a cooling rack and moves a fresh batch into the oven."
-
-        #hide angus with dissolve
-
-        #"You take the time to look over the menu, deciding on a coffee to get for the hardware store crocodile."
-        #"You also pick out a treat from the glass case for yourself."
-
-        #angus "Sorry for the wait. What can I get you?"
-        
-        #$ cinnamonRoll = False
-        #honestly just remove this choice, it doesn't affect anything and bloats the game with too many choices at once
-        #menu:
-        #    "Poppy seed muffin":
-        #        $ confectionChoice = "muffin"
-
-        #        player "I'll have one poppy seed muffin, please!"
-        #    "Cinnamon roll":
-        #        $ confectionChoice = "cinnamon roll"
-        #        $ cinnamonRoll = True
-                
-        #        player "I'll have a cinnamon roll, please!"
-        #    "Glazed lemon cake":
-        #        $ confectionChoice = "cake"
-                
-        #        player "I'll have a slice of lemon cake, please!"
-        #    "Raspberry scone":
-        #        $ confectionChoice = "scone"
-
-        #        player "I'll have a raspberry scone, please!"
-        
-        player "Those smell really good! Can I get a couple to go?"
-        
-        angus "Of course! Will that be all for you?"
-        
-
-        
-    
-        player "Yep. For now at least."
-        
-        "The baker uses a pair of tongs to grab your cookies and drops them into a paper bag."
-        
-        angus "Here you go! I'll ring you up over here."
-        
-        "You pull a piping hot cookie from the bag and nibble on it while completing your purchase."
-        
-        player "Ow! Hot!"
-        
-        angus "Please do be careful. I know it's freezing outside but I literally just pulled those out of the oven."
-        
-        player "I couldn't resist."
-        
-        angus "I'll take you willing to burn your tongue for my baking as a compliment."
-        
-        "The bear rings up your order and you swipe your card on the machine."
-        
-        angus "Thanks, have a good day!"
-        
-        player "You too!"
-        
-        hide angus with dissolve
-        
-        "You exit the store satisfied with your sugary snack and make your way to the hardware store."
-        
-        jump meetingBea

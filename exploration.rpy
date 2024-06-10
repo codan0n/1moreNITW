@@ -555,7 +555,7 @@ label townBridge1:
     "It couldn’t hurt to return every so often, you might meet the railing daredevil at some point if you do."
     "But for now, your fingers are cold and your nose is freezing, better to keep walking and stay warm than stand here and freeze until the sun goes down, then you’d really be in trouble."
 
-    "There aren’t any… Wolves or something around here, are there?"
+    "There aren’t any... Wolves or something around here, are there?"
 
     "You quicken your pace and get back to town, mercifully without being mauled."
     

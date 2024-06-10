@@ -139,7 +139,8 @@ label start:
     $ houseEventsDay = ["houseOffice", "houseBook", "houseKey"]
     $ houseEventsNight = ["houseOffice", "houseBook", "houseKey"]
     
-    
+    $ townEventsDay = ["townGerm1", "townAngus1", "townRooftops1"]
+    $ townEventsNight = [""]
 
     
     
@@ -769,7 +770,7 @@ label start:
     
     player "I'll uh, keep an eye out I guess?"
     
-    gregg "There's a ton of abandoned buildings to explore, the lake should be frozen enough for ice skating soon, uhhh some people go fishing in the old trolley station but it smells like somebody died down there so I don't often go, oh and my band is getting together to do this-"
+    gregg "There's a ton of abandoned buildings to explore, the lake should be frozen enough for ice skating soon, uhhh some people go scrap fishing in the old trolley station but it smells like somebody died down there so I don't often go, oh and my band is getting together to do this-"
     
     player "Haha yeah that sure sounds exciting! Can I pay for my groceries now?"
     
@@ -809,31 +810,51 @@ label start:
     scene bg home_interior_day with fade
     
     "You awaken just as cold as you were when you went to bed. The air blowing through the vents never got any warmer."
-    #"Which is to say you've been in cryogenic sleep. You'd have a better time sleeping in the fridge."
     "Seriously, you need to figure out what is up with the furnace."
-    "A memory arises from when you were a young child watching your father reignite the heater. Makes sense that this place would need the heater restarted after being abandoned for so long."
-    #"It's been a long time since you were last in this house but you can recall some details from the times you visited."
-    #"You remember watching your father fiddle with the heater once or twice when it wasn't blasting enough heat."
-    "Unfortunately the inner workings are blocked by a grate that's screwed in tight with some weird proprietary screw type you've never seen before."
-    "You try using various tools and objects to you found lying around to loosen the bolts but" 
-    "even resorting to attempting to pry it open"
-    #"You try to unscrew the bolts with your fingers but they're rusted and stuck in place."
+    "A memory arises from when you were a young child watching your father reignite the heater. Makes sense that this place would need some maintenance after being abandoned for so long."
+    "You look around for the furnace but the inner workings are blocked by a grate that's screwed in tight with some weird proprietary screw type you've never seen before."
+    "You try using various tools and objects you found lying around to loosen the bolts but none of them work." 
+    #"even resorting to attempting to pry it open"
+    "The map you downloaded at the cafe says there's a hardware store in town. Maybe they'll have the screwdriver you need."
     
-    #"Maybe there's a wrench somewhere in this house."
-    "Your old man left behind a ton of stuff in this house. There's gotta be a toolbox around here somewhere."
-    #"You haven't got a clue where to look though. This house is like a labrynth and there's no lack of nooks and crannies to search through."
-    #It might be faster to just go out and buy a new wrench."
-    #"The map you downloaded at the cafe says there's a hardware store nearby you could try."
-    "What should you do?"
-    ####change to force you to go to hardware store after briefly looking through the house?
-    #what to get from the hardware store?
-    #maybe just drop the heater subplot and go for something else
-        #this way it doesn't need to be super urgent, it just needs to be something you'll bother getting bea a coffee for sooner or later so she'll go through the new shipments for your niche thing instead of hauling rock salt and snow shovels all day
+    #jump to meeting bea scene, starting with town square
+    #insert walk to main street and description here, plus optional bakery part
+    
+    "You put on a jacket and boots and make your way towards the center of the town, to the main street."
+            
+    scene bg roads_day
+    
+    #"You try to follow the map but without GPS "
+    #"Without GPS you get a bit lost but eventually stumble upon what must be the main street."
+    #"blah blah blah general description of the surroundings."
+    "Old brick buildings line the streets as you approach your destination. Some of them look lived in, others look like they're about to crumble."
+    "Some look like both."
+    "Squirrels frantically hop around burying nuts in the snow in a last ditch effort to stow away food for the coming months."
+    #i think the memorial statue is between the shops?
+    #"pass by the trolley station but it's boarded up. You take a peek inside."
+
+    "That looks like the hardware store up ahead, but the aroma from the nearby bakery draws you in."
+    "Where will you go?"
+    
+    menu:
+        "{cps=0}Where will you go?{/cps}"
+        "Bakery":
+            jump angusBakeryIntro
+            #gregg mentions he's on a long lunch break since it's a slow day, but that he is still clocked in  
+        
+        "Hardware store":
+            jump meetingBea
+        
+    
+    
     #2 stage furnace, 1 not igniting
-    #low power heater not enough. you recall fixing a loose wire on a heater before and think it's the same thing (or your dad did when you were little at your city house)
-    #screws on the heater cover are weird proprietary ones, have to get a screwdriver at store
-    #if you didn't visit the bakery to get bea coffee, you visit it after getting the tools to get a snack for yourself instead of doing marcie's quest
-    #or just say fuck it all and make this segment linear
+    #low power heater not enough. you recall fixing a loose wire on a heater before and think it's the same problem (or your dad did when you were little at your city house)
+    #go to hardware store for screwdriver > need to do favor for bea for her to let you borrow it > get distracted along the way > go to bakery and get invited to dnd and get bea's coffee > give bea coffee > deliver bag for marcie > go home
+    #you can visit the bakery before the hardware store, but you'll just get a pastry for yourself and you'll have to return later to get bea's coffee
+    #reason that you could go to posspresso but it'll be cold by the time you get back
+    #point is, you need to visit the bakery for the plot to progress
+    #try to visit bakery but they're on break, so you decide to explore town a bit
+        #randomized, can bump into angus feeding squirrels in the park, germ feeding cats at abandoned grocery store, see mae and lori jumping on rooftops. mae drops her wallet and you pick it up to return to her later. no money in it of course. you're on a ~2 week timer from the time you find the wallet to return it (otherwise you return it in a brief mundane scene and don't get to see the lori mae sleepover). If you haven't met Lori and Mae yet at the pickax, then trigger the flashback scene at mae's house.
     
     
     #### to do: if there aren't any more scenes for exploring the house, remove option to explore house. Add it back when more options are available
@@ -928,8 +949,7 @@ label day3:
     #options: stay home and explore (minor event), go into town and return the wrench (minor event), library if you have the book (major event), posspresso (minor event), visit bakery (non event), explore random part of town (minor event) [current available options are  exploring the underground and uhhhhh, seeing germ feeding wild cats at the food donkey, maybe merge random posspresso meets into this list]
     
     
-    $ townEventsDay = ["townGerm1", "townAngus1", "townBridge1"]
-    $ townEventsNight = ["townBridge1"]
+
     
     $ wrenchReturned = False
     $ nightTime = False
