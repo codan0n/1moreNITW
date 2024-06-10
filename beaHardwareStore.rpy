@@ -200,7 +200,7 @@ label meetingBea:
             
             player "N-no."
             
-            "Dammit, she caught on immediately."
+            "Damn, she caught on immediately."
             
             bea "Tell you what."
             bea "If you get me a coffee... *yawn* ...I'll loan you the tool."
@@ -211,17 +211,39 @@ label meetingBea:
             bea "More like never went to sleep in the first place. You gonna hook me up with some caffeine or not?"
             
             player "Fine, I'll do it. It's cheaper than buying the full kit, that's for sure."
-
-            bea "Just make sure they don't put too much creamer in it. It ruins the flavor."
+            
+            bea "Oh and no milk or creamer. It ruins the flavor."
 
     hide bea with dissolve
 
     "She drops the salt bag into a pile with the others then shuffles to the back of the store. You hear her start dragging another bag."
-    #"Well that's a quest if you've ever heard one. You step outside and begin your hunt for coffee."
-    #"It feels like you've just been given a quest. You better get that gator some coffee. It's a hell of a lot cheaper than buying that whole wrench kit."
-    "It feels like you've just been given a quest."
+    "It feels like you've just been given a quest. Hopefully it doesn't drag on too long before you can get your heater fixed. Sleeping in the cold sucks."
+    
+    scene bg roads_day with dissolve
+    
     "You step out of the shop and look around. Where could you get coffee for that crocodile?"
-    "There's Posspresso but it's a long way and the drink would surely get cold on the way back."
+    "There's Posspresso but it's a long way and the drink would surely get cold on the way back..."
+    "A gentle breeze carries a savory aroma to your nose. You turn toward the source of it which happens to be the bakery a few doors down."
+    "Of course! Can't have cookies without coffee!"
+    "You make your way to the shop but your progress comes to a halt when the door refuses to budge."
+    "Just your luck, there's a sign reading \'Out for lunch\' posted on the door."
+    "That's fine, you can wait."
+    "Might as well explore the town some in the mean time."
+    
+    #call a random townEventDay
+    
+    $ randomSelected = renpy.random.choice(townEventsDay)
+    
+    call expression randomSelected
+    
+    #might try setting randomSelected and then calling label exploration, have if statements within exploration that correspond to the possible labels from randomSelected
+    
+    
+    
+    
+    
+    
+    
 
 
 label day2roam:

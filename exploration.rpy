@@ -242,12 +242,15 @@ label nightlabel:
     
     
 label townGerm1:
+    $ townEventsDay.remove("townGerm1")
+    $ townEventsDay.append("townGerm2")
+
     #day exclusive
     
     "You venture west toward the outskirts of town. There lies a barren parking lot next to a large abandoned building."
-    "In the distance you can make out a silhouette in against the sun. As you get closer you can see him petting stray cats."
-    "There are tins of cat food strewn about. Your foot accidentally sends one flying, making a loud clattering sound when it hits the asphalt."
-    "The cats scatter and the figure turns to you."
+    "In the distance you can make out a silhouette of a bird fellow in against the sun. As you get closer you can see him petting stray cats."
+    "As you creep forward, your foot accidentally sends one of the empty cat food tins flying. It makes a loud clattering sound when it hits the asphalt."
+    "The cats scatter in all directions and the figure turns to you."
     
     show germ neutral at center with dissolve
     
@@ -337,16 +340,20 @@ label townAngus1:
     #if you've met angus already, he is alreaded sitting there
     #if you haven't met angus, he comes up after you sit down
     
+    $ townEventsDay.remove("townAngus1")
+    $ townEventsDay.append("townAngus2")
+    
     scene bg roads_day
     
     if metAngus == True:
-        "As you wander through main street, you decide to find a place to sit for a rest. Luckily there's a conveniently placed bench nearby, and it looks like someone you know had the same idea as you."
+        "As you wander through main street, you eyes are drawn to a statue standing atop a tall pillar. It appears to be a war monument."
+        "While you're reading the plaque, a you hear a familiar voice. You turn and are greeted by the bakery bear."
         
         show angus neutral at center with dissolve
         
         angus "Hello there. It's nice to see you again."
         
-        player "Is this seat taken?"
+        player "Ah, it's you. Mind if I sit with you?"
         
         angus "Not at all."
         
@@ -354,10 +361,10 @@ label townAngus1:
         
         angus "What brings you here today?"
         
-        player "Nothing in particular. I'm just wandering aimlessly."
-        player "You?"
+        player "Thought I might hop into the bakery but it's closed."
         
-        angus "I'm just on break. I come out here to feed the squirrels around this time every day. They've grown to expect me."
+        angus "Haha sorry about that! It's just me working there and I need to take breaks from time to time."
+        angus "I like to come out here and feed the squirrels around this time every day. They've grown to expect me."
         
         "Angus pulls some bread from a paper bag. The crinkling sound attracts the attention of several nearby squirrels and they come running over."
         "He tears off small pieces of bread and the squirrels either wait patiently for him to toss them or snatch it directly out of his claws."

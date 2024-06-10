@@ -1007,22 +1007,21 @@ label day3choice:
             
             $ randomSelected = renpy.random.choice(townEventsDay)
             
-            if randomSelected == "townAngus1":
-                #to do: move remove and append statements into appropriate label
-                $ townEventsDay.remove("townAngus1")
-                $ townEventsDay.append("townAngus2")
-                call townAngus1 
-            elif randomSelected == "townGerm1":
-                $ townEventsDay.remove("townGerm1")
-                $ townEventsDay.append("townGerm2")
-                call townGerm1 
-            elif randomSelected == "townBridge1":
-                $ townEventsDay.remove("townBridge1")
-                $ townEventsNight.remove("townBridge1")
-                $ townEventsDay.append("townBridge2")
-                $ townEventsNight.append("townBridge2")
-                call townBridge1 
-            #add one more event to the pool
+            call expression randomSelected
+            
+            #if randomSelected == "townAngus1":
+            #    call townAngus1 
+            #elif randomSelected == "townGerm1":
+            #    $ townEventsDay.remove("townGerm1")
+            #    $ townEventsDay.append("townGerm2")
+            #    call townGerm1 
+            #elif randomSelected == "townBridge1":
+            #    $ townEventsDay.remove("townBridge1")
+            #    $ townEventsNight.remove("townBridge1")
+            #    $ townEventsDay.append("townBridge2")
+            #    $ townEventsNight.append("townBridge2")
+            #    call townBridge1 
+            ##add one more event to the pool
             
             
         "Return wrench" if wrenchReturned == False:
