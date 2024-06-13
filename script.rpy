@@ -77,6 +77,7 @@ label start:
 
     #### scene specific variables
     $ libraryCard = False
+    $ bakeryVisited = False
     $ tgInvite = False
     $ tgFailsafe = False
     $ exploredHouse = False
@@ -644,9 +645,12 @@ label start:
     "Miraculously there are a few milk jugs left."
     "Which one should you get, almond milk or normal milk?"
     
+    $ groceryItem = ""
+    
     menu:
         "{cps=0}Which one should you get, almond milk or normal milk?{/cps}"
         "Almost milk":
+            $ groceryItem = "almond milk"
             $ sympathetic = sympathetic + 1
             "You'd think packaging the runoff water from washing almonds would be cheaper than raising a cow but somehow it's always the more expensive option."
             "Oh well, at least you've grown accustomed to the taste and it doesn't upset your tummy."
@@ -689,6 +693,8 @@ label start:
             hide stan with dissolve
             
         "Moo cow milk":
+            $ groceryItem = "skim milk"
+            
             "Where else are you supposed to get your calcium? You need strong bones for... well you just need them, okay?"
             "At least you don't have to worry about it spoiling on the walk back home since it's more likely to freeze."
             "Alright, what's next?"

@@ -231,14 +231,26 @@ label meetingBea:
     "Might as well explore the town some in the mean time."
     
     #call a random townEventDay
+    ####instead of being random, give the player an explicit choice
     
-    $ randomSelected = renpy.random.choice(townEventsDay)
+    #$ randomSelected = renpy.random.choice(townEventsDay)
     
-    call expression randomSelected
+    #call expression randomSelected
     
-    #might try setting randomSelected and then calling label exploration, have if statements within exploration that correspond to the possible labels from randomSelected
+    menu:
+        "Where will you go?"
+        "Wander streets":
+            call townRooftops1
+        "War monument":
+            "You see some sort of monument nearby. Might be a little interesting. A little."
+            call townAngus1
+        "Venture west":
+            "You're gonna keep walking until you see something worth your while."
+            call townGerm1
     
+    "You check the bakery once more and this time it's open. Finally you can get on with your quest."
     
+    jump angusBakeryCoffee
     
     
     

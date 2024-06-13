@@ -361,7 +361,7 @@ label townAngus1:
         
         angus "What brings you here today?"
         
-        player "Thought I might hop into the bakery but it's closed."
+        player "Thought I might hop back into the bakery but it's closed."
         
         angus "Haha sorry about that! It's just me working there and I need to take breaks from time to time."
         angus "I like to come out here and feed the squirrels around this time every day. They've grown to expect me."
@@ -383,7 +383,12 @@ label townAngus1:
                 
                 player "Whoa! Do they bite?"
                 
-                angus "Thankfully they haven't bitten me yet. I hear they have a pretty nasty bite. Those teeth are made to crack walnuts after all."
+                angus "No?"
+                angus "Not yet at least."
+                angus "They like to grab their food with their tiny hands before nibbling on it."
+                #angus "Thankfully they haven't bitten me yet. I hear they have a pretty nasty bite. Those teeth are made to crack walnuts after all."
+                
+                "You shudder at the thought of being bitten by those walnut cracking teeth."
         
         "Angus offers the loaf of bread to you."
         
@@ -409,19 +414,25 @@ label townAngus1:
         
         angus "I should get back to work now but you're more than welcome to join me in feeding the squirrels anytime."
         
-        player "For sure. I'll see you around."
+        player "For sure. I think I'll sit here and watch them a bit longer. See you around!"
         
-        angus "Later."
+        angus "Later!"
+        
+        hide angus with dissolve
+        
+        "You hang around for a few minutes before getting up and moving along with your day."
         
         
         #angus "Haha they get impatient if I'm late to feed them. "
         #angus "I like to view them as my friends."
         
-        #it gets hot and stuffy in the bakery
+        #angus "it gets hot and stuffy in the bakery"
     
     else:
+        #have not met angus before
+        
         "Walking along main street, you decide to sit on a bench for a quick rest. You push aside the snow and take a seat next to some kind of old war monument."
-        "As you're distracted watching squirrels burying nuts in the snow, you don't notice when somebody approaches."
+        "Distracted watching squirrels burying nuts in the snow, you don't notice when somebody approaches."
         
         show angus neutral with dissolve
         
@@ -454,7 +465,12 @@ label townAngus1:
                 
                 player "Whoa! Do they bite?"
                 
-                angus "Thankfully they haven't bitten me yet. I hear they have a pretty nasty bite. Those teeth are made to crack walnuts after all."
+                angus "No?"
+                angus "Not yet at least."
+                angus "They like to grab their food with their tiny hands before nibbling on it."
+                #angus "Thankfully they haven't bitten me yet. I hear they have a pretty nasty bite. Those teeth are made to crack walnuts after all."
+                
+                "You shudder at the thought of being bitten by those walnut cracking teeth."
                 
         "He offers the loaf of bread to you."
         
@@ -493,15 +509,69 @@ label townAngus1:
         
         angus "Same! You should stop by the bakery sometime. We've got more than just squirrel food."
         
-        player "For sure. I'll see you around."
+        player "For sure! I was planning on checking it out anyway."
         
-        angus "Later."
+        angus "I'll have it open in just a few minutes if you wanna come in!"
         
+        player "Cool, I'll just chill here until then."
+        
+        angus "See you soon!"
+        
+        player "Later!"
+        
+        hide angus with dissolve
+        
+        "You hang around for a few minutes before getting up and moving along with your day."
         
         
     $ metAngus = True
+
+    return
     
-    hide angus with dissolve
+label townRooftops1:
+    #"scene where you see Lori and Mae running along the rooftops and mae drops her wallet."
+    #"set timer for when you've acquired the wallet and later do a check if it hasn't been too long. Something like if currentDay - dayFoundWallet > 15"
+    
+    $ dayWalletFound = currentDay
+    
+    "You take a stroll through main street, doing some window shopping and trying not to slip on frozen sections of sidewalk."
+    "Strangely you keep hearing giggling but can't make out where it's coming from until a pile of snow falls on your head."
+    "Above you are two kids prancing around on the rooftops, leaping from building to building."
+    "\'Tag, you're it!'\ one of them shouts after catching up to the other."
+    "\'Not for long!\' her friend replies and begins chasing after her."
+    "By chance something falls from her pocket right in front of you. You pick it up and call out."
+    
+    player "Hey! You dropped your..."
+    
+    "Seemingly unaware of your presence, they run along a rooftop out of your sight but you can still hear their laughs and hollars bouncing off the brick walls."
+    
+    player "...wallet."
+    
+    "No way you'll be able to catch up to them now."
+    
+    menu:
+        "Finder's keepers":
+            "You open the wallet hoping to find some cash but the money pocket is empty. Even the debit cards are expired."
+            "Well, this is no use to you."
+            "Or anyone else for that matter."
+            "You're tempted to just throw it away but you might as well see if you can return it and get some good karma."
+            "You pull an ID card from a pouch and read the name."
+        "Check ID":
+            "Your first thought is to check if there's an ID card inside. If there is, it should help you track down the owner and return their wallet."
+            "You flip through the cards in various pouches until you find the one."
+            
+    "Margaret Borowski...?"
+    
+    if metMae == True:        
+        "You recognize the cat in the photo, it's Mae!"
+        "Good god she's lost a lot of weight since this shot was taken."
+        
+    else:
+        "According to the birth date listed, she's 25!"
+        
+    "Guess it wasn't kids playing tag up there, it was a couple of fully grown adults!"
+    "You wonder who the other one was. You didn't get a good look at either of them."
+    "Nevertheless, there's an address printed on the card for you to go and return this to... whenever you have a moment of course."
 
     return
 
