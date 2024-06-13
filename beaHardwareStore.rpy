@@ -250,7 +250,92 @@ label meetingBea:
     
     "You check the bakery once more and this time it's open. Finally you can get on with your quest."
     
-    jump angusBakeryCoffee
+    call angusBakeryCoffee
+    
+    scene bg olpickaxe with dissolve
+    
+    "You returned to the hardware store to uphold you end of the bargain with the cashier."
+
+    #"She's still moving bags of salt around."
+    
+    show bea apron at center with dissolve
+    
+    #"If you went to the bakery first, you can give her a cookie. If you went after the hardware store you'll have a cinnamon roll and bea will comment on either."
+    
+    #to do: bea responds differently based on your choice earlier
+    bea "Wow, you actually came back. You must be desperate."
+    
+    "You set the coffee cup and your bag on the counter."
+    
+    bea "And you even got me a treat as well?"
+    
+    menu:
+        "Claws off, that one's mine.":
+            player "Claws off, that one's for me."
+            
+            bea "Relax, I'm just kidding."
+            bea "Thanks for the coffee though, I needed it. Here's your screwdriver. Be sure to bring it back once you're done with it."
+        "Err, yeah totally!":
+            $ beaAP = beaAP +1
+            
+            player "Err, yeah totally!"
+            
+            bea "Oh! That's surprising. How sweet of you."
+            
+            if cinnamonRoll == True:
+                "She digs the cinnamon roll out of the bag and nibbles on it."
+            
+            else:
+                "She digs the a cookie out of the bag and nibbles on it."
+            
+            player "Can I have that screwdriver now?"
+            
+            bea "Yeah sure. Just remember to bring it back once you're done with it."
+            
+    player "Of course."
+    
+    #bea "If that's all you need"
+    bea "Now if you'll excuse me, these bags aren't gonna haul themselves."
+    
+    player "Right, I guess I'll see you later then. And thanks."
+    
+    bea "Don't mention it."
+    
+    "She takes a sip of the coffee you just delivered before heading to the back room."
+    #bea "Same."
+    
+    hide bea with dissolve
+
+    call marcieSalt
+        
+    jump day2Evening
+    
+    #else:
+    #    jump day2Evening
+    #    
+    #    #bea "Now if you'll excuse me, I have more salt to haul."
+    #    
+    #    #"She takes a sip of the coffee you just delivered and wanders to the back room."
+    #    
+    #    #"As you're about to leave the store, a short cat in an orange sweater bursts in."
+    #
+    #    #"The croc sighs and pulls out an electronic cigarette. It lights up as she takes a puff from it."
+    #
+    #    #hide bea with dissolve
+    #
+    #    #"While she's away, you pass the time by taking a look around the shop."
+    #
+
+
+
+
+
+    
+    
+    
+    
+    
+    
     
     
     
