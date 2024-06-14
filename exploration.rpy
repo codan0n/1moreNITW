@@ -1,5 +1,52 @@
 #more labels
 
+label dailyExploration:
+    menu:
+        "{cps=0}What should you do?{/cps}"
+        "Explore home" if houseEventsDay:
+            if exploredHouse == False:
+                call unexploredHouse
+            
+            #if houseEvents is empty, you can no longer explore the house
+            #if not houseEventsDay:
+            #    $ houseFullyExplored = True
+            #    "You've already explored the house enough."
+            
+            $ randomSelected = renpy.random.choice(houseEventsDay)
+                
+            call expression randomSelected
+            #else:
+            #    "You've already explored the house enough."
+            #    $ houseFullyExplored = True
+        
+        "Explore town" if townEventsDay:
+            "You decide to explore Possum Springs and familiarize yourself with the area."
+            
+            $ randomSelected = renpy.random.choice(townEventsDay)
+            
+            call expression randomSelected
+            
+        "Return screwdriver" if screwdriverReturned == False:
+            #could probably just have a $ hasScrewdriver variable and it would work more cleanly
+            #day or night
+            $ screwddriverReturned = True
+            
+            "You promised the hardware store girl that you'd return the screwdriver after you were done with it."
+            "You have no more use for it so you should give it back as soon as possible."
+            
+            call returnScrewdriverScene 
+        "Return library book" if haveOverdueBook == True:
+            #daytime only
+            "The book is more overdue than the screwdriver. You should return it first."
+            
+            call libraryVisit1 
+            
+        "Do nothing":
+            "Yeahhh you don't really feel like doing anything today."
+            "You sit back and mindlessly stare at your phone for a few hours."
+            
+    return
+
 label unexploredHouse:
     $ exploredHouse = True
     

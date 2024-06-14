@@ -1,4 +1,4 @@
-label tg1:
+label tabletopGame1:
     #notes
     #arrive at bakery, angus/gregg welcomes you and invites you to back room. selma is there shuffling cards. she briefly explains the rules of the game and you begin. germ pops in shortly afterwards and joins the game
     
@@ -1165,7 +1165,7 @@ label tg1:
     
     "Everyone lingers around for a little while longer, just chilling, cleaning up and eating the rest of the snacks."
     
-    scene bg black with dissolve
+    scene bg home_interior_night with dissolve
     
     "Eventually you make it back home and take a well earned rest."
                 
