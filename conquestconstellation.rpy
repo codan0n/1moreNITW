@@ -185,7 +185,7 @@ label tabletopGame1:
     gregg "*That's* what I was forgetting!"
     gregg "Not a problem, we can just make a character for you right quick."
     
-    if animaltype == "mammal":
+    if animaltype == animalenum.MAMMAL:
         gregg "How about... Simone the fighter?"
         
         player "I uhh, actually don't know the dusk stars all too well. But a fighter sounds cool."
@@ -233,7 +233,7 @@ label tabletopGame1:
                         $ tg_class = "seer"
                         player "I'll be the seer."
                             
-    elif animaltype == "bird":
+    elif animaltype == animalenum.BIRD:
         gregg "How about... The Firemaker?"
         
         player "I uhh, actually don't know the dusk stars all too well. But I like the sound of an pyromaniac."
@@ -283,7 +283,7 @@ label tabletopGame1:
                         
                 
                     
-    elif animaltype == "reptile":
+    elif animaltype == animalenum.REPTILE:
         gregg "How about... Sterling the seer?"
         
         player "I uhh, actually don't know the dusk stars all too well. What the heck is a seer?"
@@ -833,7 +833,7 @@ label tabletopGame1:
     
     angus "Hmm. Nearly murdered you say? What's the reason this time?"
     
-    n "Gregg's tone becomes hushed."
+    "Gregg's tone becomes hushed."
     
     gregg "Let's just say I saw something I wasn't supposed to. Y'know, regarding the evil guys who come out at night."
     
@@ -851,10 +851,10 @@ label tabletopGame1:
     
     player "Sure, sounds like fun."
     
-    selmers "Blah blah blah you go to the market uneventfully and are fully equipped for the trip."
-    selmers "Just wanted to skip the boring parts cause it's getting late and we've still got a lot of adventure ahead of us."
-    selmers "After a few days, you've made it to the base of the mountains. The fog bathing the area is so thick you can hardly see more than a few feet in front of you."
-    selmers "Burned trees scar the landscape and every now and then you hear rocks tumbling down the steep cliffs. What started as a trail has become an ambiguous space between the dead plants that barely resembles a path."
+    selma "Blah blah blah you go to the market uneventfully and are fully equipped for the trip."
+    selma "Just wanted to skip the boring parts cause it's getting late and we've still got a lot of adventure ahead of us."
+    selma "After a few days, you've made it to the base of the mountains. The fog bathing the area is so thick you can hardly see more than a few feet in front of you."
+    selma "Burned trees scar the landscape and every now and then you hear rocks tumbling down the steep cliffs. What started as a trail has become an ambiguous space between the dead plants that barely resembles a path."
     
     gregg "Angus, are you sure you know where you're going?"
     
@@ -881,7 +881,7 @@ label tabletopGame1:
     else:
         gregg "Hrmmmmmfine. I've got a bad feeling about this thought..."
     
-    n "Gregg suddenly gasps."
+    "Gregg suddenly gasps."
         
     gregg "What was that noise?"
     
@@ -896,7 +896,7 @@ label tabletopGame1:
     
     angus "I've heard legends of you but I never thought I'd come across you here of all places."
     
-    if metGerm == true:
+    if metGerm == True:
         player "Oh hey it's you."
         
         "Germ gives you a nod of acknowledgement."    

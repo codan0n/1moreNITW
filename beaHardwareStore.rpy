@@ -437,6 +437,7 @@ label meetingBea:
 
 
 label returnScrewdriverScene:
+    $ screwdriverReturned = True
     $ townEventsDay.append("townLoriTracks1")
     
     scene bg olpickaxe with dissolve
@@ -449,7 +450,7 @@ label returnScrewdriverScene:
     bea "*Yaawwwwn*"
     bea "Welcome to the Ol' Pickax. You want it, we probably got it."
     #bea "Welcome to the Ol' Pickax, what is it that ya need?"
-    bea "Oh it's you. You got my wrench?"
+    bea "Oh it's you. You got my screwdriver?"
     
     player "Yup. Thanks for letting me borrow it. My heater was broken and I needed to loosen the bolts to-"
     
@@ -600,6 +601,12 @@ label returnScrewdriverScene:
     "You'll take that as your cue to finally get out of here."
     
     hide bea with dissolve
+    
+    if dayWalletFound > 0:
+        "Hey wait, wasn't that the girl who dropped her wallet?"
+        "If you'd remembered sooner you could have given it back to her."
+        "Oh well, you're sure you'll see her again sometime. Or you could just go to her place and hand it back yourself."
+    
 
     stop music fadeout 2.0
     

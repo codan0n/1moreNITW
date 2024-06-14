@@ -89,6 +89,7 @@ label start:
     $ foundBandGig = False
     $ haveOverdueBook = False
     $ cinnamonRoll = False
+    $ dayWalletFound = 0
     
     #### quest started status
     $ beaQuestStarted = False
@@ -961,7 +962,7 @@ label day3:
     #options: stay home and explore (minor event), go into town and return the wrench (minor event), library if you have the book (major event), posspresso (minor event), visit bakery (non event), explore random part of town (minor event) [current available options are  exploring the underground and uhhhhh, seeing germ feeding wild cats at the food donkey, maybe merge random posspresso meets into this list]
     
     
-    $ screwddriverReturned = False
+    $ screwdriverReturned = False
     
     #if you explore first then try to visit the hardware store, it'll be closed early. can still visit the bakery though.
     

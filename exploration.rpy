@@ -295,10 +295,13 @@ label nightlabel:
     
     jump continue
     
-    
+label townLoriTracks1:
+    "townLoriTracks1"
+
 label townGerm1:
     $ townEventsDay.remove("townGerm1")
-    $ townEventsDay.append("townGerm2")
+    ####to be added in a future version
+    #$ townEventsDay.append("townGerm2")
 
     #day exclusive
     
@@ -396,7 +399,8 @@ label townAngus1:
     #if you haven't met angus, he comes up after you sit down
     
     $ townEventsDay.remove("townAngus1")
-    $ townEventsDay.append("townAngus2")
+    ####to be added in a future version, also to need to be on week 2+
+    #$ townEventsDay.append("townAngus2")
     
     scene bg roads_day
     
