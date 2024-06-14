@@ -296,7 +296,115 @@ label nightlabel:
     jump continue
     
 label townLoriTracks1:
-    "townLoriTracks1"
+    $ loriPoints = loriPoints + 1
+    
+    #outline - find lori between the tracks, from a distance think she's a dead animal that got hit by a train, but no she's just chilling and says you should try it. option to stay away or sit with her. kind of an awkward scene. no train comes, disappointing lori. she says she used to do this all the time but there's no trains near her university. she says she was excited to leave possum springs but she's more happy to be back. player says they miss their city but not their situation. thinks possum springs is better than they expected. Lori gives you a penny to put on the tracks.
+    
+    scene bg roads_day with dissolve
+    
+    "Today you decide to follow the train tracks to see if they lead anywhere cool."
+    "You mostly just get a view of the backside of old buildings and empty fields though."
+    "Lame."
+    "You're about to call it quits when you notice something in the distance between the tracks."
+    "What is that?"
+    "When you get closer, you can tell it's a person lying on their back. Are they ok?"
+    "Please don't be a dead body."
+    "Their ears perk up when you get closer."
+    
+    show lori breath at center with dissolve
+    
+    lori "*Squeak!*"
+    
+    show lori neutral
+    
+    lori "Oh, it's just you. I heard footsteps in the snow running towards me and I thought you were gonna like stab me or something."
+    
+    player "Uh no. I thought you were a dead animal that got hit by the train at first."
+    
+    lori "So you came running?"
+    
+    player "I only started running when I realized it was a person! What are you doing lying in the middle of the tracks anyway?"
+    
+    lori "Just chilling."
+    
+    player "In the most dangerous spot you could pick?"
+    
+    lori "It's safer than the streets. The trains give a lot of warning before they show up. And I like seeing them."
+    
+    player "You do this often?"
+    
+    lori "I used to. There's no trains near my university, but I usually come out here whenever I visit Possum Springs. You should try it!"
+    
+    player "What?"
+    
+    "You look around, suddenly feeling like a train is about to sneak up on you."
+    
+    player "I feel weird just standing on the tracks."
+    
+    lori "There's plenty of space between them. Just be sure to move your feet away from the tracks when a train is coming."
+    
+    menu:
+        "Sit between the tracks":
+            $ loriAP = loriAP + 1
+            $ bold = bold + 1
+            
+            "If she can do it so fearlessly, so can you. But you're getting away the moment you hear a train."
+            
+            player "Fine, I'll do it. I don't see what's so cool about it though."
+            
+            show lori happy
+            
+            lori "You'll understand when you get up here!"
+            
+            "You climb up the rocky hill to the tracks and sit beside Lori, just far enough so she can't push you in front of an oncoming train."
+            
+            show lori neutral
+            
+            player "...I don't get it."
+            
+            lori "Give it a while. Might have to wait for a train to come first."
+            lori "It's supposed to feel exciting doing something you're not supposed to do. Just a little bit of harmless mischief."
+            lori "That's how it was when I started doing it, but I guess I got used to it and now it's a relaxing comfort activity."
+            
+            player "Hmm. I just feel like I'm gonna get hit by a piece of metal hanging off a train and die."
+            
+            lori "Then we'd both die! Hahahaha!"
+            
+            player "Hahaha... wait, that's not funny!"
+            
+            lori "It made you laugh though."
+            
+            player "You tricked me into laughing."
+            
+            lori "Just like how I tricked you into sitting between the train tracks?"
+            
+            player "Haha yeah..."
+            
+            "You suddenly sit up."
+            
+            player "Wait, was this all just a trick?"
+            
+            
+        "Stay off to the side":
+            $ mature = mature + 1
+            
+            player "I'll just stay over here, thank you very much."
+            
+            "Lori shrugs."
+            
+            lori "Suit yourself!"
+            lori "What if there's a piece of metal hanging off a train and hits you though?"
+            
+            player "Does that happen??"
+            
+            "You take a step backward and look around for any oncoming trains."
+            
+            lori "Hehehehe! It's not gonna happen. Trains have to go through tunnels and pass other trains so they can't just have random stuff hanging off the sides."
+            
+            
+            
+    
+    return
 
 label townGerm1:
     $ townEventsDay.remove("townGerm1")
