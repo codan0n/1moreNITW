@@ -934,15 +934,21 @@ label day2Evening:
     
     "Fixing the heater ended up being a quick and simple fix."
     #"luckily nothing exploded"
-    "Just had to loosen the bolts, turn the gas valve, and reignite the flame with a lighter."
-    "Exactly as you had watched your father do all those years ago."
+    "Just had to loosen the screws, turn the gas valve, and reignite the flame with a lighter."
+    "Exactly as you had watched your father do it all those years ago."
     "Luckily you didn't mess it up and blow up the house."
-    "You return the grate to its original position and tighten the bolts by hand so you don't need the wrench anymore."
-    "It's been a long day and you're exhausted. Time to go to bed."  
+    "You return the grate to its original position and tighten it by hand so you don't need the special snowflake screwdriver anymore."
+    "What a long day. You don't have the energy to do anything other than go to bed."
+    "You don't have any plans for tomorrow so it should be more chill though."
     
     scene bg black with dissolve  
     
 label day3:
+    # Day 3, friday
+    $ currentDay = 3
+    #$ currentDate = "December 3"
+    $ nightTime = False
+    
     scene bg home_interior_day with fade
     
     #outline: you can explore your home or possum springs. You can also return the wrench where you'll end up meeting mae and lori
@@ -955,10 +961,7 @@ label day3:
     #options: stay home and explore (minor event), go into town and return the wrench (minor event), library if you have the book (major event), posspresso (minor event), visit bakery (non event), explore random part of town (minor event) [current available options are  exploring the underground and uhhhhh, seeing germ feeding wild cats at the food donkey, maybe merge random posspresso meets into this list]
     
     
-
-    
-    $ wrenchReturned = False
-    $ nightTime = False
+    $ screwddriverReturned = False
     
     #if you explore first then try to visit the hardware store, it'll be closed early. can still visit the bakery though.
     
@@ -969,80 +972,44 @@ label day3:
     if not townEventsDay:
         "You're tired of exploring the town. You should find something else to do for now."
     
-
-label day3choice:
+    #maybe turn this into a function/label later on
     menu:
         "{cps=0}What should you do?{/cps}"
         "Explore home" if houseEventsDay:
-            $ nightTime = True
             if exploredHouse == False:
                 call unexploredHouse
             
             #if houseEvents is empty, you can no longer explore the house
-            if not houseEventsDay:
-                $ houseFullyExplored = True
-                "You've already explored the house enough."
+            #if not houseEventsDay:
+            #    $ houseFullyExplored = True
+            #    "You've already explored the house enough."
             
             $ randomSelected = renpy.random.choice(houseEventsDay)
-            
-            $ exploredHouse = True
-            
-            if randomSelected == "houseOffice":
-                $ houseEventsDay.remove("houseOffice")
-                $ houseEventsNight.remove("houseOffice")
-                call houseOffice 
-            elif randomSelected == "houseBook":
-                $ houseEventsDay.remove("houseBook")
-                $ houseEventsNight.remove("houseBook")
-                call houseBook 
-            elif randomSelected == "houseKey":
-                $ houseEventsDay.remove("houseKey")
-                $ houseEventsNight.remove("houseKey")
-                call houseKey 
-            elif randomSelected == "houseShed":
-                $ houseEventsDay.remove("houseShed")
-                call houseShed
-            else:
-                "You've already explored the house enough."
-                $ houseFullyExplored = True
+                
+            call expression randomSelected
+            #else:
+            #    "You've already explored the house enough."
+            #    $ houseFullyExplored = True
         
         "Explore town" if townEventsDay:
-            $ nightTime = True
-            
-            "You should explore Possum Springs to familiarize yourself with the area."
+            "You decide to explore Possum Springs and familiarize yourself with the area."
             
             $ randomSelected = renpy.random.choice(townEventsDay)
             
             call expression randomSelected
             
-            #if randomSelected == "townAngus1":
-            #    call townAngus1 
-            #elif randomSelected == "townGerm1":
-            #    $ townEventsDay.remove("townGerm1")
-            #    $ townEventsDay.append("townGerm2")
-            #    call townGerm1 
-            #elif randomSelected == "townBridge1":
-            #    $ townEventsDay.remove("townBridge1")
-            #    $ townEventsNight.remove("townBridge1")
-            #    $ townEventsDay.append("townBridge2")
-            #    $ townEventsNight.append("townBridge2")
-            #    call townBridge1 
-            ##add one more event to the pool
-            
-            
-        "Return wrench" if wrenchReturned == False:
+        "Return screwdriver" if screwdriverReturned == False:
+            #could probably just have a $ hasScrewdriver variable and it would work more cleanly
             #day or night
-            $ wrenchReturned = True
-            $ nightTime = True
+            $ screwddriverReturned = True
             
-            "You promised the hardware store girl that you'd return the wrench after you were done with it."
+            "You promised the hardware store girl that you'd return the screwdriver after you were done with it."
             "You have no more use for it so you should give it back as soon as possible."
             
-            call meetingMae 
+            call returnScrewdriverScene 
         "Return library book" if haveOverdueBook == True:
             #daytime only
-            $ nightTime = True
-            "The book is more overdue than the wrench. You should return it first."
+            "The book is more overdue than the screwdriver. You should return it first."
             
             call libraryVisit1 
             
@@ -1050,91 +1017,97 @@ label day3choice:
             "Yeahhh you don't really feel like doing anything today."
             "You sit back and mindlessly stare at your phone for a few hours."
         
-    if nightTime == True:
-        "The sun has set and it's gotten dark out, but the night is still young. What should you do?"
-        #"There's still some light in the day. What else should you do with your time?"
-        
-        $ nightTime = False
-        
-        if not houseEventsNight:
-            "You've already explored the house enough for now."
-        if not townEventsNight:
-            "You're tired of exploring the town. You should find something else to do for now."
-        
-        menu:
-            "{cps=0}What should you do?{/cps}"
-            "Explore home":
-                #minor event
-                #need to add to list of available house exploration options if you found the key earlier
-                #re-add house description if you haven't already explored the house
-                #if exploredHouse == False:
-                
-                if exploredHouse == False:
-                    call unexploredHouse 
-                
-                $ nightTime = True
-                
-                #if houseEvents is empty, you can no longer explore the house
-                if not houseEventsNight:
-                    $ houseFullyExplored = True
-                    "You've already explored the house enough."
-                
-                $ randomSelected = renpy.random.choice(houseEventsNight)
-                
-                $ exploredHouse = True
-                
-                if randomSelected == "houseOffice":
-                    $ houseEventsDay.remove("houseOffice")
-                    $ houseEventsNight.remove("houseOffice")
-                    call houseOffice 
-                elif randomSelected == "houseBook":
-                    $ houseEventsDay.remove("houseBook")
-                    $ houseEventsNight.remove("houseBook")
-                    call houseBook 
-                elif randomSelected == "houseKey":
-                    $ houseEventsDay.remove("houseKey")
-                    $ houseEventsNight.remove("houseKey")
-                    call houseKey 
-                else:
-                    "You've already explored the house enough."
-                    $ houseFullyExplored = True
-            "Explore town":
-                $ nightTime = True
-                
-                "You have the urge to walk around town."
-                
-                $ randomSelected = renpy.random.choice(townEventsNight)
-                
-                if randomSelected == "townBridge1":
-                    $ townEventsDay.remove("townBridge1")
-                    $ townEventsNight.remove("townBridge1")
-                    $ townEventsDay.append("townBridge2")
-                    $ townEventsNight.append("townBridge2")
-                    call townBridge1
-                #add one more event to the pool
-                
-                
-            "Return wrench" if wrenchReturned == False:
-                $ wrenchReturned = True
-                $ nightTime = False
-                
-                "You promised the hardware store girl that you'd return the wrench after you were done with it."
-                "You have no more use for it so you should give it back as soon as possible."
-                
-                call meetingMae 
-                
-            "Do nothing":
-                "Yeahhh you don't really feel like doing anything today."
-                "You sit back and mindlessly stare at your phone for a few hours."
+    #if nightTime == True:
+    #    "The sun has set and it's gotten dark out, but the night is still young. What should you do?"
+    #    #"There's still some light in the day. What else should you do with your time?"
+    #    
+    #    $ nightTime = False
+    #    
+    #    if not houseEventsNight:
+    #        "You've already explored the house enough for now."
+    #    if not townEventsNight:
+    #        "You're tired of exploring the town. You should find something else to do for now."
+    #    
+    #    menu:
+    #        "{cps=0}What should you do?{/cps}"
+    #        "Explore home":
+    #            #minor event
+    #            #need to add to list of available house exploration options if you found the key earlier
+    #            #re-add house description if you haven't already explored the house
+    #            #if exploredHouse == False:
+    #            
+    #            if exploredHouse == False:
+    #                call unexploredHouse 
+    #            
+    #            $ nightTime = True
+    #            
+    #            #if houseEvents is empty, you can no longer explore the house
+    #            if not houseEventsNight:
+    #                $ houseFullyExplored = True
+    #                "You've already explored the house enough."
+    #            
+    #            $ randomSelected = renpy.random.choice(houseEventsNight)
+    #            
+    #            $ exploredHouse = True
+    #            
+    #            if randomSelected == "houseOffice":
+    #                $ houseEventsDay.remove("houseOffice")
+    #                $ houseEventsNight.remove("houseOffice")
+    #                call houseOffice 
+    #            elif randomSelected == "houseBook":
+    #                $ houseEventsDay.remove("houseBook")
+    #                $ houseEventsNight.remove("houseBook")
+    #                call houseBook 
+    #            elif randomSelected == "houseKey":
+    #                $ houseEventsDay.remove("houseKey")
+    #                $ houseEventsNight.remove("houseKey")
+    #                call houseKey 
+    #            else:
+    #                "You've already explored the house enough."
+    #                $ houseFullyExplored = True
+    #        "Explore town":
+    #            $ nightTime = True
+    #            
+    #            "You have the urge to walk around town."
+    #            
+    #            $ randomSelected = renpy.random.choice(townEventsNight)
+    #            
+    #            if randomSelected == "townBridge1":
+    #                $ townEventsDay.remove("townBridge1")
+    #                $ townEventsNight.remove("townBridge1")
+    #                $ townEventsDay.append("townBridge2")
+    #                $ townEventsNight.append("townBridge2")
+    #                call townBridge1
+    #            #add one more event to the pool
+    #            
+    #            
+    #        "Return screwdriver" if screwdriverReturned == False:
+    #            #day or night
+    #            $ screwddriverReturned = True
+    #            
+    #            "You promised the hardware store girl that you'd return the screwdriver after you were done with it."
+    #            "You have no more use for it so you should give it back as soon as possible."
+    #            
+    #            call returnScrewdriverScene 
+    #                
+    #        "Do nothing":
+    #            "Yeahhh you don't really feel like doing anything today."
+    #            "You sit back and mindlessly stare at your phone for a few hours."
 
     scene bg home_interior_night with fade
 
     #"Night casts its shadow and you retire to your bedroom to rest until sunrise."
-    "Time for sleep. You retire to your bedroom and rest until sunrise."
+    "It's gotten late and you've become too tired to stay awake."
+    "Time for some sleep. You retire to your bedroom and rest until sunrise."
     
     scene bg black with dissolve
     
 label day4:
+    # Day 4 saturday
+    $ currentDay = 4
+    #$ currentDate = "December 4"
+    $ nightTime = False
+    
     scene bg home_interior_day with fade
     
     "You're starting to get used to everything. A new home, a new town, a new independent routine..."
@@ -1211,19 +1184,17 @@ label day4:
             #add one more event to the pool
             
             
-        "Return wrench" if wrenchReturned == False:
+        "Return screwdriver" if screwdriverReturned == False:
             #day or night
-            $ wrenchReturned = True
-            $ nightTime = True
+            $ screwddriverReturned = True
             
-            "You promised the hardware store girl that you'd return the wrench after you were done with it."
+            "You promised the hardware store girl that you'd return the screwdriver after you were done with it."
             "You have no more use for it so you should give it back as soon as possible."
             
-            call meetingMae from _call_meetingMae
+            call returnScrewdriverScene
         "Return library book" if haveOverdueBook == True:
             #daytime only
-            $ nightTime = True
-            "The book is more overdue than the wrench. You should return it first."
+            "The book is more overdue than the screwdriver. You should return it first."
             
             call libraryVisit1 from _call_libraryVisit1
             
@@ -1309,14 +1280,14 @@ label day4:
                 
                 
                 
-            "Return wrench" if wrenchReturned == False:
-                $ wrenchReturned = True
-                $ nightTime = False
+            "Return screwdriver" if screwdriverReturned == False:
+                #day or night
+                $ screwddriverReturned = True
                 
-                "You promised the hardware store girl that you'd return the wrench after you were done with it."
+                "You promised the hardware store girl that you'd return the screwdriver after you were done with it."
                 "You have no more use for it so you should give it back as soon as possible."
                 
-                call meetingMae 
+                call returnScrewdriverScene 
                 
             "Do nothing":
                 "Yeahhh you don't really feel like doing anything today."
@@ -1405,14 +1376,16 @@ label day4:
             #add one more event to the pool
             
             
-        "Return wrench" if wrenchReturned == False:
-            $ wrenchReturned = True
-            "You promised the hardware store girl that you'd return the wrench after you were done with it."
+        "Return screwdriver" if screwdriverReturned == False:
+            #day or night
+            $ screwddriverReturned = True
+            
+            "You promised the hardware store girl that you'd return the screwdriver after you were done with it."
             "You have no more use for it so you should give it back as soon as possible."
             
-            call meetingMae from _call_meetingMae_2
+            call returnScrewdriverScene 
         "Return library book" if haveOverdueBook == True:
-            "The book is more overdue than the wrench. You should return it first."
+            "The book is more overdue than the screwdriver. You should return it first."
             
             call libraryVisit1 from _call_libraryVisit1_2
             

@@ -1,13 +1,15 @@
 #more labels
 
 label unexploredHouse:
-    #give a general description of the house to set the mood
+    $ exploredHouse = True
+    
     "The eerie emptiness of the house unsettles you as you look around."
+    "This is the house your father lived in all alone after the divorce. You've been here a few times to visit, but now that he's gone, you've inherited it."
     "A desolate building, untouched for years. Dust has piled up on every surface and cobwebs spill from the ceiling, but everything is otherwise so tidy and neat."
     "It really is a tomb."
-    "Your memories conflict with the current reality."
+    "Your wistful memories conflict with the current reality."
     "The guest room you slept in is exactly like you remember it but the kitchen got all new tile and a fresh coat of paint."
-    "There are a lot more bookshelves than you recall. Was that table always there in the den?"
+    "There are a lot more bookshelves than you recall. Was that coffee table always there in the den?"
     #"A whirlwind of confusion and conflicting emotions makes your search for tools more difficult. You're not sure where to look. You've never even been in half the rooms."
     
     #jump continue
@@ -17,10 +19,12 @@ label unexploredHouse:
 label houseOffice:
     # day or night
     $ officeQuestStarted = True
+    $ houseEventsDay.remove("houseOffice")
+    $ houseEventsNight.remove("houseOffice")
     
     scene bg home_office_day with fade
 
-    "While searching the house you stumble upon an unfamiliar room: the office. You were never allowed in here."
+    "While wandering around the house you stumble upon an unfamiliar room: the office. You were never allowed in here."
     "Books and binders are scattered along the shelves. Some of them look so old they'll fall apart if you picked them up."
     "A desk sits on the far end of the room with a computer on top of it. You wonder if it still runs."
     "But first you take a moment to play with the dial on the wall safe. You have no idea what the code might be but predictably you don't happen to guess it on your first try."
@@ -119,8 +123,9 @@ label houseOffice:
     return
 
 label houseShed:
+    $ houseEventsDay.remove("houseShed")
     #daytime exclusive
-    "After searching the house, you happen to notice something unusual through one of the windows: a rickety looking shed standing in the backyard, half buried under the snow."
+    "While exploring the house, you happen to notice something unusual through one of the windows: a rickety looking shed standing in the backyard, half buried under the snow."
     "You recall playing in the backyard but don't remember there ever being a shed. It must have been built after the last time you visted."
     "With some effort, you manage to dig through the snow to reach the door handle, but it's locked up tight with a rusty chain and padlock."
     if hasKey == True:
@@ -141,9 +146,12 @@ label houseShed:
 label houseBook:
     #day or night
     $ haveOverdueBook = True
+    $ libraryQuestStarted = True
+    $ houseEventsDay.remove("houseBook")
+    $ houseEventsNight.remove("houseBook")
     
     #the book contains part of the password?
-    "You checked various nooks, crannies, shelves, drawers, and boxes but found nothing of note."
+    "You looked through various nooks, crannies, shelves, drawers, and boxes but found nothing noteworthy."
     "Exhausted, you decide to take a break and recline on the living room sofa."
     "Ow!"
     "Something hard is digging into your spine."
@@ -162,15 +170,15 @@ label houseBook:
     "Upon reading further, it appears this creature was nothing more than a fabrication by hysterical religious country bumpkins."
     "You should return this book to the library. They've probably been missing it."
     
-    $ libraryQuestStarted = True
-    
     return
 
 label houseKey:
     #day or night
+    $ houseEventsDay.remove("houseKey")
+    $ houseEventsNight.remove("houseKey")
     $ hasKey = True
     
-    "Your search brings you to a spare bathroom where the sound of water dripping disturbs the otherwise still area every few seconds."
+    "Your tour of the house brings you to a spare bathroom where the sound of water dripping disturbs the otherwise still area every few seconds."
     "You pull back the curtain around the bathtub to reveal it's been filled almost to the brim, presumably from the leaky faucet over the years."
     "You turn the knob to prevent any more water from dripping and hesitantly stick your hand elbow-deep into the frigid tub to pull the stopper and drain it."
     "As the water spirals down the drain, the flow drags an object along the bottom, catching your eye."
@@ -191,12 +199,12 @@ label houseKey:
         
     return
     
-label afterLookingForTool:
-    "You spent a few hours searching and have yet to find a tool to open that grate. At this rate, it'll be dark by the time you figure something out."
-    "For all you know, there might not even be a wrench in this house anymore."
-    "Your next best option is to see if the hardware store in town has what you need."
-    
-    jump intoTown
+#label afterLookingForTool:
+#    "You spent a few hours searching and have yet to find a tool to open that grate. At this rate, it'll be dark by the time you figure something out."
+#    "For all you know, there might not even be a wrench in this house anymore."
+#    "Your next best option is to see if the hardware store in town has what you need."
+#    
+#    jump intoTown
     
 
 
@@ -532,6 +540,9 @@ label townRooftops1:
     #"scene where you see Lori and Mae running along the rooftops and mae drops her wallet."
     #"set timer for when you've acquired the wallet and later do a check if it hasn't been too long. Something like if currentDay - dayFoundWallet > 15"
     
+    $ townEventsDay.remove("townRooftops1")
+    ####to be added in a later version
+    #$ townEventsDay.append("townRooftops2")
     $ dayWalletFound = currentDay
     
     "You take a stroll through main street, doing some window shopping and trying not to slip on frozen sections of sidewalk."
@@ -578,6 +589,10 @@ label townRooftops1:
 
 label townBridge1:
     #day or night
+    $ townEventsDay.remove("townBridge1")
+    $ townEventsNight.remove("townBridge1")
+    $ townEventsDay.append("townBridge2")
+    $ townEventsNight.append("townBridge2")
     
     "You continue walking until the buildings of downtown give way to smaller residences, and beyond that, sparse trees."
     "Cotton-like snowflakes fall infrequently around you, drifting so slowly it feels like time is coming to a gradual halt."

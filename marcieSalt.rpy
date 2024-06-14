@@ -1,5 +1,4 @@
 label marcieSalt:
-    $ metMarcie = True
     #written by punchoid, edited by codanon
     "Might as well have a look around to see if there's anything else here you could use."
     "You wander through the aisles but nothing really cathes your eye."
@@ -13,9 +12,10 @@ label marcieSalt:
     
     #"After aquiring your new doo-dad, you watch as a mousey older lady drags a particularly massive bag of salt to the register. Bea eyes it with apprehension as she rings it through."
 
-    marcie "Either they keep putting more salt in these bags every year, or I keep getting older! How've you been, Beatrice? Work isn't treating you too hard?"
+    marcie "Either they keep putting more salt in these bags every year, or I'm getting too old to be hauling these!"
+    marcie "How've you been, Beatrice? Work isn't treating you too hard?"
 
-    bea "Hi Marcie, good to see you in my shop again. It's been a tough week, but the blizzard let up and I haven't had to shovel today so that's an improvement."
+    bea "Hi Marcie, good to see you in my shop again. It's been a tough week, but the blizzard finally let up and I haven't had to shovel snow today so that's an improvement."
 
     marcie "Good, good. You've always been such a hard worker, dear, hopefully you get some time off soon."
 
@@ -84,8 +84,8 @@ label marcieSalt:
             
             player "I guess I can spare some time. Let me grab that for you."
             
-            "You put on a friendly face and hoist the bag up to your shoulder with a grunt."
-            "This thing is heavier than it looks and the jagged edges dig into your skin."
+            "You put on a friendly face and hoist the bag up onto your shoulder with a grunt."
+            "This thing is heavier than it looks and the jagged edges dig into your neck."
             "With your free hand, you grab the cash and stuff it in your pocket."
             
     bea "You got it?"

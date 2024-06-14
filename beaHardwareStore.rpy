@@ -343,97 +343,264 @@ label meetingBea:
     
 
 
-label day2roam:
-    scene bg roads_day with fade
+#label day2roam:
+#    scene bg roads_day with fade
+#
+#    "Where will you go?"
+#
+#    menu:
+#        "{cps=0}Where will you go?{/cps}"
+#        "Bear Essentials Bakery":
+#            $ beaQuestBakery = True
+#            
+#            jump meetingAngus
+#
+#        "Ol Pickaxe":
+#            scene bg olpickaxe with dissolve
+#        
+#            show bea apron at center with dissolve
+#            
+#            bea "Oh hey you're back. Got my coffee yet?"
+#            
+#            player "Nope."
+#            
+#            bea "Then what are you doing here?"
+#            
+#            player "I dunno."
+#            
+#            bea "..."
+#            bea "I've got work to do."
+#            
+#            hide bea with dissolve
+#            
+#            jump day2roam
+#        "Posspresso":
+#            $ beaQuestPosspresso = True
+#            
+#            "Where can you get a coffee in this literally nowhere town?"
+#            "Well, you got some at Posspresso yesterday, so it's worth a shot to see if they're open today."
+#            "It's a bit of a walk though."
+#            
+#            scene bg cafe with fade
+#            
+#            show trish neutral at center with dissolve
+#            
+#            trish "Heya! Welcome back! I knew ya couldn't resist another cup o' joe but I didn't expect to see ya so soon!"
+#            
+#            player "Heh, it was pretty good, but I'm here on a fetch quest today."
+#            
+#            trish "Playin' delivery for someone else, huh?"
+#            
+#            player "Something like that."
+#            
+#            trish "Aww, I bet yer gettin' a gift for a cutie ya fancy~ Don't lie, I can see it in yer eyes!"
+#            trish "So what'll it be? It's on the house~"
+#            
+#            #player "Gimme the most bitter drink you've got."
+#            #player "She specifically requested it."
+#            
+#            player "Gimme something bitter."
+#            player "Something to match her bitter attitude..."
+#            
+#            trish "What was that?"
+#            
+#            player "Oh just a plain black coffee will do."
+#            
+#            trish "Comin' right up!"
+#            
+#            hide trish with dissolve
+#            
+#            "You find a place to sit while Trish makes the drink."
+#            "You're not looking forward to the long walk you have back towards town."
+#            "Hopefully the shop will still be open by the time you get there."
+#            
+#            show trish neutral at center
+#            
+#            trish "Aaaaand done!"
+#            trish "Hope yer date enjoys it!"
+#            
+#            player "She's not my..."
+#            
+#            trish "Here ya are riskin' life and limb out there in the snowstorm to get here, it warms my heart knowin' people love my coffee that much!"
+#            
+#            player "Right... well, thanks for the free coffee."
+#            
+#            trish "Anytime! Er no, not anytime. This is the one and only time actually."
+#            
+#            player "Fair. See you later!"
+#            
+#            trish "Come back soon!"
+#            
+#            hide trish with dissolve
+#            
+#    jump meetingBea
 
-    "Where will you go?"
 
-    menu:
-        "{cps=0}Where will you go?{/cps}"
-        "Bear Essentials Bakery":
-            $ beaQuestBakery = True
-            
-            jump meetingAngus
+label returnScrewdriverScene:
+    $ townEventsDay.append("townLoriTracks1")
+    
+    scene bg olpickaxe with dissolve
+    
+    "No one is at the counter when you arrive at the hardware store."
+    "You ring the bell and only after a few minutes does the cashier shuffle over."
+    
+    show bea apron neutral at center with dissolve
+    
+    bea "*Yaawwwwn*"
+    bea "Welcome to the Ol' Pickax. You want it, we probably got it."
+    #bea "Welcome to the Ol' Pickax, what is it that ya need?"
+    bea "Oh it's you. You got my wrench?"
+    
+    player "Yup. Thanks for letting me borrow it. My heater was broken and I needed to loosen the bolts to-"
+    
+    bea "Fascinating. I guess I won't be needing to sic a collection agency on you after all."
+    bea "Will that be all?"
+    
+    player "I think so."
+    
+    bea "Good. Have a nice day."
+    
+    hide bea with dissolve
+    
+    "She looks like she's sleepwalking as she returns to the backroom. You'd be tired too if you spent all day hauling heavy stuff."
+    
+    show lori neutral at offscreenleft
+    show mae neutral at offscreenleft
+    
+    "You decide not to bother her any further and try to quietly leave the store but someone bursts through the door as you reach out to the handle."
+    
+    play sound "sound/storebell.mp3"
+    
+    show mae:
+        xzoom -1
+        xpos 800
+    show lori:
+        xzoom -1
+        xpos 950
+    with move
 
-        "Ol Pickaxe":
-            scene bg olpickaxe with dissolve
-        
-            show bea apron at center with dissolve
-            
-            bea "Oh hey you're back. Got my coffee yet?"
-            
-            player "Nope."
-            
-            bea "Then what are you doing here?"
-            
-            player "I dunno."
-            
-            bea "..."
-            bea "I've got work to do."
-            
-            hide bea with dissolve
-            
-            jump day2roam
-        "Posspresso":
-            $ beaQuestPosspresso = True
-            
-            "Where can you get a coffee in this literally nowhere town?"
-            "Well, you got some at Posspresso yesterday, so it's worth a shot to see if they're open today."
-            "It's a bit of a walk though."
-            
-            scene bg cafe with fade
-            
-            show trish neutral at center with dissolve
-            
-            trish "Heya! Welcome back! I knew ya couldn't resist another cup o' joe but I didn't expect to see ya so soon!"
-            
-            player "Heh, it was pretty good, but I'm here on a fetch quest today."
-            
-            trish "Playin' delivery for someone else, huh?"
-            
-            player "Something like that."
-            
-            trish "Aww, I bet yer gettin' a gift for a cutie ya fancy~ Don't lie, I can see it in yer eyes!"
-            trish "So what'll it be? It's on the house~"
-            
-            #player "Gimme the most bitter drink you've got."
-            #player "She specifically requested it."
-            
-            player "Gimme something bitter."
-            player "Something to match her bitter attitude..."
-            
-            trish "What was that?"
-            
-            player "Oh just a plain black coffee will do."
-            
-            trish "Comin' right up!"
-            
-            hide trish with dissolve
-            
-            "You find a place to sit while Trish makes the drink."
-            "You're not looking forward to the long walk you have back towards town."
-            "Hopefully the shop will still be open by the time you get there."
-            
-            show trish neutral at center
-            
-            trish "Aaaaand done!"
-            trish "Hope yer date enjoys it!"
-            
-            player "She's not my..."
-            
-            trish "Here ya are riskin' life and limb out there in the snowstorm to get here, it warms my heart knowin' people love my coffee that much!"
-            
-            player "Right... well, thanks for the free coffee."
-            
-            trish "Anytime! Er no, not anytime. This is the one and only time actually."
-            
-            player "Fair. See you later!"
-            
-            trish "Come back soon!"
-            
-            hide trish with dissolve
-            
-            
-            
-            
-    jump meetingBea
+    #"Wait a minute, you recognize her as the same cat who picked up the mouse girl at the bus station the other day!"
+    #"You didn't notice it at the time, but one of her ears is torn and she has subtle red highlights in her fur."
+    #"She frantically looks around the store before coming up to you."
+    "The cat frantically looks around turning to you."
+
+    mae "Hey, do you know if Bea here right now?"
+
+    #player "Is that the cashier?"
+    player "That's the cashier, right?"
+
+    mae "More like owner but yes."
+
+    player "She went into the back room."
+
+    mae "Ok cool thanks."
+
+    show mae skeptical at left
+
+    "She narrows her eyes at you."
+
+    mae "Do I know you from somewhere?"
+    
+    "A girl steps out from behind the cat. She had practically been clinging to her but now that you get a good look at her, you recognize her from a few days ago."
+    
+    show lori with move:
+        xpos 1100
+     
+    lori "I know [himherthem]!"
+    lori "We met on the bus, remember?"
+
+    #player "I don't think so?"
+    
+    #mae "I thought I saw you at the bus station the other day."
+    
+    #"You think back to a few days ago when you first arrived in Possum Springs."
+    #n "The memory comes flooding back to you."
+    
+    call loriFlashback
+    
+    
+    scene bg olpickaxe with fade
+    
+    show lori neutral at offscreenleft
+    show mae neutral at offscreenleft
+
+    #"From there you remember walking through the woods to get to your new home."
+
+    show mae neutral:
+        xzoom -1
+        xpos 900
+    show lori neutral:
+        xzoom -1
+        xpos 1300
+
+    "A look of realization dawns on the cat."
+
+    mae "Oh yeah! I do remember seeing you! At the bus station!"
+    mae "It's not every day someone new arrives in Possum Springs!"
+
+    player "Ah right, I saw you for just a moment. I just moved into town the other day. My name's [name]."
+
+    mae "Mae. Mae Borowski. Nice to meet you!"
+
+    player "Same!"
+
+    mae "So what made you decide to come all the way out to Possum Springs?"
+
+    player "You know, the relaxing countryside, the fresh air, peace and quiet... oh and inheriting a house up past the train tracks."
+    player "The old man was nice enough to put it in my name before he died a few years back."
+
+    show mae sad1
+
+    "Mae looks away and mumbles to herself."
+
+    mae "Died...?"
+
+    show mae panic at left
+    
+    mae "Err how many years ago? If you don't mind my asking...?"
+    
+    player "Like five I think?"
+
+    "She suddenly looks like she's seen a ghost."
+
+    mae "Uhh, look at the time Ihavetogobye!"
+    mae "Come on Lori, I just remembered we have to be somewhere."
+    
+    show mae at offscreenleft with move
+    
+    lori "Mae! Wait up!"
+    lori "Sorry to run off so quickly, [name]. I'll see you around though, I'm sure."
+    
+    show lori at offscreenleft with move
+    
+    "You look out the window and watch the pair run through the streets just as the crocodile cashier comes back."
+
+    show bea apron at right with dissolve
+
+    bea "Was that Mae and Lori just now?"
+
+    "You're still processing what just happened. You snap out of it and turn to the shop owner."
+
+    player "Uh, yeah. You know them?"
+
+    bea "You could say that. What did they want?"
+
+    player "I dunno. They just came in, asked if you were here, then left."
+
+    bea "Huh. Weird."
+    bea "Anyway, is there anything else you needed?"
+
+    player "Hm? Oh, no I was just leaving."
+
+    bea "See you around."
+
+    player "Later gator."
+    
+    "She bares her teeth at you."
+    "You'll take that as your cue to finally get out of here."
+    
+    hide bea with dissolve
+
+    stop music fadeout 2.0
+    
+    return
