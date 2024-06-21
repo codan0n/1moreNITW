@@ -366,6 +366,8 @@ label townLoriTracks1:
             lori "It's supposed to feel exciting doing something you're not supposed to do. Just a little bit of harmless mischief."
             lori "That's how it was when I started doing it, but I guess I got used to it and now it's a relaxing comfort activity."
             
+            "Lori lies down with her arms behind her head as a pillow. You follow suit."
+            
             player "Hmm. I just feel like I'm gonna get hit by a piece of metal hanging off a train and die."
             
             lori "Then we'd both die! Hahahaha!"
@@ -384,6 +386,28 @@ label townLoriTracks1:
             
             player "Wait, was this all just a trick?"
             
+            #lori "Only if you think I could manipulate you into stumbling upon this particular section of track at this specific time on this exact day."
+            lori "Hehehe not really! I had no idea you'd be here today. You seem cool and I just thought you might wanna hang out between some tracks."
+            
+            menu:
+                "Me? Cool?":
+                    player "Me? Cool? No one's ever said that before."
+                    
+                    lori "Nobody thought I was cool either until I met the right people."
+                "It's kinda fun":
+                    player "I mean, it's kinda fun?"
+                    player "It's a new experience at least. I never would have thought to do something like this back in the city."
+                    player "I'd probably provoke a gang war or get shot by police for trespassing just doing this."
+                    
+                    lori "I'm glad my college town is like, small college town."
+                    lori "Bigger than Possum Springs for sure, but not like 'city life' *huff huff*"
+                "I guess it was fate":
+                    player "I guess it was fate that we'd both end up here at the same time."
+                    
+                    lori "Maybe! But I'm here pretty often to be honest, so fate is pretty lenient I guess."
+            
+            player ""
+            
             
         "Stay off to the side":
             $ mature = mature + 1
@@ -401,7 +425,46 @@ label townLoriTracks1:
             
             lori "Hehehehe! It's not gonna happen. Trains have to go through tunnels and pass other trains so they can't just have random stuff hanging off the sides."
             
+            player "That's reassuring... but I'm still staying away just in case."
             
+            lori "Maybe a train will come soon and you'll see how safe it is between the tracks..."
+            lori "Or you'll see my mangled bloody body after being dragged a couple hundred feet."
+            lori "Hehehehe!"
+            
+            player "Hahaha yeah..."
+            player "Wait, that's not funny!"
+            
+            lori "It made you laugh though."
+            
+            player "Only because you laughed!"
+            
+            lori "Well I thought it was funny."
+            
+            #player "Country people sure have an odd sense of humor."
+            player "You sure have an odd sense of humor."
+            
+            #lori "Do I? Sorry it's not normie humor."
+            lori "Sorry... *huff huff*"
+            
+            player "It's cool. You're cool."
+            
+            lori "Really???"
+            
+            player "What?"
+            
+            lori "You said I'm cool?"
+            
+            player "Uhh, yeah? You're a lot more interesting than the people I knew back in the city."
+            
+            lori "Wow. I thought I was kinda boring."
+            
+            player "If anything I'm the boring one here. Too scared to even sit between the tracks."
+            
+            lori "Scary things are fun. I like being scared."
+            lori "This doesn't scare me anymore but it did when I started doing it."
+            lori "Which is kinda why I wanted to do it in the first place."
+            
+            player ""
             
     
     return
