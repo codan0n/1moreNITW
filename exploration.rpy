@@ -296,7 +296,7 @@ label nightlabel:
     jump continue
     
 label townLoriTracks1:
-    $ loriPoints = loriPoints + 1
+    $ loriAP = loriAP + 1
     
     #outline - find lori between the tracks, from a distance think she's a dead animal that got hit by a train, but no she's just chilling and says you should try it. option to stay away or sit with her. kind of an awkward scene. no train comes, disappointing lori. she says she used to do this all the time but there's no trains near her university. she says she was excited to leave possum springs but she's more happy to be back. player says they miss their city but not their situation. thinks possum springs is better than they expected. Lori gives you a penny to put on the tracks.
     
@@ -394,19 +394,66 @@ label townLoriTracks1:
                     player "Me? Cool? No one's ever said that before."
                     
                     lori "Nobody thought I was cool either until I met the right people."
+                    
+                    player "I guess you just have to be in the right place at the right time."
+                    
+                    lori "Like on the train tracks in the afternoon."
+                    
+                    player "Yeah."
+                    
+                    lori "Well... I'm here pretty often whenever I'm in town, so if you ever wanna hang out just follow the tracks."
+                    
+                    player "I'll think of you every time I see roadkill."
+                    
+                    lori "Hehehe!"
                 "It's kinda fun":
                     player "I mean, it's kinda fun?"
                     player "It's a new experience at least. I never would have thought to do something like this back in the city."
                     player "I'd probably provoke a gang war or get shot by police for trespassing just doing this."
                     
-                    lori "I'm glad my college town is like, small college town."
-                    lori "Bigger than Possum Springs for sure, but not like 'city life' *huff huff*"
+                    lori "I'm glad my college isn't like in a huge city."
+                    lori "I don't think I could get used to it if it was."
+                    lori "It's bigger than Possum Springs, sure, but it's not like 'city living' you know? *huff huff*"
+                    
+                    player "Yeah... I don't miss the traffic and noise and trash everywhere."
+                    player "Possum Springs makes me feel like I'm on a different planet."
+                    player "Like I'm on some Mars colony far away from everything else."
+                    
+                    lori "That's a good way of putting it. Vast and empty and you need to take a shuttle to get back to civilization."
+                    lori "Gotta watch out for the Martians lurking under the soil too."
+                    
+                    player "Oh nooo, don't eat me! I taste bad, I'm full of corn syrup!"
+                    
+                    lori "Hehehe!"
                 "I guess it was fate":
                     player "I guess it was fate that we'd both end up here at the same time."
                     
                     lori "Maybe! But I'm here pretty often to be honest, so fate is pretty lenient I guess."
-            
-            player ""
+                    lori "Perhaps there's a reason why we keep bumping into each other, like in the grand scheme of things."
+                    
+                    player "Like a supernatural reason or...?"
+                    
+                    lori "Yeah!"
+                    lori "Like two strangers keep seeing each other on the street and then it's revealed that they have some sort of mystical connection that they have to use to discover some hidden secret and defeat the big bad evil guy!"
+                    lori "*Huff huff* sorry, I read too many stories."
+                    
+                    player "Haha well I don't think it's quite that deep, but I'd be down for an adventure. I've already had to do some low level quests since moving into town."
+                    
+                    lori "Really? Like what?"
+                    
+                    player "Just some mundane fetch quests to get key items to progress the plot. Trade a coffee for a screwdriver to fix the furnace and so on."
+                    
+                    lori "Ohh like one of those old computer games."
+                    
+                    player "Pretty much."
+                    
+                    lori "I used to love playing those!"
+                    lori "Granted, I didn't have many games when I was younger so I had to make the most of the ones I could get."
+                    lori "Some of those puzzles were really obtuse and I think that permanently affected how I approach problem solving."
+                    
+                    player "I'll come to you if I ever get stuck on a quest then."
+                    
+                    lori "Hehehe sure!"
             
             
         "Stay off to the side":
@@ -464,8 +511,17 @@ label townLoriTracks1:
             lori "This doesn't scare me anymore but it did when I started doing it."
             lori "Which is kinda why I wanted to do it in the first place."
             
-            player ""
+            player "I guess I can kinda see the appeal. Like watching a horror movie or riding a roller coaster."
             
+            lori "Hehehe exactly!! I love those too!"
+            
+            #player ""
+    
+    hide lori with dissolve
+    
+    "You hang out with Lori for a while until the sun starts to go down."
+    "No trains came by, which Lori noted was odd but happens sometimes."
+    "She seemed disappointed by that, but said she was glad to have some company while she waited."
     
     return
 
