@@ -40,7 +40,8 @@ label dailyExploration:
             "The book is more overdue than the screwdriver. You should return it first."
             
             call libraryVisit1 
-            
+        "Return wallet" if dayWalletFound > 0:
+            call maeLoriSleepover
         "Do nothing":
             "Yeahhh you don't really feel like doing anything today."
             "You sit back and mindlessly stare at your phone for a few hours."
@@ -296,6 +297,10 @@ label nightlabel:
     jump continue
     
 label townLoriTracks1:
+    $ townEventsDay.remove("townLoriTracks1")
+    ####to be added in a future version
+    #$ townEventsDay.append("townLoriTracks2")
+    
     $ loriAP = loriAP + 1
     
     #outline - find lori between the tracks, from a distance think she's a dead animal that got hit by a train, but no she's just chilling and says you should try it. option to stay away or sit with her. kind of an awkward scene. no train comes, disappointing lori. she says she used to do this all the time but there's no trains near her university. she says she was excited to leave possum springs but she's more happy to be back. player says they miss their city but not their situation. thinks possum springs is better than they expected. Lori gives you a penny to put on the tracks.

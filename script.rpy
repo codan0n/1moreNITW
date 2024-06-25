@@ -128,6 +128,7 @@ label start:
     $ metSelma = False
     $ metGerm = False
     $ metMarcie = False
+    $ metCandy = False
 
     
     $ libraryVisits = 0

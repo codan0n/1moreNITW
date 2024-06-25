@@ -495,86 +495,96 @@ label returnScrewdriverScene:
     player "She went into the back room."
 
     mae "Ok cool thanks."
-
-    show mae skeptical at left
-
-    "She narrows her eyes at you."
-
-    mae "Do I know you from somewhere?"
     
-    "A girl steps out from behind the cat. She had practically been clinging to her but now that you get a good look at her, you recognize her from a few days ago."
-    
-    show lori with move:
-        xpos 1100
-     
-    lori "I know [himherthem]!"
-    lori "We met on the bus, remember?"
+    if metMae == False:
+        show mae skeptical at left
 
-    #player "I don't think so?"
-    
-    #mae "I thought I saw you at the bus station the other day."
-    
-    #"You think back to a few days ago when you first arrived in Possum Springs."
-    #n "The memory comes flooding back to you."
-    
-    call loriFlashback
-    
-    
-    scene bg olpickaxe with fade
-    
-    show lori neutral at offscreenleft
-    show mae neutral at offscreenleft
+        "She narrows her eyes at you."
 
-    #"From there you remember walking through the woods to get to your new home."
+        mae "Do I know you from somewhere?"
+        
+        "A mouse girl steps out from behind the cat. She had practically been clinging to her but now that you get a good look at her, you recognize her from a few days ago."
+        
+        show lori with move:
+            xpos 1100
+         
+        lori "I know [himherthem]!"
+        lori "We met on the bus, remember?"
 
-    show mae neutral:
-        xzoom -1
-        xpos 900
-    show lori neutral:
-        xzoom -1
-        xpos 1300
+        #player "I don't think so?"
+        
+        #mae "I thought I saw you at the bus station the other day."
+        
+        #"You think back to a few days ago when you first arrived in Possum Springs."
+        #n "The memory comes flooding back to you."
+        
+        call loriFlashback
+        
+        scene bg olpickaxe with fade
+        
+        show lori neutral at offscreenleft
+        show mae neutral at offscreenleft
 
-    "A look of realization dawns on the cat."
+        #"From there you remember walking through the woods to get to your new home."
 
-    mae "Oh yeah! I do remember seeing you! At the bus station!"
-    mae "It's not every day someone new arrives in Possum Springs!"
+        show mae neutral:
+            xzoom -1
+            xpos 900
+        show lori neutral:
+            xzoom -1
+            xpos 1300
 
-    player "Ah right, I saw you for just a moment. I just moved into town the other day. My name's [name]."
+        "A look of realization dawns on the cat."
 
-    mae "Mae. Mae Borowski. Nice to meet you!"
+        mae "Oh yeah! I do remember seeing you! At the bus station!"
+        mae "It's not every day someone new arrives in Possum Springs!"
 
-    player "Same!"
+        player "Ah right, I saw you for just a moment. I just moved into town the other day. My name's [name]."
 
-    mae "So what made you decide to come all the way out to Possum Springs?"
+        mae "Mae. Mae Borowski. Nice to meet you!"
 
-    player "You know, the relaxing countryside, the fresh air, peace and quiet... oh and inheriting a house up past the train tracks."
-    player "The old man was nice enough to put it in my name before he died a few years back."
+        player "Same!"
 
-    show mae sad1
+        mae "So what made you decide to come all the way out to Possum Springs?"
 
-    "Mae looks away and mumbles to herself."
+        player "You know, the relaxing countryside, the fresh air, peace and quiet... oh and inheriting a house up past the train tracks."
+        player "The old man was nice enough to put it in my name before he died a few years back."
 
-    mae "Died...?"
+        show mae sad1
 
-    show mae panic at left
-    
-    mae "Err how many years ago? If you don't mind my asking...?"
-    
-    player "Like five I think?"
+        "Mae looks away and mumbles to herself."
 
-    "She suddenly looks like she's seen a ghost."
+        mae "Died...?"
 
-    mae "Uhh, look at the time Ihavetogobye!"
-    mae "Come on Lori, I just remembered we have to be somewhere."
-    
-    show mae at offscreenleft with move
-    
-    lori "Mae! Wait up!"
-    lori "Sorry to run off so quickly, [name]. I'll see you around though, I'm sure."
-    
-    show lori at offscreenleft with move
-    
-    "You look out the window and watch the pair run through the streets just as the crocodile cashier comes back."
+        show mae panic at left
+        
+        mae "Err how many years ago? If you don't mind my asking...?"
+        
+        player "Like five I think?"
+
+        "She suddenly looks like she's seen a ghost."
+
+        mae "Uhh, look at the time Ihavetogobye!"
+        mae "Come on Lori, I just remembered we have to be somewhere."
+        
+        show mae at offscreenleft with move
+        
+        lori "Mae! Wait up!"
+        lori "Sorry to run off so quickly, [name]. I'll see you around though, I'm sure."
+        
+        show lori at offscreenleft with move
+        
+        "You look out the window and watch the pair run through the streets just as the crocodile cashier comes back."
+    else:
+        mae "Hmm."
+        mae "I guess she's busy right now."
+        mae "We'll come back later."
+        
+        lori "Okay!"
+        lori "See you around, [name]!"
+        
+        show mae at offscreenleft with move
+        show lori at offscreenleft with move
 
     show bea apron at right with dissolve
 
@@ -601,6 +611,8 @@ label returnScrewdriverScene:
     "You'll take that as your cue to finally get out of here."
     
     hide bea with dissolve
+    
+    $ metMae == True
     
     if dayWalletFound > 0:
         "Hey wait, wasn't that the girl who dropped her wallet?"
