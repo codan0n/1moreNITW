@@ -1247,11 +1247,30 @@ label day4:
     #$ currentDate = "December 6"
     $ nightTime = False
     
+    scene bg home_interior_day with fade
+    
+    "You're starting to get used to everything. A new home, a new town, a new independent routine..."
+    "You've got a lot of freedom to do what you want for now, but you're going to have to find a way to make money soon."
+    "For now though, your savings will hold you over and you can focus on settling in."
+    "What will you do today?"
+    
+    call dailyExploration
+    
+    scene bg home_interior_night with fade
+
+    #"Night casts its shadow and you retire to your bedroom to rest until sunrise."
+    "It's gotten late and you've become too tired to stay awake."
+    "Time for some sleep. You retire to your bedroom and rest until sunrise."
+    
+    scene bg black with dissolve
+    
+    #### make this happen on day 7 and make it a friday. keep 1 day of random explorations between the tabletop game, this, and church sunday
+    
     #if you haven't already seen the poster for the band gig, you stumble upon it somehow and decide to check it out that night.
     
-    if foundBandGig == False:
-        "As you wonder through town, a sheet of paper flutters through the wind. By chance it flies directly in your face."
-        "You see it's a flyer for some sort of band gig happening... tonight?!"
+    #if foundBandGig == False:
+    #    "As you wonder through town, a sheet of paper flutters through the wind. By chance it flies directly in your face."
+    #    "You see it's a flyer for some sort of band gig happening... tonight?!"
         
     
     #day7
@@ -1260,6 +1279,9 @@ label day4:
     #$ currentDate = "December 7"
     $ nightTime = False
     #church scene?
+    
+    return
+    
     "untested"
     
     

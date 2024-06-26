@@ -117,7 +117,7 @@ label meetingBea:
     "Snow shovels sure seem to be high demand these days."
     "The gothy crocodile behind the counter just finished selling one to a customer before glaring at you."
 
-    show bea apron at right with dissolve
+    show bea neutral at right with dissolve
 
     bea "Welcome to the Ol' Pickaxe. Let me know if I can help you find any- *yawn*"
     bea "-...thing."
@@ -141,8 +141,7 @@ label meetingBea:
     "It's only available as part of a larger kit that comes with a million other tools and has a price tag to reflect it."
     "After wandering the aisle a few times hoping to spot a singular one somewhere, you catch a glimpse of the cashier dragging a large bag of road salt and decide to approach her."
     
-    show bea apron at center with dissolve:
-        ypos 1150
+    show bea neutral at center with dissolve
 
     player "Excuse me, you don't seem to have the tool I need in stock. I mean, outside of this overpriced kit."
     
@@ -258,7 +257,7 @@ label meetingBea:
 
     #"She's still moving bags of salt around."
     
-    show bea apron at center with dissolve
+    show bea neutral at center with dissolve
     
     #"If you went to the bakery first, you can give her a cookie. If you went after the hardware store you'll have a cinnamon roll and bea will comment on either."
     
@@ -438,14 +437,13 @@ label meetingBea:
 
 label returnScrewdriverScene:
     $ screwdriverReturned = True
-    $ townEventsDay.append("townLoriTracks1")
     
     scene bg olpickaxe with dissolve
     
     "No one is at the counter when you arrive at the hardware store."
     "You ring the bell and only after a few minutes does the cashier shuffle over."
     
-    show bea apron neutral at center with dissolve
+    show bea neutral at center with dissolve
     
     bea "*Yaawwwwn*"
     bea "Welcome to the Ol' Pickax. You want it, we probably got it."
@@ -586,7 +584,7 @@ label returnScrewdriverScene:
         show mae at offscreenleft with move
         show lori at offscreenleft with move
 
-    show bea apron at right with dissolve
+    show bea neutral at right with dissolve
 
     bea "Was that Mae and Lori just now?"
 

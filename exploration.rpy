@@ -20,6 +20,8 @@ label dailyExploration:
             #    $ houseFullyExplored = True
         
         "Explore town" if townEventsDay:
+            scene bg roads_day with dissolve
+        
             "You decide to explore Possum Springs and familiarize yourself with the area."
             
             $ randomSelected = renpy.random.choice(townEventsDay)
@@ -827,6 +829,8 @@ label townRooftops1:
     ####to be added in a later version
     #$ townEventsDay.append("townRooftops2")
     $ dayWalletFound = currentDay
+    
+    scene bg roads_day
     
     "You take a stroll through main street, doing some window shopping and trying not to slip on frozen sections of sidewalk."
     "Strangely you keep hearing giggling but can't make out where it's coming from until a pile of snow falls on your head."

@@ -36,7 +36,8 @@ label maeLoriSleepover:
         
         "You turn around and see a timid mouse girl with an overstuffed bag on her back."
         
-        show lori neutral at left with dissolve
+        show lori neutral at left with dissolve:
+            xzoom -1
         
         player "Hey...?"
         

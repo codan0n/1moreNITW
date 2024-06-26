@@ -1,5 +1,6 @@
 label loriFlashback:
-    $ metLori == True
+    $ townEventsDay.append("townLoriTracks1")
+    $ metLori = True
     
     #include an option to visit the bakery while you're here. Either that or force a bakery visit if you haven't already been.
     
