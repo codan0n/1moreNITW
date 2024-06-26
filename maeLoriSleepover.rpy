@@ -96,7 +96,8 @@ label maeLoriSleepover:
         
         player "[name]."
         
-        show mae skeptical at left
+        show mae skeptical at left:
+            xzoom -1
 
         "She narrows her eyes at you."
 
@@ -119,7 +120,8 @@ label maeLoriSleepover:
 
         mae "Died...?"
 
-        show mae panic at left
+        show mae panic at left:
+            xzoom -1
         
         mae "Err how many years ago? If you don't mind my asking...?"
         
@@ -176,8 +178,10 @@ label maeLoriSleepover:
     "Mrs. Borowski goes to the stove to stir the pot with a ladle before turning off the burner."
 
     show candy neutral at right
-    show lori neutral at left
-    show mae sad1 at left
+    show lori neutral at left:
+        xzoom -1
+    show mae sad1 at left:
+        xzoom -1
     with dissolve
 
     candy "You all sit tight, and I'll have a bowl out for everyone in just a minute!"
@@ -416,7 +420,8 @@ label maeLoriSleepover:
     scene bg maelivingroom with dissolve
     #stop music fadeout 2.0
 
-    show candy neutral at left
+    show candy neutral at left:
+        xzoom -1
     show lori neutral at right
     show mae neutral at right
     with dissolve

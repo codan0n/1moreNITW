@@ -875,24 +875,25 @@ label townRooftops1:
 
 
 label townBridge1:
-    #day or night
+    #day only (for now? night scene later?)
     $ townEventsDay.remove("townBridge1")
-    $ townEventsNight.remove("townBridge1")
+    #$ townEventsNight.remove("townBridge1")
     $ townEventsDay.append("townBridge2")
-    $ townEventsNight.append("townBridge2")
+    #$ townEventsNight.append("townBridge2")
     
     "You continue walking until the buildings of downtown give way to smaller residences, and beyond that, sparse trees."
     "Cotton-like snowflakes fall infrequently around you, drifting so slowly it feels like time is coming to a gradual halt."
-    "Before long, it’s just you, the main road and the woods. The trees aren’t so sparse anymore."
+    "Before long, it's just you, the main road and the woods. The trees aren't so sparse anymore."
     "The air is cold, and a chill mist lowers visibility slightly within the denser patches of trees."
-    "As you pass through the barren landscape, you reflect on the recent changes to your life. The folks you’ve met seem… eccentric, but friendly enough."
-    "But it’s been refreshing to meet new people and change up your life a bit. Possum Springs is an entirely new flavour of existence, though you still aren’t sure what the future holds, or even what you want it to hold."
-    "The melancholy reflection ends as you realise that you can’t even see a building in any direction anymore, only the grasping grey trees are left to detail the landscape. Since you’re walking on a road, and there isn’t really a danger of getting lost, you forge ahead."
-    "Being used to city life, it’s strange not seeing a convenience store every hundred steps or so. There aren’t even any streetlights!"
+    "As you pass through the barren landscape, you reflect on the recent changes to your life. The folks you've met seem… eccentric, but friendly enough."
+    "But it's been refreshing to meet new people and change up your life a bit. Possum Springs is an entirely new flavour of existence, though you still aren't sure what the future holds, or even what you want it to hold."
+    "The melancholy reflection ends as you realise that you can't even see a building in any direction anymore, only the grasping grey trees are left to detail the landscape."
+    "Since you're walking on a road, and there isn't really a danger of getting lost, you forge ahead."
+    "Being used to city life, it's strange not seeing a convenience store every hundred steps or so. There aren't even any streetlights!"
     "Just as you start feeling like nothing interesting will ever show up, you come upon a small steel bridge over what can only be described as a large ditch."
-    "You vaguely remember crossing it on your way into town, may as well check it out while you’re here."
+    "You vaguely remember crossing it on your way into town, may as well check it out while you're here."
     "The bridge is constructed of large, solid metal girders, and painted a dull red. The paint is peeling, showing several layers of paint underneath and revealing bare metal in places."
-    "Rust weeps in long, thin strands from the bolts and fasteners holding the steel construction together, and there’s as much graffiti as you’d expect."
+    "Rust weeps in long, thin strands from the bolts and fasteners holding the steel construction together, and there's as much graffiti as you'd expect."
 
     "Class of 14"
 
@@ -902,11 +903,11 @@ label townBridge1:
 
     "Seems like people come here semi-regularly to dick around at least, nobody is here at the moment though."
     "You exhale towards the sky, your breath condensing and floating up and away towards the clouds before you stuff your hands in your pockets and look at the pavement."
-    "Huh. You didn’t notice before, but there are footprints leading from the edge of the ravine to the center of the bridge before stopping at the handrail and doubling back."
+    "Huh. You didn't notice before, but there are footprints leading from the edge of the ravine to the center of the bridge before stopping at the handrail and doubling back."
     "Curiously, snow is cleared off the handrail and you can see boot prints ON TOP OF the rail."
-    "Damn, that’s hardcore. It’s not a very deep ravine but a fall like that would still likely kill you."
-    "At least the boot prints lead back the way they came so you know whatever crazy bad-ass came out here to do that didn’t fall. It was probably one of those hooligan children from town, with no sense of self-preservation."
-    "You can’t believe someone would actually risk their life for fun like that. No way you’d do that. No matter how cool that is."
+    "Damn, that's hardcore. It's not a very deep ravine but a fall like that would still likely kill you."
+    "At least the boot prints lead back the way they came so you know whatever crazy bad-ass came out here to do that didn't fall. It was probably one of those hooligan children from town, with no sense of self-preservation."
+    "You can't believe someone would actually risk their life for fun like that. No way you'd do that. No matter how cool that is."
 
     menu:
         "Fuck it we ball":
@@ -925,16 +926,16 @@ label townBridge1:
 
 
         "Pussy out":
-            "Yeah you’d definitely slip and die, nobody would find your broken corpse at the bottom of the ditch for days, if not weeks. Maybe months."
+            "Yeah you'd definitely slip and die, nobody would find your broken corpse at the bottom of the ditch for days, if not weeks. Maybe months."
             "You wonder if anyone would actually miss you if you did fall."
             "The thought depresses you."
 
-    "Well, that’s enough for today. Probably time to head back."
+    "Well, that's enough for today. Probably time to head back."
 
-    "It couldn’t hurt to return every so often, you might meet the railing daredevil at some point if you do."
-    "But for now, your fingers are cold and your nose is freezing, better to keep walking and stay warm than stand here and freeze until the sun goes down, then you’d really be in trouble."
+    "It couldn't hurt to return every so often, you might meet the railing daredevil at some point if you do."
+    "But for now, your fingers are cold and your nose is freezing, better to keep walking and stay warm than stand here and freeze until the sun goes down, then you'd really be in trouble."
 
-    "There aren’t any... Wolves or something around here, are there?"
+    "There aren't any... Wolves or something around here, are there?"
 
     "You quicken your pace and get back to town, mercifully without being mauled."
     

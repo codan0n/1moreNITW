@@ -50,15 +50,16 @@ label before_main_menu:
 #
 #    #testenum = Enum('testenum', 'ORANGE APPLE GRAPE')
 
-#label after_load:   
-#    python:
-#        from enum import Enum
-#        
-#    #$ testenum = Enum('testenum', 'ORANGE APPLE GRAPE')
-#    
-#    "is this even running?"
-#    
-#    return
+label after_load:   
+    init python:
+        from enum import Enum
+        
+        #testenum = Enum('testenum', 'ORANGE APPLE GRAPE')
+        drinkenum = Enum('drinkenum', 'MOCHA SPECIAL AMERICANO CAPPUCCINO')
+        animalenum = Enum('animalenum', 'REPTILE BIRD MAMMAL')
+        hobbyenum = Enum('hobbyenum', 'MOVIES BOOKS MUSIC')
+    
+    return
 
 
 label start:
@@ -169,7 +170,7 @@ label start:
     $ houseEventsDay = ["houseOffice", "houseBook", "houseKey"]
     $ houseEventsNight = ["houseOffice", "houseBook", "houseKey"]
     
-    $ townEventsDay = ["townGerm1", "townAngus1", "townRooftops1"]
+    $ townEventsDay = ["townGerm1", "townAngus1", "townRooftops1", "townBridge1"]
     $ townEventsNight = [""]
 
     
