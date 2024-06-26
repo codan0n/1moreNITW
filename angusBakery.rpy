@@ -71,7 +71,7 @@ label angusBakeryCoffee:
     #need variations for if you have never met angus, if you have met angus, if you visited the bakery before, if you didn't visit the bakery before
     #definitely need different versions for if you visited bakery prior, but can have just a small variation if you only met angus at the park
     
-    scene bg bakery_interior
+    scene bg bakery_interior with dissolve
     
     if bakeryVisited == False:
         "A bell on the door jingles as you open it and step inside."
@@ -187,7 +187,7 @@ label angusBakeryCoffee:
     
     player "Just a hot black coffee. To go."
     
-    angus "Good timing! I just brewed a fresh batch!"
+    angus "Good timing! I just brewed a fresh pot!"
     
     "Angus turns around and pours from the coffee pot into a cardboard cup and fixes a lid to it."
     

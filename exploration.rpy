@@ -259,7 +259,7 @@ label houseKey:
 label intoTown:
     "You put on a jacket and boots and make your way towards the center of the town."
             
-    scene bg roads_day
+    scene bg roads_day with dissolve
     
     #"You try to follow the map but without GPS "
     #"Without GPS you get a bit lost but eventually stumble upon what must be the main street."
@@ -634,7 +634,7 @@ label townAngus1:
     ####to be added in a future version, also to need to be on week 2+
     #$ townEventsDay.append("townAngus2")
     
-    scene bg roads_day
+    scene bg roads_day with dissolve
     
     if metAngus == True:
         "As you wander through main street, you eyes are drawn to a statue standing atop a tall pillar. It appears to be a war monument."

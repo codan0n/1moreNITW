@@ -16,7 +16,8 @@ label maeLoriSleepover:
         
         "You turn around and see Lori with an overstuffed bag on her back."
         
-        show lori neutral at left with dissolve
+        show lori neutral at left with dissolve:
+            xzoom -1
         
         player "Whoa! Lori, you startled me!"
         
@@ -50,6 +51,11 @@ label maeLoriSleepover:
         "You try to remember back to that night."
         
         call loriFlashback
+        
+        scene bg street with fade
+        
+        show lori neutral at left:
+            xzoom -1
         
         player "Oh right, now I recall! Lori, right?"
         
@@ -137,13 +143,13 @@ label maeLoriSleepover:
     
     candy "Mae, did you lose your wallet again?"
 
-    show mae angry flip
+    show mae angry
 
     mae "Mom!"
 
     candy "What? I can't count the number of times you've lost that thing. Did you tell [himherthem] thank you?"
 
-    show mae grump flip
+    show mae grump
 
     mae "Yes Mom, I'm not five anymore. I know how to talk to people."
     
@@ -232,7 +238,7 @@ label maeLoriSleepover:
 
     candy "You should! She's improved so much in the past few years, she could be the next Picasso!"
 
-    show mae grump flip
+    show mae grump
 
     mae "Mom, please. It's not that good."
 
@@ -357,7 +363,9 @@ label maeLoriSleepover:
 
             mae "A couple???"
             
-            player "Yeah like "
+            player "Yeah like."
+            player "Um."
+            player "So you're not dating?"
 
             "You get the feeling you've made a tremendous error."
 
@@ -441,7 +449,9 @@ label maeLoriSleepover:
     with dissolve
 
     "Mae opens the door for you and you give a last friendly wave as you wander into the night back to your house."
+    
+    $ dayWalletFound = 0
 
-    $ metMae == True
+    $ metMae = True
 
     return

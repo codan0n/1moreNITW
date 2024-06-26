@@ -12,7 +12,7 @@ define narrator = Character("")
 define player = Character("Wayfarer")
 define candy = Character("Candy")
 define stan = Character("Stan")
-define name = Character("Avery")
+define name = Character("Alex")
 define driver = Character("Driver")
 define trish = Character("???")
 define harleyunknown = Character("???")
@@ -32,6 +32,33 @@ define saleem = Character("Saleem")
 define sadie = Character("Sadie")
 define man = Character("Man")
 define madamespectre = Character("Madame Spectre")
+
+
+label before_main_menu:
+    python:
+        from enum import Enum
+        
+        #testenum = Enum('testenum', 'ORANGE APPLE GRAPE')
+        drinkenum = Enum('drinkenum', 'MOCHA SPECIAL AMERICANO CAPPUCCINO')
+        animalenum = Enum('animalenum', 'REPTILE BIRD MAMMAL')
+        hobbyenum = Enum('hobbyenum', 'MOVIES BOOKS MUSIC')
+    
+    return
+
+#init python:
+#    from enum import Enum
+#
+#    #testenum = Enum('testenum', 'ORANGE APPLE GRAPE')
+
+#label after_load:   
+#    python:
+#        from enum import Enum
+#        
+#    #$ testenum = Enum('testenum', 'ORANGE APPLE GRAPE')
+#    
+#    "is this even running?"
+#    
+#    return
 
 
 label start:
@@ -223,6 +250,7 @@ label start:
     
     python:
         from enum import Enum
+        
 
     ####add walking in snow sound effect
     
@@ -240,7 +268,7 @@ label start:
     "The local artists' amateur paintings and cheap grandma tier wallpaper really brings it all together."
     #nuke possum springs carved into table
     "Dare you say, this place has... soul."
-    "Behind the counter, a young bird lady with brick red feathers smiles and waves at you."
+    "Behind the counter, a young feathered lady with brick red feathers smiles and waves at you."
 
     show trish neutral at right with dissolve
 
@@ -292,8 +320,8 @@ label start:
     
     trish "Welcome to Posspresso! You can call me Trish!"
     trish "Have you decided what you'd like?"
-    
-    $ drinkenum = Enum('drinkenum', 'MOCHA SPECIAL AMERICANO CAPPUCCINO')
+
+#    $ drinkenum = Enum('drinkenum', 'MOCHA SPECIAL AMERICANO CAPPUCCINO')
     $ chosenDrink = 0
 
     menu:
@@ -354,7 +382,7 @@ label start:
             name = renpy.input("Oh shoot, what's your name again?", length = 14)
             name = name.strip()
             povnameValid = True
-            # prevents the player from naming themselves certain names and names them Avery if nothing is input
+            # prevents the player from naming themselves certain names and names them Alex if nothing is input
             if name.upper() == "MAE":
                 "Choose another name."
                 povnameValid = False
@@ -405,7 +433,7 @@ label start:
                 povnameValid = False
             if not name:
                 #default name in case you don't type anything
-                name = "Avery"
+                name = "Alex"
                 povnameValid = True
 
         if povnameValid == True:
@@ -438,7 +466,7 @@ label start:
     "You're lucky Posspresso even decided to open on a day like this."
     "Your eyes come to focus on your reflection in the glass, noticing you still have some snow on your..."
 
-    $ animalenum = Enum('animalenum', 'REPTILE BIRD MAMMAL')
+#    $ animalenum = Enum('animalenum', 'REPTILE BIRD MAMMAL')
     $ animaltype = 0
     
     menu:
@@ -584,7 +612,8 @@ label start:
     "It may be a while before you get internet again, so you should download something to keep yourself busy later on."
     
     
-    $ hobbyenum = Enum('hobbyenum', 'MOVIES BOOKS MUSIC')
+#    $ hobbyenum = Enum('hobbyenum', 'MOVIES BOOKS MUSIC')
+    #$ hobbyenum = Enum('hobbyenum', 'MOVIES BOOKS MUSIC')
     $ playerHobby = 0
     
     menu:
@@ -830,7 +859,7 @@ label start:
     
     "You put on a jacket and boots and make your way towards the center of the town, to the main street."
             
-    scene bg roads_day
+    scene bg roads_day with dissolve
     
     #"You try to follow the map but without GPS "
     #"Without GPS you get a bit lost but eventually stumble upon what must be the main street."
@@ -3031,823 +3060,824 @@ label day4:
 
     #lori "[name]! You made it!"
 
-    "You look to the source of the voice. You didn't even notice the mouse girl sitting at one of the tables. She stands up and runs toward you."
-
-    lori "Sorry I forgot to give you a time to come. To be honest I wasn't sure when we were meeting!"
-
-    player "Uh, it's fine."
-
-    "You're still confused from discovering Gregg and Angus are in a band with Mae and the hardware store girl."
-
-    lori "Guys, this is [name]! [name], that's Gregg, Angus, Mae, and Bea!"
-
-    "She points to each of them as she lists their names."
-
-    player "I've already met everyone, actually."
-
-    "Gregg hops down from the stage with his guitar still strapped over his body."
-
-    show gregg neutral flip at left:
-        yalign greggheight
-        xalign -.12
-    with dissolve
-
-    gregg "Yeah, we played video games and ate pizza the other day."
-
-    show lori breath
-
-    lori "Whaaaaaat? Really??"
-
-    show bea neutral at right:
-        yalign beaheight
-        xalign .9
-    with moveinright
-
-    bea "Mae and I saw them at the Ol' Pickaxe too."
-
-    lori "Oh gosh, I-I thought..."
-
-    "Lori trails off and shrinks down in shame."
-
-    show angus neutral flip at left
-    with moveinleft
-
-    angus "It's cool. [name] is cool."
-
-    lori "Sorry for inviting [name] without knowing if it was ok... I thought it was going to be a bigger party..."
-
-    gregg "No, it's fine. Tell ya what, we'll go out to eat after putting things away here. You hungry, [name]?"
-
-    player "I could eat."
-
-    bea "I can make time for something quick at the diner. And I can get dinner to-go for my dad while we're there."
-
-    gregg "Cool! Let's pack up and get the heck outta here!"
-
-    "Gregg hops back on stage and kicks open his worn guitar case. Angus, Bea and Mae go ahead and start putting their things away while Lori waits at a table."
-
-    hide lori
-    hide gregg
-    hide angus
-    hide bea
-    with dissolve
-
-    show mae neutral at right:
-        xalign 1.5
-
-    menu:
-        "Offer to help clean":
-            #+1 trust
-
-            player "Let me help you with that!"
-
-            show gregg neutral flip at left:
-                yalign greggheight
-            with dissolve
-
-            gregg "Hm? Oh sure. Can you unplug those amps and put 'em in the storage closet over there?"
-
-            player "'Course!"
-
-            "You readily do as he requested while the others put away their instruments."
-            "Angus coils up the mic wire and collapses the tripod while Bea folds up the table her keyboard was on and stuffs the laptop in her bag."
-            "Mae strummed on her bass a few times, adjusting the tuning before putting it away in a case and helping out with general cleaning."
-            "She was awfully quiet and seemed to keep her distance from you, only occasionally making weird glances in your direction. She whispers something to Bea."
-            "You brush it off and finish helping, bumping into Gregg as he stowed the last speaker."
-
-            player "I didn't know you guys were in a band. I thought this was just gonna be a movie party."
-
-            gregg "Is that what Lori told you? We ended up watching the movie early on, then Bea wanted to test a song she's been writing."
-
-            player "Bea writes music?"
-
-            gregg "Yeah, she just finished going to school for that sort of thing."
-            gregg "Honestly, I haven't picked up my guitar in ages and kinda suck at playing now."
-            gregg "But it was fun getting together and playing again!"
-
-            player "I never would have imagined all you guys were in a band."
-
-            gregg "Believe me, this is the least crazy thing about us."
-            gregg "Hey be right back, I need to hit the bathroom."
-
-            hide gregg with dissolve
-            show bea neutral at right:
-                xalign 2.0
-
-            "The fox locks away all the gear with a key then heads to the back of the building and out the exit door."
-            "Rather than question where exactly he's going, you decide to approach Lori who had been seated at a table looking stressed as she scrolls through her phone."
-
-            show lori sad at right:
-                yalign loriheight
-                xalign 1.06
-            with dissolve
-
-            player "You ok?"
-
-            show lori neutral
-
-            lori "Huh? Oh, yeah I'm fine! You guys done?"
-
-            player "I think so. Just waiting on Gregg to get back."
-
-            "You chat with Lori while Mae, Bea and Angus converse amongst themselves."
-            "After a minute or so Gregg walks back in and approaches you. The others hop down from the stage and gather around."
-            "The crocodile has her bag slung over one shoulder and her keyboard pinned between her arm and her side."
-
-            show bea neutral at right:
-                yalign beaheight
-                xalign .96
-            with moveinright
-
-            bea "Ready to go?"
-
-        "Hang back with Lori":
-            $ loriAP = loriAP + 1
-
-            show bea neutral at right:
-                xalign 2.0
-
-            "You pull up a seat across from Lori, who looks stressed as she scrolls through her phone."
-
-            show lori sad at right:
-                yalign loriheight
-                xalign 1.06
-            with dissolve
-
-            player "You ok?"
-
-            show lori neutral
-
-            lori "Huh? Oh, yeah I'm fine!"
-            lori "...Sorry I made things awkward earlier."
-
-            "You shrug nonchalantly."
-
-            player "Don't worry about it. It all worked out in the end."
-
-            if loriAP > 1:
-                lori "Shame you missed out on the movie though... maybe we can watch it together another time?"
-
-                player "I'd love that! It's been ages since I've last seen it!"
-
-                lori "I watch it every year hahaha!"
-
-            else:
-                lori "Yeah..."
-
-            "Out of the corner of your eye you see Gregg rush out the exit toward the back of the building while the others finish putting everything away."
-
-            player "Hey so, dumb question, but are they like, in a band?"
-
-            "You gesture toward the group on the stage."
-
-            lori "Oh! Yeah, well, they used to be. But Bea just finished her degree in music studies and wanted to test a song she's been writing so they brought out all their old instruments."
-
-            player "Wow. Did it turn out well?"
-
-            lori "Nnnnot really. Gregg's pretty rusty with his guitar."
-            lori "Don't let him know I said that though!"
-
-            "Just then, Gregg returns from whatever it was he was doing and everyone gathers around the table you and Lori are seated at."
-            "Bea has her bag slung over one shoulder and her keyboard pinned between her arm and her side."
-
-            show bea neutral at right:
-                yalign beaheight
-                xalign .96
-            with moveinright
-
-            bea "Everything's packed up. You ready to go?"
-
-
-    show angus neutral at left:
-        yalign angusheight
-        xalign -1.0
-
-    show gregg neutral flip at left:
-        yalign greggheight
-        xalign -.2
-    with moveinleft
-
-    gregg "Yup!"
-
-    show angus neutral flip at left:
-        yalign angusheight
-        xalign .12
-    with moveinleft
-
-    angus "Indeed!"
-
-    lori "Mh-hm!"
-
-    player "Yeah!"
-
-    show mae sad1 at right:
-        yalign maeheight
-        xalign .67
-    with moveinright
-
-    mae "Sure."
-
-    "Bea adjusts her grip on the keyboard and turns toward the door."
-
-    bea "Let's roll."
-
-    hide mae
-    hide gregg
-    hide bea
-    hide angus
-    hide lori
-    with dissolve
-
-    "You all file out through the doorway and into the cold dark street."
-
-    stop music fadeout 1.5
-
-    show bea neutral at right:
-        yalign beaheight
-        xalign 1.08
-    with dissolve
-
-    "Bea turns toward the group and does a headcount."
-
-    bea "There's too many of us to fit in my car so I guess we're walking."
-
-    show angus neutral flip at left:
-        yalign angusheight
-        xalign .08
-    show gregg neutral flip at left:
-        yalign greggheight
-        xalign -.1
-    with dissolve
-
-    gregg "I volunteer to sit in Angus's lap to make space."
-
-    bea "That would work if I didn't have a big box of records in the passenger seat, and a keyboard soon to be occupying the back."
-
-    gregg "Aww."
-
-    hide gregg
-    hide angus
-    with dissolve
-
-    bea "Be right back."
-
-    hide bea with dissolve
-
-    "Bea starts toward the Ol' Pickaxe where her car is parked."
-
-    show mae panic flip at left:
-        yalign maeheight
-    with dissolve
-
-    mae "I'll go with you!"
-
-    "Mae hastily runs off to catch up to Bea."
-
-    show mae at right:
-        yalign maeheight
-        xalign 2.0
-    with move
-    show bea at right:
-        yalign beaheight
-        xalign 2.0
-
-    "You consider going with them just so your body can warm up by walking but the moment of opportunity has already passed."
-    "You're all just standing here with nothing else to do so why not break the ice?"
-
-    show angus neutral flip at left:
-        yalign angusheight
-        xalign .0
-    show gregg neutral flip at left:
-        yalign greggheight
-        xalign -.12
-    show lori neutral at right:
-        yalign loriheight
-        xalign 1.06
-    with dissolve
-
-    player "So why is there a stage in the middle of the bakery?"
-
-    angus "It's a holdover from the previous business. We used to break in and play music on it way back in the day."
-    angus "No need for breaking in now."
-
-    gregg "Lame."
-
-    angus "Nowadays it usually gets used for banquets and whatever other local events need a stage."
-
-    lori "Like the Harfest play!"
-
-    gregg "Yeah, like that thing literally nobody cares about but we still do for some reason."
-
-    "You stand around idly chatting waiting for Mae and Bea to come back."
-    "How long does it take to put away a keyboard??"
-
-    show bea neutral at right:
-        yalign beaheight
-        xalign 1.0
-    with moveinright
-    show mae sad1 at right:
-        yalign maeheight
-        xalign .7
-    with moveinright
-
-    "Seems Lori was thinking the same thing. When the pair finally return, she makes a quip."
-
-    lori "Did ya get lost along the way?"
-
-    bea "Har har. Come on, we doing this or not?"
-
-    mae "Yeah. Let's go."
-
-    hide gregg
-    hide angus
-    hide lori
-    with dissolve
-
-    "Bea stands between you and Mae as your party advances, footsteps crunching against the snow."
-    "While the others joke and converse, you sneak a glance at Mae. You can feel that there's something conflicting her and that she doesn't want to be here."
-    "Unfortunately you don't know what you can do about it other than feel bad for her."
-
-    hide bea
-    hide mae
-    with dissolve
-
-    show mae neutral at right:
-        xalign 2.0
-
-    "The diner turns out to only be a few blocks away. It's a repurposed train car with an orange neon sign reading CLIK CLAK DINER."
-
-    show angus neutral left:
-        yalign angusheight
-        xalign -2.0
-    show lori neutral right:
-        yalign loriheight
-        xalign 2.0
-
-    show gregg neutral flip at left:
-        yalign greggheight
-        xalign -.15
-    with dissolve
-
-    gregg "Here we are!"
-
-    "Gregg holds the door open for everyone. Inside, you're met with a cramped, cluttered space, vaguely reminiscent of Art Deco design, covered with photos, paintings, and other artwork on the walls."
-    "You're seated at a booth and given a menu that has the typical diner offerings."
-    "Pizza, burgers, bacon and eggs, club sandwiches, and even pierogies. You all make your selections and chat while the food is cooked."
-
-    show bea neutral at right with dissolve:
-        yalign beaheight
-        xalign 1.18
-
-    bea "So [name], I heard you moved here recently? What are you doing in Possum Springs?"
-
-    player "Eh, just wanted to get away from home, ya know? Move out and be independent and all that stuff."
-    player "I have to say, I'm enjoying Possum Springs a lot more than I thought I would."
-
-    bea "Really? Almost everyone I know can't wait to escape from here."
-
-    "A subtle hush falls over the group. Bea quickly changes the topic."
-
-    bea "Anyway, you got a job here yet?"
-
-    player "Nope. Living off of savings at the moment. Why, you know anybody who's hiring?"
-
-    show lori neutral at right:
-        yalign loriheight
-        xalign .85
-    with dissolve
-
-    lori "I could scrounge together something and pay you a little if you help me work on my movie."
-
-    player "You're making a movie?"
-
-    lori "Yup! It's partly a school project but it's also something I just wanna do."
-    lori "I'm out in the woods or by the tracks nearly every day if you wanna come and watch or set up equipment or maybe even act in it?"
-
-    player "Sounds spooky. I'll definitely consider it."
-
-    "Lori giggles at your choice of words."
-
-    bea "*Ahem*"
-    bea "I could use a hand at the shop if you're interested. Backbreaking work but decent untaxed, under the table pay."
-
-    player "What do I have to do?"
-
-    bea "Lift heavy stuff, maybe direct a customer toward said heavy stuff, and on rare occasion move the heavy stuff to their car."
-
-    player "Noted. I'll consider that as well."
-
-    show angus neutral flip at left:
-        yalign angusheight
-        xalign .0
-    with dissolve
-
-    gregg "I could try putting in a good word for you at Ham Panther. I don't think they're hiring right now though."
-
-    angus "I've got my paws full just trying to pay myself at the bakery so..."
-
-    gregg "Maybe Mae could get you something at the arts council if you're into that."
-
-    "All eyes turn toward an unsuspecting Mae. She looks like she wasn't paying much attention to the conversation and was caught off guard."
-
-    show mae panic at right:
-        yalign maeheight
-        xalign .7
-    with dissolve
-
-    mae "Oh uh, yeah. I teach art stuff at the Deep Hollow County Arts Council on Fridays and Saturdays. Painting, clay sculpting, photography..."
-
-    lori "Mae's the one who taught me how to use a camera!"
-
-    show mae sad1
-
-    "Mae shrugs."
-
-    mae "At this point, Lori's more comfortable with cameras than I am. I just know enough to teach the basics."
-
-    player "Gotchya. I'll check it out if I'm feeling artsy."
-
-    show mae neutral
-
-    "Mae flashes you a forced smile. Luckily the awkward moment is interrupted by the waitress coming by with your food."
-    "Food has a way of lightening the mood. Mae relaxes and even becomes more talkative as the evening goes on."
-    "Even though your meal isn't very good, you still have a pleasant time with your new friends."
-    "Towards the end of the night, Bea gets a box for her leftovers and the waitress drops off the meal she ordered for her father."
-    "When it comes time to pay the bill, Gregg insists that he cover for you but you politely decline, knowing you can spare the cash more comfortably."
-    "Ironically, Angus is the one to put down his debit card for both himself and Gregg."
-    "Bea pays for her own, and Mae asks the waitress to put hers and Lori's meals on one bill."
-
-    show mae blush
-
-    "Lori wordlessly expresses her gratitude by resting her head on Mae's shoulder and wrapping her arm around Mae's. For the first time this night you see Mae smile in earnest."
-
-    #scene transition
-
-    show mae neutral
-
-    "Once you're outside, you all crowd around under a streetlight and discuss your plans for the rest of the night."
-
-    gregg "This was great. We should do this again."
-
-    lori "Yeah, it was awesome seeing you guys playing as a band again!"
-
-    "Bea lights a cigarette."
-
-    bea "Always a joy. But I think I'm gonna go home, relax and watch some TV with my dad now."
-
-    lori "Hmm, yeah I should get home too before my dad starts worrying where I am so late."
-
-    mae "I'll drive you home so you don't have to walk back in the dark Lori."
-
-    lori "Thanks!"
-
-    gregg "Me and Angus will probably watch some streams then go to sleep."
-
-    player "Yeah, sleep sounds good right about now. It was fun hanging out with you all though."
-
-    bea "Before I forget, you have Chattrbox right? Add me and we can talk more about having you work at the Pickaxe."
-
-    lori "Oh and add me too in case you decide to help me out on my film!"
-
-    "You pull out your phone and get their Chattrbox names."
-    "You'll have to wait until you have wifi again before it registers but it's no big deal. You pocket your phone and give them a smile."
-
-    player "Sweet. I'm open to just chatting too if you want."
-
-    bea "Sure."
-
-    lori "Of course!"
-
-    hide lori
-    hide gregg
-    hide angus
-    hide bea
-    hide mae
-    with dissolve
-
-    "You walk as a group back to the bakery before parting ways. Gregg and Angus go around to the back of the building, while Mae, Bea and Lori go to the parking lot by the Ol' Pickaxe."
-    "You hop on your motorcycle and rev her up for the trip home, where you promptly get ready for bed."
-    "You add Bea and Lori to your Chattrbox then set your phone to 'Do not disturb' mode and fall asleep with your face buried in your pillow."
-
-    scene bg black with fade
-
-
-label church1:
-    # day 5, sunday, dec 5
-    scene bg home_interior_day with fade
-
-    "Your first week in Possum Springs has come to a close."
-    "Really this is only your sixth day here, but it's Sunday so you're counting it as having been a week."
-    "Each new day further cements your routine. Wake up, shower, eat breakfast, play around on the internet for a bit, and so on."
-    "The excitement of moving into an unfamiliar town has worn off, yet you still seek the thrills you've felt over the past few days."
-    "You should get out of this dusty old house and go on an adventure today."
-
-    #scene bg outsidePlayerHouseSnowClearSky
-    play sound "sound/door open and close.mp3"
-    scene bg home_exterior_night with fade
-
-    "The snowstorm has finally subsided."
-    "The skies are bright and clear once again, but the ground is going to be covered with a thick blanket of snow for a while."
-    "That shouldn't hinder your ability to get around though. \nNow then, where shall you go today?"
-    "Why not visit the top of that big hill in town? You bet you can see everything in Possum Springs from up there!"
-
-    jump churchScene1
-
-label jobs1:
-    # day 6, monday
-    $ currentDay = 6
-    $ currentDate = "December 6"
-    scene bg home_interior_day with fade
-
-    "Another day, a new adventure awaits."
-    "Or something like that."
-    "Either way, you make yourself presentable and prepare to go out."
-
-    menu:
-        "{cps=0}Where do you want to go?{/cps}"
-        "Ol' Pickaxe" if workingWithBeaCompleted == False:
-            jump workingWithBea
-        "Help Lori with film project" if loriHelpCompleted == False:
-            jump loriFilm
-        "Check out the arts council" if maeArtsCompleted == False:
-            jump maeArts
-            
-      
-label day7:
-    #day 7, tuesday, dec 7
-    #
-
-    #add a random event where you hang out with germ. maybe you see him hauling animal feed across town in a stolen shopping cart, making him look homeless
-            
-            
-            
-label jobs2:
-    # day 8, wednesday, dec 8
-    "Another day, a new adventure awaits."
-    "Or something like that."
-    "Either way, you make yourself presentable and prepare to go out."
-
-    menu:
-        "{cps=0}Where do you want to go?{/cps}"
-        "Ol' Pickaxe" if workingWithBeaCompleted == False:
-            jump workingWithBea
-        "Help Lori with film project" if loriHelpCompleted == False:
-            jump loriFilm
-        "Check out the arts council" if maeArtsCompleted == False:
-            jump maeArts
-            
-            
-            
-            
-            
-
-    
-
-label day9:
-    # day 9, thursday
-    $ currentDay = 9
-    $ currentDate = "December 9"
-
-    scene bg home_interior_day with fade
-
-    "As you're eating breakfast, a you suddenly feel like you're forgetting something."
-    "Wasn't there something you were supposed to do today?"
-    "Oh yeah, Selmers is hosting an event at the library this afternoon and asked if you could help out!"
-    "Huh?"
-    "Your phone just vibrated and a text message appeared on the screen. It's from Lori."
-    "It says \"Hey just wanted to let you know me and Gregg are gonna be filming at the historical society this evening if you wanna come help!\""
-    "Well shoot, you can't do both."
-
-    menu:
-        "{cps=0}Where do you want to go?{/cps}"
-        "Library":
-            jump selmaLibraryReading
-        "Historical Society":
-            jump loriGreggHistorical
-
-    label day10a:
-    # day 10, friday
-    $ currentDay = 10
-    $ currentDate = "December 10"
-
-    scene bg home_interior_day with fade
-
-    "Another day, a new adventure awaits."
-    "Or something like that."
-    "Either way, you make yourself presentable and prepare to go out."
-
-    menu:
-        "{cps=0}Where do you want to go?{/cps}"
-        "Ol' Pickaxe":
-            jump beaAntiqueShop
-        "Bakery":
-            "to the bakery"
-            #visit bakery but are surprised by lack of coffee. learn that they have a deal with posspresso where they don't sell coffee and possprsso doesn't sell certain baked goods. angus mentions his favorite drink there and you offer to get him one in exchange for your confection. at the cafe you find selma, and you can give her your treat as apology for missing the library event
-        "Explore town":
-            jump maeLoriSleepover
-
-label anotherday:
-#another germ scene, he slips on ice, you help him home, visit his animal shelter
-
-
-    label day10:
-        # day 10, thursday
-        $ currentDay = 10
-        $ currentDate = "December 16"
-        
-        "Another day, a new adventure awaits."
-    "Or something like that."
-    "Either way, you make yourself presentable and prepare to go out."
-
-    menu:
-        "{cps=0}Where do you want to go?{/cps}"
-        "Ol' Pickaxe":
-            jump beaAntiqueShop
-        "bakery":
-            "to the bakery"
-            #visit bakery but are surprised by lack of coffee. learn that they have a deal with posspresso where they don't sell coffee and possprsso doesn't sell certain baked goods. angus mentions his favorite drink there and you offer to get him one in exchange for your confection. at the cafe you find selma, and you can give her your treat as apology for missing the library event
-        "Explore town":
-            jump maeLoriSleepover
-            
-
-
-label day:
-    #farmer's market?
-    #group hangout at ??? with ???
-    #germ is invited but couldn't make it
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-label nextday:
-
-    menu:
-        "Play video games with Gregg and Angus":
-            jump dragonsDungeons1
-        "Train Tracks" if loriFilmCompleted == False:
-            jump loriFilm
-
-
-    label day11:
-        # day 11, friday
-        $ currentDay = 11
-        $ currentDate = "December 17"
-
-        jump posspresso_group1
-
-    label day12:
-        # day 12, saturday
-        $ currentDay = 12
-        $ currentDate = "December 18"
-
-        menu:
-            "Arts Council":
-                jump artsCouncilScene
-            "Train Tracks" if loriFilmCompleted == False:
-                jump loriFilm
-            #"tabletop gaming" 
-                
-
-
-    label day13:
-        # day 13, sunday
-        $ currentDay = 13
-        $ currentDate = "December 19"
-
-        menu:
-            "Church":
-                jump churchWeek2
-            "Ol' Pickaxe":
-                scene bg pickaxe with fade
-
-                play music "music/picknaxe_loop.mp3" fadein 1.0
-
-                "You head down to the hardware store and find Bea manning the counter."
-
-                show bea apron at right with dissolve:
-                    yalign beaheight
-
-                bea "Hey [name]. Me and Selma are going out to the Arts Council tonight for some poetry. You wanna come?"
-
-                player "Sure!"
-
-                bea "Meet us there at around 7:00, k?"
-
-                player "Sounds good. See you then!"
-
-                stop music fadeout 2.0
-
-                bea "See ya."
-
-                hide bea with dissolve
-
-                jump beaSelmaPoetry
-            #"Library":
-                #jump beaSelmaPoetry
-            #give option to go to library as well, selma tells invites player to poetry thing
-
-    label day14:
-        # day 14, monday
-        $ currentDay = 14
-        $ currentDate = "December 20"
-
-        scene bg home_interior_day with fade
-
-        "Welp, it's Longest Night Eve. Better write a scene for this."
-
-
-    label day15:
-        # day 15, tuesday
-        $ currentDay = 15
-        $ currentDate = "December 21"
-
-        jump longestNightOpening
-
-    label day16:
-        # day 16, wednesday
-        $ currentDay = 16
-        $ currentDate = "December 22"
-
-        jump endDemo
-
-
-    label olPickaxeWeek1:
-        # make beaSelmaPoetry available only after the cafe meetup
-
-        scene bg pickaxe with fade
-
-        play music "music/picknaxe_loop.mp3" fadein 1.0
-
-        "You head down to the hardware store and find Bea manning the counter."
-
-        show bea apron at right with dissolve:
-            yalign beaheight
-
-        bea "Hey [name]. Me and Selma are going out to the Arts Council tonight for some poetry. You wanna come?"
-
-        player "Sure!"
-
-        bea "Meet us there at around 7:00, k?"
-
-        player "Sounds good. See you then!"
-
-        stop music fadeout 2.0
-
-        bea "See ya."
-
-        hide bea with dissolve
-
-        jump beaSelmaPoetry
-
-
-        #menu:
-            #"Sure!":
-
-                #player "Sure!"
-
-                #bea "Meet us there at around 7:00, k?"
-
-                #player "Sounds good. See you then!"
-
-                #stop music fadeout 2.0
-
-                #bea "See ya."
-
-                #hide bea with dissolve
-
-
-
-                #jump beaSelmaPoetry
-            #"Nope.":
-
-                #player "Sorry, I think I'm busy around that time."
-
-                #bea "No big deal. See ya around."
-
-                #stop music fadeout 2.0
-
-                #player "Bye!"
-
-                #hide bea with dissolve
-
-    label endDemo:
-        scene bg black with fade
-        "That concludes the demo! Thanks so much for playing! Stay tuned for more to come!"
-        "Credits"
-        "Project Management: Fishy"
-        "Writing: Kodiak, Ferrin, MegaBirb, Tymime, Fishy, V-25 Sean"
-        "Programming: Kodiak"
-        "Music: Tymime, EightbyteOwl, Elias Lang, Ferrin, JunoDeer"
-        "Character Sprites: Equestria Prevails, TRPCWings, Balderdash, LataviaBoy1999, Tymime, Starxeil, Lauri, EightbyteOwl"
-        "Background Art: Eightbyteowl, Coldiru, Nukathefloof, TRPCWings, Balderdash, LataviaBoy1999, Careybou, WorkerQ, KDD, Lauri"
-        "Licensing info: The contents of this game are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License	https://creativecommons.org/licenses/by-nc-sa/3.0/us/"
-        return
-
-    return
+#    "You look to the source of the voice. You didn't even notice the mouse girl sitting at one of the tables. She stands up and runs toward you."
+#
+#    lori "Sorry I forgot to give you a time to come. To be honest I wasn't sure when we were meeting!"
+#
+#    player "Uh, it's fine."
+#
+#    "You're still confused from discovering Gregg and Angus are in a band with Mae and the hardware store girl."
+#
+#    lori "Guys, this is [name]! [name], that's Gregg, Angus, Mae, and Bea!"
+#
+#    "She points to each of them as she lists their names."
+#
+#    player "I've already met everyone, actually."
+#
+#    "Gregg hops down from the stage with his guitar still strapped over his body."
+#
+#    show gregg neutral flip at left:
+#        yalign greggheight
+#        xalign -.12
+#    with dissolve
+#
+#    gregg "Yeah, we played video games and ate pizza the other day."
+#
+#    show lori breath
+#
+#    lori "Whaaaaaat? Really??"
+#
+#    show bea neutral at right:
+#        yalign beaheight
+#        xalign .9
+#    with moveinright
+#
+#    bea "Mae and I saw them at the Ol' Pickaxe too."
+#
+#    lori "Oh gosh, I-I thought..."
+#
+#    "Lori trails off and shrinks down in shame."
+#
+#    show angus neutral flip at left
+#    with moveinleft
+#
+#    angus "It's cool. [name] is cool."
+#
+#    lori "Sorry for inviting [name] without knowing if it was ok... I thought it was going to be a bigger party..."
+#
+#    gregg "No, it's fine. Tell ya what, we'll go out to eat after putting things away here. You hungry, [name]?"
+#
+#    player "I could eat."
+#
+#    bea "I can make time for something quick at the diner. And I can get dinner to-go for my dad while we're there."
+#
+#    gregg "Cool! Let's pack up and get the heck outta here!"
+#
+#    "Gregg hops back on stage and kicks open his worn guitar case. Angus, Bea and Mae go ahead and start putting their things away while Lori waits at a table."
+#
+#    hide lori
+#    hide gregg
+#    hide angus
+#    hide bea
+#    with dissolve
+#
+#    show mae neutral at right:
+#        xalign 1.5
+#
+#    menu:
+#        "Offer to help clean":
+#            #+1 trust
+#
+#            player "Let me help you with that!"
+#
+#            show gregg neutral flip at left:
+#                yalign greggheight
+#            with dissolve
+#
+#            gregg "Hm? Oh sure. Can you unplug those amps and put 'em in the storage closet over there?"
+#
+#            player "'Course!"
+#
+#            "You readily do as he requested while the others put away their instruments."
+#            "Angus coils up the mic wire and collapses the tripod while Bea folds up the table her keyboard was on and stuffs the laptop in her bag."
+#            "Mae strummed on her bass a few times, adjusting the tuning before putting it away in a case and helping out with general cleaning."
+#            "She was awfully quiet and seemed to keep her distance from you, only occasionally making weird glances in your direction. She whispers something to Bea."
+#            "You brush it off and finish helping, bumping into Gregg as he stowed the last speaker."
+#
+#            player "I didn't know you guys were in a band. I thought this was just gonna be a movie party."
+#
+#            gregg "Is that what Lori told you? We ended up watching the movie early on, then Bea wanted to test a song she's been writing."
+#
+#            player "Bea writes music?"
+#
+#            gregg "Yeah, she just finished going to school for that sort of thing."
+#            gregg "Honestly, I haven't picked up my guitar in ages and kinda suck at playing now."
+#            gregg "But it was fun getting together and playing again!"
+#
+#            player "I never would have imagined all you guys were in a band."
+#
+#            gregg "Believe me, this is the least crazy thing about us."
+#            gregg "Hey be right back, I need to hit the bathroom."
+#
+#            hide gregg with dissolve
+#            show bea neutral at right:
+#                xalign 2.0
+#
+#            "The fox locks away all the gear with a key then heads to the back of the building and out the exit door."
+#            "Rather than question where exactly he's going, you decide to approach Lori who had been seated at a table looking stressed as she scrolls through her phone."
+#
+#            show lori sad at right:
+#                yalign loriheight
+#                xalign 1.06
+#            with dissolve
+#
+#            player "You ok?"
+#
+#            show lori neutral
+#
+#            lori "Huh? Oh, yeah I'm fine! You guys done?"
+#
+#            player "I think so. Just waiting on Gregg to get back."
+#
+#            "You chat with Lori while Mae, Bea and Angus converse amongst themselves."
+#            "After a minute or so Gregg walks back in and approaches you. The others hop down from the stage and gather around."
+#            "The crocodile has her bag slung over one shoulder and her keyboard pinned between her arm and her side."
+#
+#            show bea neutral at right:
+#                yalign beaheight
+#                xalign .96
+#            with moveinright
+#
+#            bea "Ready to go?"
+#
+#        "Hang back with Lori":
+#            $ loriAP = loriAP + 1
+#
+#            show bea neutral at right:
+#                xalign 2.0
+#
+#            "You pull up a seat across from Lori, who looks stressed as she scrolls through her phone."
+#
+#            show lori sad at right:
+#                yalign loriheight
+#                xalign 1.06
+#            with dissolve
+#
+#            player "You ok?"
+#
+#            show lori neutral
+#
+#            lori "Huh? Oh, yeah I'm fine!"
+#            lori "...Sorry I made things awkward earlier."
+#
+#            "You shrug nonchalantly."
+#
+#            player "Don't worry about it. It all worked out in the end."
+#
+#            if loriAP > 1:
+#                lori "Shame you missed out on the movie though... maybe we can watch it together another time?"
+#
+#                player "I'd love that! It's been ages since I've last seen it!"
+#
+#                lori "I watch it every year hahaha!"
+#
+#            else:
+#                lori "Yeah..."
+#
+#            "Out of the corner of your eye you see Gregg rush out the exit toward the back of the building while the others finish putting everything away."
+#
+#            player "Hey so, dumb question, but are they like, in a band?"
+#
+#            "You gesture toward the group on the stage."
+#
+#            lori "Oh! Yeah, well, they used to be. But Bea just finished her degree in music studies and wanted to test a song she's been writing so they brought out all their old instruments."
+#
+#            player "Wow. Did it turn out well?"
+#
+#            lori "Nnnnot really. Gregg's pretty rusty with his guitar."
+#            lori "Don't let him know I said that though!"
+#
+#            "Just then, Gregg returns from whatever it was he was doing and everyone gathers around the table you and Lori are seated at."
+#            "Bea has her bag slung over one shoulder and her keyboard pinned between her arm and her side."
+#
+#            show bea neutral at right:
+#                yalign beaheight
+#                xalign .96
+#            with moveinright
+#
+#            bea "Everything's packed up. You ready to go?"
+#
+#
+#    show angus neutral at left:
+#        yalign angusheight
+#        xalign -1.0
+#
+#    show gregg neutral flip at left:
+#        yalign greggheight
+#        xalign -.2
+#    with moveinleft
+#
+#    gregg "Yup!"
+#
+#    show angus neutral flip at left:
+#        yalign angusheight
+#        xalign .12
+#    with moveinleft
+#
+#    angus "Indeed!"
+#
+#    lori "Mh-hm!"
+#
+#    player "Yeah!"
+#
+#    show mae sad1 at right:
+#        yalign maeheight
+#        xalign .67
+#    with moveinright
+#
+#    mae "Sure."
+#
+#    "Bea adjusts her grip on the keyboard and turns toward the door."
+#
+#    bea "Let's roll."
+#
+#    hide mae
+#    hide gregg
+#    hide bea
+#    hide angus
+#    hide lori
+#    with dissolve
+#
+#    "You all file out through the doorway and into the cold dark street."
+#
+#    stop music fadeout 1.5
+#
+#    show bea neutral at right:
+#        yalign beaheight
+#        xalign 1.08
+#    with dissolve
+#
+#    "Bea turns toward the group and does a headcount."
+#
+#    bea "There's too many of us to fit in my car so I guess we're walking."
+#
+#    show angus neutral flip at left:
+#        yalign angusheight
+#        xalign .08
+#    show gregg neutral flip at left:
+#        yalign greggheight
+#        xalign -.1
+#    with dissolve
+#
+#    gregg "I volunteer to sit in Angus's lap to make space."
+#
+#    bea "That would work if I didn't have a big box of records in the passenger seat, and a keyboard soon to be occupying the back."
+#
+#    gregg "Aww."
+#
+#    hide gregg
+#    hide angus
+#    with dissolve
+#
+#    bea "Be right back."
+#
+#    hide bea with dissolve
+#
+#    "Bea starts toward the Ol' Pickaxe where her car is parked."
+#
+#    show mae panic flip at left:
+#        yalign maeheight
+#    with dissolve
+#
+#    mae "I'll go with you!"
+#
+#    "Mae hastily runs off to catch up to Bea."
+#
+#    show mae at right:
+#        yalign maeheight
+#        xalign 2.0
+#    with move
+#    show bea at right:
+#        yalign beaheight
+#        xalign 2.0
+#
+#    "You consider going with them just so your body can warm up by walking but the moment of opportunity has already passed."
+#    "You're all just standing here with nothing else to do so why not break the ice?"
+#
+#    show angus neutral flip at left:
+#        yalign angusheight
+#        xalign .0
+#    show gregg neutral flip at left:
+#        yalign greggheight
+#        xalign -.12
+#    show lori neutral at right:
+#        yalign loriheight
+#        xalign 1.06
+#    with dissolve
+#
+#    player "So why is there a stage in the middle of the bakery?"
+#
+#    angus "It's a holdover from the previous business. We used to break in and play music on it way back in the day."
+#    angus "No need for breaking in now."
+#
+#    gregg "Lame."
+#
+#    angus "Nowadays it usually gets used for banquets and whatever other local events need a stage."
+#
+#    lori "Like the Harfest play!"
+#
+#    gregg "Yeah, like that thing literally nobody cares about but we still do for some reason."
+#
+#    "You stand around idly chatting waiting for Mae and Bea to come back."
+#    "How long does it take to put away a keyboard??"
+#
+#    show bea neutral at right:
+#        yalign beaheight
+#        xalign 1.0
+#    with moveinright
+#    show mae sad1 at right:
+#        yalign maeheight
+#        xalign .7
+#    with moveinright
+#
+#    "Seems Lori was thinking the same thing. When the pair finally return, she makes a quip."
+#
+#    lori "Did ya get lost along the way?"
+#
+#    bea "Har har. Come on, we doing this or not?"
+#
+#    mae "Yeah. Let's go."
+#
+#    hide gregg
+#    hide angus
+#    hide lori
+#    with dissolve
+#
+#    "Bea stands between you and Mae as your party advances, footsteps crunching against the snow."
+#    "While the others joke and converse, you sneak a glance at Mae. You can feel that there's something conflicting her and that she doesn't want to be here."
+#    "Unfortunately you don't know what you can do about it other than feel bad for her."
+#
+#    hide bea
+#    hide mae
+#    with dissolve
+#
+#    show mae neutral at right:
+#        xalign 2.0
+#
+#    "The diner turns out to only be a few blocks away. It's a repurposed train car with an orange neon sign reading CLIK CLAK DINER."
+#
+#    show angus neutral left:
+#        yalign angusheight
+#        xalign -2.0
+#    show lori neutral right:
+#        yalign loriheight
+#        xalign 2.0
+#
+#    show gregg neutral flip at left:
+#        yalign greggheight
+#        xalign -.15
+#    with dissolve
+#
+#    gregg "Here we are!"
+#
+#    "Gregg holds the door open for everyone. Inside, you're met with a cramped, cluttered space, vaguely reminiscent of Art Deco design, covered with photos, paintings, and other artwork on the walls."
+#    "You're seated at a booth and given a menu that has the typical diner offerings."
+#    "Pizza, burgers, bacon and eggs, club sandwiches, and even pierogies. You all make your selections and chat while the food is cooked."
+#
+#    show bea neutral at right with dissolve:
+#        yalign beaheight
+#        xalign 1.18
+#
+#    bea "So [name], I heard you moved here recently? What are you doing in Possum Springs?"
+#
+#    player "Eh, just wanted to get away from home, ya know? Move out and be independent and all that stuff."
+#    player "I have to say, I'm enjoying Possum Springs a lot more than I thought I would."
+#
+#    bea "Really? Almost everyone I know can't wait to escape from here."
+#
+#    "A subtle hush falls over the group. Bea quickly changes the topic."
+#
+#    bea "Anyway, you got a job here yet?"
+#
+#    player "Nope. Living off of savings at the moment. Why, you know anybody who's hiring?"
+#
+#    show lori neutral at right:
+#        yalign loriheight
+#        xalign .85
+#    with dissolve
+#
+#    lori "I could scrounge together something and pay you a little if you help me work on my movie."
+#
+#    player "You're making a movie?"
+#
+#    lori "Yup! It's partly a school project but it's also something I just wanna do."
+#    lori "I'm out in the woods or by the tracks nearly every day if you wanna come and watch or set up equipment or maybe even act in it?"
+#
+#    player "Sounds spooky. I'll definitely consider it."
+#
+#    "Lori giggles at your choice of words."
+#
+#    bea "*Ahem*"
+#    bea "I could use a hand at the shop if you're interested. Backbreaking work but decent untaxed, under the table pay."
+#
+#    player "What do I have to do?"
+#
+#    bea "Lift heavy stuff, maybe direct a customer toward said heavy stuff, and on rare occasion move the heavy stuff to their car."
+#
+#    player "Noted. I'll consider that as well."
+#
+#    show angus neutral flip at left:
+#        yalign angusheight
+#        xalign .0
+#    with dissolve
+#
+#    gregg "I could try putting in a good word for you at Ham Panther. I don't think they're hiring right now though."
+#
+#    angus "I've got my paws full just trying to pay myself at the bakery so..."
+#
+#    gregg "Maybe Mae could get you something at the arts council if you're into that."
+#
+#    "All eyes turn toward an unsuspecting Mae. She looks like she wasn't paying much attention to the conversation and was caught off guard."
+#
+#    show mae panic at right:
+#        yalign maeheight
+#        xalign .7
+#    with dissolve
+#
+#    mae "Oh uh, yeah. I teach art stuff at the Deep Hollow County Arts Council on Fridays and Saturdays. Painting, clay sculpting, photography..."
+#
+#    lori "Mae's the one who taught me how to use a camera!"
+#
+#    show mae sad1
+#
+#    "Mae shrugs."
+#
+#    mae "At this point, Lori's more comfortable with cameras than I am. I just know enough to teach the basics."
+#
+#    player "Gotchya. I'll check it out if I'm feeling artsy."
+#
+#    show mae neutral
+#
+#    "Mae flashes you a forced smile. Luckily the awkward moment is interrupted by the waitress coming by with your food."
+#    "Food has a way of lightening the mood. Mae relaxes and even becomes more talkative as the evening goes on."
+#    "Even though your meal isn't very good, you still have a pleasant time with your new friends."
+#    "Towards the end of the night, Bea gets a box for her leftovers and the waitress drops off the meal she ordered for her father."
+#    "When it comes time to pay the bill, Gregg insists that he cover for you but you politely decline, knowing you can spare the cash more comfortably."
+#    "Ironically, Angus is the one to put down his debit card for both himself and Gregg."
+#    "Bea pays for her own, and Mae asks the waitress to put hers and Lori's meals on one bill."
+#
+#    show mae blush
+#
+#    "Lori wordlessly expresses her gratitude by resting her head on Mae's shoulder and wrapping her arm around Mae's. For the first time this night you see Mae smile in earnest."
+#
+#    #scene transition
+#
+#    show mae neutral
+#
+#    "Once you're outside, you all crowd around under a streetlight and discuss your plans for the rest of the night."
+#
+#    gregg "This was great. We should do this again."
+#
+#    lori "Yeah, it was awesome seeing you guys playing as a band again!"
+#
+#    "Bea lights a cigarette."
+#
+#    bea "Always a joy. But I think I'm gonna go home, relax and watch some TV with my dad now."
+#
+#    lori "Hmm, yeah I should get home too before my dad starts worrying where I am so late."
+#
+#    mae "I'll drive you home so you don't have to walk back in the dark Lori."
+#
+#    lori "Thanks!"
+#
+#    gregg "Me and Angus will probably watch some streams then go to sleep."
+#
+#    player "Yeah, sleep sounds good right about now. It was fun hanging out with you all though."
+#
+#    bea "Before I forget, you have Chattrbox right? Add me and we can talk more about having you work at the Pickaxe."
+#
+#    lori "Oh and add me too in case you decide to help me out on my film!"
+#
+#    "You pull out your phone and get their Chattrbox names."
+#    "You'll have to wait until you have wifi again before it registers but it's no big deal. You pocket your phone and give them a smile."
+#
+#    player "Sweet. I'm open to just chatting too if you want."
+#
+#    bea "Sure."
+#
+#    lori "Of course!"
+#
+#    hide lori
+#    hide gregg
+#    hide angus
+#    hide bea
+#    hide mae
+#    with dissolve
+#
+#    "You walk as a group back to the bakery before parting ways. Gregg and Angus go around to the back of the building, while Mae, Bea and Lori go to the parking lot by the Ol' Pickaxe."
+#    "You hop on your motorcycle and rev her up for the trip home, where you promptly get ready for bed."
+#    "You add Bea and Lori to your Chattrbox then set your phone to 'Do not disturb' mode and fall asleep with your face buried in your pillow."
+#
+#    scene bg black with fade
+#
+#
+#label church1:
+#    # day 5, sunday, dec 5
+#    scene bg home_interior_day with fade
+#
+#    "Your first week in Possum Springs has come to a close."
+#    "Really this is only your sixth day here, but it's Sunday so you're counting it as having been a week."
+#    "Each new day further cements your routine. Wake up, shower, eat breakfast, play around on the internet for a bit, and so on."
+#    "The excitement of moving into an unfamiliar town has worn off, yet you still seek the thrills you've felt over the past few days."
+#    "You should get out of this dusty old house and go on an adventure today."
+#
+#    #scene bg outsidePlayerHouseSnowClearSky
+#    play sound "sound/door open and close.mp3"
+#    scene bg home_exterior_night with fade
+#
+#    "The snowstorm has finally subsided."
+#    "The skies are bright and clear once again, but the ground is going to be covered with a thick blanket of snow for a while."
+#    "That shouldn't hinder your ability to get around though. \nNow then, where shall you go today?"
+#    "Why not visit the top of that big hill in town? You bet you can see everything in Possum Springs from up there!"
+#
+#    jump churchScene1
+#
+#label jobs1:
+#    # day 6, monday
+#    $ currentDay = 6
+#    $ currentDate = "December 6"
+#    scene bg home_interior_day with fade
+#
+#    "Another day, a new adventure awaits."
+#    "Or something like that."
+#    "Either way, you make yourself presentable and prepare to go out."
+#
+#    menu:
+#        "{cps=0}Where do you want to go?{/cps}"
+#        "Ol' Pickaxe" if workingWithBeaCompleted == False:
+#            jump workingWithBea
+#        "Help Lori with film project" if loriHelpCompleted == False:
+#            jump loriFilm
+#        "Check out the arts council" if maeArtsCompleted == False:
+#            jump maeArts
+#            
+#      
+#label day7:
+#    #day 7, tuesday, dec 7
+#    #
+#
+#    #add a random event where you hang out with germ. maybe you see him hauling animal feed across town in a stolen shopping cart, making him look homeless
+#            
+#            
+#            
+#label jobs2:
+#    # day 8, wednesday, dec 8
+#    "Another day, a new adventure awaits."
+#    "Or something like that."
+#    "Either way, you make yourself presentable and prepare to go out."
+#
+#    menu:
+#        "{cps=0}Where do you want to go?{/cps}"
+#        "Ol' Pickaxe" if workingWithBeaCompleted == False:
+#            jump workingWithBea
+#        "Help Lori with film project" if loriHelpCompleted == False:
+#            jump loriFilm
+#        "Check out the arts council" if maeArtsCompleted == False:
+#            jump maeArts
+#            
+#            
+#            
+#            
+#            
+#
+#    
+#
+#label day9:
+#    # day 9, thursday
+#    $ currentDay = 9
+#    $ currentDate = "December 9"
+#
+#    scene bg home_interior_day with fade
+#
+#    "As you're eating breakfast, a you suddenly feel like you're forgetting something."
+#    "Wasn't there something you were supposed to do today?"
+#    "Oh yeah, Selmers is hosting an event at the library this afternoon and asked if you could help out!"
+#    "Huh?"
+#    "Your phone just vibrated and a text message appeared on the screen. It's from Lori."
+#    "It says \"Hey just wanted to let you know me and Gregg are gonna be filming at the historical society this evening if you wanna come help!\""
+#    "Well shoot, you can't do both."
+#
+#    menu:
+#        "{cps=0}Where do you want to go?{/cps}"
+#        "Library":
+#            jump selmaLibraryReading
+#        "Historical Society":
+#            jump loriGreggHistorical
+#
+#    label day10a:
+#    # day 10, friday
+#    $ currentDay = 10
+#    $ currentDate = "December 10"
+#
+#    scene bg home_interior_day with fade
+#
+#    "Another day, a new adventure awaits."
+#    "Or something like that."
+#    "Either way, you make yourself presentable and prepare to go out."
+#
+#    menu:
+#        "{cps=0}Where do you want to go?{/cps}"
+#        "Ol' Pickaxe":
+#            jump beaAntiqueShop
+#        "Bakery":
+#            "to the bakery"
+#            #visit bakery but are surprised by lack of coffee. learn that they have a deal with posspresso where they don't sell coffee and possprsso doesn't sell certain baked goods. angus mentions his favorite drink there and you offer to get him one in exchange for your confection. at the cafe you find selma, and you can give her your treat as apology for missing the library event
+#        "Explore town":
+#            jump maeLoriSleepover
+#
+#label anotherday:
+##another germ scene, he slips on ice, you help him home, visit his animal shelter
+#
+#
+#    label day10:
+#        # day 10, thursday
+#        $ currentDay = 10
+#        $ currentDate = "December 16"
+#        
+#        "Another day, a new adventure awaits."
+#    "Or something like that."
+#    "Either way, you make yourself presentable and prepare to go out."
+#
+#    menu:
+#        "{cps=0}Where do you want to go?{/cps}"
+#        "Ol' Pickaxe":
+#            jump beaAntiqueShop
+#        "bakery":
+#            "to the bakery"
+#            #visit bakery but are surprised by lack of coffee. learn that they have a deal with posspresso where they don't sell coffee and possprsso doesn't sell certain baked goods. angus mentions his favorite drink there and you offer to get him one in exchange for your confection. at the cafe you find selma, and you can give her your treat as apology for missing the library event
+#        "Explore town":
+#            jump maeLoriSleepover
+#            
+#
+#
+#label day:
+#    #farmer's market?
+#    #group hangout at ??? with ???
+#    #germ is invited but couldn't make it
+#            
+#            
+#            
+#            
+#            
+#            
+#            
+#            
+#            
+#            
+#            
+#label nextday:
+#
+#    menu:
+#        "Play video games with Gregg and Angus":
+#            jump dragonsDungeons1
+#        "Train Tracks" if loriFilmCompleted == False:
+#            jump loriFilm
+#
+#
+#    label day11:
+#        # day 11, friday
+#        $ currentDay = 11
+#        $ currentDate = "December 17"
+#
+#        jump posspresso_group1
+#
+#    label day12:
+#        # day 12, saturday
+#        $ currentDay = 12
+#        $ currentDate = "December 18"
+#
+#        menu:
+#            "Arts Council":
+#                jump artsCouncilScene
+#            "Train Tracks" if loriFilmCompleted == False:
+#                jump loriFilm
+#            #"tabletop gaming" 
+#                
+#
+#
+#    label day13:
+#        # day 13, sunday
+#        $ currentDay = 13
+#        $ currentDate = "December 19"
+#
+#        menu:
+#            "Church":
+#                jump churchWeek2
+#            "Ol' Pickaxe":
+#                scene bg pickaxe with fade
+#
+#                play music "music/picknaxe_loop.mp3" fadein 1.0
+#
+#                "You head down to the hardware store and find Bea manning the counter."
+#
+#                show bea apron at right with dissolve:
+#                    yalign beaheight
+#
+#                bea "Hey [name]. Me and Selma are going out to the Arts Council tonight for some poetry. You wanna come?"
+#
+#                player "Sure!"
+#
+#                bea "Meet us there at around 7:00, k?"
+#
+#                player "Sounds good. See you then!"
+#
+#                stop music fadeout 2.0
+#
+#                bea "See ya."
+#
+#                hide bea with dissolve
+#
+#                jump beaSelmaPoetry
+#            #"Library":
+#                #jump beaSelmaPoetry
+#            #give option to go to library as well, selma tells invites player to poetry thing
+#
+#    label day14:
+#        # day 14, monday
+#        $ currentDay = 14
+#        $ currentDate = "December 20"
+#
+#        scene bg home_interior_day with fade
+#
+#        "Welp, it's Longest Night Eve. Better write a scene for this."
+#
+#
+#    label day15:
+#        # day 15, tuesday
+#        $ currentDay = 15
+#        $ currentDate = "December 21"
+#
+#        jump longestNightOpening
+#
+#    label day16:
+#        # day 16, wednesday
+#        $ currentDay = 16
+#        $ currentDate = "December 22"
+#
+#        jump endDemo
+#
+#
+#    label olPickaxeWeek1:
+#        # make beaSelmaPoetry available only after the cafe meetup
+#
+#        scene bg pickaxe with fade
+#
+#        play music "music/picknaxe_loop.mp3" fadein 1.0
+#
+#        "You head down to the hardware store and find Bea manning the counter."
+#
+#        show bea apron at right with dissolve:
+#            yalign beaheight
+#
+#        bea "Hey [name]. Me and Selma are going out to the Arts Council tonight for some poetry. You wanna come?"
+#
+#        player "Sure!"
+#
+#        bea "Meet us there at around 7:00, k?"
+#
+#        player "Sounds good. See you then!"
+#
+#        stop music fadeout 2.0
+#
+#        bea "See ya."
+#
+#        hide bea with dissolve
+#
+#        jump beaSelmaPoetry
+#
+#
+#        #menu:
+#            #"Sure!":
+#
+#                #player "Sure!"
+#
+#                #bea "Meet us there at around 7:00, k?"
+#
+#                #player "Sounds good. See you then!"
+#
+#                #stop music fadeout 2.0
+#
+#                #bea "See ya."
+#
+#                #hide bea with dissolve
+#
+#
+#
+#                #jump beaSelmaPoetry
+#            #"Nope.":
+#
+#                #player "Sorry, I think I'm busy around that time."
+#
+#                #bea "No big deal. See ya around."
+#
+#                #stop music fadeout 2.0
+#
+#                #player "Bye!"
+#
+#                #hide bea with dissolve
+#
+#    label endDemo:
+#        scene bg black with fade
+#        "That concludes the demo! Thanks so much for playing! Stay tuned for more to come!"
+#        "Credits"
+#        "Project Management: Fishy"
+#        "Writing: Kodiak, Ferrin, MegaBirb, Tymime, Fishy, V-25 Sean"
+#        "Programming: Kodiak"
+#        "Music: Tymime, EightbyteOwl, Elias Lang, Ferrin, JunoDeer"
+#        "Character Sprites: Equestria Prevails, TRPCWings, Balderdash, LataviaBoy1999, Tymime, Starxeil, Lauri, EightbyteOwl"
+#        "Background Art: Eightbyteowl, Coldiru, Nukathefloof, TRPCWings, Balderdash, LataviaBoy1999, Careybou, WorkerQ, KDD, Lauri"
+#        "Licensing info: The contents of this game are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License	https://creativecommons.org/licenses/by-nc-sa/3.0/us/"
+#        return
+#
+#    return
+#
