@@ -5,7 +5,7 @@ label dailyExploration:
         "{cps=0}What should you do?{/cps}"
         "Explore home" if houseEventsDay:
             if exploredHouse == False:
-                call unexploredHouse
+                call unexploredHouse from _call_unexploredHouse
             
             #if houseEvents is empty, you can no longer explore the house
             #if not houseEventsDay:
@@ -14,7 +14,7 @@ label dailyExploration:
             
             $ randomSelected = renpy.random.choice(houseEventsDay)
                 
-            call expression randomSelected
+            call expression randomSelected from _call_expression
             #else:
             #    "You've already explored the house enough."
             #    $ houseFullyExplored = True
@@ -26,7 +26,7 @@ label dailyExploration:
             
             $ randomSelected = renpy.random.choice(townEventsDay)
             
-            call expression randomSelected
+            call expression randomSelected from _call_expression_1
             
         "Return screwdriver" if screwdriverReturned == False:
             #could probably just have a $ hasScrewdriver variable and it would work more cleanly
@@ -36,14 +36,14 @@ label dailyExploration:
             "You promised the hardware store girl that you'd return the screwdriver after you were done with it."
             "You have no more use for it so you should give it back as soon as possible."
             
-            call returnScrewdriverScene 
+            call returnScrewdriverScene from _call_returnScrewdriverScene 
         "Return library book" if haveOverdueBook == True:
             #daytime only
             "The book is more overdue than the screwdriver. You should return it first."
             
-            call libraryVisit1 
+            call libraryVisit1 from _call_libraryVisit1 
         "Return wallet" if dayWalletFound > 0:
-            call maeLoriSleepover
+            call maeLoriSleepover from _call_maeLoriSleepover
         "Do nothing":
             "Yeahhh you don't really feel like doing anything today."
             "You sit back and mindlessly stare at your phone for a few hours."
@@ -878,7 +878,7 @@ label townBridge1:
     #day only (for now? night scene later?)
     $ townEventsDay.remove("townBridge1")
     #$ townEventsNight.remove("townBridge1")
-    $ townEventsDay.append("townBridge2")
+    #$ townEventsDay.append("townBridge2")
     #$ townEventsNight.append("townBridge2")
     
     "You continue walking until the buildings of downtown give way to smaller residences, and beyond that, sparse trees."

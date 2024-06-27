@@ -1,44 +1,35 @@
 # This is the main script called upon when a new game is selected
 
 #### Define characters
-define mae = Character("Mae", color="#ff3f54")
-define bea = Character("Bea", color="#4f7175")
-define gregg = Character("Gregg", color="#e8971a")
-define angus = Character("Angus", color="#6fbc92")
-define lori = Character("Lori", color="#c1e0fc")
-define germ = Character("Germ", color="#a384e5")
-define selma = Character("Selmers", color="#d15384")
+define mae = Character("Mae : ", color="#ff3f54")
+define bea = Character("Bea : ", color="#4f7175")
+define gregg = Character("Gregg: ", color="#e8971a")
+define angus = Character("Angus: ", color="#6fbc92")
+define lori = Character("Lori: ", color="#c1e0fc")
+define germ = Character("Germ: ", color="#a384e5")
+define selma = Character("Selmers : ", color="#d15384")
 define narrator = Character("")
-define player = Character("Wayfarer")
-define candy = Character("Candy")
-define stan = Character("Stan")
-define name = Character("Alex")
-define driver = Character("Driver")
-define trish = Character("???")
-define harleyunknown = Character("???")
-define harley = Character("Harley")
-define receptionist = Character("???")
-define marcie = Character("Marcie")
-define kid = Character("Kid")
-define cashier = Character("Cashier")
-define pa = Character("PA")
-define raccoon = Character("Raccoon")
-define danny = Character("Danny")
-define citycouncil1 = Character("City Council 1")
-define citycouncil2 = Character("City Council 2")
-define citycouncil3 = Character("City Council 3")
-define citycouncil4 = Character("City Council 4")
-define saleem = Character("Saleem")
-define sadie = Character("Sadie")
-define man = Character("Man")
-define madamespectre = Character("Madame Spectre")
+define candy = Character("Candy : ")
+define stan = Character("Stan : ")
+define name = Character("You : ")
+define driver = Character("Driver : ")
+define trish = Character("??? : ")
+define harleyunknown = Character("??? : ")
+define harley = Character("Harley : ")
+define receptionist = Character("??? : ")
+define marcie = Character("Marcie : ")
+define kid = Character("Kid : ")
+define cashier = Character("Cashier : ")
+define pa = Character("PA : ")
+define raccoon = Character("Raccoon : ")
+define danny = Character("Danny : ")
+define madamespectre = Character("Madame Spectre : ")
 
 
 label before_main_menu:
     python:
         from enum import Enum
         
-        #testenum = Enum('testenum', 'ORANGE APPLE GRAPE')
         drinkenum = Enum('drinkenum', 'MOCHA SPECIAL AMERICANO CAPPUCCINO')
         animalenum = Enum('animalenum', 'REPTILE BIRD MAMMAL')
         hobbyenum = Enum('hobbyenum', 'MOVIES BOOKS MUSIC')
@@ -54,7 +45,6 @@ label after_load:
     init python:
         from enum import Enum
         
-        #testenum = Enum('testenum', 'ORANGE APPLE GRAPE')
         drinkenum = Enum('drinkenum', 'MOCHA SPECIAL AMERICANO CAPPUCCINO')
         animalenum = Enum('animalenum', 'REPTILE BIRD MAMMAL')
         hobbyenum = Enum('hobbyenum', 'MOVIES BOOKS MUSIC')
@@ -317,7 +307,7 @@ label start:
 
     trish "Ain't seen you around before!"
     
-    define trish = Character("Trish")
+    define trish = Character("Trish : ")
     
     trish "Welcome to Posspresso! You can call me Trish!"
     trish "Have you decided what you'd like?"
@@ -375,7 +365,8 @@ label start:
     trish "And can I get a name for you?"
 
     $ povnameValid = False
-    $ player = Character("[name]")
+    #$ player = Character("[name] : ")
+    $ player = Character("You : ")
     #jump namescript1
     label namescript1:
 
@@ -1004,7 +995,7 @@ label day3:
     if not townEventsDay:
         "You're tired of exploring the town. You should find something else to do for now."
     
-    call dailyExploration
+    call dailyExploration from _call_dailyExploration
     
     #if nightTime == True:
     #    "The sun has set and it's gotten dark out, but the night is still young. What should you do?"
@@ -1104,7 +1095,7 @@ label day4:
     "For now though, your savings will hold you over and you can focus on settling in."
     "What will you do today?"
     
-    call dailyExploration
+    call dailyExploration from _call_dailyExploration_1
     
     
     
@@ -1225,7 +1216,7 @@ label day4:
     "They're starting at night so you should have plenty of time to do something else for a while."
     "What will you do today?"
     
-    call dailyExploration
+    call dailyExploration from _call_dailyExploration_2
     
     scene bg home_interior_night with fade
     
@@ -1237,7 +1228,7 @@ label day4:
     "The time when Gregg and Angus said they'd be playing is fast approaching."
     "You head out to the meeting place, unsure of what you're getting into but excited nonetheless."
                     
-    call tabletopGame1
+    call tabletopGame1 from _call_tabletopGame1
     
          
     
@@ -1255,7 +1246,7 @@ label day4:
     "For now though, your savings will hold you over and you can focus on settling in."
     "What will you do today?"
     
-    call dailyExploration
+    call dailyExploration from _call_dailyExploration_3
     
     scene bg home_interior_night with fade
 

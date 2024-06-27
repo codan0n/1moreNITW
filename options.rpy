@@ -17,7 +17,7 @@ define config.name = _("One More Night in the Woods \n0.0.1")
 define gui.text_font = "Nitw.otf"
 define gui.name_text_font = "Nitw.otf"
 define gui.text_size = 60
-define gui.name_text_size = 70
+define gui.name_text_size = 60
 
 
 
@@ -44,7 +44,7 @@ define gui.about = _p("""A Night in the Woods fan game\n\nCredits\n
         Music: Tymime, EightbyteOwl, Elias Lang, Ferrin, JunoDeer\n
         Character Sprites: Equestria Prevails, TRPCWings, Balderdash, LataviaBoy1999, Tymime, Starxeil, Lauri, EightbyteOwl\n
         Background Art: Eightbyteowl, Coldiru, Nukathefloof, TRPCWings, Balderdash, LataviaBoy1999, Careybou, WorkerQ, KDD, Lauri\n
-        \n
+        You can follow development at twitter.com/codavn\n
         One More Night in the Woods is built from free-to-use pieces of Love in the Woods and After the Fall, along with original ideas and content.
         \n
         Equestria Prevails (aka goatanimedatingsim) art (most of the base character sprites) are licensed under Creative Commons Share-alike license.\n

@@ -7,7 +7,7 @@ label marcieSalt:
     
     show marcie neutral at left:
         xzoom -1
-    show bea neutral at right
+    show bea apron neutral at right
     with dissolve
     
     #"After aquiring your new doo-dad, you watch as a mousey older lady drags a particularly massive bag of salt to the register. Bea eyes it with apprehension as she rings it through."

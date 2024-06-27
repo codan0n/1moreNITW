@@ -85,8 +85,12 @@ label angusBakeryCoffee:
     show angus neutral at left with dissolve:
         xzoom -1
 
-    angus "Welcome back! Gregg, get off the counter, I have a customer."
-    
+
+    if bakeryVisited == True:
+        angus "Welcome back! Gregg, get off the counter, I have a customer."
+    else:
+        angus "Welcome! Gregg, get off the counter, I have a customer."
+        
     show gregg neutral at right with dissolve
     
     gregg "I like being up here though! I makes me feel tall!"

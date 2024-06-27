@@ -51,7 +51,7 @@ label maeLoriSleepover:
         
         "You try to remember back to that night."
         
-        call loriFlashback
+        call loriFlashback from _call_loriFlashback_1
         
         scene bg street with fade
         
@@ -96,8 +96,7 @@ label maeLoriSleepover:
         
         player "[name]."
         
-        show mae skeptical at left:
-            xzoom -1
+        show mae skeptical
 
         "She narrows her eyes at you."
 
@@ -120,8 +119,7 @@ label maeLoriSleepover:
 
         mae "Died...?"
 
-        show mae panic at left:
-            xzoom -1
+        show mae freakout
         
         mae "Err how many years ago? If you don't mind my asking...?"
         
@@ -130,11 +128,18 @@ label maeLoriSleepover:
         "She suddenly looks like she's seen a ghost."
         
         mae "Uhh wow, very interesting!"
+        
+        show mae neutral
+        
         mae "Well thanks for returning my wallet and all but I've gotta get back to doing stuff right now!"
     
     mae "Come on in, Lori, food's almost ready!"
     
     candy "Mae honey, is that Lori? Come wash your paws and get some dinner!"
+    
+    show mae at right:
+        xoffset -400
+    with move
     
     show candy neutral at right with dissolve
     

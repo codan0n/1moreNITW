@@ -356,34 +356,34 @@ label libraryVisit1:
             $ randomSelected = renpy.random.choice(libraryGuests)
             if randomSelected == "trishLibrary1":
                     $ libraryGuests.remove("trishLibrary1")
-                    call trishLibraryScene1
+                    call trishLibraryScene1 from _call_trishLibraryScene1
             if randomSelected == "marcieLibrary1":
                     $ libraryGuests.remove("marcieLibrary1")
-                    call marcieLibraryScene1
+                    call marcieLibraryScene1 from _call_marcieLibraryScene1
             if randomSelected == "greggLibrary1":
                     $ libraryGuests.remove("greggLibrary1")
-                    call greggLibraryScene1
+                    call greggLibraryScene1 from _call_greggLibraryScene1
             if randomSelected == "maeLibrary1":
                     $ libraryGuests.remove("maeLibrary1")
-                    call maeLibraryScene1
+                    call maeLibraryScene1 from _call_maeLibraryScene1
             if randomSelected == "beaLibrary1":
                     $ libraryGuests.remove("beaLibrary1")
-                    call beaLibraryScene1
+                    call beaLibraryScene1 from _call_beaLibraryScene1
             if randomSelected == "germLibrary1":
                     $ libraryGuests.remove("germLibrary1")
-                    call germLibraryScene1
+                    call germLibraryScene1 from _call_germLibraryScene1
             if randomSelected == "selmaLibrary1":
                     $ libraryGuests.remove("selmaLibrary1")
-                    call selmaLibraryScene1
+                    call selmaLibraryScene1 from _call_selmaLibraryScene1
             if randomSelected == "stanLibrary1":
                     $ libraryGuests.remove("stanLibrary1")
-                    call stanLibraryScene1
+                    call stanLibraryScene1 from _call_stanLibraryScene1
             if randomSelected == "angusLibrary1":
                     $ libraryGuests.remove("angusLibrary1")
-                    call angusLibraryScene1
+                    call angusLibraryScene1 from _call_angusLibraryScene1
             if randomSelected == "loriLibrary1":
                     $ libraryGuests.remove("loriLibrary1")
-                    call loriLibraryScene1
+                    call loriLibraryScene1 from _call_loriLibraryScene1
         
     # on 2nd visit selma is surprised to see you. on 3rd visit she invites you to an event
     #as you leave, you see an ad for the band gig on the cork board (along with other ads)

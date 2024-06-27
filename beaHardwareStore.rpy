@@ -117,7 +117,7 @@ label meetingBea:
     "Snow shovels sure seem to be high demand these days."
     "The gothy crocodile behind the counter just finished selling one to a customer before glaring at you."
 
-    show bea neutral at right with dissolve
+    show bea apron neutral at right with dissolve
 
     bea "Welcome to the Ol' Pickaxe. Let me know if I can help you find any- *yawn*"
     bea "-...thing."
@@ -141,7 +141,7 @@ label meetingBea:
     "It's only available as part of a larger kit that comes with a million other tools and has a price tag to reflect it."
     "After wandering the aisle a few times hoping to spot a singular one somewhere, you catch a glimpse of the cashier dragging a large bag of road salt and decide to approach her."
     
-    show bea neutral at center with dissolve
+    show bea apron neutral at center with dissolve
 
     player "Excuse me, you don't seem to have the tool I need in stock. I mean, outside of this overpriced kit."
     
@@ -239,17 +239,17 @@ label meetingBea:
     menu:
         "Where will you go?"
         "Wander streets":
-            call townRooftops1
+            call townRooftops1 from _call_townRooftops1
         "War monument":
             "You see some sort of monument nearby. Might be a little interesting. A little."
-            call townAngus1
+            call townAngus1 from _call_townAngus1
         "Venture west":
             "You're gonna keep walking until you see something worth your while."
-            call townGerm1
+            call townGerm1 from _call_townGerm1
     
     "You check the bakery once more and this time it's open. Finally you can get on with your quest."
     
-    call angusBakeryCoffee
+    call angusBakeryCoffee from _call_angusBakeryCoffee
     
     scene bg olpickaxe with dissolve
     
@@ -257,7 +257,7 @@ label meetingBea:
 
     #"She's still moving bags of salt around."
     
-    show bea neutral at center with dissolve
+    show bea apron neutral at center with dissolve
     
     #"If you went to the bakery first, you can give her a cookie. If you went after the hardware store you'll have a cinnamon roll and bea will comment on either."
     
@@ -305,7 +305,7 @@ label meetingBea:
     
     hide bea with dissolve
 
-    call marcieSalt
+    call marcieSalt from _call_marcieSalt
         
     jump day2Evening
     
@@ -443,7 +443,7 @@ label returnScrewdriverScene:
     "No one is at the counter when you arrive at the hardware store."
     "You ring the bell and only after a few minutes does the cashier shuffle over."
     
-    show bea neutral at center with dissolve
+    show bea apron neutral at center with dissolve
     
     bea "*Yaawwwwn*"
     bea "Welcome to the Ol' Pickax. You want it, we probably got it."
@@ -516,7 +516,7 @@ label returnScrewdriverScene:
         #"You think back to a few days ago when you first arrived in Possum Springs."
         #n "The memory comes flooding back to you."
         
-        call loriFlashback
+        call loriFlashback from _call_loriFlashback
         
         scene bg olpickaxe with fade
         
@@ -584,7 +584,7 @@ label returnScrewdriverScene:
         show mae at offscreenleft with move
         show lori at offscreenleft with move
 
-    show bea neutral at right with dissolve
+    show bea apron neutral at right with dissolve
 
     bea "Was that Mae and Lori just now?"
 
