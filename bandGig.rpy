@@ -131,7 +131,7 @@ label bandGig1:
         
         bea "[heshethey] came into my store bothering me about a screwdriver a few days ago."
         
-        if screwdriverReturned == False
+        if screwdriverReturned == False:
             bea "I still haven't gotten that back by the way."
             
             player "Sorry, I'll bring it back ASAP."

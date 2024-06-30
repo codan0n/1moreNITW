@@ -1,4 +1,5 @@
 label maeLoriSleepover:
+    $ metCandy = True
 
     "It's about time you deliver that wallet you found to its rightful owner."
     "The address on the ID said they reside on Maple Street."
