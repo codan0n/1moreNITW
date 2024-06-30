@@ -54,6 +54,23 @@ label after_load:
 
 label start:
 
+    ###testing
+    
+    #$ loriAP = 10
+    #$ maeAP = 10
+    #$ beaAP = 30
+    #
+    #$ highestAP = max(loriAP, maeAP, beaAP)
+    #
+    #"highest AP is [highestAP]"
+    #
+    #if highestAP == loriAP:
+    #    "lori is best girl"
+    #elif highestAP == maeAP:
+    #    "mae is best girl"
+    #elif highestAP == beaAP:
+    #    "bea is best girl"
+
     #### variables
 
     #### misc
@@ -364,7 +381,7 @@ label start:
 
     trish "And can I get a name for you?"
 
-    $ povnameValid = False
+    $ nameValid = False
     #$ player = Character("[name] : ")
     $ player = Character("You : ")
     #jump namescript1
@@ -373,62 +390,62 @@ label start:
         python:
             name = renpy.input("Oh shoot, what's your name again?", length = 14)
             name = name.strip()
-            povnameValid = True
+            nameValid = True
             # prevents the player from naming themselves certain names and names them Alex if nothing is input
             if name.upper() == "MAE":
                 "Choose another name."
-                povnameValid = False
+                nameValid = False
             if name.upper() == "MARGARET":
                 "Choose another name."
-                povnameValid = False
+                nameValid = False
             if name.upper() == "BEA":
                 "Choose another name."
-                povnameValid = False
+                nameValid = False
             if name.upper() == "BEATRICE":
                 "Choose another name."
-                povnameValid = False
+                nameValid = False
             if name.upper() == "GREGG":
                 "Choose another name."
-                povnameValid = False
+                nameValid = False
             if name.upper() == "GREG":
                 "Choose another name."
-                povnameValid = False
+                nameValid = False
             if name.upper() == "ANGUS":
                 "Choose another name."
-                povnameValid = False
+                nameValid = False
             if name.upper() == "GERM":
                 "Choose another name."
-                povnameValid = False
+                nameValid = False
             if name.upper() == "JEREMY":
                 "Choose another name."
-                povnameValid = False
+                nameValid = False
             if name.upper() == "LORI":
                 "Choose another name."
-                povnameValid = False
+                nameValid = False
             if name.upper() == "SELMA":
                 "Choose another name."
-                povnameValid = False
+                nameValid = False
             if name.upper() == "SELMERS":
                 "Choose another name."
-                povnameValid = False
+                nameValid = False
             if name.upper() == "STAN":
                 "Choose another name."
-                povnameValid = False
+                nameValid = False
             if name.upper() == "CANDY":
                 "Choose another name."
-                povnameValid = False
+                nameValid = False
             if name.upper() == "TRISH":
                 "Choose another name."
-                povnameValid = False
+                nameValid = False
             if name.upper() == "MARCIE":
                 "Choose another name."
-                povnameValid = False
-            if not name:
+                nameValid = False
+            if name == "":
                 #default name in case you don't type anything
                 name = "Alex"
-                povnameValid = True
+                nameValid = True
 
-        if povnameValid == True:
+        if nameValid == True:
             "Your name is [name]?"
         else:
             "Choose another name."

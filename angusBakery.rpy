@@ -97,7 +97,7 @@ label angusBakeryCoffee:
     
     angus "Don't make me spray you with water."
     
-    angus "Ffffiiine."
+    gregg "Ffffiiine."
 
     "The fox pouts and whines as he slides off. His boots make a loud *thud* as they hit the floor and the whole room shakes a bit."
     #every loose object in the room rattles

@@ -438,6 +438,8 @@ label meetingBea:
 label returnScrewdriverScene:
     $ screwdriverReturned = True
     
+    $ beaAP = beaAP + 1
+    
     scene bg olpickaxe with dissolve
     
     "No one is at the counter when you arrive at the hardware store."

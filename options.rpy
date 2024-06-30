@@ -39,16 +39,18 @@ define config.version = "0.0.1"
 #define gui.about = _p("""
 #""")
 define gui.about = _p("""A Night in the Woods fan game\n\nCredits\n
-        Writing: Codanon, Kodiak, Ferrin, MegaBirb, Tymime, Fishy, V-25 Sean\n
+        Writing: Codanon, Someleaf, Kodiak, Ferrin, MegaBirb, Tymime, Fishy, V-25 Sean\n
         Programming: Codanon, Kodiak\n
         Music: Tymime, EightbyteOwl, Elias Lang, Ferrin, JunoDeer\n
         Character Sprites: Equestria Prevails, TRPCWings, Balderdash, LataviaBoy1999, Tymime, Starxeil, Lauri, EightbyteOwl\n
         Background Art: Eightbyteowl, Coldiru, Nukathefloof, TRPCWings, Balderdash, LataviaBoy1999, Careybou, WorkerQ, KDD, Lauri\n
         You can follow development at twitter.com/codavn\n
-        One More Night in the Woods is built from free-to-use pieces of Love in the Woods and After the Fall, along with original ideas and content.
+        One More Night in the Woods is built from free-to-use assets from Love in the Woods and After the Fall, along with original ideas and content. Setting and most characters are from Night in the Woods which belongs to its creators.
+        After the Fall version 4 and prior was distributed under CC AT-NC-SA 3.0 license. 
         \n
-        Equestria Prevails (aka goatanimedatingsim) art (most of the base character sprites) are licensed under Creative Commons Share-alike license.\n
-        Licensing info (from After the Fall): The contents of this game are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License https://creativecommons.org/licenses/by-nc-sa/3.0/us/
+        RIP Alec. Revenant Hill got what it deserved.
+        Equestria Prevails (aka goatanimedatingsim) art is licensed under Creative Commons Attribution Non-Commercial Share-alike license.\n
+        Various contents of this game (art for characters and original backgrounds, code and writing) are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License https://creativecommons.org/licenses/by-nc-sa/3.0/us/
 """)
 
 ## A short name for the game used for executables and directories in the built
