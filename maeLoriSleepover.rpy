@@ -423,7 +423,7 @@ label maeLoriSleepover:
     
             mae "Yeah... sorry my room's a wreck haha. Let's all head back downstairs."
 
-    scene bg maelivingroom with dissolve
+    scene bg maekitchen with fade
     #stop music fadeout 2.0
 
     show candy neutral at left:

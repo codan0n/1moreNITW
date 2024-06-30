@@ -1,6 +1,8 @@
 label church1:
     $ metCandy = True
     
+    scene bg roads_day
+    
     "There sure are a lot of people heading up to the top of that hill today."
     "You wonder if there's some sort of event going on."
     "There's gotta be free food up there if so many people are gathering in one spot."
@@ -14,7 +16,7 @@ label church1:
     "That the statue of the fire-breathing pope guy by the welcome sign must be doing a good job of guarding the premises."
     "A large crowd of people begins pouring out of the church."
     "Some walk right past you, giving you friendly smiles and hellos, while others hang back and chat among themselves here in the courtyard."
-    "To your surprise, you spot Mae amid the last to pass through the doors, accompanied by what looks like her parents."
+    "To your surprise, you spot Mae among the last to pass through the doors, accompanied by what looks like her parents."
     "Mae impatiently drags them toward the parking lot until she notices you, whereupon she jumps back in shock."
     
     show mae freakout at right with dissolve
@@ -45,9 +47,9 @@ label church1:
     "Dammit, Mae's parents aren't going to let you get away that easily."
     "You give them a cordial nod and greeting."
     
-    player "Hi there. I'm [newname]. I just moved in last week."
+    player "Hi there. I'm [name]. I just moved in last week."
 
-    candy "Nice to meet you [newname]! I'm Mae's mother, Candy."
+    candy "Nice to meet you [name]! I'm Mae's mother, Candy."
 
     stan "I don't have my name tag on me at the moment but rest assured I'm still Stan."
     stan "Working at the Panther is just my part time job. Raising Mae is my full time one hahaha!"
