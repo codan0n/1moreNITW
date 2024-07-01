@@ -125,6 +125,7 @@ label start:
     $ haveOverdueBook = False
     $ cinnamonRoll = False
     $ dayWalletFound = 0
+    $ bandGig1Complete = False
     
     #### quest started status
     $ beaQuestStarted = False
@@ -986,6 +987,7 @@ label day2Evening:
 label day3:
     # Day 3, wednesday
     $ currentDay = currentDay + 1
+    $ screwDriverDay = currentDay
     #$ currentDate = "December 3"
     $ nightTime = False
     
@@ -1280,7 +1282,34 @@ label day4:
     #if foundBandGig == False:
     #    "As you wonder through town, a sheet of paper flutters through the wind. By chance it flies directly in your face."
     #    "You see it's a flyer for some sort of band gig happening... tonight?!"
-        
+    
+    "Today's the day that band is playing at the bakery. You spend the day running errands and getting ready for tonight's big event."
+    
+    call bandGig1
+    
+    scene bg home_interior_night with fade
+
+    #"Night casts its shadow and you retire to your bedroom to rest until sunrise."
+    "It's gotten late and you've become too tired to stay awake."
+    "Time for some sleep. You retire to your bedroom and rest until sunrise."
+    
+    
+    
+    #interim day
+    
+    scene bg home_interior_day with fade
+    
+    "What will you do today?"
+    
+    call dailyExploration
+    
+    
+    scene bg home_interior_night with fade
+
+    #"Night casts its shadow and you retire to your bedroom to rest until sunrise."
+    "It's gotten late and you've become too tired to stay awake."
+    "Time for some sleep. You retire to your bedroom and rest until sunrise."
+    
     
     #day7
     # Day 7 Sunday

@@ -440,6 +440,10 @@ label returnScrewdriverScene:
     
     $ beaAP = beaAP + 1
     
+    #earliest opportunity to return the screwdriver, gets you a bonus to bea AP
+    if currentDay = screwDriverDay:
+        $ beaAP = beaAP + 1
+    
     scene bg olpickaxe with dissolve
     
     "No one is at the counter when you arrive at the hardware store."

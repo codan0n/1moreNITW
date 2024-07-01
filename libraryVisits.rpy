@@ -325,18 +325,22 @@ label libraryVisit1:
                 #"It's faded. Last seen like 6 years ago. Yeah I don't think anyone's gonna find him."
                 jump bulletinboard1
             "Leave":
-                $ foundBandGig = True
-                "The rest of the pinned items are things like lawyers' business cards or ads for events from last summer."
-                "Well that was a waste of time."
-                "Oh, what's this?"
-                "Hidden underneath one of the other papers is a flyer for an upcoming event. Apparently a local band called The Pumpkin Head Guys is gonna play at the Party Barn(?) this Saturday."
-                "You'd think this was some farmercore band but the poster is designed more like a Harfest event with drawings of skulls and bats flying around."
-                "There's only one demographic that loves Harfest more than children and farmers, and that's goth chicks."
-                "You might have to check them out, but you're leaving the second you hear country music."
-                #"They don't seem like the type to do country music. You might actually have to check them out."
-                #"If Possum Springs has any sort of alt scene, this is probably where you'd go to find it."
-                #"You've got nothing better planned for the weekend, so you take a photo of the address listed and set a reminder to attend. Admission is free too."
-    
+                if bandGig1Complete == True:
+                    "You find a poster for the gig Bea's band did earlier. It's got some cool art. You wonder which band member drew it."
+                    "It's gotta be either Gregg or Mae's handiwork. It's too crude for Bea or Angus to be responsible for."
+                else:
+                    $ foundBandGig = True
+                    "The rest of the pinned items are things like lawyers' business cards or ads for events from last summer."
+                    "Well that was a waste of time."
+                    "Oh, what's this?"
+                    "Hidden underneath one of the other papers is a flyer for an upcoming event. Apparently a local band called The Pumpkin Head Guys is gonna play at the Party Barn(?) this Saturday."
+                    "You'd think this was some farmercore band but the poster is designed more like a Harfest event with drawings of skulls and bats flying around."
+                    "There's only one demographic that loves Harfest more than children and farmers, and that's goth chicks."
+                    "You might have to check them out, but you're leaving the second you hear country music."
+                    #"They don't seem like the type to do country music. You might actually have to check them out."
+                    #"If Possum Springs has any sort of alt scene, this is probably where you'd go to find it."
+                    #"You've got nothing better planned for the weekend, so you take a photo of the address listed and set a reminder to attend. Admission is free too."
+                "That's enough library for today. Time to do something else."
 
     
 

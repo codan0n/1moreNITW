@@ -1,15 +1,18 @@
 label bandGig1:
+    $ bandGig1Complete = True
     #considerations
     #at this point you may not have met Lori and Mae
     #maybe only trigger this scene if you've met them
 
     #outline
     #As they're cleaning up, lori hangs out with the band, they notice you and invite you over, then get dinner at clik clak
+    
+    scene bg bakery_exterior with fade
 
     "You're running late but as you approach the bakery, you can see the lights are still on and the thumping of bass hangs in the air."
     "You quicken your pace and reach for the door handle."
     
-    scene bg bakery with fade
+    scene bg bakery_interior with fade
     
     "Inside there's a small crowd formed around the stage. You can hardly see who's on it due to the dim lighting, but you recognize the voice on the microphone."
     
@@ -90,7 +93,7 @@ label bandGig1:
     
     germ "Wouldn't miss it!"
     
-    show lori at right with dissolve
+    show lori neutral at right with dissolve
     
     lori "Bye Germ! Give your pet possum hugs and kisses for me!"
     
@@ -98,7 +101,7 @@ label bandGig1:
     
     hide germ with dissolve
     
-    show bea at left with dissolve:
+    show bea neutral at left with dissolve:
         xzoom -1
     
     bea "So. Are we getting dinner or what?"
@@ -211,7 +214,7 @@ label bandGig1:
     
     "You all file out through the doorway and into the cold dark street."
 
-    scene bg street
+    scene bg bakery_exterior with dissolve
 
     show bea neutral at right with dissolve
 
